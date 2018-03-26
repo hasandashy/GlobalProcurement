@@ -1,0 +1,1348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1B6A194A-24AC-4A14-A6F4-0E43D7617196}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SGA</RootNamespace>
+    <AssemblyName>SGA</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\Projectsource\SGA\SGA\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="CookComputing.XmlRpcV2">
+      <HintPath>..\..\..\Projectsource\SGA\SGA\bin\CookComputing.XmlRpcV2.dll</HintPath>
+    </Reference>
+    <Reference Include="cronometro">
+      <HintPath>..\..\..\Projectsource\SGA\SGA\bin\cronometro.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNet.Highcharts">
+      <HintPath>..\..\HRPA\AHRI\bin\DotNet.Highcharts.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\..\..\Projectsource\SGA\SGA\bin\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>RequiredDll\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="FredCK.FCKeditorV2">
+      <HintPath>..\..\..\Projectsource\SGA\SGA\bin\FredCK.FCKeditorV2.dll</HintPath>
+    </Reference>
+    <Reference Include="Hammock">
+      <HintPath>E:\Downloads\hammock-master\hammock-master\src\net40\Hammock\obj\Debug\Hammock.dll</HintPath>
+    </Reference>
+    <Reference Include="InfusionSoftDotNet">
+      <HintPath>..\..\..\Projectsource\SGA\SGA\bin\InfusionSoftDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\Projectsource\SGA\SGA\bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\..\..\..\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\..\benproject\dlls\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Projectsource\SGA\SGA\bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\..\benproject\dlls\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\..\..\..\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment">
+      <HintPath>..\..\..\..\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor">
+      <HintPath>..\..\benproject\dlls\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\iTextHelperFunctionDMP.cs" />
+    <Compile Include="App_Code\LinkedInService.cs" />
+    <Compile Include="App_Code\Company.cs" />
+    <Compile Include="App_Code\MailSending.cs" />
+    <Content Include="App_Code\oAuthFacebook.cs" />
+    <Compile Include="App_Code\People.cs" />
+    <Compile Include="App_Code\SGACommon.cs" />
+    <Compile Include="App_Code\SGAMembershipProvider.cs" />
+    <Compile Include="App_Code\SGARoleProvider.cs" />
+    <Compile Include="App_Code\SqlHelper.cs" />
+    <Compile Include="Contribute.aspx.cs">
+      <DependentUpon>Contribute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contribute.aspx.designer.cs">
+      <DependentUpon>Contribute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\HomeController.cs" />
+    <Compile Include="Controller\PMPResultController.cs" />
+    <Compile Include="Controller\SgtResultController.cs" />
+    <Compile Include="Controller\SubdomainController.cs" />
+    <Compile Include="Controller\TnaResultController.cs" />
+    <Compile Include="controls\ctrlCMCGraph.ascx.cs">
+      <DependentUpon>ctrlCMCGraph.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\ctrlCMCGraph.ascx.designer.cs">
+      <DependentUpon>ctrlCMCGraph.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ctrlCMCPdf.ascx.cs">
+      <DependentUpon>ctrlCMCPdf.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\ctrlCMCPdf.ascx.designer.cs">
+      <DependentUpon>ctrlCMCPdf.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ctrlFooter.ascx.cs">
+      <DependentUpon>ctrlFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\ctrlFooter.ascx.designer.cs">
+      <DependentUpon>ctrlFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ctrlHeader.ascx.cs">
+      <DependentUpon>ctrlHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\ctrlHeader.ascx.designer.cs">
+      <DependentUpon>ctrlHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ctrlLeftMenu.ascx.cs">
+      <DependentUpon>ctrlLeftMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\ctrlLeftMenu.ascx.designer.cs">
+      <DependentUpon>ctrlLeftMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ctrlMoreInformation.ascx.cs">
+      <DependentUpon>ctrlMoreInformation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\ctrlMoreInformation.ascx.designer.cs">
+      <DependentUpon>ctrlMoreInformation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ctrlUserLeftMenu.ascx.cs">
+      <DependentUpon>ctrlUserLeftMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\ctrlUserLeftMenu.ascx.designer.cs">
+      <DependentUpon>ctrlUserLeftMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privacy.aspx.cs">
+      <DependentUpon>Privacy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privacy.aspx.designer.cs">
+      <DependentUpon>Privacy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register_Success.aspx.cs">
+      <DependentUpon>Register_Success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register_Success.aspx.designer.cs">
+      <DependentUpon>Register_Success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reset_Password.aspx.cs">
+      <DependentUpon>Reset_Password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reset_Password.aspx.designer.cs">
+      <DependentUpon>Reset_Password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\skillsser\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="skillsservice.asmx.cs">
+      <DependentUpon>skillsservice.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Terms.aspx.cs">
+      <DependentUpon>Terms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Terms.aspx.designer.cs">
+      <DependentUpon>Terms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tnaMaster.Master.cs">
+      <DependentUpon>tnaMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tnaMaster.Master.designer.cs">
+      <DependentUpon>tnaMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="tna\assessment-Instructions-dimensions.aspx.cs">
+      <DependentUpon>assessment-Instructions-dimensions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tna\assessment-Instructions-dimensions.aspx.designer.cs">
+      <DependentUpon>assessment-Instructions-dimensions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tna\assessment-instructions.aspx.cs">
+      <DependentUpon>assessment-instructions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tna\assessment-instructions.aspx.designer.cs">
+      <DependentUpon>assessment-instructions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tna\assessment-pillars.aspx.cs">
+      <DependentUpon>assessment-pillars.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tna\assessment-pillars.aspx.designer.cs">
+      <DependentUpon>assessment-pillars.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tna\assessments-pillar-quotes.aspx.cs">
+      <DependentUpon>assessments-pillar-quotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tna\assessments-pillar-quotes.aspx.designer.cs">
+      <DependentUpon>assessments-pillar-quotes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tna\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tna\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tna\Help.aspx.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tna\Help.aspx.designer.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tna\MainMenu.aspx.cs">
+      <DependentUpon>MainMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tna\MainMenu.aspx.designer.cs">
+      <DependentUpon>MainMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tna\my-results-bar-graph.aspx.cs">
+      <DependentUpon>my-results-bar-graph.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tna\my-results-bar-graph.aspx.designer.cs">
+      <DependentUpon>my-results-bar-graph.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tna\MyProfile.aspx.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tna\MyProfile.aspx.designer.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tna\procurement-benchmark-assessment-test.aspx.cs">
+      <DependentUpon>procurement-benchmark-assessment-test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tna\procurement-benchmark-assessment-test.aspx.designer.cs">
+      <DependentUpon>procurement-benchmark-assessment-test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tna\ResultDenied.aspx.cs">
+      <DependentUpon>ResultDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tna\ResultDenied.aspx.designer.cs">
+      <DependentUpon>ResultDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tna\SuccessMessage.aspx.cs">
+      <DependentUpon>SuccessMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tna\SuccessMessage.aspx.designer.cs">
+      <DependentUpon>SuccessMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tna\TestDenied.aspx.cs">
+      <DependentUpon>TestDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tna\TestDenied.aspx.designer.cs">
+      <DependentUpon>TestDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tna\UpdatePassword.aspx.cs">
+      <DependentUpon>UpdatePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tna\UpdatePassword.aspx.designer.cs">
+      <DependentUpon>UpdatePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\AllContactUs.aspx.cs">
+      <DependentUpon>AllContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\AllContactUs.aspx.designer.cs">
+      <DependentUpon>AllContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\BrowserTracker.aspx.cs">
+      <DependentUpon>BrowserTracker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\BrowserTracker.aspx.designer.cs">
+      <DependentUpon>BrowserTracker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\CompanyManagers.aspx.cs">
+      <DependentUpon>CompanyManagers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\CompanyManagers.aspx.designer.cs">
+      <DependentUpon>CompanyManagers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\CompanyUsers.aspx.cs">
+      <DependentUpon>CompanyUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\CompanyUsers.aspx.designer.cs">
+      <DependentUpon>CompanyUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\DashBoard.aspx.cs">
+      <DependentUpon>DashBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\DashBoard.aspx.designer.cs">
+      <DependentUpon>DashBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\DownloadReport.aspx.cs">
+      <DependentUpon>DownloadReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\DownloadReport.aspx.designer.cs">
+      <DependentUpon>DownloadReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\EditCMStest.aspx.cs">
+      <DependentUpon>EditCMStest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\EditCMStest.aspx.designer.cs">
+      <DependentUpon>EditCMStest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\EditTemplate.aspx.cs">
+      <DependentUpon>EditTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\EditTemplate.aspx.designer.cs">
+      <DependentUpon>EditTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\EmailTracker.aspx.cs">
+      <DependentUpon>EmailTracker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\EmailTracker.aspx.designer.cs">
+      <DependentUpon>EmailTracker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\ListUsers.aspx.cs">
+      <DependentUpon>ListUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\ListUsers.aspx.designer.cs">
+      <DependentUpon>ListUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\Manage-diagnostic-needs-analysis.aspx.cs">
+      <DependentUpon>Manage-diagnostic-needs-analysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\Manage-diagnostic-needs-analysis.aspx.designer.cs">
+      <DependentUpon>Manage-diagnostic-needs-analysis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\ManageCMC.aspx.cs">
+      <DependentUpon>ManageCMC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\ManageCMC.aspx.designer.cs">
+      <DependentUpon>ManageCMC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\ManageEmailTemplates.aspx.cs">
+      <DependentUpon>ManageEmailTemplates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\ManageEmailTemplates.aspx.designer.cs">
+      <DependentUpon>ManageEmailTemplates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\ManageJobSuggestions.aspx.cs">
+      <DependentUpon>ManageJobSuggestions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\ManageJobSuggestions.aspx.designer.cs">
+      <DependentUpon>ManageJobSuggestions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\ManagePlans.aspx.cs">
+      <DependentUpon>ManagePlans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\ManagePlans.aspx.designer.cs">
+      <DependentUpon>ManagePlans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\ManageReviewAssess.aspx.cs">
+      <DependentUpon>ManageReviewAssess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\ManageReviewAssess.aspx.designer.cs">
+      <DependentUpon>ManageReviewAssess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\ManageSubdomains.aspx.cs">
+      <DependentUpon>ManageSubdomains.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\ManageSubdomains.aspx.designer.cs">
+      <DependentUpon>ManageSubdomains.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\ManageWorkshop.aspx.cs">
+      <DependentUpon>ManageWorkshop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\ManageWorkshop.aspx.designer.cs">
+      <DependentUpon>ManageWorkshop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\PeerReviewRequests.aspx.cs">
+      <DependentUpon>PeerReviewRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\PeerReviewRequests.aspx.designer.cs">
+      <DependentUpon>PeerReviewRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\PlanAndElearningMapping.aspx.cs">
+      <DependentUpon>PlanAndElearningMapping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\PlanAndElearningMapping.aspx.designer.cs">
+      <DependentUpon>PlanAndElearningMapping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\ReportsDownload.aspx.cs">
+      <DependentUpon>ReportsDownload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\ReportsDownload.aspx.designer.cs">
+      <DependentUpon>ReportsDownload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\ShareChallenge.aspx.cs">
+      <DependentUpon>ShareChallenge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\ShareChallenge.aspx.designer.cs">
+      <DependentUpon>ShareChallenge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\ShowCMCPdf.aspx.cs">
+      <DependentUpon>ShowCMCPdf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\ShowCMCPdf.aspx.designer.cs">
+      <DependentUpon>ShowCMCPdf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\TabSample.aspx.cs">
+      <DependentUpon>TabSample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\TabSample.aspx.designer.cs">
+      <DependentUpon>TabSample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\TestChart.aspx.cs">
+      <DependentUpon>TestChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\TestChart.aspx.designer.cs">
+      <DependentUpon>TestChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\UserDetails.aspx.cs">
+      <DependentUpon>UserDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\UserDetails.aspx.designer.cs">
+      <DependentUpon>UserDetails.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="App_Browsers\firefox.browser" />
+    <Content Include="App_Browsers\ie.browser" />
+    <Content Include="Contribute.aspx" />
+    <Content Include="controls\ctrlUserLeftMenu.ascx" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\jquery.fancybox.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\mediaquery.css" />
+    <Content Include="css\nice-select.css" />
+    <Content Include="css\owl.carousel-logo.css" />
+    <Content Include="css\owl.carousel.css" />
+    <Content Include="css\owl.theme.css" />
+    <Content Include="css\responsive.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\test.htm" />
+    <Content Include="css\ifpsm.htm" />
+    <Content Include="css\aopemail.htm" />
+    <Content Include="Feedback.aspx" />
+    <Content Include="Fonts\arial.ttf" />
+    <None Include="Fonts\cleargothic-demibold-webfont.eot" />
+    <None Include="Fonts\cleargothic-demibold-webfont.svg" />
+    <None Include="Fonts\cleargothic-demibold-webfont.ttf" />
+    <None Include="Fonts\cleargothic-demibold-webfont.woff" />
+    <Content Include="Fonts\cleargothic-demibold-webfont.woff2" />
+    <None Include="Fonts\cleargothic-light-webfont.eot" />
+    <None Include="Fonts\cleargothic-light-webfont.svg" />
+    <None Include="Fonts\cleargothic-light-webfont.ttf" />
+    <None Include="Fonts\cleargothic-light-webfont.woff" />
+    <Content Include="Fonts\cleargothic-light-webfont.woff2" />
+    <None Include="Fonts\cleargothic-medium-webfont.eot" />
+    <None Include="Fonts\cleargothic-medium-webfont.svg" />
+    <None Include="Fonts\cleargothic-medium-webfont.ttf" />
+    <None Include="Fonts\cleargothic-medium-webfont.woff" />
+    <Content Include="Fonts\cleargothic-medium-webfont.woff2" />
+    <None Include="Fonts\cleargothic-regular-webfont.eot" />
+    <None Include="Fonts\cleargothic-regular-webfont.svg" />
+    <None Include="Fonts\cleargothic-regular-webfont.ttf" />
+    <None Include="Fonts\cleargothic-regular-webfont.woff" />
+    <Content Include="Fonts\cleargothic-medium-demo.html" />
+    <Content Include="Fonts\cleargothic-xlight-webfont.eot" />
+    <Content Include="Fonts\cleargothic-xlight-webfont.woff" />
+    <Content Include="Fonts\cleargothic-xlight-webfont.woff2" />
+    <Content Include="Fonts\cleargothic_regular_1-webfont.eot" />
+    <Content Include="Fonts\cleargothic_regular_1-webfont.woff" />
+    <Content Include="Fonts\cleargothic_regular_1-webfont.woff2" />
+    <None Include="Fonts\derwin-webfont.eot" />
+    <None Include="Fonts\derwin-webfont.svg" />
+    <None Include="Fonts\derwin-webfont.ttf" />
+    <None Include="Fonts\derwin-webfont.woff" />
+    <Content Include="Fonts\derwin-webfont.woff2" />
+    <Content Include="Fonts\fontawesome-webfont.eot" />
+    <Content Include="Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Fonts\fontawesome-webfont.woff" />
+    <Content Include="Fonts\fontawesome-webfont.woff2" />
+    <Content Include="Fonts\FontAwesome.otf" />
+    <None Include="Fonts\helr45w-webfont.eot" />
+    <None Include="Fonts\helr45w-webfont.svg" />
+    <None Include="Fonts\helr45w-webfont.ttf" />
+    <None Include="Fonts\helr45w-webfont.woff" />
+    <Content Include="Fonts\cleargothic_regular_1-webfont.svg" />
+    <Content Include="Fonts\derwin-demo.html" />
+    <Content Include="Fonts\fontawesome-webfont.svg" />
+    <Content Include="Fonts\helr45w-webfontd41d.eot" />
+    <None Include="Fonts\helr65w-webfont.eot" />
+    <None Include="Fonts\helr65w-webfont.svg" />
+    <None Include="Fonts\helr65w-webfont.ttf" />
+    <None Include="Fonts\helr65w-webfont.woff" />
+    <Content Include="Fonts\helvetica-bold-webfont.eot" />
+    <Content Include="Fonts\helvetica-bold-webfont.ttf" />
+    <Content Include="Fonts\helvetica-bold-webfont.woff" />
+    <Content Include="Fonts\helvetica-bold-webfont.woff2" />
+    <Content Include="Fonts\Helvetica.eot" />
+    <Content Include="Fonts\Helvetica.ttf" />
+    <Content Include="Fonts\Helvetica.woff" />
+    <None Include="Fonts\helveticaneue-boldcond-webfont.eot" />
+    <None Include="Fonts\helveticaneue-boldcond-webfont.svg" />
+    <None Include="Fonts\helveticaneue-boldcond-webfont.ttf" />
+    <None Include="Fonts\helveticaneue-boldcond-webfont.woff" />
+    <None Include="Fonts\helveticaneue-condensed-webfont.eot" />
+    <None Include="Fonts\helveticaneue-condensed-webfont.svg" />
+    <None Include="Fonts\helveticaneue-condensed-webfont.ttf" />
+    <None Include="Fonts\helveticaneue-condensed-webfont.woff" />
+    <None Include="Fonts\helveticaneue-heavycond-webfont.eot" />
+    <None Include="Fonts\helveticaneue-heavycond-webfont.svg" />
+    <None Include="Fonts\helveticaneue-heavycond-webfont.ttf" />
+    <None Include="Fonts\helveticaneue-heavycond-webfont.woff" />
+    <None Include="Fonts\helveticaneue-italic-webfont.eot" />
+    <None Include="Fonts\helveticaneue-italic-webfont.svg" />
+    <None Include="Fonts\helveticaneue-italic-webfont.ttf" />
+    <None Include="Fonts\helveticaneue-italic-webfont.woff" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\CookComputing.XmlRpcV2.dll" />
+    <Content Include="bin\cronometro.dll" />
+    <Content Include="bin\EPPlus.dll" />
+    <Content Include="bin\Facebook.dll" />
+    <Content Include="bin\FredCK.FCKeditorV2.dll" />
+    <Content Include="bin\Hammock.dll" />
+    <Content Include="bin\InfusionSoftDotNet.dll" />
+    <Content Include="bin\itextsharp.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="Fonts\cleargothic-xlight-webfont.svg" />
+    <Content Include="Fonts\helvetica-bold-webfont.svg" />
+    <Content Include="Fonts\helvetica_light_font_download-webfont.svg" />
+    <Content Include="Fonts\miserablylose-webfont.svg" />
+    <Content Include="Fonts\newcleargothic_regular_1-webfont.svg" />
+    <Content Include="Fonts\OpenSans-Regular-webfont.svg" />
+    <Content Include="Images\1.png" />
+    <Content Include="Images\2.png" />
+    <Content Include="Images\3.png" />
+    <Content Include="Images\4.png" />
+    <Content Include="Images\5.png" />
+    <Content Include="Images\6.png" />
+    <Content Include="Images\7.png" />
+    <Content Include="Images\8.png" />
+    <Content Include="Images\9.png" />
+    <Content Include="Images\aacam.png" />
+    <Content Include="Images\abcai.png" />
+    <Content Include="Images\adaci.png" />
+    <Content Include="Images\africa-map.png" />
+    <Content Include="Images\aips.png" />
+    <Content Include="Images\AjaxLoader.gif" />
+    <Content Include="Images\america-map.png" />
+    <Content Include="Images\aprocal.png" />
+    <Content Include="Images\argentina.png" />
+    <Content Include="Images\arrow.png" />
+    <Content Include="Images\asia-map.png" />
+    <Content Include="Images\assessments-icon-logo.png" />
+    <Content Include="Images\assessments-icon.png" />
+    <Content Include="Images\association-icon.png" />
+    <Content Include="Images\Austria.png" />
+    <Content Include="Images\banner.jpg" />
+    <Content Include="Images\bdr1.jpg" />
+    <Content Include="Images\Belgium.png" />
+    <Content Include="Images\benchmark-bottom.png" />
+    <Content Include="Images\benchmark-bottom1.png" />
+    <Content Include="Images\benchmark.png" />
+    <Content Include="Images\benjamin-shute.jpg" />
+    <Content Include="Images\blackdot.gif" />
+    <Content Include="Images\blank.gif" />
+    <Content Include="Images\bmo.png" />
+    <Content Include="Images\brand-img.jpg" />
+    <Content Include="Images\brand-img2.jpg" />
+    <Content Include="Images\Brazil.png" />
+    <Content Include="Images\Businessmen.jpg" />
+    <Content Include="Images\button-linkedin.png" />
+    <Content Include="Images\Canada.png" />
+    <Content Include="Images\cd-top-arrow.svg" />
+    <Content Include="Images\China.png" />
+    <Content Include="Images\cpi.png" />
+    <Content Include="Images\Croatia.png" />
+    <Content Include="Images\Denmark.png" />
+    <Content Include="Images\dot-new.gif" />
+    <Content Include="Images\dot.gif" />
+    <Content Include="Images\dot2.gif" />
+    <Content Include="Images\dpnappi.png" />
+    <Content Include="Images\Estonia.png" />
+    <Content Include="Images\europe-map.png" />
+    <Content Include="Images\evaluation3.png" />
+    <Content Include="Images\Facebook.png" />
+    <Content Include="Images\fancybox_loading%402x.gif" />
+    <Content Include="Images\fancybox_loading.gif" />
+    <Content Include="Images\fancybox_overlay.png" />
+    <Content Include="Images\fancybox_sprite%402x.png" />
+    <Content Include="Images\fancybox_sprite.png" />
+    <Content Include="Images\faq-arrowdown.png" />
+    <Content Include="Images\faq-arrowup.png" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\fb_login_image.png" />
+    <Content Include="Images\Finland.png" />
+    <Content Include="Images\flag-icon.png" />
+    <Content Include="Images\France.png" />
+    <Content Include="Images\Germany.png" />
+    <Content Include="Images\grabbing.png" />
+    <Content Include="Images\graph.jpg" />
+    <Content Include="Images\graph.png" />
+    <Content Include="Images\graph1.jpg" />
+    <Content Include="Images\graph2.jpg" />
+    <Content Include="Images\graph2.png" />
+    <Content Include="Images\graph3.jpg" />
+    <Content Include="Images\graph4.jpg" />
+    <Content Include="Images\graph5.jpg" />
+    <Content Include="Images\Greece.png" />
+    <Content Include="Images\greentick.jpg" />
+    <Content Include="Images\Hong Kong.png" />
+    <Content Include="Images\hop-logo-v2.png" />
+    <Content Include="Images\hop.png" />
+    <Content Include="Images\hund.png" />
+    <Content Include="Images\Hungary.png" />
+    <Content Include="Images\icon1.png" />
+    <Content Include="Images\icon2.png" />
+    <Content Include="Images\icon3.png" />
+    <Content Include="Images\icon4.png" />
+    <Content Include="Images\icon5.png" />
+    <Content Include="Images\icon6.png" />
+    <Content Include="Images\icon7.png" />
+    <Content Include="Images\icon8.png" />
+    <Content Include="Images\icon9.png" />
+    <Content Include="Images\ifpsm-logo.png" />
+    <Content Include="Images\ifpsm.png" />
+    <Content Include="Images\img-banner-05.jpg" />
+    <Content Include="Images\India.png" />
+    <Content Include="Images\Indonesia.png" />
+    <Content Include="Images\Instagram.png" />
+    <Content Include="Images\Ireland.png" />
+    <Content Include="Images\Israel.png" />
+    <Content Include="Images\Italy.png" />
+    <Content Include="Images\Japan.png" />
+    <Content Include="Images\kenya.png" />
+    <Content Include="Images\leaderboard-icon.png" />
+    <Content Include="Images\leadership1.jpg" />
+    <Content Include="Images\leftarrow.jpg" />
+    <Content Include="Images\leftbanner.jpg" />
+    <Content Include="Images\line1.gif" />
+    <Content Include="Images\linkedIn.png" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\logo1.png" />
+    <Content Include="Images\logo10.png" />
+    <Content Include="Images\logo11.png" />
+    <Content Include="Images\logo12.png" />
+    <Content Include="Images\logo13.png" />
+    <Content Include="Images\logo14.png" />
+    <Content Include="Images\logo15.png" />
+    <Content Include="Images\logo16.png" />
+    <Content Include="Images\logo17.png" />
+    <Content Include="Images\logo18.png" />
+    <Content Include="Images\logo19.png" />
+    <Content Include="Images\logo2.png" />
+    <Content Include="Images\logo20.png" />
+    <Content Include="Images\logo21.png" />
+    <Content Include="Images\logo22.png" />
+    <Content Include="Images\logo23.png" />
+    <Content Include="Images\logo24.png" />
+    <Content Include="Images\logo25.png" />
+    <Content Include="Images\logo26.png" />
+    <Content Include="Images\logo27.png" />
+    <Content Include="Images\logo28.png" />
+    <Content Include="Images\logo29.png" />
+    <Content Include="Images\logo3.png" />
+    <Content Include="Images\logo30.png" />
+    <Content Include="Images\logo31.png" />
+    <Content Include="Images\logo32.png" />
+    <Content Include="Images\logo33.png" />
+    <Content Include="Images\logo34.png" />
+    <Content Include="Images\logo35.png" />
+    <Content Include="Images\logo36.png" />
+    <Content Include="Images\logo37.png" />
+    <Content Include="Images\logo38.png" />
+    <Content Include="Images\logo4.png" />
+    <Content Include="Images\logo5.png" />
+    <Content Include="Images\logo6.png" />
+    <Content Include="Images\logo7.png" />
+    <Content Include="Images\logo8.png" />
+    <Content Include="Images\logo9.png" />
+    <Content Include="Images\logout-icon.png" />
+    <Content Include="Images\Malawi.png" />
+    <Content Include="Images\Malaysia.png" />
+    <Content Include="Images\map-icon.png" />
+    <Content Include="Images\map.jpg" />
+    <Content Include="Images\menu-icon.png" />
+    <Content Include="Images\menuIcon.png" />
+    <Content Include="Images\Mexico.png" />
+    <Content Include="Images\Netherlands.png" />
+    <Content Include="Images\newimg2.jpg" />
+    <Content Include="Images\Nigeria.png" />
+    <Content Include="Images\Norway.png" />
+    <Content Include="Images\npbanner.jpg" />
+    <Content Include="Images\pasia-logo.png" />
+    <Content Include="Images\pasia-logo2.png" />
+    <Content Include="Images\Philippines.png" />
+    <Content Include="Images\pillarThoughts\brand-img.jpg" />
+    <Content Include="Images\Poland.png" />
+    <Content Include="Images\Portugal.png" />
+    <Content Include="Images\PPU.png" />
+    <Content Include="Images\result-icon.png" />
+    <Content Include="Images\rightarrow.jpg" />
+    <Content Include="Images\ronin-header-logo.gif" />
+    <Content Include="Images\Russia.png" />
+    <Content Include="Images\Serbia.png" />
+    <Content Include="Images\Singapore.png" />
+    <Content Include="Images\skills-gap-logo.png" />
+    <Content Include="Images\skillsgaplogo-footer.jpg" />
+    <Content Include="Images\skillsgaplogo.jpg" />
+    <Content Include="Images\skillsgaplogo.png" />
+    <Content Include="Images\Slovenia.png" />
+    <Content Include="Images\spa.png" />
+    <Content Include="Images\Spain.png" />
+    <Content Include="Images\Srilanka.jpg" />
+    <Content Include="Images\sub_menu_icon.png" />
+    <Content Include="Images\Sweden.png" />
+    <Content Include="Images\Switzerland.png" />
+    <Content Include="Images\Taiwan.png" />
+    <Content Include="Images\terms.png" />
+    <Content Include="Images\Thailand.jpg" />
+    <Content Include="Images\thanksbanner.png" />
+    <Content Include="Images\tick-icon-green.png" />
+    <Content Include="Images\tick-icon..png" />
+    <Content Include="Images\tick-icon.png" />
+    <Content Include="Images\tick.jpg" />
+    <Content Include="Images\ticknew.png" />
+    <Content Include="Images\top-gray-new.jpg" />
+    <Content Include="Images\top.jpg" />
+    <Content Include="Images\top_arrow.png" />
+    <Content Include="Images\Trininddad &amp; Tobago.png" />
+    <Content Include="Images\Turkey.png" />
+    <Content Include="Images\Twitter.png" />
+    <Content Include="Images\uganda.png" />
+    <Content Include="Images\United Kingdom.png" />
+    <Content Include="Images\usericon.png" />
+    <Content Include="Images\victoria-logo.png" />
+    <Content Include="Images\white-divider.gif" />
+    <Content Include="innerimages\BarGraph.png" />
+    <Content Include="innerimages\compare.png" />
+    <Content Include="innerimages\dna.png" />
+    <Content Include="innerimages\hierarchy.png" />
+    <Content Include="innerimages\icon-bargraph.png" />
+    <Content Include="innerimages\icon-dna.png" />
+    <Content Include="innerimages\icon-hierarchy.png" />
+    <Content Include="innerimages\pdf.png" />
+    <Content Include="innerimages\pdf_ico.png" />
+    <Content Include="js\animation.js" />
+    <Content Include="js\bottom-top.js" />
+    <Content Include="js\equal-height.js" />
+    <Content Include="js\iphone-menu.js" />
+    <Content Include="js\jquery-1.11.3.min.js" />
+    <Content Include="js\jquery-1.7.1.min.js" />
+    <Content Include="js\jquery-validate.js" />
+    <Content Include="js\jquery.fancybox.pack.js" />
+    <Content Include="js\jquery.nice-select.min.js" />
+    <Content Include="js\modernizr-2.5.3.min.js" />
+    <Content Include="js\owl.carousel-logo.js" />
+    <Content Include="js\owl.carousel.js" />
+    <Content Include="js\placeholder.js" />
+    <Content Include="js\script.js" />
+    <Content Include="js\viewportchecker.js" />
+    <Content Include="Fonts\newcleargothic_regular_1-webfont.eot" />
+    <Content Include="Fonts\newcleargothic_regular_1-webfont.woff" />
+    <Content Include="Fonts\newcleargothic_regular_1-webfont.woff2" />
+    <Content Include="Fonts\helvetica_light_font_download-webfont.eot" />
+    <Content Include="Fonts\helvetica_light_font_download-webfont.ttf" />
+    <Content Include="Fonts\helvetica_light_font_download-webfont.woff" />
+    <Content Include="Fonts\helvetica_light_font_download-webfont.woff2" />
+    <Content Include="Fonts\HelveticaNeueLTStd-BdCn.eot" />
+    <Content Include="Fonts\HelveticaNeueLTStd-BdCn.ttf" />
+    <Content Include="Fonts\HelveticaNeueLTStd-BdCn.woff" />
+    <Content Include="Fonts\miserablylose-webfont.eot" />
+    <Content Include="Fonts\miserablylose-webfont.ttf" />
+    <Content Include="Fonts\miserablylose-webfont.woff" />
+    <Content Include="Fonts\miserablylose-webfont.woff2" />
+    <Content Include="Fonts\OpenSans-Regular-webfont.eot" />
+    <Content Include="Fonts\OpenSans-Regular-webfont.ttf" />
+    <Content Include="Fonts\OpenSans-Regular-webfont.woff" />
+    <Content Include="login.aspx" />
+    <Content Include="Register_Success.aspx" />
+    <Content Include="Registration.aspx" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\jquery.colorbox-1.6.4.js" />
+    <Content Include="Scripts\jquery.loadmask.min.js" />
+    <Content Include="Scripts\test.js" />
+    <None Include="Properties\PublishProfiles\IFPSM.pubxml" />
+    <None Include="Service References\skillsser\skillsservice.disco" />
+    <None Include="Service References\skillsser\configuration91.svcinfo" />
+    <None Include="Service References\skillsser\configuration.svcinfo" />
+    <None Include="Service References\skillsser\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="SGA.Publish.xml" />
+    <Content Include="Site.Master" />
+    <None Include="Service References\skillsser\skillsservice.wsdl" />
+    <None Include="template\CMCResult_Template.xlsx" />
+    <None Include="template\SSAResult_Template.xlsx" />
+    <Content Include="skillsservice.asmx" />
+    <Content Include="Styles\jquery.loadmask.css" />
+    <Content Include="subdomainlogo\PAlogo.png" />
+    <Content Include="Test.htm" />
+    <Content Include="tnaMaster.Master" />
+    <Content Include="tna\assessment-Instructions-dimensions.aspx" />
+    <Content Include="tna\assessment-pillars.aspx" />
+    <Content Include="tna\assessments-pillar-quotes.aspx" />
+    <Content Include="tna\MainMenu.aspx" />
+    <Content Include="tna\procurement-benchmark-assessment-test.aspx" />
+    <Content Include="tna\SuccessMessage.aspx" />
+    <Content Include="tna\UpdatePassword.aspx" />
+    <Content Include="tna\Web.config" />
+    <Content Include="Views\Home\BAResult.cshtml" />
+    <Content Include="Views\Home\CMAResult.cshtml" />
+    <Content Include="Views\Home\CompareResult.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\MPResult.cshtml" />
+    <Content Include="Views\Home\NPResult.cshtml" />
+    <Content Include="Views\Home\ReviewResult.cshtml" />
+    <Content Include="Views\Home\SSAResult.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_TnaLayout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+    <Content Include="webadmin\AdminMaster.Master" />
+    <Content Include="Views\Subdomain\Index.cshtml" />
+    <Content Include="Views\Shared\_SharedLayout.cshtml" />
+    <Content Include="template\Users.xlsx" />
+    <Content Include="Views\Home\SCSAResult.cshtml" />
+    <Content Include="Views\Home\SCKEResult.cshtml" />
+    <None Include="webadmin\css\jquery-ui.cssold" />
+    <None Include="webadmin\docs\SGAUsers_Upload_Template.xlsx" />
+    <None Include="webadmin\fonts\myriadpro-regular-webfont.eot" />
+    <None Include="webadmin\fonts\myriadpro-regular-webfont.svg" />
+    <None Include="webadmin\fonts\myriadpro-regular-webfont.ttf" />
+    <None Include="webadmin\fonts\myriadpro-regular-webfont.woff" />
+    <Content Include="webadmin\Manage-diagnostic-needs-analysis.aspx" />
+    <Content Include="webadmin\ManageJobSuggestions.aspx" />
+    <Content Include="webadmin\ManagePlans.aspx" />
+    <Content Include="webadmin\ManageReviewAssess.aspx" />
+    <Content Include="webadmin\ManageSubdomains.aspx" />
+    <Content Include="webadmin\PeerReviewRequests.aspx" />
+    <Content Include="webadmin\PlanAndElearningMapping.aspx" />
+    <Content Include="webadmin\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="controls\ctrlCMCGraph.ascx" />
+    <Content Include="controls\ctrlCMCPdf.ascx" />
+    <Content Include="controls\ctrlFooter.ascx" />
+    <Content Include="controls\ctrlHeader.ascx" />
+    <Content Include="controls\ctrlLeftMenu.ascx" />
+    <Content Include="controls\ctrlMoreInformation.ascx" />
+    <Content Include="css\emailtoaaron.htm" />
+    <Content Include="css\ie8.css" />
+    <Content Include="css\mediaquery_old.css" />
+    <Content Include="css\moreinfo.htm" />
+    <Content Include="css\register.htm" />
+    <Content Include="css\style_old.css" />
+    <Content Include="default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="googlef2232d1dca10de4d.html" />
+    <Content Include="highchart\highcharts-more.js" />
+    <Content Include="highchart\highcharts.js" />
+    <Content Include="highchart\modules\annotations.js" />
+    <Content Include="highchart\modules\annotations.src.js" />
+    <Content Include="highchart\modules\canvas-tools.js" />
+    <Content Include="highchart\modules\canvas-tools.src.js" />
+    <Content Include="highchart\modules\data.js" />
+    <Content Include="highchart\modules\data.src.js" />
+    <Content Include="highchart\modules\exporting.js" />
+    <Content Include="highchart\modules\exporting.src.js" />
+    <Content Include="highchart\modules\funnel.js" />
+    <Content Include="highchart\modules\funnel.src.js" />
+    <Content Include="highchart\modules\heatmap.js" />
+    <Content Include="highchart\modules\heatmap.src.js" />
+    <Content Include="highchart\modules\map.js" />
+    <Content Include="highchart\modules\map.src.js" />
+    <Content Include="Images\btn-enquire.png" />
+    <Content Include="Images\btn-go.png" />
+    <Content Include="Images\btn-go1.png" />
+    <Content Include="Images\btn-go2.png" />
+    <Content Include="Images\btn-go3.png" />
+    <Content Include="Images\btn-more.png" />
+    <Content Include="Images\btn-ok.png" />
+    <Content Include="Images\btn-register-here.png" />
+    <Content Include="Images\btn-register-here1.png" />
+    <Content Include="Images\btn-submit.png" />
+    <Content Include="Images\bx_loader.gif" />
+    <Content Include="Images\cal.gif" />
+    <Content Include="Images\captcha-btn.png" />
+    <Content Include="Images\captcha.jpg" />
+    <Content Include="Images\comprara-small.jpg" />
+    <Content Include="Images\dotted-line.gif" />
+    <Content Include="Images\dotted-line1.gif" />
+    <Content Include="Images\emaillogo.gif" />
+    <Content Include="Images\esourcing-group.gif" />
+    <Content Include="Images\fancyb0.gif" />
+    <Content Include="Images\fancyb1.gif" />
+    <Content Include="Images\fancyb2.gif" />
+    <Content Include="Images\fancyb3.gif" />
+    <Content Include="Images\fancyb4.gif" />
+    <Content Include="Images\fancyb5.gif" />
+    <Content Include="Images\fancyb6.gif" />
+    <Content Include="Images\fancyb7.gif" />
+    <Content Include="Images\fancyb8.gif" />
+    <Content Include="Images\fancyb9.gif" />
+    <Content Include="Images\go_back.png" />
+    <Content Include="Images\icon-bs-assessment.png" />
+    <Content Include="Images\icon-bs-assessment1.png" />
+    <Content Include="Images\icon-bs-assessment2.png" />
+    <Content Include="Images\icon-cm-chellenge.png" />
+    <Content Include="Images\icon-dm-profile.png" />
+    <Content Include="Images\icon-dm-profile1.png" />
+    <Content Include="Images\icon-dm-profile2.png" />
+    <Content Include="Images\icon-dm-profile3.png" />
+    <Content Include="Images\icon-full-report.png" />
+    <Content Include="Images\icon-laptop.png" />
+    <Content Include="Images\icon-score.png" />
+    <Content Include="Images\icon-ss-assessment.png" />
+    <Content Include="Images\icon-ss-assessment1.png" />
+    <Content Include="Images\icon-ss-assessment2.png" />
+    <Content Include="Images\icon-survey-results.png" />
+    <Content Include="Images\img-banner-01.jpg" />
+    <Content Include="Images\img-banner-02.jpg" />
+    <Content Include="Images\img-banner-03.jpg" />
+    <Content Include="Images\img-banner-04.jpg" />
+    <Content Include="Images\img-banner-about-us-new.jpg" />
+    <Content Include="Images\img-banner-about-us.jpg" />
+    <Content Include="Images\img-banner-bs-assessment-new.jpg" />
+    <Content Include="Images\img-banner-bs-assessment.jpg" />
+    <Content Include="Images\img-banner-bs-assessment1.jpg" />
+    <Content Include="Images\img-banner-cm-challenge.jpg" />
+    <Content Include="Images\img-banner-cm-challenge1.jpg" />
+    <Content Include="Images\img-banner-contact-us.jpg" />
+    <Content Include="Images\img-banner-dm-profile-new.jpg" />
+    <Content Include="Images\img-banner-dm-profile.jpg" />
+    <Content Include="Images\img-banner-ng-master.jpg" />
+    <Content Include="Images\img-banner-ng-master.png" />
+    <Content Include="Images\img-banner-ss-assessment-new.jpg" />
+    <Content Include="Images\img-banner-ss-assessment.jpg" />
+    <Content Include="Images\img-banner-ss-assessment1.jpg" />
+    <Content Include="Images\img-benjamin-shute.jpg" />
+    <Content Include="Images\img-cm-challenge-form.png" />
+    <Content Include="Images\img-cm-challenge-mob.png" />
+    <Content Include="Images\img-cm-challenge.png" />
+    <Content Include="Images\img-cm-challenge1.gif" />
+    <Content Include="Images\img-cm-challenge2.jpg" />
+    <Content Include="Images\img-comprara.png" />
+    <Content Include="Images\img-esourcing.jpg" />
+    <Content Include="Images\img-ng-master-form.png" />
+    <Content Include="Images\img-ng-master-mob.png" />
+    <Content Include="Images\img-ng-master-old.png" />
+    <Content Include="Images\img-ng-master.png" />
+    <Content Include="Images\img-ng-master2.jpg" />
+    <Content Include="Images\img-paul-rogers.jpg" />
+    <Content Include="Images\inpts-checkbox.png" />
+    <Content Include="Images\inpts-radio.png" />
+    <Content Include="Images\inpts-radio1.png" />
+    <Content Include="Images\inpts-select.png" />
+    <Content Include="Images\login-mob-bg.gif" />
+    <Content Include="Images\logo-footer.gif" />
+    <Content Include="Images\logo.gif" />
+    <Content Include="Images\logo_e.png" />
+    <Content Include="Images\mor-info1-bg.jpg" />
+    <Content Include="Images\more-info-mob-bg.png" />
+    <Content Include="Images\no.png" />
+    <Content Include="Images\no_thanks - Copy.png" />
+    <Content Include="Images\no_thanks.png" />
+    <Content Include="Images\outer-bg.gif" />
+    <Content Include="Images\outer-btm-bg.gif" />
+    <Content Include="Images\overlay.png" />
+    <Content Include="Images\proceed.png" />
+    <Content Include="Images\tick-arrow.png" />
+    <Content Include="Images\tick-arrow1.png" />
+    <Content Include="Images\tick-arrow2.png" />
+    <Content Include="Images\tick-arrow4.png" />
+    <Content Include="Images\top-nav-mob-bg.gif" />
+    <Content Include="Images\yes.png" />
+    <Content Include="Images\yess.png" />
+    <Content Include="index.aspx" />
+    <Content Include="innerimages\arw-bt.gif" />
+    <Content Include="innerimages\arw-rt.gif" />
+    <Content Include="innerimages\btn-go.png" />
+    <Content Include="innerimages\btn-my-profile.png" />
+    <Content Include="innerimages\btn-next.png" />
+    <Content Include="innerimages\btn-save-big.png" />
+    <Content Include="innerimages\btn-save.png" />
+    <Content Include="innerimages\btn-share.png" />
+    <Content Include="innerimages\calculator-icon.png" />
+    <Content Include="innerimages\dotted-line.gif" />
+    <Content Include="innerimages\down_r.png" />
+    <Content Include="innerimages\icon-arrow.gif" />
+    <Content Include="innerimages\icon-bulb.png" />
+    <Content Include="innerimages\icon-copy.png" />
+    <Content Include="innerimages\icon-email.png" />
+    <Content Include="innerimages\icon-graf.png" />
+    <Content Include="innerimages\icon-lock.png" />
+    <Content Include="innerimages\icon-locked.png" />
+    <Content Include="innerimages\icon-pdf.gif" />
+    <Content Include="innerimages\icon-score.png" />
+    <Content Include="innerimages\icon-timed-task.png" />
+    <Content Include="innerimages\img-behavioural-assessment.gif" />
+    <Content Include="innerimages\img-category-management-challenge.gif" />
+    <Content Include="innerimages\img-cloud-1.gif" />
+    <Content Include="innerimages\img-cloud-2.gif" />
+    <Content Include="innerimages\img-contract-management-assessment.png" />
+    <Content Include="innerimages\img-department-maturity-profile.gif" />
+    <Content Include="innerimages\img-graph-icon.gif" />
+    <Content Include="innerimages\img-graph.gif" />
+    <Content Include="innerimages\img-skills-self-assessment.gif" />
+    <Content Include="innerimages\inpts-checkbox.png" />
+    <Content Include="innerimages\inpts-radio.png" />
+    <Content Include="innerimages\inpts-select.png" />
+    <Content Include="innerimages\logo-footer.gif" />
+    <Content Include="innerimages\logo.gif" />
+    <Content Include="innerimages\my-result-container-bg.gif" />
+    <Content Include="innerimages\no.png" />
+    <Content Include="innerimages\outer-bg.gif" />
+    <Content Include="innerimages\outer-btm-bg.gif" />
+    <Content Include="innerimages\proceed.png" />
+    <Content Include="innerimages\top_r.png" />
+    <Content Include="js\crono.js" />
+    <Content Include="js\custom-form-elements-load.js" />
+    <Content Include="js\custom-form-elements.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\ddaccordion-menu.js" />
+    <Content Include="js\ddaccordion.js" />
+    <Content Include="js\html5.js" />
+    <Content Include="js\javascript_cookies.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\sgatestvalid.js" />
+    <Content Include="Privacy.aspx" />
+    <Content Include="Reset_Password.aspx" />
+    <Content Include="Scripts\custom-form-elements.js" />
+    <Content Include="Scripts\custom.js" />
+    <Content Include="Scripts\html5.js" />
+    <Content Include="Scripts\jquery.bxslider.min.js" />
+    <Content Include="Scripts\jquery.colorbox.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Styles\ie8.css" />
+    <Content Include="Styles\mediaquery.css" />
+    <Content Include="Styles\style.css" />
+    <Content Include="Terms.aspx" />
+    <Content Include="tna\assessment-instructions.aspx" />
+    <Content Include="tna\default.aspx" />
+    <Content Include="tna\Help.aspx" />
+    <Content Include="tna\my-results-bar-graph.aspx" />
+    <Content Include="tna\MyProfile.aspx" />
+    <Content Include="tna\ResultDenied.aspx" />
+    <Content Include="tna\TestDenied.aspx" />
+    <Content Include="webadmin\AllContactUs.aspx" />
+    <Content Include="webadmin\BrowserTracker.aspx" />
+    <Content Include="webadmin\CompanyManagers.aspx" />
+    <Content Include="webadmin\CompanyUsers.aspx" />
+    <Content Include="webadmin\css\esourcing.css" />
+    <Content Include="webadmin\css\jquery-ui.css" />
+    <Content Include="webadmin\css\simpletabs.css" />
+    <Content Include="webadmin\css\style.css" />
+    <Content Include="webadmin\css\thickbox.css" />
+    <Content Include="webadmin\DashBoard.aspx" />
+    <Content Include="webadmin\DownloadReport.aspx" />
+    <Content Include="webadmin\EditCMStest.aspx" />
+    <Content Include="webadmin\EditTemplate.aspx" />
+    <Content Include="webadmin\EmailTracker.aspx" />
+    <Content Include="webadmin\images\approve.png" />
+    <Content Include="webadmin\images\approve_button.png" />
+    <Content Include="webadmin\images\arrow.jpg" />
+    <Content Include="webadmin\images\assessment.png" />
+    <Content Include="webadmin\images\assessment_h.png" />
+    <Content Include="webadmin\images\behavioural.png" />
+    <Content Include="webadmin\images\behavioural_h.png" />
+    <Content Include="webadmin\images\cal.gif" />
+    <Content Include="webadmin\images\calculator-icon.png" />
+    <Content Include="webadmin\images\close.png" />
+    <Content Include="webadmin\images\cma-icon.png" />
+    <Content Include="webadmin\images\darrow.jpg" />
+    <Content Include="webadmin\images\del.png" />
+    <Content Include="webadmin\images\delet.png" />
+    <Content Include="webadmin\images\delete.png" />
+    <Content Include="webadmin\images\delete_button.png" />
+    <Content Include="webadmin\images\disap.png" />
+    <Content Include="webadmin\images\disapprove.png" />
+    <Content Include="webadmin\images\disapprove_button.png" />
+    <Content Include="webadmin\images\disapprove_icon.png" />
+    <Content Include="webadmin\images\drilldown.png" />
+    <Content Include="webadmin\images\edit.png" />
+    <Content Include="webadmin\images\excel.png" />
+    <Content Include="webadmin\images\expired.png" />
+    <Content Include="webadmin\images\gr.jpg" />
+    <Content Include="webadmin\images\home.jpg" />
+    <Content Include="webadmin\images\home.png" />
+    <Content Include="webadmin\images\home_h.png" />
+    <Content Include="webadmin\images\icon-pdf.gif" />
+    <Content Include="webadmin\images\icon2.jpg" />
+    <Content Include="webadmin\images\img-graph-icon.gif" />
+    <Content Include="webadmin\images\img.jpg" />
+    <Content Include="webadmin\images\loading.gif" />
+    <Content Include="webadmin\images\logo.jpg" />
+    <Content Include="webadmin\images\mail-32.png" />
+    <Content Include="webadmin\images\next.png" />
+    <Content Include="webadmin\images\pdf.png" />
+    <Content Include="webadmin\images\permission.png" />
+    <Content Include="webadmin\images\point.png" />
+    <Content Include="webadmin\images\prev.png" />
+    <Content Include="webadmin\images\procurement.png" />
+    <Content Include="webadmin\images\procurement_h.png" />
+    <Content Include="webadmin\images\quote.jpg" />
+    <Content Include="webadmin\images\reminder.png" />
+    <Content Include="webadmin\images\reports.png" />
+    <Content Include="webadmin\images\reports_h.png" />
+    <Content Include="webadmin\images\resend-48.png" />
+    <Content Include="webadmin\images\resend.png" />
+    <Content Include="webadmin\images\resend_button.png" />
+    <Content Include="webadmin\images\save.png" />
+    <Content Include="webadmin\images\search.jpg" />
+    <Content Include="webadmin\images\select.png" />
+    <Content Include="webadmin\images\select_button.png" />
+    <Content Include="webadmin\images\select_icon.png" />
+    <Content Include="webadmin\images\sendLoginReminder.png" />
+    <Content Include="webadmin\images\skill.png" />
+    <Content Include="webadmin\images\skill_h.png" />
+    <Content Include="webadmin\images\sortdown - Copy.png" />
+    <Content Include="webadmin\images\sortdown.png" />
+    <Content Include="webadmin\images\sortup - Copy.png" />
+    <Content Include="webadmin\images\sortup.png" />
+    <Content Include="webadmin\images\traning.png" />
+    <Content Include="webadmin\images\traning_h.png" />
+    <Content Include="webadmin\images\unselect-icon.png" />
+    <Content Include="webadmin\images\update.png" />
+    <Content Include="webadmin\images\user.png" />
+    <Content Include="webadmin\images\user_h.png" />
+    <Content Include="webadmin\images\view.png" />
+    <Content Include="webadmin\js\simpletabs_1.3.js" />
+    <Content Include="webadmin\js\simpletabs_1.3.packed.js" />
+    <Content Include="webadmin\js\thickbox.js" />
+    <Content Include="webadmin\ListUsers.aspx" />
+    <Content Include="webadmin\ManageCMC.aspx" />
+    <Content Include="webadmin\ManageEmailTemplates.aspx" />
+    <Content Include="webadmin\ManageWorkshop.aspx" />
+    <Content Include="webadmin\ReportsDownload.aspx" />
+    <Content Include="webadmin\ShareChallenge.aspx" />
+    <Content Include="webadmin\ShowCMCPdf.aspx" />
+    <Content Include="webadmin\TabSample.aspx" />
+    <Content Include="webadmin\TestChart.aspx" />
+    <Content Include="webadmin\UserDetails.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\skillsser\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63977</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

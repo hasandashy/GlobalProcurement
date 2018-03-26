@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RegisterUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegisterUserResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckValidCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckValidCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckValidCustomerResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFirstNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveAboutYourOrganisation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="customerId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="jobRole" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="jobTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sector" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="industry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pModel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="noofpeople" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveAboutYourOrganisationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveAboutYourOrganisationResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssessmentForm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="customerId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="answer1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="answer2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="answer3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="answer4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="answer5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="answer6" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="answer7" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="answer8" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="answer9" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="answer10" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssessmentFormResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AssessmentFormResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RegisterUserSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterUser" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckValidCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckValidCustomer" />
+  </wsdl:message>
+  <wsdl:message name="CheckValidCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckValidCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFirstName" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFirstNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveAboutYourOrganisationSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveAboutYourOrganisation" />
+  </wsdl:message>
+  <wsdl:message name="SaveAboutYourOrganisationSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveAboutYourOrganisationResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssessmentFormSoapIn">
+    <wsdl:part name="parameters" element="tns:AssessmentForm" />
+  </wsdl:message>
+  <wsdl:message name="AssessmentFormSoapOut">
+    <wsdl:part name="parameters" element="tns:AssessmentFormResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserHttpGetIn">
+    <wsdl:part name="firstName" type="s:string" />
+    <wsdl:part name="lastName" type="s:string" />
+    <wsdl:part name="emailAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="CheckValidCustomerHttpGetIn">
+    <wsdl:part name="customerId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckValidCustomerHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstNameHttpGetIn">
+    <wsdl:part name="customerId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveAboutYourOrganisationHttpGetIn">
+    <wsdl:part name="customerId" type="s:string" />
+    <wsdl:part name="company" type="s:string" />
+    <wsdl:part name="jobRole" type="s:string" />
+    <wsdl:part name="jobTitle" type="s:string" />
+    <wsdl:part name="sector" type="s:string" />
+    <wsdl:part name="industry" type="s:string" />
+    <wsdl:part name="pModel" type="s:string" />
+    <wsdl:part name="noofpeople" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveAboutYourOrganisationHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="AssessmentFormHttpGetIn">
+    <wsdl:part name="customerId" type="s:string" />
+    <wsdl:part name="answer1" type="s:string" />
+    <wsdl:part name="answer2" type="s:string" />
+    <wsdl:part name="answer3" type="s:string" />
+    <wsdl:part name="answer4" type="s:string" />
+    <wsdl:part name="answer5" type="s:string" />
+    <wsdl:part name="answer6" type="s:string" />
+    <wsdl:part name="answer7" type="s:string" />
+    <wsdl:part name="answer8" type="s:string" />
+    <wsdl:part name="answer9" type="s:string" />
+    <wsdl:part name="answer10" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AssessmentFormHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserHttpPostIn">
+    <wsdl:part name="firstName" type="s:string" />
+    <wsdl:part name="lastName" type="s:string" />
+    <wsdl:part name="emailAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="CheckValidCustomerHttpPostIn">
+    <wsdl:part name="customerId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckValidCustomerHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstNameHttpPostIn">
+    <wsdl:part name="customerId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveAboutYourOrganisationHttpPostIn">
+    <wsdl:part name="customerId" type="s:string" />
+    <wsdl:part name="company" type="s:string" />
+    <wsdl:part name="jobRole" type="s:string" />
+    <wsdl:part name="jobTitle" type="s:string" />
+    <wsdl:part name="sector" type="s:string" />
+    <wsdl:part name="industry" type="s:string" />
+    <wsdl:part name="pModel" type="s:string" />
+    <wsdl:part name="noofpeople" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveAboutYourOrganisationHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="AssessmentFormHttpPostIn">
+    <wsdl:part name="customerId" type="s:string" />
+    <wsdl:part name="answer1" type="s:string" />
+    <wsdl:part name="answer2" type="s:string" />
+    <wsdl:part name="answer3" type="s:string" />
+    <wsdl:part name="answer4" type="s:string" />
+    <wsdl:part name="answer5" type="s:string" />
+    <wsdl:part name="answer6" type="s:string" />
+    <wsdl:part name="answer7" type="s:string" />
+    <wsdl:part name="answer8" type="s:string" />
+    <wsdl:part name="answer9" type="s:string" />
+    <wsdl:part name="answer10" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AssessmentFormHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:portType name="skillsserviceSoap">
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input message="tns:RegisterUserSoapIn" />
+      <wsdl:output message="tns:RegisterUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckValidCustomer">
+      <wsdl:input message="tns:CheckValidCustomerSoapIn" />
+      <wsdl:output message="tns:CheckValidCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstName">
+      <wsdl:input message="tns:GetFirstNameSoapIn" />
+      <wsdl:output message="tns:GetFirstNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAboutYourOrganisation">
+      <wsdl:input message="tns:SaveAboutYourOrganisationSoapIn" />
+      <wsdl:output message="tns:SaveAboutYourOrganisationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssessmentForm">
+      <wsdl:input message="tns:AssessmentFormSoapIn" />
+      <wsdl:output message="tns:AssessmentFormSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="skillsserviceHttpGet">
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input message="tns:RegisterUserHttpGetIn" />
+      <wsdl:output message="tns:RegisterUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckValidCustomer">
+      <wsdl:input message="tns:CheckValidCustomerHttpGetIn" />
+      <wsdl:output message="tns:CheckValidCustomerHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstName">
+      <wsdl:input message="tns:GetFirstNameHttpGetIn" />
+      <wsdl:output message="tns:GetFirstNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAboutYourOrganisation">
+      <wsdl:input message="tns:SaveAboutYourOrganisationHttpGetIn" />
+      <wsdl:output message="tns:SaveAboutYourOrganisationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssessmentForm">
+      <wsdl:input message="tns:AssessmentFormHttpGetIn" />
+      <wsdl:output message="tns:AssessmentFormHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="skillsserviceHttpPost">
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input message="tns:RegisterUserHttpPostIn" />
+      <wsdl:output message="tns:RegisterUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckValidCustomer">
+      <wsdl:input message="tns:CheckValidCustomerHttpPostIn" />
+      <wsdl:output message="tns:CheckValidCustomerHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstName">
+      <wsdl:input message="tns:GetFirstNameHttpPostIn" />
+      <wsdl:output message="tns:GetFirstNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAboutYourOrganisation">
+      <wsdl:input message="tns:SaveAboutYourOrganisationHttpPostIn" />
+      <wsdl:output message="tns:SaveAboutYourOrganisationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssessmentForm">
+      <wsdl:input message="tns:AssessmentFormHttpPostIn" />
+      <wsdl:output message="tns:AssessmentFormHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="skillsserviceSoap" type="tns:skillsserviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegisterUser">
+      <soap:operation soapAction="http://tempuri.org/RegisterUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckValidCustomer">
+      <soap:operation soapAction="http://tempuri.org/CheckValidCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstName">
+      <soap:operation soapAction="http://tempuri.org/GetFirstName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAboutYourOrganisation">
+      <soap:operation soapAction="http://tempuri.org/SaveAboutYourOrganisation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssessmentForm">
+      <soap:operation soapAction="http://tempuri.org/AssessmentForm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="skillsserviceSoap12" type="tns:skillsserviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegisterUser">
+      <soap12:operation soapAction="http://tempuri.org/RegisterUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckValidCustomer">
+      <soap12:operation soapAction="http://tempuri.org/CheckValidCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstName">
+      <soap12:operation soapAction="http://tempuri.org/GetFirstName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAboutYourOrganisation">
+      <soap12:operation soapAction="http://tempuri.org/SaveAboutYourOrganisation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssessmentForm">
+      <soap12:operation soapAction="http://tempuri.org/AssessmentForm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="skillsserviceHttpGet" type="tns:skillsserviceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="RegisterUser">
+      <http:operation location="/RegisterUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckValidCustomer">
+      <http:operation location="/CheckValidCustomer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstName">
+      <http:operation location="/GetFirstName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAboutYourOrganisation">
+      <http:operation location="/SaveAboutYourOrganisation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssessmentForm">
+      <http:operation location="/AssessmentForm" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="skillsserviceHttpPost" type="tns:skillsserviceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="RegisterUser">
+      <http:operation location="/RegisterUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckValidCustomer">
+      <http:operation location="/CheckValidCustomer" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstName">
+      <http:operation location="/GetFirstName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAboutYourOrganisation">
+      <http:operation location="/SaveAboutYourOrganisation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssessmentForm">
+      <http:operation location="/AssessmentForm" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="skillsservice">
+    <wsdl:port name="skillsserviceSoap" binding="tns:skillsserviceSoap">
+      <soap:address location="http://demo.skillsgapanalysis.com/skillsservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="skillsserviceSoap12" binding="tns:skillsserviceSoap12">
+      <soap12:address location="http://demo.skillsgapanalysis.com/skillsservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="skillsserviceHttpGet" binding="tns:skillsserviceHttpGet">
+      <http:address location="http://demo.skillsgapanalysis.com/skillsservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="skillsserviceHttpPost" binding="tns:skillsserviceHttpPost">
+      <http:address location="http://demo.skillsgapanalysis.com/skillsservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

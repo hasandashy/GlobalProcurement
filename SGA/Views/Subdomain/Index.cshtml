@@ -1,0 +1,187 @@
+﻿@{
+    Layout = "~/Views/Shared/_SharedLayout.cshtml";
+}
+<script type="text/javascript">
+           var filter = /^([a-zA-Z0-9_\.\-])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+           var alertHtml = '';
+           var title = "Alert";
+            $(document).ready(function () {
+                $('#btnSend').colorbox({
+                    href: "/Popup.aspx",
+                    width: "392px",
+                    height: "200px",
+                    onComplete: function () {
+                        $("#title").text(title);
+                        $('#alertMessage').text(alertHtml);
+                    }
+            });
+
+           $('#btnSend').click(function () {
+
+            //$('#colorbox').css({ "display": "block" });
+            var error = 0;
+            var emptyFields = new Array();
+            var name = $('#FName').val();
+            if (name == '' || name == 'First name ...') {
+                error = 1;
+                emptyFields.push('First name');
+            }
+            var surname = $('#lname').val();
+            if (surname == '' || surname == 'Last name ...') {
+                error = 1;
+                emptyFields.push('Last name');
+            }
+            var email = $('#eAddress').val();
+            if (email == '' || email == 'Email ...') {
+                error = 1;
+                emptyFields.push('Email Address');
+            }
+            var jobRole =$("#ddlJobRole").val();
+            if (jobRole == 0) {
+                error = 1;
+                emptyFields.push('Job role');
+            }
+
+            var cEmail = $('#confirmEmail').val();
+            if (cEmail == '' || cEmail == 'Confirm email ...') {
+                error = 1;
+                emptyFields.push('Confirm email');
+            }
+            var password = $('#password').val();
+            if (password == '' || password == 'Password ...') {
+                error = 1;
+                emptyFields.push('Password');
+            }
+            var orgName = $('#OrganisationName').val();
+            if (orgName == '' || orgName == 'Organisation Name ...') {
+                error = 1;
+                emptyFields.push('Organisation Name');
+            }
+
+            var _jobTitle = $('#jobTitle').val();
+            if (_jobTitle == '' || _jobTitle == 'Job Title ...') {
+                error = 1;
+                emptyFields.push('Job Title');
+            }
+
+            var state = $("#ddlState").val();
+            if (state == '') {
+                error = 1;
+                emptyFields.push('State');
+            }
+
+            if (error) {
+                $('#colorbox').css({ "display": "block" });
+                alertHtml = 'Please enter ' + emptyFields.join(', ');
+            }
+            else if (email != '' && !filter.test(email)) {
+                $('#colorbox').css({ "display": "block" });
+                alertHtml = 'Please enter valid email id';
+            }
+            else if (email != cEmail) {
+                $('#colorbox').css({ "display": "block" });
+                alertHtml = 'The email addresses you entered are not the same. Please ensure they match!';
+            }
+
+            else {
+                $.ajax({
+                    type: "POST",
+                    async: false,
+                    url: "/about_us.aspx/RegisterUserForPA",
+                    data: JSON.stringify({ 'fname': name, 'lname': surname, 'company': orgName, 'email': email, 'jobId': $("#ddlJobRole").val(), 'plainpassword': password, 'isMemberPA': "0", 'state': state, 'jobTitle': _jobTitle, 'isCode': $("#hdIsCode").val() }),
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        if (data.d == 's') {
+                            title = "Success";
+                            $('#colorbox').css({ "display": "block" });
+                            alertHtml = 'Thank you for registering. Your registration has been approved and a confirmation email sent to your inbox.';
+                            $('#FName').val('');
+                            $('#lname').val('');
+                            $('#eAddress').val('');
+                            $('#confirmEmail').val('');
+                            $('#password').val('');
+                            $('#OrganisationName').val('');
+                            $('#jobTitle').val('');
+                        } else if (data.d == 'e') {
+                            $('#colorbox').css({ "display": "block" });
+                            alertHtml = 'Some error occured in the process, Please try again.';
+                        } else if (data.d == 'u') {
+                            $('#colorbox').css({ "display": "block" });
+                            alertHtml = 'User name already exists.';
+                        } else if (data.d == 'd') {
+                            $('#colorbox').css({ "display": "block" });
+                            alertHtml = 'Email address already exists.';
+                        }
+                    }
+                });
+            }
+        });
+
+    });
+
+
+
+</script>
+<div>
+    
+    <div class="customtxt">
+        <p class="image"><img src="@ViewBag.LogoPath" id="imgLogo" alt="" /></p>
+        <p>@Html.Raw(ViewBag.Text.ToString().Replace("\r\n","<br>"))</p>
+        <div class="clear"></div>
+
+    </div>
+    <div class="clear"></div>
+    <div id="RegestrationForm" class="backColor" style="margin-top:10px;">
+        <div style="width:50%;margin-left:30%;">
+            <br /><b>Register Here</b>
+            <br />
+            <br />
+            <input type="hidden" id="hdIsCode" name="hdIsCode" value="@ViewBag.ISCode" />
+            <input type="text" autocomplete="off" id="FName" placeholder="First name" />
+            <label for="lname">
+            </label>
+            <input type="text" autocomplete="off" id="lname" placeholder="Last name" />
+            <input type="text" autocomplete="off" id="eAddress" placeholder="Email address" />
+            <input type="text" autocomplete="off" id="confirmEmail" placeholder="Confirm email address" />
+            <input type="password" autocomplete="off" id="password" placeholder="password" />
+            <input type="text" autocomplete="off" id="OrganisationName" placeholder="Organisation name" />
+            <input type="text" autocomplete="off" id="jobTitle" placeholder="Job Title" />
+            <select id="ddlState" name="ddlState">
+                <option Value="">Select state</option>
+                <option Value="NSW">NSW</option>
+                <option Value="ACT">ACT</option>
+                <option Value="VIC">VIC</option>
+                <option Value="QLD">QLD</option>
+                <option Value="SA">SA</option>
+                <option Value="WA">WA</option>
+                <option Value="TAS">TAS</option>
+                <option Value="NT">NT</option>
+            </select>
+            
+            <select id="ddlJobRole" name="ddlJobRole">
+                <option  Value="0"> Job role best described as ...</option>
+                <option Value="8"> CPO </option>
+                <option Value="4"> Procurement Director </option>
+                <option Value="6"> Procurement Leader/ Influencer </option>
+                <option Value="5"> Category Manager </option>
+                <option Value="3"> Strategic Sourcing </option>
+                <option Value="9"> VM/ SRM </option>
+                <option Value="1"> Analyst </option>
+                <option Value="2"> Procurement Support </option>
+                <option Value="7"> Supply Chain  </option>
+                <option Value="10"> Other  </option>
+            </select>
+            <div class="textr">
+
+                <input type="submit" value="GO" style="background:#@(ViewBag.color) none repeat scroll 0 0" id="btnSend"  class="linkbutton cboxElement" />
+            </div>
+            <br />
+            <br />
+        </div>
+    </div>
+
+
+
+
+</div>

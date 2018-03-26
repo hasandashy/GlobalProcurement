@@ -1,0 +1,64 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="tnaMaster.master.cs" Inherits="SGA.tnaMaster" %>
+<%@ Register TagName="header" TagPrefix="sga" Src="~/controls/ctrlHeader.ascx"   %>
+<%@ Register TagName="footer" TagPrefix="sga" Src="~/controls/ctrlFooter.ascx"   %>
+
+<!DOCTYPE HTML>
+<html>
+	<head runat="server">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="MobileOptimized" content="width" />
+<meta name="format-detection" content="telephone=no" />
+<meta id="_metaKeywords" name="Keywords" content="" />
+<meta id="_metaDescription" name="description" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="description" content="" />
+<title>::Welcome::</title>
+
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/responsive.css" rel="stylesheet" type="text/css" />
+
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="../js/modernizr-2.5.3.min.js" type="text/javascript"></script>
+ <script src="../js/jquery-validate.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+     </asp:ScriptManager>
+     <script type="text/javascript">
+         var prm = Sys.WebForms.PageRequestManager.getInstance();
+
+         function EndRequestHandler(sender, args) {
+             window.scrollTo(0, 0)
+         }
+         prm.add_endRequest(EndRequestHandler);
+    </script>
+    <div class="comman-page">
+				<sga:header id="header1" runat="server"></sga:header>
+				<!-- Header end // -->
+				<!-- Content Area start -->
+				<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+				<!-- Content Area end // -->
+				<sga:footer id="footer" runat="server"></sga:footer>
+			</div>
+		<div id="outer-btm">&nbsp;</div>
+		<!-- Outer end // -->
+    
+    </form>
+  </body>
+</html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41955815-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-41955815-1');
+</script>
+
+
