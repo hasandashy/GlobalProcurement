@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGA.App_Code;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,7 +13,7 @@ namespace SGA.tna
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.lblName.Text = "Hi " + SGACommon.GetName() + "!";
         }
 
         protected void lnkLogout_Click(object sender, System.EventArgs e)

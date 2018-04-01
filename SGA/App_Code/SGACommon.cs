@@ -199,47 +199,51 @@ namespace SGA.App_Code
 
         public static string GetJobRole(int roleId)
         {
-            string strJobRole = "";
+            string strValue = "";
             switch (roleId)
-            {
+            {                 
                 case 1:
-                    strJobRole = "Analyst";
+                    strValue = "Analyst";
                     break;
                 case 2:
-                    strJobRole = "Procurement Support";
+                    strValue = "Procurement Support";
                     break;
                 case 3:
-                    strJobRole = "Strategic Sourcing";
+                    strValue = "Strategic Sourcing";
                     break;
                 case 4:
-                    strJobRole = "Vendor Manager/ Supplier Relationship Manager";
+                    strValue = "Vendor Manager/ Supplier Relationship Manager";
                     break;
                 case 5:
-                    strJobRole = "Category Manager";
+                    strValue = "Category Manager";
                     break;
                 case 6:
-                    strJobRole = "Procurement Leader";
+                    strValue = "Procurement Leader";
                     break;
                 case 7:
-                    strJobRole = "Supply Chain";
+                    strValue = "Supply Chain";
                     break;
                 case 8:
-                    strJobRole = "Non-Procurement: CXO";
+                    strValue = "Non-Procurement: CXO";
                     break;
                 case 9:
-                    strJobRole = "Non-Procurement: Director";
+                    strValue = "Non-Procurement: Director";
                     break;
                 case 10:
-                    strJobRole = "Non-Procurement: Manager";
+                    strValue = "Non-Procurement: Manager";
                     break;
                 case 11:
-                    strJobRole = "Non-Procurement: Professional";
+                    strValue = "Non-Procurement: Professional";
                     break;
                 case 12:
-                    strJobRole = "Non-Procurement: Trainee";
+                    strValue = "Non-Procurement: Trainee";
                     break;
+                case 13:
+                    strValue = "Other";
+                    break;
+                
             }
-            return strJobRole;
+            return strValue;
         }
 
         public static string ToTitleCase(string text)
@@ -913,7 +917,7 @@ namespace SGA.App_Code
                     strValue = "Procurement strategy is centralised, but execution is de-centralised";
                     break;
                 default:
-                    strValue = "No response entered";
+                    strValue = "Procurement Model";
                     break;
             }
             return strValue;
@@ -949,7 +953,120 @@ namespace SGA.App_Code
                     strValue = "Regional or Global Procurement";
                     break;
                 default:
-                    strValue = "No response entered";
+                    strValue = "Reporting line";
+                    break;
+            }
+            return strValue;
+        }
+
+        public static string GetSpendUnderInfluence(int spendId)
+        {
+            string strValue;
+            switch (spendId)
+            {
+                case 1:
+                    strValue = "$1 billion or more";
+                    break;
+                case 2:
+                    strValue = "$500 million to $999.9 million";
+                    break;
+                case 3:
+                    strValue = "$100 million to $499.9 million";
+                    break;
+                case 4:
+                    strValue = "$50 million to $99.9 million";
+                    break;
+                case 5:
+                    strValue = "$20 million to $49.9 million";
+                    break;
+                case 6:
+                    strValue = "$10 million to $19.9 million";
+                    break;
+                case 7:
+                    strValue = "$5 million to $9.9 million";
+                    break;
+                case 8:
+                    strValue = "$2.5 million to $4.9 million";
+                    break;
+                case 9:
+                    strValue = "$1 million to $2.49 million";
+                    break;
+                case 10:
+                    strValue = "$500,000 to $999,999";
+                    break;
+                case 11:
+                    strValue = "Less than $500,000";
+                    break;
+                default:
+                    strValue = "Spend under influence";
+                    break;
+            }
+            return strValue;
+        }
+
+        public static string GetSector(int sectorId)
+        {
+            string strValue;
+            switch (sectorId)
+            {
+                case 1:
+                    strValue = "Public";
+                    break;
+                case 2:
+                    strValue = "Private";
+                    break;
+                case 3:
+                    strValue = "Non Profit";
+                    break;
+             
+                default:
+                    strValue = "Sector";
+                    break;
+            }
+            return strValue;
+        }
+
+
+        public static string GetSpentUnderYourInfluence(int spendId)
+        {
+            string strValue;
+            switch (spendId)
+            {
+                case 1:
+                    strValue = "$1 billion or more";
+                    break;
+                case 2:
+                    strValue = "$500 million to $999.9 million";
+                    break;
+                case 3:
+                    strValue = "$100 million to $499.9 million";
+                    break;
+                case 4:
+                    strValue = "$50 million to $99.9 million";
+                    break;
+                case 5:
+                    strValue = "$20 million to $49.9 million";
+                    break;
+                case 6:
+                    strValue = "$10 million to $19.9 million";
+                    break;
+                case 7:
+                    strValue = "$5 million to $9.9 million";
+                    break;
+                case 8:
+                    strValue = "$2.5 million to $4.9 million";
+                    break;
+                case 9:
+                    strValue = "$1 million to $2.49 million";
+                    break;
+                case 10:
+                    strValue = "$500,000 to $999,999";
+                    break;
+                case 11:
+                    strValue = "Less than $500,000";
+                    break;
+                default:
+                    strValue = "Spend under your influence";
                     break;
             }
             return strValue;
@@ -1006,7 +1123,7 @@ namespace SGA.App_Code
                     strValue = "1";
                     break;
                 default:
-                    strValue = "No response entered";
+                    strValue = "Number of employees";
                     break;
             }
             return strValue;
@@ -1027,7 +1144,7 @@ namespace SGA.App_Code
                     strValue = "Global";
                     break;
                 default:
-                    strValue = "No response entered";
+                    strValue = "Geographical influence";
                     break;
             }
             return strValue;
@@ -1076,7 +1193,7 @@ namespace SGA.App_Code
                     break;
                 
                 default:
-                    strValue = "No response entered";
+                    strValue = "Role best described as:";
                     break;
             }
             return strValue;
@@ -1145,7 +1262,7 @@ namespace SGA.App_Code
                     strValue = "Wardrobe & Workwear";
                     break;
                 default:
-                    strValue = "No response entered";
+                    strValue = "Category you manage currently";
                     break;
             }
             return strValue;
@@ -1181,7 +1298,7 @@ namespace SGA.App_Code
                     strValue = "Not applicable";
                     break;
                 default:
-                    strValue = "No response entered";
+                    strValue = "Procurement qualifications";
                     break;
             }
             return strValue;
@@ -1217,7 +1334,106 @@ namespace SGA.App_Code
                     strValue = "Doctorate";
                     break;
                 default:
-                    strValue = "No response entered";
+                    strValue = "Level of Education";
+                    break;
+            }
+            return strValue;
+        }
+
+        public static string GetExp(int expId)
+        {
+            string strValue;
+            switch (expId)
+            {
+                case 1:
+                    strValue = "Less than 1 year";
+                    break;
+                case 2:
+                    strValue = "1 - 3 years";
+                    break;
+                case 3:
+                    strValue = "3 - 5 years";
+                    break;
+                case 4:
+                    strValue = "5 - 10 years";
+                    break;
+                case 5:
+                    strValue = "10 or more years";
+                    break;
+                case 6:
+                    strValue = "Not Applicable";
+                    break;               
+                default:
+                    strValue = "Years of procurement experience";
+                    break;
+            }
+            return strValue;
+        }
+
+        public static string GetPrevCatExp(int expId)
+        {
+            string strValue;
+            switch (expId)
+            {
+                case 1:
+                    strValue = "Indirect- General";
+                    break;
+                case 2:
+                    strValue = "Directs - General";
+                    break;
+                case 3:
+                    strValue = "IT&T Services: Software, Hardware, Telco etc.";
+                    break;
+                case 4:
+                    strValue = "Packaging: PET, Glass, Print, Labels, etc.";
+                    break;
+                case 5:
+                    strValue = "Marketing Services: ABT, BTL, Print, etc.";
+                    break;
+                case 6:
+                    strValue = "Ingredients";
+                    break;
+                case 7:
+                    strValue = "HR Services: Labour hire, Recruitment, Training, etc.";
+                    break;
+                case 8:
+                    strValue = "Chemicals";
+                    break;
+                case 9:
+                    strValue = "Professional Services: Legal, Audit & Accounting, Security, etc.";
+                    break;
+                case 10:
+                    strValue = "Industry specific production material";
+                    break;
+                case 11:
+                    strValue = "Facilities and Corporate Real Estate (FM/CRE)";
+                    break;
+                case 12:
+                    strValue = "Utilities: Gas, Electricity, Water";
+                    break;
+                case 13:
+                    strValue = "Capex: Heavy machinery and equipment";
+                    break;
+                case 14:
+                    strValue = "MRO Maintenance, Repairs, Operations and Consumables";
+                    break;
+                case 15:
+                    strValue = "Office: Stationery, post";
+                    break;
+                case 16:
+                    strValue = "Travel";
+                    break;
+                case 17:
+                    strValue = "Fleet";
+                    break;
+                case 18:
+                    strValue = "Logistics";
+                    break;
+                case 19:
+                    strValue = "Other";
+                    break;
+                default:
+                    strValue = "Your previous category experience";
                     break;
             }
             return strValue;

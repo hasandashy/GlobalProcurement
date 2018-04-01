@@ -142,7 +142,7 @@ namespace SGA
                     string passwordSalt = SGACommon.CreateSalt(5);
                     string passwordHash = SGACommon.CreatePasswordHash(plainpassword, passwordSalt);
 
-                    param = new SqlParameter[12];
+                    param = new SqlParameter[13];
                     param[0] = new SqlParameter("@action", SqlDbType.VarChar);
                     param[0].Value = "Insert";
                     param[1] = new SqlParameter("@password", SqlDbType.VarChar);
@@ -162,11 +162,14 @@ namespace SGA
                     param[8] = new SqlParameter("@passwordSalt", SqlDbType.VarChar);
                     param[8].Value = passwordSalt;
                     param[9] = new SqlParameter("@jobRole", SqlDbType.Int);
-                    param[9].Value = "1";
+                    //param[9].Value = "1";
+                    param[9].Value = jobRole;
                     param[10] = new SqlParameter("@isAdminAdded", SqlDbType.Bit);
                     param[10].Value = false;
                     param[11] = new SqlParameter("@country", SqlDbType.VarChar);
                     param[11].Value = country;
+                    param[12] = new SqlParameter("@membershipAssociation", SqlDbType.VarChar);
+                    param[12].Value = membershipAssociation;
                     int result = System.Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "spUserMasterGlobalProcurement", param));
                     if (result > 0)
                     {
@@ -178,7 +181,7 @@ namespace SGA
                         //objStreamReader.Dispose();
                         //content = content.Replace("@fullname", firstName + " " + lastName).Replace("@email", emailAddress);
                         //MailSending.SendMail(ConfigurationManager.AppSettings["nameDisplay"].ToString(), emailAddress, ConfigurationManager.AppSettings["UserName"].ToString(), subject, content, "");
-                        
+
                     }
                 }
             }

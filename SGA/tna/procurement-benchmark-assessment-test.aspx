@@ -1,7 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/tnaMaster.Master" AutoEventWireup="true" CodeBehind="procurement-benchmark-assessment-test.aspx.cs" Inherits="SGA.tna.procurement_benchmark_assessment_test" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <style type="text/css">
+    .itemselected {
+        background:#f9a03d;
+    }
+</style>
     <div class="dis-block clearfix  marT1 top-space">
         <div class="main-heading dis-block clearfix pad15 font18 head-graybg padbottom-none padtop1 marTnone">
             <h1>Pillar <%= pillarId %><span runat="server" id="pillarNameSpan">Data, Analysis & Insights  </span></h1>
@@ -77,7 +81,9 @@
         });
         $("#optionlist li").click(function () {
             $('#optionlist li').removeAttr('id');
+            $('#optionlist li').removeAttr('class');
             $(this).attr('id', 'selected');
+            $(this).attr('class', 'itemselected');
            
         });
         $("#lb1").click(function (event) {           

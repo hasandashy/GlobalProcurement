@@ -310,6 +310,13 @@
     <Compile Include="tna\assessments-pillar-quotes.aspx.designer.cs">
       <DependentUpon>assessments-pillar-quotes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="tna\Association.aspx.cs">
+      <DependentUpon>Association.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tna\Association.aspx.designer.cs">
+      <DependentUpon>Association.aspx</DependentUpon>
+    </Compile>
     <Compile Include="tna\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -351,6 +358,13 @@
     </Compile>
     <Compile Include="tna\procurement-benchmark-assessment-test.aspx.designer.cs">
       <DependentUpon>procurement-benchmark-assessment-test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tna\ProfileDetails.aspx.cs">
+      <DependentUpon>ProfileDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tna\ProfileDetails.aspx.designer.cs">
+      <DependentUpon>ProfileDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="tna\ResultDenied.aspx.cs">
       <DependentUpon>ResultDenied.aspx</DependentUpon>
@@ -957,8 +971,10 @@
     <Content Include="tna\assessment-Instructions-dimensions.aspx" />
     <Content Include="tna\assessment-pillars.aspx" />
     <Content Include="tna\assessments-pillar-quotes.aspx" />
+    <Content Include="tna\Association.aspx" />
     <Content Include="tna\MainMenu.aspx" />
     <Content Include="tna\procurement-benchmark-assessment-test.aspx" />
+    <Content Include="tna\ProfileDetails.aspx" />
     <Content Include="tna\SuccessMessage.aspx" />
     <Content Include="tna\UpdatePassword.aspx" />
     <Content Include="tna\Web.config" />

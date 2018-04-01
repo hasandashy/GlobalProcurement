@@ -33,7 +33,7 @@
                                            <asp:Label ID="lblErrorLogin" ClientIDMode="Static" runat="server" ForeColor="Red"></asp:Label>
                                     </div>
                                     <div class="form-group">
-                                        <input required class="form-control" id="inf_field_UserName" maxlength="250" name="inf_field_UserName" type="text" placeholder="First Name *" />
+                                        <input required class="form-control" id="inf_field_UserName" maxlength="250" name="inf_field_UserName" type="text" placeholder="Username *" />
                                     </div>
                                     <div class="form-group">
                                         <input required class="form-control" id="inf_field_Password" maxlength="250" name="inf_field_Password" type="password" placeholder="Password *" />

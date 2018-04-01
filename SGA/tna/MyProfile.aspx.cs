@@ -38,7 +38,7 @@ namespace SGA.tna
                         }
                     }
                 }
-                this.lblName.Text = "Hi " + SGACommon.GetName() + "!";
+                //this.lblName.Text = "Hi " + SGACommon.GetName() + "!";
                 this.LoadProfile();
             }
         }
@@ -46,40 +46,55 @@ namespace SGA.tna
         private void LoadProfile()
         {
             SqlParameter[] param = new SqlParameter[]
-			{
-				new SqlParameter("@userId", SqlDbType.Int)
-			};
+            {
+                new SqlParameter("@userId", SqlDbType.Int)
+            };
             param[0].Value = SGACommon.LoginUserInfo.userId;
             DataSet ds = SqlHelper.ExecuteDataset(CommandType.StoredProcedure, "spGetProfileDetails", param);
             if (ds != null)
             {
                 if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
                 {
-                    SGACommon.SelectListItem(this.ddlIndustry, ds.Tables[0].Rows[0]["industry"].ToString());
-                    SGACommon.SelectListItem(this.ddlAnnualRevenue, ds.Tables[0].Rows[0]["arevenue"].ToString());
-                    SGACommon.SelectListItem(this.ddlModel, ds.Tables[0].Rows[0]["pmodel"].ToString());
-                    SGACommon.SelectListItem(this.ddlEmployeeCompany, ds.Tables[0].Rows[0]["noemployee"].ToString());
-                    SGACommon.SelectListItem(this.ddlCompanyRevenue, ds.Tables[0].Rows[0]["spendunder"].ToString());
-                    SGACommon.SelectListItem(this.ddlProcurementYear, ds.Tables[0].Rows[0]["experience"].ToString());
-                    SGACommon.SelectListItem(this.cboQualifications, ds.Tables[0].Rows[0]["education"].ToString());
-                    SGACommon.SelectListItem(this.ddlExpertise, ds.Tables[0].Rows[0]["categoryId"].ToString());
-                    SGACommon.SelectListItem(this.ddlReportingLine, ds.Tables[0].Rows[0]["reportline"].ToString());
-                    SGACommon.SelectListItem(this.ddlSpendUnder, ds.Tables[0].Rows[0]["spentUnder"].ToString());
-                    SGACommon.SelectListItem(this.ddlJobRole, ds.Tables[0].Rows[0]["jobRole"].ToString());
-                    SGACommon.SelectListItem(this.ddlProLevel, ds.Tables[0].Rows[0]["proLevel"].ToString());
-                    SGACommon.SelectListItem(this.ddlGeographical, ds.Tables[0].Rows[0]["geoInfluence"].ToString());
-                    SGACommon.SelectListItem(this.ddlCountry, ds.Tables[0].Rows[0]["country"].ToString());
-                    this.fname.Value = ds.Tables[0].Rows[0]["firstname"].ToString();
-                    this.lname.Value = ds.Tables[0].Rows[0]["lastname"].ToString();
-                    this.company.Value = ((ds.Tables[0].Rows[0]["company"].ToString().Length > 0) ? ds.Tables[0].Rows[0]["company"].ToString() : "Company");
-                    this.password.Value = ds.Tables[0].Rows[0]["plainpassword"].ToString();
-                    this.phone.Value = ((ds.Tables[0].Rows[0]["Phone"].ToString().Length > 0) ? ds.Tables[0].Rows[0]["Phone"].ToString() : "Phone No");
-                    this.state.Value = ((ds.Tables[0].Rows[0]["State"].ToString().Length > 0) ? ds.Tables[0].Rows[0]["State"].ToString() : "In which state do you work?");
-                    this.postcode.Value = ((ds.Tables[0].Rows[0]["postcode"].ToString().Length > 0) ? ds.Tables[0].Rows[0]["postcode"].ToString() : "PostCode");
-                    this.jobtitle.Value = ((ds.Tables[0].Rows[0]["jobtitle"].ToString().Length > 0) ? ds.Tables[0].Rows[0]["jobtitle"].ToString() : "JobTitle");
-                    this.email.Value = ds.Tables[0].Rows[0]["email"].ToString();
-                    this._direct = ds.Tables[0].Rows[0]["directgenneral"].ToString();
-                    this._indirect = ds.Tables[0].Rows[0]["specialist"].ToString();
+                    procModel.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["pmodel"].ToString()) ? "Procurement model" : Profile.GetProcurementModel(Convert.ToInt32( ds.Tables[0].Rows[0]["pmodel"]));
+                    reportingLine.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["reportline"].ToString()) ? "Reporting line" : Profile.GetReportLineTo(Convert.ToInt32(ds.Tables[0].Rows[0]["reportline"]));
+                    spenUnderInfluence.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["spendunder"].ToString()) ? "Spend under influence" : Profile.GetSpendUnderInfluence(Convert.ToInt32(ds.Tables[0].Rows[0]["spendunder"]));
+                    sector.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["sector"].ToString()) ? "Sector" : Profile.GetSector(Convert.ToInt32(ds.Tables[0].Rows[0]["sector"]));
+                    numberOfEmp.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["noemployee"].ToString()) ? "Number of employees" : Profile.GetNoOfEmployee(Convert.ToInt32(ds.Tables[0].Rows[0]["noemployee"]));
+
+                    jobRole.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["jobRole"].ToString()) ? "Role best described as:" : Profile.GetJobRole(Convert.ToInt32(ds.Tables[0].Rows[0]["jobRole"]));
+                    category.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["categoryId"].ToString()) ? "Category you manage currently:" : Profile.GetCategory(Convert.ToInt32(ds.Tables[0].Rows[0]["categoryId"]));
+                    spendUnderYour.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["spentUnder"].ToString()) ? "Spend under your influence" : Profile.GetSpentUnderYourInfluence(Convert.ToInt32(ds.Tables[0].Rows[0]["spentUnder"]));
+                    geoInfluence.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["geoInfluence"].ToString()) ? "Geographical influence" : Profile.GetGeoInfluence(Convert.ToInt32(ds.Tables[0].Rows[0]["geoInfluence"]));
+                    exp.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["experience"].ToString()) ? "Years of procurement experience" : Profile.GetExp(Convert.ToInt32(ds.Tables[0].Rows[0]["experience"]));
+                    edu.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["education"].ToString()) ? "Level of Education" : Profile.GetEducation(Convert.ToInt32(ds.Tables[0].Rows[0]["education"]));
+                    procQual.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["proLevel"].ToString()) ? "Procurement qualifications" : Profile.GetProcurementLevel(Convert.ToInt32(ds.Tables[0].Rows[0]["proLevel"]));
+                    prevExp.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["prevCatExp"].ToString()) ? "Your previous category experience" : Profile.GetPrevCatExp(Convert.ToInt32(ds.Tables[0].Rows[0]["prevCatExp"]));
+
+                    //SGACommon.SelectListItem(this.ddlIndustry, ds.Tables[0].Rows[0]["industry"].ToString());
+                    //SGACommon.SelectListItem(this.ddlAnnualRevenue, ds.Tables[0].Rows[0]["arevenue"].ToString());
+                    //SGACommon.SelectListItem(this.ddlModel, ds.Tables[0].Rows[0]["pmodel"].ToString());
+                    //SGACommon.SelectListItem(this.ddlEmployeeCompany, ds.Tables[0].Rows[0]["noemployee"].ToString());
+                    //SGACommon.SelectListItem(this.ddlCompanyRevenue, ds.Tables[0].Rows[0]["spendunder"].ToString());
+                    //SGACommon.SelectListItem(this.ddlProcurementYear, ds.Tables[0].Rows[0]["experience"].ToString());
+                    //SGACommon.SelectListItem(this.cboQualifications, ds.Tables[0].Rows[0]["education"].ToString());
+                    //SGACommon.SelectListItem(this.ddlExpertise, ds.Tables[0].Rows[0]["categoryId"].ToString());
+                    //SGACommon.SelectListItem(this.ddlReportingLine, ds.Tables[0].Rows[0]["reportline"].ToString());
+                    //SGACommon.SelectListItem(this.ddlSpendUnder, ds.Tables[0].Rows[0]["spentUnder"].ToString());
+                    //SGACommon.SelectListItem(this.ddlJobRole, ds.Tables[0].Rows[0]["jobRole"].ToString());
+                    //SGACommon.SelectListItem(this.ddlProLevel, ds.Tables[0].Rows[0]["proLevel"].ToString());
+                    //SGACommon.SelectListItem(this.ddlGeographical, ds.Tables[0].Rows[0]["geoInfluence"].ToString());
+                    //SGACommon.SelectListItem(this.ddlCountry, ds.Tables[0].Rows[0]["country"].ToString());
+                    //this.fname.Value = ds.Tables[0].Rows[0]["firstname"].ToString();
+                    //this.lname.Value = ds.Tables[0].Rows[0]["lastname"].ToString();
+                    //this.company.Value = ((ds.Tables[0].Rows[0]["company"].ToString().Length > 0) ? ds.Tables[0].Rows[0]["company"].ToString() : "Company");
+                    //this.password.Value = ds.Tables[0].Rows[0]["plainpassword"].ToString();
+                    //this.phone.Value = ((ds.Tables[0].Rows[0]["Phone"].ToString().Length > 0) ? ds.Tables[0].Rows[0]["Phone"].ToString() : "Phone No");
+                    //this.state.Value = ((ds.Tables[0].Rows[0]["State"].ToString().Length > 0) ? ds.Tables[0].Rows[0]["State"].ToString() : "In which state do you work?");
+                    //this.postcode.Value = ((ds.Tables[0].Rows[0]["postcode"].ToString().Length > 0) ? ds.Tables[0].Rows[0]["postcode"].ToString() : "PostCode");
+                    //this.jobtitle.Value = ((ds.Tables[0].Rows[0]["jobtitle"].ToString().Length > 0) ? ds.Tables[0].Rows[0]["jobtitle"].ToString() : "JobTitle");
+                    //this.email.Value = ds.Tables[0].Rows[0]["email"].ToString();
+                    //this._direct = ds.Tables[0].Rows[0]["directgenneral"].ToString();
+                    //this._indirect = ds.Tables[0].Rows[0]["specialist"].ToString();
                 }
             }
         }

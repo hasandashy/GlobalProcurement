@@ -359,7 +359,8 @@
                             data: { 'email': $("#inf_field_Email").val() },
                             success: function (data) {
                                 if (data == "s") {
-                                    $('#lblErrorReset').text("Please check your email.");
+                                    //$('#lblErrorReset').text("Please check your email.");
+                                    window.location.href = 'login.aspx';
                                 }
                                 else if (data == "f") {
                                     $('#lblErrorReset').text("Invalid Email.");

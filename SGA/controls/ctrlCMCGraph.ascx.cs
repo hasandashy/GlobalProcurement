@@ -95,9 +95,9 @@ namespace SGA.controls
         {
             if (!base.IsPostBack)
             {
-                tblCompare.Visible = (this.showCompare == 1);
+                //tblCompare.Visible = (this.showCompare == 1);
                 BindGraph();
-                Page.ClientScript.RegisterStartupScript(base.GetType(), "CallMyFunction", "drawChart()", true);
+                //Page.ClientScript.RegisterStartupScript(base.GetType(), "CallMyFunction", "drawChart()", true);
             }
         }
 
@@ -153,11 +153,11 @@ namespace SGA.controls
             }
         }
 
-        protected void lnkCompare_Click(object sender, System.EventArgs e)
-        {
-            int selectedValue = System.Convert.ToInt32(rdlQuartile.SelectedValue);
-            this.CompareResult(selectedValue);
-        }
+        //protected void lnkCompare_Click(object sender, System.EventArgs e)
+        //{
+        //    int selectedValue = System.Convert.ToInt32(rdlQuartile.SelectedValue);
+        //    this.CompareResult(selectedValue);
+        //}
 
         public void CompareResult(int selectedValue)
         {

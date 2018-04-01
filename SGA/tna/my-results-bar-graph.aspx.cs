@@ -18,14 +18,14 @@ namespace SGA.tna
         protected void Page_Load(object sender, System.EventArgs e)
         {
             //SGACommon.IsViewResult("viewSGAResult");
-            Session["sgaTestId"] = "76";
+            Session["sgaTestId"] = "1";
 
             if (!base.IsPostBack)
             {
                 base.Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", ""));
                 if (this.Session["sgaTestId"] != null)
                 {
-                    //this.graph1.testId = System.Convert.ToInt32(this.Session["sgaTestId"].ToString());
+                    this.graph1.testId = System.Convert.ToInt32(this.Session["sgaTestId"].ToString());
                 }
                
             }

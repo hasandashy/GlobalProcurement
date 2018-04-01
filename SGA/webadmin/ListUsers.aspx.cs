@@ -560,21 +560,24 @@ namespace SGA.webadmin
             {
                 try
                 {
+                    // Register user
+                    string plainpassword = SGACommon.generatePassword(8);
                     string passwordSalt = SGACommon.CreateSalt(5);
-                    string passwordHash = SGACommon.CreatePasswordHash(this.txtPassword.Value.Trim(), passwordSalt);
-                    param = new SqlParameter[11];
+                    string passwordHash = SGACommon.CreatePasswordHash(plainpassword, passwordSalt);
+
+                    param = new SqlParameter[13];
                     param[0] = new SqlParameter("@action", SqlDbType.VarChar);
                     param[0].Value = "Insert";
                     param[1] = new SqlParameter("@password", SqlDbType.VarChar);
-                    param[1].Value = this.txtPassword.Value.Trim();
+                    param[1].Value = plainpassword;
                     param[2] = new SqlParameter("@company", SqlDbType.VarChar);
-                    param[2].Value = this.txtCompanyName.Value.Trim();
+                    param[2].Value = "";
                     param[3] = new SqlParameter("@firstName", SqlDbType.VarChar);
-                    param[3].Value = this.txtFirstname.Value.Trim();
+                    param[3].Value = this.txtFirstname.Value;
                     param[4] = new SqlParameter("@lastName", SqlDbType.VarChar);
-                    param[4].Value = this.txtLastname.Value.Trim();
+                    param[4].Value = this.txtLastname.Value;
                     param[5] = new SqlParameter("@email", SqlDbType.VarChar);
-                    param[5].Value = this.txtEmailAddress.Value.Trim();
+                    param[5].Value = this.txtEmailAddress.Value;
                     param[6] = new SqlParameter("@isApproved", SqlDbType.Bit);
                     param[6].Value = 1;
                     param[7] = new SqlParameter("@passwordHash", SqlDbType.VarChar);
@@ -582,146 +585,48 @@ namespace SGA.webadmin
                     param[8] = new SqlParameter("@passwordSalt", SqlDbType.VarChar);
                     param[8].Value = passwordSalt;
                     param[9] = new SqlParameter("@jobRole", SqlDbType.Int);
-                    param[9].Value = System.Convert.ToInt32(this.ddlJobRole.SelectedValue);
+                    param[9].Value = this.ddlJobRole.SelectedValue;
                     param[10] = new SqlParameter("@isAdminAdded", SqlDbType.Bit);
                     param[10].Value = true;
+                    param[11] = new SqlParameter("@country", SqlDbType.VarChar);
+                    param[11].Value = this.ddlCountry.SelectedValue;
+                    param[12] = new SqlParameter("@membershipAssociation", SqlDbType.VarChar);
+                    param[12].Value = this.ddlMembership.SelectedValue;
+                    int result = System.Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "spUserMasterGlobalProcurement", param));
 
-                    int result = System.Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "spUserMaster", param));
+                    
                     if (result == 0)
                     {
                         this.lblError.Text = "There was some error with user saving, try again.";
                     }
                     else
                     {
-                        string subject = "";
-                        string body = "";
-                        SGACommon.GetEmailTemplate(8, ref subject, ref body);
-                        body = body.Replace("@v0", this.txtFirstname.Value.Trim()).Replace("@v1", this.txtLastname.Value.Trim()).Replace("@v2", this.txtCompanyName.Value.Trim()).Replace("@v3", this.txtEmailAddress.Value.Trim()).Replace("@v5", this.txtPassword.Value.Trim()).Replace("@v4", SGACommon.GetJobRole(System.Convert.ToInt32(this.ddlJobRole.SelectedValue)));
-                        MailSending.SendMail(ConfigurationManager.AppSettings["nameDisplay"].ToString(), ConfigurationManager.AppSettings["UserName"].ToString(), this.txtEmailAddress.Value.Trim(), subject, body, "");
-                        string[] strField = new string[]
-                        {
-                            "Id"
-                        };
-                        XmlRpcStruct[] resultFound = isdnAPI.findByEmail(this.txtEmailAddress.Value.Trim(), strField);
-                        int userId;
-                        if (resultFound.Length > 0)
-                        {
-                            userId = System.Convert.ToInt32(resultFound[0]["Id"].ToString());
-                            isdnAPI.addToGroup(userId, 104);
-                            isdnAPI.addToGroup(userId, 1464);
-                            isdnAPI.addToGroup(userId, 2724);
-                            isdnAPI.optIn(this.txtEmailAddress.Value.Trim(), "Sending emails is allowed");
-                        }
-                        else
-                        {
-                            userId = isdnAPI.add(new XmlRpcStruct
-                            {
-                                {
-                                    "FirstName",
-                                    this.txtFirstname.Value.Trim()
-                                },
-                                {
-                                    "LastName",
-                                    this.txtLastname.Value.Trim()
-                                },
-                                {
-                                    "JobTitle",
-                                    ""
-                                },
-                                {
-                                    "Email",
-                                    this.txtEmailAddress.Value.Trim()
-                                },
-                                {
-                                    "Company",
-                                    this.txtCompanyName.Value.Trim()
-                                },
-                                {
-                                    "_Yourlevel",
-                                    ""
-                                },
-                                {
-                                    "_Jobrolebestdescribedas",
-                                    SGACommon.GetJobRole(System.Convert.ToInt32(this.ddlJobRole.SelectedValue))
-                                },{
-                                    "_SGApassword",
-                                    this.txtPassword.Value.Trim()
-                            },
+                        UpdateValueinIS(this.txtEmailAddress.Value, this.txtFirstname.Value, this.txtLastname.Value, this.ddlCountry.SelectedValue, this.ddlMembership.SelectedValue, "", "", plainpassword, Convert.ToInt32(this.ddlJobRole.SelectedValue));
+                        //string subject = "";
+                        //string body = "";
+                        //SGACommon.GetEmailTemplate(8, ref subject, ref body);
+                        //body = body.Replace("@v0", this.txtFirstname.Value.Trim()).Replace("@v1", this.txtLastname.Value.Trim()).Replace("@v2", "".Trim()).Replace("@v3", this.txtEmailAddress.Value.Trim()).Replace("@v5", this.txtPassword.Value.Trim()).Replace("@v4", SGACommon.GetJobRole(System.Convert.ToInt32(this.ddlJobRole.SelectedValue)));
+                        //MailSending.SendMail(ConfigurationManager.AppSettings["nameDisplay"].ToString(), ConfigurationManager.AppSettings["UserName"].ToString(), this.txtEmailAddress.Value.Trim(), subject, body, "");
 
-                                {
-                                    "LeadSourceId",
-                                    "22"
-                                },
-                                {
-                                    "OwnerID",
-                                    "6"
-                                },
-                                {
-                                    "ContactType",
-                                    "Customer"
-                                }
-                            });
-                            if (userId > 0)
-                            {
-                                bool isAdded = isdnAPI.addToGroup(userId, 104);
-                                isdnAPI.addToGroup(userId, 1464);
-                                isdnAPI.addToGroup(userId, 2724);
-                                isdnAPI.optIn(this.txtEmailAddress.Value.Trim(), "Sending emails is allowed");
-                            }
-                        }
-                        XmlRpcStruct MailContent = new XmlRpcStruct();
-                        MailContent = isdnAPI.getEmailTemplate(3396);
-                        subject = MailContent["subject"].ToString();
-                        string fromAddress = MailContent["fromAddress"].ToString();
-                        string htmlBody = MailContent["htmlBody"].ToString();
-                        isdnAPI.dsAdd("Lead", new XmlRpcStruct
-                        {
-                            {
-                                "OpportunityTitle",
-                                string.Concat(new string[]
-                                {
-                                    this.txtCompanyName.Value.Trim(),
-                                    " - ",
-                                    this.txtFirstname.Value.Trim(),
-                                    " ",
-                                    this.txtLastname.Value.Trim(),
-                                    " - Register SkillsGapAnlaysis"
-                                })
-                            },
-                            {
-                                "ContactID",
-                                userId
-                            },
-                            {
-                                "StageID",
-                                22
-                            },
-                            {
-                                "UserID",
-                                6
-                            },
-                            {
-                                "OpportunityNotes",
-                                "Please follow up contact"
-                            },
-                            {
-                                "NextActionDate",
-                                System.DateTime.Now.AddDays(7.0).ToString()
-                            }
-                        });
-                        subject = "New user registration email";
-                        System.IO.StreamReader objStreamReader = System.IO.File.OpenText(HttpContext.Current.Server.MapPath("~/css/register.htm"));
-                        string content = objStreamReader.ReadToEnd();
-                        objStreamReader.Close();
-                        objStreamReader.Dispose();
-                        content = content.Replace("@firstname", this.txtFirstname.Value.Trim()).Replace("@lastname", this.txtLastname.Value.Trim()).Replace("@email", this.txtEmailAddress.Value.Trim()).Replace("@company", this.txtCompanyName.Value.Trim()).Replace("@jobrole", SGACommon.GetJobRole(System.Convert.ToInt32(this.ddlJobRole.SelectedValue))).Replace("@ip", HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]);
-                        MailSending.SendMail(ConfigurationManager.AppSettings["nameDisplay"].ToString(), fromAddress, ConfigurationManager.AppSettings["infusionTo"].ToString(), subject, content, ConfigurationManager.AppSettings["infusionCC"].ToString());
+                        //XmlRpcStruct MailContent = new XmlRpcStruct();
+                        //MailContent = isdnAPI.getEmailTemplate(3396);
+                        //subject = MailContent["subject"].ToString();
+                        //string fromAddress = MailContent["fromAddress"].ToString();
+                        //string htmlBody = MailContent["htmlBody"].ToString();
+
+                        //subject = "New user registration email";
+                        //System.IO.StreamReader objStreamReader = System.IO.File.OpenText(HttpContext.Current.Server.MapPath("~/css/register.htm"));
+                        //string content = objStreamReader.ReadToEnd();
+                        //objStreamReader.Close();
+                        //objStreamReader.Dispose();
+                        //content = content.Replace("@firstname", this.txtFirstname.Value.Trim()).Replace("@lastname", this.txtLastname.Value.Trim()).Replace("@email", this.txtEmailAddress.Value.Trim()).Replace("@company", "".Trim()).Replace("@jobrole", SGACommon.GetJobRole(System.Convert.ToInt32(this.ddlJobRole.SelectedValue))).Replace("@ip", HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]);
+                        //MailSending.SendMail(ConfigurationManager.AppSettings["nameDisplay"].ToString(), fromAddress, ConfigurationManager.AppSettings["infusionTo"].ToString(), subject, content, ConfigurationManager.AppSettings["infusionCC"].ToString());
                         this.lblError.Text = "User added successfully and email sent to him.";
                         this.txtFirstname.Value = "";
                         this.txtLastname.Value = "";
-                        this.txtCompanyName.Value = "";
+                        
                         this.txtEmailAddress.Value = "";
-                        this.txtPassword.Value = "";
+                        this.ddlMembership.SelectedIndex = -1;
                         this.ddlJobRole.SelectedIndex = -1;
                         this.BindGrid();
                     }
@@ -729,6 +634,107 @@ namespace SGA.webadmin
                 catch (System.Exception ex_81E)
                 {
                     this.lblError.Text = "There was some error with user saving, try again.";
+                }
+            }
+        }
+
+        public void UpdateValueinIS(string emailAddress, string firstName, string lastName, string country, string membershipAssociation, string ifpsmComments, string ifpsmJobRole, string plainPassword, int jobRole)
+        {
+            string[] strField = new string[]
+                            {
+                            "Id"
+                            };
+            XmlRpcStruct[] resultFound = isdnAPI.findByEmail(emailAddress, strField);
+            if (resultFound.Length > 0)
+            {
+                XmlRpcStruct Contact = new XmlRpcStruct();
+
+                Contact.Add("ContactType", "Customer");
+                Contact.Add("FirstName", firstName);
+                Contact.Add("LastName", lastName);
+                Contact.Add("_Country1", country);
+                Contact.Add("_MembershipAssociation0", membershipAssociation);
+                Contact.Add("_IFPSMComments", ifpsmComments);
+                Contact.Add("_Jobrolebestdescribedas", SGACommon.GetJobRole(jobRole));
+                Contact.Add("_IFPSMPageJobRole", ifpsmJobRole);
+                isdnAPI.dsUpdate("Contact", System.Convert.ToInt32(resultFound[0]["Id"].ToString()), Contact);
+                isdnAPI.addToGroup(System.Convert.ToInt32(resultFound[0]["Id"].ToString()), 3448);
+                isdnAPI.optIn(emailAddress, "Make them marketable");
+            }
+            else
+            {
+                int userId = isdnAPI.add(new XmlRpcStruct
+                            {
+                                {
+                                    "FirstName",
+                                    firstName
+                                },
+                                {
+                                    "LastName",
+                                    lastName
+                                },
+                                {
+                                    "JobTitle",
+                                    ""
+                                },
+                                {
+                                    "Email",
+                                    emailAddress
+                                },
+                                {
+                                    "Company",
+                                    ""
+                                },
+                                {
+                                    "_Yourlevel",
+                                    ""
+                                },
+                                {
+                                    "_Jobrolebestdescribedas",
+                                    SGACommon.GetJobRole(jobRole)
+                                },
+                                {
+                                    "LeadSourceId",
+                                    "22"
+                                },
+                                {
+                                    "OwnerID",
+                                    "6"
+                                },{
+                                    "_MembershipAssociation0",
+                                    membershipAssociation
+                                },{
+                                        "_Country1",
+                                        country
+                                },
+                                { "_IFPSMComments", ifpsmComments },
+
+                                {
+                                    "ContactType",
+                                    "Customer"
+                                }
+                            });
+                if (userId > 0)
+                {
+                    if (plainPassword.Length > 0)
+                    {
+                        XmlRpcStruct Contact = new XmlRpcStruct();
+
+                        Contact.Add("ContactType", "Customer");
+                        Contact.Add("_SGApassword", plainPassword);
+                        Contact.Add("_IFPSMPageJobRole", ifpsmJobRole);
+                        isdnAPI.dsUpdate("Contact", userId, Contact);
+                    }
+                    else
+                    {
+                        XmlRpcStruct Contact = new XmlRpcStruct();
+
+                        Contact.Add("ContactType", "Customer");
+                        Contact.Add("_IFPSMPageJobRole", ifpsmJobRole);
+                        isdnAPI.dsUpdate("Contact", userId, Contact);
+                    }
+                    isdnAPI.addToGroup(userId, 3448);
+                    isdnAPI.optIn(emailAddress, "Make them marketable");
                 }
             }
         }
@@ -754,28 +760,9 @@ namespace SGA.webadmin
                         "Email address",
                         "First name",
                         "Last name",
-                        "Company name",
+                        "Country",
                         "Job Role ID",
-                        "Job Title",
-                        "Postal Code",
-                        "Phone",
-                        "State",
-                        "viewPkeResult",
-                        "takePKE",
-                        "viewPsaResult",
-                        "takePSA",
-                        "viewPMPResult",
-                        "takePMP",
-                        "viewDMP",
-                        "takeDMP",
-                        "viewNPResult",
-                        "takeNP",
-                        "viewCMAResult",
-                        "takeCMATest",
-                        "viewCMKE",
-                        "takeCMKE",
-                        "viewCMSA",
-                        "takeCMSA",
+                        "Membership Accociation"
                     };
                     int iRow = 2;
                     using (ExcelPackage xlPackage = new ExcelPackage(newFile))
@@ -804,28 +791,9 @@ namespace SGA.webadmin
                             string email = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Email address")].Value.ToString().Trim();
                             string fName = worksheet.Cells[iRow, this.GetColumnIndex(properties, "First name")].Value.ToString().Trim();
                             string lName = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Last name")].Value.ToString().Trim();
-                            string CName = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Company name")].Value.ToString().Trim();
+                            string Country = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Country")].Value.ToString().Trim();
                             string jobRoleId = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Job Role ID")].Value.ToString().Trim();
-                            string jobTitle = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Job Title")].Value.ToString().Trim();
-                            string postalCode = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Postal Code")].Value.ToString().Trim();
-                            string phone = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Phone")].Value.ToString().Trim();
-                            string state = worksheet.Cells[iRow, this.GetColumnIndex(properties, "State")].Value.ToString().Trim();
-                            int viewSgaResult = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "viewPkeResult")].Value.ToString().Trim());
-                            int takeSGT = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "takePKE")].Value.ToString().Trim());
-                            int viewTnaResult = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "viewPsaResult")].Value.ToString().Trim());
-                            int takeTNA = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "takePSA")].Value.ToString().Trim());
-                            int viewPMPResult = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "viewPMPResult")].Value.ToString().Trim());
-                            int takePMP = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "takePMP")].Value.ToString().Trim());
-                            int viewDMP = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "viewDMP")].Value.ToString().Trim());
-                            int takeDMP = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "takeDMP")].Value.ToString().Trim());
-                            int viewNPResult = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "viewNPResult")].Value.ToString().Trim());
-                            int takeNP = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "takeNP")].Value.ToString().Trim());
-                            int viewCMAResult = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "viewCMAResult")].Value.ToString().Trim());
-                            int takeCMATest = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "takeCMATest")].Value.ToString().Trim());
-                            int viewCMK = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "viewCMKE")].Value.ToString().Trim());
-                            int takeCMK = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "takeCMKE")].Value.ToString().Trim());
-                            int viewCMSA = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "viewCMSA")].Value.ToString().Trim());
-                            int takeCMSA = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "takeCMSA")].Value.ToString().Trim());
+                            string membership = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Membership Accociation")].Value.ToString().Trim();
                             if (email.Trim().Length <= 0)
                             {
                                 goto Block_12;
@@ -862,28 +830,9 @@ namespace SGA.webadmin
                                 string email = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Email address")].Value.ToString().Trim();
                                 string fName = worksheet.Cells[iRow, this.GetColumnIndex(properties, "First name")].Value.ToString().Trim();
                                 string lName = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Last name")].Value.ToString().Trim();
-                                string CName = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Company name")].Value.ToString().Trim();
+                                string Country = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Country")].Value.ToString().Trim();
                                 string jobRoleId = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Job Role ID")].Value.ToString().Trim();
-                                string jobTitle = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Job Title")].Value.ToString().Trim();
-                                string postalCode = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Postal Code")].Value.ToString().Trim();
-                                string phone = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Phone")].Value.ToString().Trim();
-                                string state = worksheet.Cells[iRow, this.GetColumnIndex(properties, "State")].Value.ToString().Trim();
-                                int viewSgaResult = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "viewPkeResult")].Value.ToString().Trim());
-                                int takeSGT = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "takePKE")].Value.ToString().Trim());
-                                int viewTnaResult = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "viewPsaResult")].Value.ToString().Trim());
-                                int takeTNA = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "takePSA")].Value.ToString().Trim());
-                                int viewPMPResult = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "viewPMPResult")].Value.ToString().Trim());
-                                int takePMP = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "takePMP")].Value.ToString().Trim());
-                                int viewDMP = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "viewDMP")].Value.ToString().Trim());
-                                int takeDMP = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "takeDMP")].Value.ToString().Trim());
-                                int viewNPResult = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "viewNPResult")].Value.ToString().Trim());
-                                int takeNP = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "takeNP")].Value.ToString().Trim());
-                                int viewCMAResult = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "viewCMAResult")].Value.ToString().Trim());
-                                int takeCMATest = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "takeCMATest")].Value.ToString().Trim());
-                                int viewCMK = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "viewCMKE")].Value.ToString().Trim());
-                                int takeCMK = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "takeCMKE")].Value.ToString().Trim());
-                                int viewCMSA = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "viewCMSA")].Value.ToString().Trim());
-                                int takeCMSA = System.Convert.ToInt32(worksheet.Cells[iRow, this.GetColumnIndex(properties, "takeCMSA")].Value.ToString().Trim());
+                                string membership = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Membership Accociation")].Value.ToString().Trim();
 
                                 SqlParameter[] param = new SqlParameter[]
                                 {
@@ -898,16 +847,18 @@ namespace SGA.webadmin
                                 }
                                 else
                                 {
-                                    string password = SGACommon.generatePassword(6);
+                                    // Register user
+                                    string plainpassword = SGACommon.generatePassword(8);
                                     string passwordSalt = SGACommon.CreateSalt(5);
-                                    string passwordHash = SGACommon.CreatePasswordHash(password, passwordSalt);
-                                    param = new SqlParameter[31];
+                                    string passwordHash = SGACommon.CreatePasswordHash(plainpassword, passwordSalt);
+
+                                    param = new SqlParameter[13];
                                     param[0] = new SqlParameter("@action", SqlDbType.VarChar);
                                     param[0].Value = "Insert";
                                     param[1] = new SqlParameter("@password", SqlDbType.VarChar);
-                                    param[1].Value = password;
+                                    param[1].Value = plainpassword;
                                     param[2] = new SqlParameter("@company", SqlDbType.VarChar);
-                                    param[2].Value = CName;
+                                    param[2].Value = "";
                                     param[3] = new SqlParameter("@firstName", SqlDbType.VarChar);
                                     param[3].Value = fName;
                                     param[4] = new SqlParameter("@lastName", SqlDbType.VarChar);
@@ -921,162 +872,33 @@ namespace SGA.webadmin
                                     param[8] = new SqlParameter("@passwordSalt", SqlDbType.VarChar);
                                     param[8].Value = passwordSalt;
                                     param[9] = new SqlParameter("@jobRole", SqlDbType.Int);
+                                    //param[9].Value = "1";
                                     param[9].Value = jobRoleId;
                                     param[10] = new SqlParameter("@isAdminAdded", SqlDbType.Bit);
-                                    param[10].Value = true;
-                                    param[11] = new SqlParameter("@jobTitle", SqlDbType.VarChar);
-                                    param[11].Value = jobTitle;
-                                    param[12] = new SqlParameter("@phone", SqlDbType.VarChar);
-                                    param[12].Value = phone;
-                                    param[13] = new SqlParameter("@postalCode", SqlDbType.VarChar);
-                                    param[13].Value = postalCode;
-                                    param[14] = new SqlParameter("@state", SqlDbType.VarChar);
-                                    param[14].Value = state;
-                                    param[15] = new SqlParameter("@viewSgaResult", SqlDbType.Bit);
-                                    param[15].Value = viewSgaResult;
-                                    param[16] = new SqlParameter("@takeSGT", SqlDbType.Bit);
-                                    param[16].Value = takeSGT;
-                                    param[17] = new SqlParameter("@viewTnaResult", SqlDbType.Bit);
-                                    param[17].Value = viewTnaResult;
-                                    param[18] = new SqlParameter("@takeTNA", SqlDbType.Bit);
-                                    param[18].Value = takeTNA;
-                                    param[19] = new SqlParameter("@viewPMPResult", SqlDbType.Bit);
-                                    param[19].Value = viewPMPResult;
-                                    param[20] = new SqlParameter("@takePMP", SqlDbType.Bit);
-                                    param[20].Value = takePMP;
-                                    param[21] = new SqlParameter("@viewDMP", SqlDbType.Bit);
-                                    param[21].Value = viewDMP;
-                                    param[22] = new SqlParameter("@takeDMP", SqlDbType.Bit);
-                                    param[22].Value = takeDMP;
-                                    param[23] = new SqlParameter("@viewNPResult", SqlDbType.Bit);
-                                    param[23].Value = viewNPResult;
-                                    param[24] = new SqlParameter("@takeNP", SqlDbType.Bit);
-                                    param[24].Value = takeNP;
-                                    param[25] = new SqlParameter("@viewCMAResult", SqlDbType.Bit);
-                                    param[25].Value = viewCMAResult;
-                                    param[26] = new SqlParameter("@takeCMATest", SqlDbType.Bit);
-                                    param[26].Value = takeCMATest;
-                                    param[27] = new SqlParameter("@viewCMK", SqlDbType.Bit);
-                                    param[27].Value = viewCMK;
-                                    param[28] = new SqlParameter("@takeCMK", SqlDbType.Bit);
-                                    param[28].Value = takeCMK;
-                                    param[29] = new SqlParameter("@viewCMSA", SqlDbType.Bit);
-                                    param[29].Value = viewCMSA;
-                                    param[30] = new SqlParameter("@takeCMSA", SqlDbType.Bit);
-                                    param[30].Value = takeCMSA;
-                                    int result = System.Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "spUserMasterAdmin", param));
+                                    param[10].Value = false;
+                                    param[11] = new SqlParameter("@country", SqlDbType.VarChar);
+                                    param[11].Value = Country;
+                                    param[12] = new SqlParameter("@membershipAssociation", SqlDbType.VarChar);
+                                    param[12].Value = membership;
+                                    int result = System.Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "spUserMasterGlobalProcurement", param));
+
+
                                     if (result > 0)
                                     {
-                                        string subject = "";
-                                        string body = "";
-                                        SGACommon.GetEmailTemplate(8, ref subject, ref body);
-                                        body = body.Replace("@v0", fName).Replace("@v1", lName).Replace("@v2", CName).Replace("@v3", email).Replace("@v5", password);
-                                        MailSending.SendMail(ConfigurationManager.AppSettings["nameDisplay"].ToString(), ConfigurationManager.AppSettings["UserName"].ToString(), email, subject, body, "");
-                                        string[] strField = new string[]
-                                        {
-                                            "Id"
-                                        };
-                                        XmlRpcStruct[] resultFound = isdnAPI.findByEmail(email, strField);
-                                        XmlRpcStruct Contact = new XmlRpcStruct();
-                                        int userId;
-                                        if (resultFound.Length > 0)
-                                        {
-                                            userId = System.Convert.ToInt32(resultFound[0]["Id"].ToString());
-                                            isdnAPI.addToGroup(userId, 104);
-                                            isdnAPI.addToGroup(userId, 1464);
-                                            isdnAPI.addToGroup(userId, 2724);
-                                            isdnAPI.optIn(email, "Sending emails is allowed");
-                                            Contact.Add("FirstName", fName);
-                                            Contact.Add("LastName", lName);
-                                            Contact.Add("JobTitle", jobTitle);
-                                            Contact.Add("Email", email);
-                                            Contact.Add("Company", CName);
-                                            Contact.Add("_Yourlevel", "");
-                                            Contact.Add("State", state);
-                                            Contact.Add("PostalCode", postalCode);
-                                            //Contact.Add("Phone1", phone);
-                                            Contact.Add("Fax1", phone);
-                                            Contact.Add("_Jobrolebestdescribedas", SGACommon.GetJobRole(System.Convert.ToInt32(jobRoleId)));
-                                            Contact.Add("LeadSourceId", "22");
-                                            Contact.Add("OwnerID", "6");
-                                            Contact.Add("_SGApassword", password);
-                                            Contact.Add("ContactType", "Customer");
-                                            isdnAPI.dsUpdate("Contact", userId, Contact);
-                                        }
-                                        else
-                                        {
-                                            Contact.Add("FirstName", fName);
-                                            Contact.Add("LastName", lName);
-                                            Contact.Add("JobTitle", jobTitle);
-                                            Contact.Add("Email", email);
-                                            Contact.Add("Company", CName);
-                                            Contact.Add("State", state);
-                                            Contact.Add("PostalCode", postalCode);
-                                            //Contact.Add("Phone1", phone);
-                                            Contact.Add("Fax1", phone);
-                                            Contact.Add("_Yourlevel", "");
-                                            Contact.Add("_Jobrolebestdescribedas", SGACommon.GetJobRole(System.Convert.ToInt32(jobRoleId)));
-                                            Contact.Add("LeadSourceId", "22");
-                                            Contact.Add("OwnerID", "6");
-                                            Contact.Add("_SGApassword", password);
+                                        UpdateValueinIS(email, fName, lName, Country, membership, "", "", plainpassword, Convert.ToInt32(jobRoleId));
+                                        //string subject = "";
+                                        //string body = "";
+                                        //SGACommon.GetEmailTemplate(8, ref subject, ref body);
+                                        //body = body.Replace("@v0", fName).Replace("@v1", lName).Replace("@v2", CName).Replace("@v3", email).Replace("@v5", password);
+                                        //MailSending.SendMail(ConfigurationManager.AppSettings["nameDisplay"].ToString(), ConfigurationManager.AppSettings["UserName"].ToString(), email, subject, body, "");
 
-                                            Contact.Add("ContactType", "Customer");
-                                            userId = isdnAPI.add(Contact);
-                                            if (userId > 0)
-                                            {
-                                                bool isAdded = isdnAPI.addToGroup(userId, 104);
-                                                isdnAPI.addToGroup(userId, 1464);
-                                                isdnAPI.addToGroup(userId, 2724);
-                                                isdnAPI.optIn(email, "Sending emails is allowed");
-                                            }
-                                        }
-                                        XmlRpcStruct MailContent = new XmlRpcStruct();
-                                        MailContent = isdnAPI.getEmailTemplate(3396);
-                                        subject = MailContent["subject"].ToString();
-                                        string fromAddress = MailContent["fromAddress"].ToString();
-                                        string htmlBody = MailContent["htmlBody"].ToString();
-                                        isdnAPI.dsAdd("Lead", new XmlRpcStruct
-                                        {
-                                            {
-                                                "OpportunityTitle",
-                                                string.Concat(new string[]
-                                                {
-                                                    CName,
-                                                    " - ",
-                                                    fName,
-                                                    " ",
-                                                    lName,
-                                                    " - Register SkillsGapAnlaysis"
-                                                })
-                                            },
-                                            {
-                                                "ContactID",
-                                                userId
-                                            },
-                                            {
-                                                "StageID",
-                                                22
-                                            },
-                                            {
-                                                "UserID",
-                                                6
-                                            },
-                                            {
-                                                "OpportunityNotes",
-                                                "Please follow up contact"
-                                            },
-                                            {
-                                                "NextActionDate",
-                                                System.DateTime.Now.AddDays(7.0).ToString()
-                                            }
-                                        });
-                                        subject = "New user registration email";
-                                        System.IO.StreamReader objStreamReader = System.IO.File.OpenText(HttpContext.Current.Server.MapPath("~/css/register.htm"));
-                                        string content = objStreamReader.ReadToEnd();
-                                        objStreamReader.Close();
-                                        objStreamReader.Dispose();
-                                        content = content.Replace("@firstname", fName).Replace("@lastname", lName).Replace("@email", email).Replace("@company", CName).Replace("@jobrole", SGACommon.GetJobRole(System.Convert.ToInt32(jobRoleId))).Replace("@ip", HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]);
-                                        MailSending.SendMail(ConfigurationManager.AppSettings["nameDisplay"].ToString(), fromAddress, ConfigurationManager.AppSettings["infusionTo"].ToString(), subject, content, ConfigurationManager.AppSettings["infusionCC"].ToString());
+                                        //subject = "New user registration email";
+                                        //System.IO.StreamReader objStreamReader = System.IO.File.OpenText(HttpContext.Current.Server.MapPath("~/css/register.htm"));
+                                        //string content = objStreamReader.ReadToEnd();
+                                        //objStreamReader.Close();
+                                        //objStreamReader.Dispose();
+                                        //content = content.Replace("@firstname", fName).Replace("@lastname", lName).Replace("@email", email).Replace("@company", CName).Replace("@jobrole", SGACommon.GetJobRole(System.Convert.ToInt32(jobRoleId))).Replace("@ip", HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]);
+                                        //MailSending.SendMail(ConfigurationManager.AppSettings["nameDisplay"].ToString(), fromAddress, ConfigurationManager.AppSettings["infusionTo"].ToString(), subject, content, ConfigurationManager.AppSettings["infusionCC"].ToString());
                                     }
                                     userInsert = true;
                                 }

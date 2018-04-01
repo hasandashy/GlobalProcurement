@@ -104,7 +104,7 @@
                                             <li><a href="#tabs-3">Permissions </a></li>
                                             <li><a href="#tabs-4">User Tests</a></li>
                                             <li><a href="#tabs-5">PKE Test</a></li>
-                                           <%-- <li><a href="#tabs-6">PSA Test</a></li>
+                                            <%-- <li><a href="#tabs-6">PSA Test</a></li>
                                             <li><a href="#tabs-7">BA Test</a></li>
                                             <li><a href="#tabs-8">NP Test</a></li>
                                             <li><a href="#tabs-9">MP Test</a></li>
@@ -112,7 +112,7 @@
 
                                             <li><a href="#tabs-6">Add User</a></li>
                                             <li><a href="#tabs-7">Import</a></li>
-                                          <%--  <li><a href="#tabs-13">DNA Assess</a></li>
+                                            <%--  <li><a href="#tabs-13">DNA Assess</a></li>
                                             <li><a href="#tabs-14">SCKE Assess</a></li>
                                             <li><a href="#tabs-15">SCSA Assess</a></li>
                                             <li><a href="#tabs-16">CMSA Assess</a></li>
@@ -371,18 +371,15 @@
                                                                 <td>
                                                                     <asp:DropDownList ID="ddlEditJobRole" CssClass="styled" runat="server">
                                                                         <asp:ListItem Value="0">Job role best described as ...</asp:ListItem>
-                                                                        <asp:ListItem Value="1">Analyst</asp:ListItem>
-                                                                        <asp:ListItem Value="2">Procurement Support</asp:ListItem>
-                                                                        <asp:ListItem Value="3">Strategic Sourcing</asp:ListItem>
-                                                                        <asp:ListItem Value="4">Vendor Manager/ Supplier Relationship Manager</asp:ListItem>
-                                                                        <asp:ListItem Value="5">Category Manager</asp:ListItem>
-                                                                        <asp:ListItem Value="6">Procurement Leader</asp:ListItem>
-                                                                        <asp:ListItem Value="7">Supply Chain</asp:ListItem>
-                                                                        <asp:ListItem Value="8">Non-Procurement: CXO</asp:ListItem>
-                                                                        <asp:ListItem Value="9">Non-Procurement: Director</asp:ListItem>
-                                                                        <asp:ListItem Value="10">Non-Procurement: Manager</asp:ListItem>
-                                                                        <asp:ListItem Value="11">Non-Procurement: Professional</asp:ListItem>
-                                                                        <asp:ListItem Value="12">Non-Procurement: Trainee</asp:ListItem>
+                                                                        <asp:ListItem Value="1">Procurement Officer</asp:ListItem>
+                                                                        <asp:ListItem Value="2">Procurement Analyst</asp:ListItem>
+                                                                        <asp:ListItem Value="3">Procurement Advisor</asp:ListItem>
+                                                                        <asp:ListItem Value="4">Procurement Specialist</asp:ListItem>
+                                                                        <asp:ListItem Value="5">Contract Manager</asp:ListItem>
+                                                                        <asp:ListItem Value="6">Contract Manager (including procurement)</asp:ListItem>
+                                                                        <asp:ListItem Value="7">Category Manager</asp:ListItem>
+                                                                        <asp:ListItem Value="8">Procurement Director</asp:ListItem>
+                                                                        <asp:ListItem Value="9">Other</asp:ListItem>
                                                                     </asp:DropDownList></td>
                                                                 <td class="txtrht">Password</td>
                                                                 <td>
@@ -1080,7 +1077,7 @@
                                                                         <input type="checkbox" id="chkSga" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("sgaResult") %>' />
                                                                     </ItemTemplate>
                                                                 </asp:TemplateColumn>
-                                                               <%-- <asp:TemplateColumn HeaderText="SSA Result" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
+                                                                <%-- <asp:TemplateColumn HeaderText="SSA Result" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
                                                                     <ItemTemplate>
                                                                         <input type="checkbox" id="chkTna" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("tnaResult") %>' />
                                                                     </ItemTemplate>
@@ -1224,13 +1221,14 @@
                                                                 <asp:BoundColumn DataField="email" HeaderText="Email" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="20%" HeaderStyle-Width="20%"></asp:BoundColumn>
                                                                 <asp:BoundColumn DataField="company" HeaderText="Company" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="10%" HeaderStyle-Width="10%"></asp:BoundColumn>
                                                                 <asp:BoundColumn DataField="SGATest" HeaderText="PKE" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" ItemStyle-Width="10%" HeaderStyle-Width="10%"></asp:BoundColumn>
-                                                               <%-- <asp:BoundColumn DataField="SSAtest" HeaderText="PSA" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" ItemStyle-Width="10%" HeaderStyle-Width="10%"></asp:BoundColumn>
+                                                                <%-- <asp:BoundColumn DataField="SSAtest" HeaderText="PSA" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" ItemStyle-Width="10%" HeaderStyle-Width="10%"></asp:BoundColumn>
                                                                 <asp:BoundColumn DataField="BAtest" HeaderStyle-HorizontalAlign="Center" HeaderText="BA" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="10%" HeaderStyle-Width="10%"></asp:BoundColumn>
                                                                 <asp:BoundColumn DataField="NPtest" HeaderStyle-HorizontalAlign="Center" HeaderText="NP" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="10%" HeaderStyle-Width="10%"></asp:BoundColumn>
                                                                 <asp:BoundColumn DataField="MPtest" HeaderStyle-HorizontalAlign="Center" HeaderText="MP" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="10%" HeaderStyle-Width="10%"></asp:BoundColumn>
                                                                 <asp:BoundColumn DataField="SCKEtest" HeaderStyle-HorizontalAlign="Center" HeaderText="MP" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="10%" HeaderStyle-Width="10%"></asp:BoundColumn>
                                                                 <asp:BoundColumn DataField="SCSAtest" HeaderStyle-HorizontalAlign="Center" HeaderText="MP" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="10%" HeaderStyle-Width="10%"></asp:BoundColumn>
-                                                          --%>  </Columns>
+                                                                --%>
+                                                            </Columns>
                                                         </asp:DataGrid>
                                                     </td>
                                                 </tr>
@@ -1341,7 +1339,7 @@
                                                           <%--  <a target="_blank" href="ShowCMCPdf.aspx?id=<%#Eval("testId") %>&userId=<%#Eval("userId") %>">
                                                                 <img src="../innerimages/icon-pdf.gif" style="height: 25px; width: 25px;" alt="" /></a>
                                                                         &nbsp;--%>
-                                                            <asp:ImageButton ID="iBtnGraph" runat="server" CausesValidation="false" AlternateText="Graph" Style="height: 25px; width: 25px;" CommandArgument='<%#Eval("testId") %>' CommandName="Graph" ToolTip="Graph" ImageUrl="~/webadmin/images/img-graph-icon.gif" />
+                                                                        <asp:ImageButton ID="iBtnGraph" runat="server" CausesValidation="false" AlternateText="Graph" Style="height: 25px; width: 25px;" CommandArgument='<%#Eval("testId") %>' CommandName="Graph" ToolTip="Graph" ImageUrl="~/webadmin/images/img-graph-icon.gif" />
                                                                         &nbsp;
                                                             <asp:ImageButton ID="iBtnEdit" runat="server" CausesValidation="false" AlternateText="Edit" Style="height: 25px; width: 25px;" CommandArgument='<%#Eval("testId") %>' CommandName="Edit" ToolTip="Edit" ImageUrl="~/webadmin/images/edit.png" />
                                                                         &nbsp;
@@ -1354,7 +1352,7 @@
                                                 </tr>
                                             </table>
                                         </div>
-                                       
+
                                         <div id="tabs-6">
                                             <table width="99%" border="0" align="center" cellpadding="0" cellspacing="0">
                                                 <tr>
@@ -1378,10 +1376,253 @@
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td class="txtrht">Company Name</td>
+                                                                <td class="txtrht">Country</td>
                                                                 <td>
-                                                                    <input type="text" autocomplete="off" name="txtCompanyName" id="txtCompanyName" runat="server" maxlength="100" />
-                                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" SetFocusOnError="true" CssClass="error" ControlToValidate="txtCompanyName" ValidationGroup="add" Text="*"></asp:RequiredFieldValidator>
+                                                                    <asp:DropDownList ID="ddlCountry" runat="server" class="styled">
+                                                                        <asp:ListItem>Australia</asp:ListItem>
+                                                                        <asp:ListItem>Afghanistan</asp:ListItem>
+                                                                        <asp:ListItem>Aland Islands</asp:ListItem>
+                                                                        <asp:ListItem>Albania</asp:ListItem>
+                                                                        <asp:ListItem>American Samoa</asp:ListItem>
+                                                                        <asp:ListItem>Andorra</asp:ListItem>
+                                                                        <asp:ListItem>Angola</asp:ListItem>
+                                                                        <asp:ListItem>Anguilla</asp:ListItem>
+                                                                        <asp:ListItem>Antarctica</asp:ListItem>
+                                                                        <asp:ListItem>Antigua and Barbuda</asp:ListItem>
+                                                                        <asp:ListItem>Argentina</asp:ListItem>
+                                                                        <asp:ListItem>Armenia</asp:ListItem>
+                                                                        <asp:ListItem>Aruba</asp:ListItem>
+                                                                        <asp:ListItem>Austria</asp:ListItem>
+                                                                        <asp:ListItem>Azerbaijan</asp:ListItem>
+                                                                        <asp:ListItem>Bahamas</asp:ListItem>
+                                                                        <asp:ListItem>Bahrain</asp:ListItem>
+                                                                        <asp:ListItem>Bangladesh</asp:ListItem>
+                                                                        <asp:ListItem>Barbados</asp:ListItem>
+                                                                        <asp:ListItem>Belarus</asp:ListItem>
+                                                                        <asp:ListItem>Belgium</asp:ListItem>
+                                                                        <asp:ListItem>Belize</asp:ListItem>
+                                                                        <asp:ListItem>Benin</asp:ListItem>
+                                                                        <asp:ListItem>Bermuda</asp:ListItem>
+                                                                        <asp:ListItem>Bhutan</asp:ListItem>
+                                                                        <asp:ListItem>Bolivia</asp:ListItem>
+                                                                        <asp:ListItem>Bosnia and Herzegovina</asp:ListItem>
+                                                                        <asp:ListItem>Botswana</asp:ListItem>
+                                                                        <asp:ListItem>Bouvet Island</asp:ListItem>
+                                                                        <asp:ListItem>Brazil</asp:ListItem>
+                                                                        <asp:ListItem>British Indian Ocean Territory</asp:ListItem>
+                                                                        <asp:ListItem>British Virgin Islands</asp:ListItem>
+                                                                        <asp:ListItem>Brunei</asp:ListItem>
+                                                                        <asp:ListItem>Bulgaria</asp:ListItem>
+                                                                        <asp:ListItem>Burkina Faso</asp:ListItem>
+                                                                        <asp:ListItem>Burundi</asp:ListItem>
+                                                                        <asp:ListItem>Cambodia</asp:ListItem>
+                                                                        <asp:ListItem>Cameroon</asp:ListItem>
+                                                                        <asp:ListItem>Canada</asp:ListItem>
+                                                                        <asp:ListItem>Cape Verde</asp:ListItem>
+                                                                        <asp:ListItem>Cayman Islands</asp:ListItem>
+                                                                        <asp:ListItem>Central African Republic</asp:ListItem>
+                                                                        <asp:ListItem>Chad</asp:ListItem>
+                                                                        <asp:ListItem>Chile</asp:ListItem>
+                                                                        <asp:ListItem>China</asp:ListItem>
+                                                                        <asp:ListItem>Christmas Island</asp:ListItem>
+                                                                        <asp:ListItem>Cocos (Keeling) Islands</asp:ListItem>
+                                                                        <asp:ListItem>Colombia</asp:ListItem>
+                                                                        <asp:ListItem>Congo</asp:ListItem>
+                                                                        <asp:ListItem>Cook Islands</asp:ListItem>
+                                                                        <asp:ListItem>Costa Rica</asp:ListItem>
+                                                                        <asp:ListItem>Croatia</asp:ListItem>
+                                                                        <asp:ListItem>Cuba</asp:ListItem>
+                                                                        <asp:ListItem>Cyprus</asp:ListItem>
+                                                                        <asp:ListItem>Czech Republic</asp:ListItem>
+                                                                        <asp:ListItem>Democratic Republic of Congo</asp:ListItem>
+                                                                        <asp:ListItem>Denmark</asp:ListItem>
+                                                                        <asp:ListItem>Disputed Territory</asp:ListItem>
+                                                                        <asp:ListItem>Djibouti</asp:ListItem>
+                                                                        <asp:ListItem>Dominica</asp:ListItem>
+                                                                        <asp:ListItem>Dominican Republic</asp:ListItem>
+                                                                        <asp:ListItem>East Timor</asp:ListItem>
+                                                                        <asp:ListItem>Ecuador</asp:ListItem>
+                                                                        <asp:ListItem>Egypt</asp:ListItem>
+                                                                        <asp:ListItem>El Salvador</asp:ListItem>
+                                                                        <asp:ListItem>Equatorial Guinea</asp:ListItem>
+                                                                        <asp:ListItem>Eritrea</asp:ListItem>
+                                                                        <asp:ListItem>Estonia</asp:ListItem>
+                                                                        <asp:ListItem>Ethiopia</asp:ListItem>
+                                                                        <asp:ListItem>Falkland Islands</asp:ListItem>
+                                                                        <asp:ListItem>Faroe Islands</asp:ListItem>
+                                                                        <asp:ListItem>Federated States of Micronesia</asp:ListItem>
+                                                                        <asp:ListItem>Fiji</asp:ListItem>
+                                                                        <asp:ListItem>Finland</asp:ListItem>
+                                                                        <asp:ListItem>France</asp:ListItem>
+                                                                        <asp:ListItem>French Guyana</asp:ListItem>
+                                                                        <asp:ListItem>French Polynesia</asp:ListItem>
+                                                                        <asp:ListItem>French Southern Territories</asp:ListItem>
+                                                                        <asp:ListItem>Gabon</asp:ListItem>
+                                                                        <asp:ListItem>Gambia</asp:ListItem>
+                                                                        <asp:ListItem>Georgia</asp:ListItem>
+                                                                        <asp:ListItem>Germany</asp:ListItem>
+                                                                        <asp:ListItem>Ghana</asp:ListItem>
+                                                                        <asp:ListItem>Gibraltar</asp:ListItem>
+                                                                        <asp:ListItem>Greece</asp:ListItem>
+                                                                        <asp:ListItem>Greenland</asp:ListItem>
+                                                                        <asp:ListItem>Grenada</asp:ListItem>
+                                                                        <asp:ListItem>Guadeloupe</asp:ListItem>
+                                                                        <asp:ListItem>Guam</asp:ListItem>
+                                                                        <asp:ListItem>Guatemala</asp:ListItem>
+                                                                        <asp:ListItem>Guinea</asp:ListItem>
+                                                                        <asp:ListItem>Guinea-Bissau</asp:ListItem>
+                                                                        <asp:ListItem>Guyana</asp:ListItem>
+                                                                        <asp:ListItem>Haiti</asp:ListItem>
+                                                                        <asp:ListItem>Heard Island and McDonald Islands</asp:ListItem>
+                                                                        <asp:ListItem>Honduras</asp:ListItem>
+                                                                        <asp:ListItem>Hong Kong</asp:ListItem>
+                                                                        <asp:ListItem>Hungary</asp:ListItem>
+                                                                        <asp:ListItem>Iceland</asp:ListItem>
+                                                                        <asp:ListItem>India</asp:ListItem>
+                                                                        <asp:ListItem>Indonesia</asp:ListItem>
+                                                                        <asp:ListItem>Iran</asp:ListItem>
+                                                                        <asp:ListItem>Iraq</asp:ListItem>
+                                                                        <asp:ListItem>Iraq-Saudi Arabia Neutral Zone</asp:ListItem>
+                                                                        <asp:ListItem>Ireland</asp:ListItem>
+                                                                        <asp:ListItem>Israel</asp:ListItem>
+                                                                        <asp:ListItem>Italy</asp:ListItem>
+                                                                        <asp:ListItem>Ivory Coast</asp:ListItem>
+                                                                        <asp:ListItem>Jamaica</asp:ListItem>
+                                                                        <asp:ListItem>Japan</asp:ListItem>
+                                                                        <asp:ListItem>Jordan</asp:ListItem>
+                                                                        <asp:ListItem>Kazakhstan</asp:ListItem>
+                                                                        <asp:ListItem>Kenya</asp:ListItem>
+                                                                        <asp:ListItem>Kiribati</asp:ListItem>
+                                                                        <asp:ListItem>Kuwait</asp:ListItem>
+                                                                        <asp:ListItem>Kyrgyz Republic</asp:ListItem>
+                                                                        <asp:ListItem>Laos</asp:ListItem>
+                                                                        <asp:ListItem>Latvia</asp:ListItem>
+                                                                        <asp:ListItem>Lebanon</asp:ListItem>
+                                                                        <asp:ListItem>Lesotho</asp:ListItem>
+                                                                        <asp:ListItem>Liberia</asp:ListItem>
+                                                                        <asp:ListItem>Libya</asp:ListItem>
+                                                                        <asp:ListItem>Liechtenstein</asp:ListItem>
+                                                                        <asp:ListItem>Lithuania</asp:ListItem>
+                                                                        <asp:ListItem>Luxembourg</asp:ListItem>
+                                                                        <asp:ListItem>Macau</asp:ListItem>
+                                                                        <asp:ListItem>Macedonia</asp:ListItem>
+                                                                        <asp:ListItem>Madagascar</asp:ListItem>
+                                                                        <asp:ListItem>Malawi</asp:ListItem>
+                                                                        <asp:ListItem>Malaysia</asp:ListItem>
+                                                                        <asp:ListItem>Maldives</asp:ListItem>
+                                                                        <asp:ListItem>Mali</asp:ListItem>
+                                                                        <asp:ListItem>Malta</asp:ListItem>
+                                                                        <asp:ListItem>Marshall Islands</asp:ListItem>
+                                                                        <asp:ListItem>Martinique</asp:ListItem>
+                                                                        <asp:ListItem>Mauritania</asp:ListItem>
+                                                                        <asp:ListItem>Mauritius</asp:ListItem>
+                                                                        <asp:ListItem>Mayotte</asp:ListItem>
+                                                                        <asp:ListItem>Mexico</asp:ListItem>
+                                                                        <asp:ListItem>Moldova</asp:ListItem>
+                                                                        <asp:ListItem>Monaco</asp:ListItem>
+                                                                        <asp:ListItem>Mongolia</asp:ListItem>
+                                                                        <asp:ListItem>Montenegro</asp:ListItem>
+                                                                        <asp:ListItem>Montserrat</asp:ListItem>
+                                                                        <asp:ListItem>Morocco</asp:ListItem>
+                                                                        <asp:ListItem>Mozambique</asp:ListItem>
+                                                                        <asp:ListItem>Myanmar</asp:ListItem>
+                                                                        <asp:ListItem>Namibia</asp:ListItem>
+                                                                        <asp:ListItem>Nauru</asp:ListItem>
+                                                                        <asp:ListItem>Nepal</asp:ListItem>
+                                                                        <asp:ListItem>Netherlands Antilles</asp:ListItem>
+                                                                        <asp:ListItem>Netherlands</asp:ListItem>
+                                                                        <asp:ListItem>New Caledonia</asp:ListItem>
+                                                                        <asp:ListItem>New Zealand</asp:ListItem>
+                                                                        <asp:ListItem>Nicaragua</asp:ListItem>
+                                                                        <asp:ListItem>Niger</asp:ListItem>
+                                                                        <asp:ListItem>Nigeria</asp:ListItem>
+                                                                        <asp:ListItem>Niue</asp:ListItem>
+                                                                        <asp:ListItem>Norfolk Island</asp:ListItem>
+                                                                        <asp:ListItem>North Korea</asp:ListItem>
+                                                                        <asp:ListItem>Northern Mariana Islands</asp:ListItem>
+                                                                        <asp:ListItem>Norway</asp:ListItem>
+                                                                        <asp:ListItem>Oman</asp:ListItem>
+                                                                        <asp:ListItem>Pakistan</asp:ListItem>
+                                                                        <asp:ListItem>Palau</asp:ListItem>
+                                                                        <asp:ListItem>Palestinian Territories</asp:ListItem>
+                                                                        <asp:ListItem>Panama</asp:ListItem>
+                                                                        <asp:ListItem>Papua New Guinea</asp:ListItem>
+                                                                        <asp:ListItem>Paraguay</asp:ListItem>
+                                                                        <asp:ListItem>Peru</asp:ListItem>
+                                                                        <asp:ListItem>Philippines</asp:ListItem>
+                                                                        <asp:ListItem>Pitcairn Islands</asp:ListItem>
+                                                                        <asp:ListItem>Poland</asp:ListItem>
+                                                                        <asp:ListItem>Portugal</asp:ListItem>
+                                                                        <asp:ListItem>Puerto Rico</asp:ListItem>
+                                                                        <asp:ListItem>Qatar</asp:ListItem>
+                                                                        <asp:ListItem>Reunion</asp:ListItem>
+                                                                        <asp:ListItem>Romania</asp:ListItem>
+                                                                        <asp:ListItem>Russia</asp:ListItem>
+                                                                        <asp:ListItem>Rwanda</asp:ListItem>
+                                                                        <asp:ListItem>Saint Helena and Dependencies</asp:ListItem>
+                                                                        <asp:ListItem>Saint Kitts &amp; Nevis</asp:ListItem>
+                                                                        <asp:ListItem>Saint Lucia</asp:ListItem>
+                                                                        <asp:ListItem>Saint Pierre and Miquelon</asp:ListItem>
+                                                                        <asp:ListItem>Samoa</asp:ListItem>
+                                                                        <asp:ListItem>San Marino</asp:ListItem>
+                                                                        <asp:ListItem>Sao Tome and Principe</asp:ListItem>
+                                                                        <asp:ListItem>Saudi Arabia</asp:ListItem>
+                                                                        <asp:ListItem>Senegal</asp:ListItem>
+                                                                        <asp:ListItem>Serbia</asp:ListItem>
+                                                                        <asp:ListItem>Seychelles</asp:ListItem>
+                                                                        <asp:ListItem>Sierra Leone</asp:ListItem>
+                                                                        <asp:ListItem>Singapore</asp:ListItem>
+                                                                        <asp:ListItem>Slovakia</asp:ListItem>
+                                                                        <asp:ListItem>Slovenia</asp:ListItem>
+                                                                        <asp:ListItem>Solomon Islands</asp:ListItem>
+                                                                        <asp:ListItem>Somalia</asp:ListItem>
+                                                                        <asp:ListItem>South Africa</asp:ListItem>
+                                                                        <asp:ListItem>South Georgia and the South Sandwich Islands</asp:ListItem>
+                                                                        <asp:ListItem>South Korea</asp:ListItem>
+                                                                        <asp:ListItem>Spain</asp:ListItem>
+                                                                        <asp:ListItem>Spratly Islands</asp:ListItem>
+                                                                        <asp:ListItem>Sri Lanka</asp:ListItem>
+                                                                        <asp:ListItem>Sudan</asp:ListItem>
+                                                                        <asp:ListItem>Suriname</asp:ListItem>
+                                                                        <asp:ListItem>Svalbard and Jan Mayen Islands</asp:ListItem>
+                                                                        <asp:ListItem>Swaziland</asp:ListItem>
+                                                                        <asp:ListItem>Sweden</asp:ListItem>
+                                                                        <asp:ListItem>Switzerland</asp:ListItem>
+                                                                        <asp:ListItem>Syria</asp:ListItem>
+                                                                        <asp:ListItem>Taiwan</asp:ListItem>
+                                                                        <asp:ListItem>Tajikistan</asp:ListItem>
+                                                                        <asp:ListItem>Tanzania</asp:ListItem>
+                                                                        <asp:ListItem>Thailand</asp:ListItem>
+                                                                        <asp:ListItem>Togo</asp:ListItem>
+                                                                        <asp:ListItem>Tokelau</asp:ListItem>
+                                                                        <asp:ListItem>Tonga</asp:ListItem>
+                                                                        <asp:ListItem>Trinidad and Tobago</asp:ListItem>
+                                                                        <asp:ListItem>Tunisia</asp:ListItem>
+                                                                        <asp:ListItem>Turkey</asp:ListItem>
+                                                                        <asp:ListItem>Turkmenistan</asp:ListItem>
+                                                                        <asp:ListItem>Turks and Caicos Islands</asp:ListItem>
+                                                                        <asp:ListItem>Tuvalu</asp:ListItem>
+                                                                        <asp:ListItem>US Virgin Islands</asp:ListItem>
+                                                                        <asp:ListItem>Uganda</asp:ListItem>
+                                                                        <asp:ListItem>Ukraine</asp:ListItem>
+                                                                        <asp:ListItem>Union of the Comoros</asp:ListItem>
+                                                                        <asp:ListItem>United Arab Emirates</asp:ListItem>
+                                                                        <asp:ListItem>United Kingdom</asp:ListItem>
+                                                                        <asp:ListItem>United States Minor Outlying Islands</asp:ListItem>
+                                                                        <asp:ListItem>United States</asp:ListItem>
+                                                                        <asp:ListItem>Uruguay</asp:ListItem>
+                                                                        <asp:ListItem>Uzbekistan</asp:ListItem>
+                                                                        <asp:ListItem>Vanuatu</asp:ListItem>
+                                                                        <asp:ListItem>Vatican City</asp:ListItem>
+                                                                        <asp:ListItem>Venezuela</asp:ListItem>
+                                                                        <asp:ListItem>Vietnam</asp:ListItem>
+                                                                        <asp:ListItem>Wallis and Futuna Islands</asp:ListItem>
+                                                                        <asp:ListItem>Western Sahara</asp:ListItem>
+                                                                        <asp:ListItem>Yemen</asp:ListItem>
+                                                                        <asp:ListItem>Zambia</asp:ListItem>
+                                                                        <asp:ListItem>Zimbabwe</asp:ListItem>
+                                                                    </asp:DropDownList>
+                                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" SetFocusOnError="true" CssClass="error" ControlToValidate="ddlCountry" ValidationGroup="add" Text="*"></asp:RequiredFieldValidator>
                                                                 </td>
                                                                 <td class="txtrht">Email Address</td>
                                                                 <td>
@@ -1396,25 +1637,83 @@
                                                                 <td>
                                                                     <asp:DropDownList ID="ddlJobRole" CssClass="styled" runat="server">
                                                                         <asp:ListItem Value="0">Job role best described as ...</asp:ListItem>
-                                                                        <asp:ListItem Value="1">Analyst</asp:ListItem>
-                                                                        <asp:ListItem Value="2">Procurement Support</asp:ListItem>
-                                                                        <asp:ListItem Value="3">Strategic Sourcing</asp:ListItem>
-                                                                        <asp:ListItem Value="4">Vendor Manager/ Supplier Relationship Manager</asp:ListItem>
-                                                                        <asp:ListItem Value="5">Category Manager</asp:ListItem>
-                                                                        <asp:ListItem Value="6">Procurement Leader</asp:ListItem>
-                                                                        <asp:ListItem Value="7">Supply Chain</asp:ListItem>
-                                                                        <asp:ListItem Value="8">Non-Procurement: CXO</asp:ListItem>
-                                                                        <asp:ListItem Value="9">Non-Procurement: Director</asp:ListItem>
-                                                                        <asp:ListItem Value="10">Non-Procurement: Manager</asp:ListItem>
-                                                                        <asp:ListItem Value="11">Non-Procurement: Professional</asp:ListItem>
-                                                                        <asp:ListItem Value="12">Non-Procurement: Trainee</asp:ListItem>
+                                                                        <asp:ListItem Value="1">Procurement Officer</asp:ListItem>
+                                                                        <asp:ListItem Value="2">Procurement Analyst</asp:ListItem>
+                                                                        <asp:ListItem Value="3">Procurement Advisor</asp:ListItem>
+                                                                        <asp:ListItem Value="4">Procurement Specialist</asp:ListItem>
+                                                                        <asp:ListItem Value="5">Contract Manager</asp:ListItem>
+                                                                        <asp:ListItem Value="6">Contract Manager (including procurement)</asp:ListItem>
+                                                                        <asp:ListItem Value="7">Category Manager</asp:ListItem>
+                                                                        <asp:ListItem Value="8">Procurement Director</asp:ListItem>
+                                                                        <asp:ListItem Value="9">Other</asp:ListItem>
                                                                     </asp:DropDownList>
                                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" SetFocusOnError="true" ControlToValidate="ddlJobRole" CssClass="error" InitialValue="0" ValidationGroup="add" Text="*"></asp:RequiredFieldValidator>
                                                                 </td>
-                                                                <td class="txtrht">Password</td>
+                                                              <%--  <td class="txtrht">Password</td>
                                                                 <td>
                                                                     <input type="text" autocomplete="off" name="txtPassword" id="txtPassword" runat="server" maxlength="20" />
                                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" SetFocusOnError="true" ControlToValidate="txtPassword" CssClass="error" ValidationGroup="add" Text="*"></asp:RequiredFieldValidator>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                               --%>
+                                                                     <td class="txtrht">Membership Association</td>
+                                                                 <td>
+                                                                    <asp:DropDownList ID="ddlMembership" CssClass="styled" runat="server">
+                                                                        <asp:ListItem Value="0">Membership Association *</asp:ListItem>
+                                                                        <asp:ListItem Value="AACAM">AACAM - Asociación Argentina de Compras Administracion de Materiales y Logistica</asp:ListItem>
+                                                                        <asp:ListItem Value="ABCAL">ABCAL - Association Belge des Cardes d’Achat et de Logistique</asp:ListItem>
+                                                                        <asp:ListItem Value="ADACI">ADACI - Associazione Italiana Acquiste E Supply Management</asp:ListItem>
+                                                                        <asp:ListItem Value="AERCE">AERCE - Associación Espanola de Professionales de Compras, Contractión y Aprovisionamientos</asp:ListItem>
+                                                                        <asp:ListItem Value="APCADEC">APCADEC - Portuguese association for Purchasing and Supply Management</asp:ListItem>
+                                                                        <asp:ListItem Value="APPI">APPI - Asosiasi Pengacara Pengadaan Indonesia</asp:ListItem>
+                                                                        <asp:ListItem Value="APROCAL">APROCAL - Asociación de Profesionales en Compras, Abastecimiento y Logística, A.C.</asp:ListItem>
+                                                                        <asp:ListItem Value="BME">BME - Bundesverband Materialwirtschaft, Einkauf und Logistik</asp:ListItem>
+                                                                        <asp:ListItem Value="BMOE">BMOE - Bundesverband Materialwirtschaft, Einkauf und Logistik in Osterreich</asp:ListItem>
+                                                                        <asp:ListItem Value="CAP">CAP - Croatian Association of Purchasing</asp:ListItem>
+                                                                        <asp:ListItem Value="CAPP">CAPP - Caribbean Association of Procurement Professionals</asp:ListItem>
+                                                                        <asp:ListItem Value="CBEC">CBEC - Brazilian Council of Purchasing Executives</asp:ListItem>
+                                                                        <asp:ListItem Value="CFLP">CFLP - China Federation of Logistics and Purchasing</asp:ListItem>
+                                                                        <asp:ListItem Value="CIPSMN">CIPSMN - Chartered Institute of Purchasing & Supply Management of Nigeria</asp:ListItem>
+                                                                        <asp:ListItem Value="DILF">DILF - Danish Purchasing and Logistics Forum</asp:ListItem>
+                                                                        <asp:ListItem Value="Forum Einkauf">Forum Einkauf - Forum Einkauf</asp:ListItem>
+                                                                        <asp:ListItem Value="FZUP">FZUP - Federation of Purchases and Supply Management of Russia</asp:ListItem>
+                                                                        <asp:ListItem Value="HALPIM">HALPIM - Hungarian Association of Logistics, Purchasing and Inventory Management</asp:ListItem>
+                                                                        <asp:ListItem Value="HPI">HPI - Hellenic Purchasing Institute</asp:ListItem>
+                                                                        <asp:ListItem Value="IAPI">IAPI - Ikatan Ahli Pengadaan Indonesia</asp:ListItem>
+                                                                        <asp:ListItem Value="IFPSM">IFPSM - International Federation of Purchasing & Supply Management</asp:ListItem>
+                                                                        <asp:ListItem Value="IIMM">IIMM - Indian Institute of Materials Management</asp:ListItem>
+                                                                        <asp:ListItem Value="IIPMM">IIPMM - Irish Institute of Purchasing and Materials Management</asp:ListItem>
+                                                                        <asp:ListItem Value="IPLMA">IPLMA - Israeli Purchasing & Logistics Managers Association</asp:ListItem>
+                                                                        <asp:ListItem Value="IPPU">IPPU - Institute of Procurement Professionals of Uganda</asp:ListItem>
+                                                                        <asp:ListItem Value="IPSHK">IPSHK - The Institute of Purchasing and Supply of Hong Kong</asp:ListItem>
+                                                                        <asp:ListItem Value="ISMM">ISMM - Institute of Supply and Materials Management</asp:ListItem>
+                                                                        <asp:ListItem Value="JMMA">JMMA - Japan Materials Management Association</asp:ListItem>
+                                                                        <asp:ListItem Value="KISM">KISM - Kenya Institute of Supplies Management</asp:ListItem>
+                                                                        <asp:ListItem Value="LOGY">LOGY - Finnish Association of Purchasing and Logistics</asp:ListItem>
+                                                                        <asp:ListItem Value="MIPMM">MIPMM - Malaysian Institute of Purchasing & Materials Management</asp:ListItem>
+                                                                        <asp:ListItem Value="MIPS">MIPS - Malawi Institute of Procurement and Supply</asp:ListItem>
+                                                                        <asp:ListItem Value="NEVI">NEVI - Nederlandse Vereniging voor Inkoop Management</asp:ListItem>
+                                                                        <asp:ListItem Value="NIMA">NIMA - Norsk Forbund for Innkjøp og Logistikk (The Norwegian Association of Purchasing and Logistics)</asp:ListItem>
+                                                                        <asp:ListItem Value="PASIA">PASIA - Procurement and Supply Institute of Asia</asp:ListItem>
+                                                                        <asp:ListItem Value="PISM">PISM - Philippine Institute for Supply Management</asp:ListItem>
+                                                                        <asp:ListItem Value="PROCURE">PROCURE - procure.ch Swiss Association for Purchasing and Supply Management</asp:ListItem>
+                                                                        <asp:ListItem Value="PROLOG">PROLOG - Estonian Purchasing and Supply Chain Management Association</asp:ListItem>
+                                                                        <asp:ListItem Value="PSCMT">PSCMT - Purchasing and Supply Chain Management Association of Thailand</asp:ListItem>
+                                                                        <asp:ListItem Value="PSML">PSML - Polskie Stowarzyszenie Menedżerów Logistyki</asp:ListItem>
+                                                                        <asp:ListItem Value="SAPPP">SAPPP - Serbian Association of Professionals in Public Procurement</asp:ListItem>
+                                                                        <asp:ListItem Value="SCMA">SCMA - Supply Chain Management Association</asp:ListItem>
+                                                                        <asp:ListItem Value="SILF">SILF - Swedish Purchasing and Logistic Association</asp:ListItem>
+                                                                        <asp:ListItem Value="SIMM">SIMM - Singapore Institute of Materials Management</asp:ListItem>
+                                                                        <asp:ListItem Value="SMIT">SMIT - Supply Management Institute, Taiwan</asp:ListItem>
+                                                                        <asp:ListItem Value="SSCPA">SSCPA - Serbian Supply Chain Professionals Association</asp:ListItem>
+                                                                        <asp:ListItem Value="TUSAYDER">TUSAYDER - TUSAYDER</asp:ListItem>
+                                                                        <asp:ListItem Value="ZNS">ZNS - Zdruzenje nabavnikov Slovenije (Slovenian Purchasing Association)</asp:ListItem>
+                                                                        <asp:ListItem Value="Other - CIPS">Other: CIPS – Chartered Institute of Purchasing & Supply</asp:ListItem>
+                                                                        <asp:ListItem Value="Other - ISM">Other: ISM – Institute of Supply Management</asp:ListItem>
+                                                                    </asp:DropDownList>
+                                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" SetFocusOnError="true" ControlToValidate="ddlMembership" CssClass="error" InitialValue="0" ValidationGroup="add" Text="*"></asp:RequiredFieldValidator>
+
                                                                 </td>
                                                             </tr>
 
@@ -1483,8 +1782,8 @@
                                                 </tr>
                                             </table>
                                         </div>
-                                      
-                                        
+
+
                                     </div>
                                 </td>
                             </tr>

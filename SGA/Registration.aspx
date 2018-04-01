@@ -9,9 +9,11 @@
     <div class="container ">
         <div class="heading two-line  marT50 marB50">
             <h2>Your invitation to participate in the inaugural <span>Global Procurement Capability Benchmark.</span></h2>
-            <p>Do you know what skills and knowledge you will need
+            <p>
+                Do you know what skills and knowledge you will need
                 <br>
-                in order to deliver tomorrow – and into the future? </p>
+                in order to deliver tomorrow – and into the future?
+            </p>
         </div>
     </div>
 
@@ -45,16 +47,19 @@
                             <div class="form-group">
 
                                 <select id="jobRole" name="jobRole" class="form-control">
-                                    <option selected value="0">Job Role best described as *</option>
-                                    <option>Procurement Officer</option>
-                                    <option>Procurement Analyst</option>
-                                    <option>Procurement Advisor</option>
-                                    <option>Procurement Specialist</option>
-                                    <option>Contract Manager</option>
-                                    <option>Contract Manager (including procurement)</option>
-                                    <option>Category Manager</option>
-                                    <option>Procurement Director</option>
-                                    <option>Other</option>
+                                    <option value="1">Analyst</option>
+                                    <option value="2">Procurement Support</option>
+                                    <option value="3">Strategic Sourcing</option>
+                                    <option value="4">Vendor Manager/ Supplier Relationship Manager</option>
+                                    <option value="5">Category Manager</option>
+                                    <option value="6">Procurement Leader</option>
+                                    <option value="7">Supply Chain</option>
+                                    <option value="8">Non-Procurement: CXO</option>
+                                    <option value="9">Non-Procurement: Director</option>
+                                    <option value="10">Non-Procurement: Manager</option>
+                                    <option value="11">Non-Procurement: Professional</option>
+                                    <option value="12">Non-Procurement: Trainee</option>
+                                    <option value="13">Other</option>
 
                                     <!--<option value="1">Analyst</option>
 		<option value="2">Procurement Support</option>
@@ -393,9 +398,4 @@
 
 
         </div>
-
-
-
-
-      
 </asp:Content>

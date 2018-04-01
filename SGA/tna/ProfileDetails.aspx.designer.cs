@@ -10,7 +10,16 @@
 namespace SGA.tna {
     
     
-    public partial class MyProfile {
+    public partial class ProfileDetails {
+        
+        /// <summary>
+        /// multiView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.MultiView multiView;
         
         /// <summary>
         /// procModel control.
@@ -19,25 +28,25 @@ namespace SGA.tna {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor procModel;
+        protected global::System.Web.UI.WebControls.View procModel;
         
         /// <summary>
-        /// reportingLine control.
+        /// reportsTo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor reportingLine;
+        protected global::System.Web.UI.WebControls.View reportsTo;
         
         /// <summary>
-        /// spenUnderInfluence control.
+        /// spendUnder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor spenUnderInfluence;
+        protected global::System.Web.UI.WebControls.View spendUnder;
         
         /// <summary>
         /// numberOfEmp control.
@@ -46,7 +55,7 @@ namespace SGA.tna {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor numberOfEmp;
+        protected global::System.Web.UI.WebControls.View numberOfEmp;
         
         /// <summary>
         /// sector control.
@@ -55,7 +64,7 @@ namespace SGA.tna {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor sector;
+        protected global::System.Web.UI.WebControls.View sector;
         
         /// <summary>
         /// jobRole control.
@@ -64,43 +73,43 @@ namespace SGA.tna {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor jobRole;
+        protected global::System.Web.UI.WebControls.View jobRole;
         
         /// <summary>
-        /// category control.
+        /// catManaged control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor category;
+        protected global::System.Web.UI.WebControls.View catManaged;
         
         /// <summary>
-        /// spendUnderYour control.
+        /// spentUnderYour control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor spendUnderYour;
+        protected global::System.Web.UI.WebControls.View spentUnderYour;
         
         /// <summary>
-        /// geoInfluence control.
+        /// GeoInfluence control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor geoInfluence;
+        protected global::System.Web.UI.WebControls.View GeoInfluence;
         
         /// <summary>
-        /// exp control.
+        /// Exp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor exp;
+        protected global::System.Web.UI.WebControls.View Exp;
         
         /// <summary>
         /// procQual control.
@@ -109,24 +118,24 @@ namespace SGA.tna {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor procQual;
+        protected global::System.Web.UI.WebControls.View procQual;
         
         /// <summary>
-        /// edu control.
+        /// Edu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor edu;
+        protected global::System.Web.UI.WebControls.View Edu;
         
         /// <summary>
-        /// prevExp control.
+        /// prevCatExp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor prevExp;
+        protected global::System.Web.UI.WebControls.View prevCatExp;
     }
 }
