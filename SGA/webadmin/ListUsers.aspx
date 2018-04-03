@@ -1700,7 +1700,7 @@
                                                                         <asp:ListItem Value="PROCURE">PROCURE - procure.ch Swiss Association for Purchasing and Supply Management</asp:ListItem>
                                                                         <asp:ListItem Value="PROLOG">PROLOG - Estonian Purchasing and Supply Chain Management Association</asp:ListItem>
                                                                         <asp:ListItem Value="PSCMT">PSCMT - Purchasing and Supply Chain Management Association of Thailand</asp:ListItem>
-                                                                        <asp:ListItem Value="PSML">PSML - Polskie Stowarzyszenie Menedżerów Logistyki</asp:ListItem>
+                                                                        <asp:ListItem Value="PSML">PSML - Polish Supply Management Leaders</asp:ListItem>
                                                                         <asp:ListItem Value="SAPPP">SAPPP - Serbian Association of Professionals in Public Procurement</asp:ListItem>
                                                                         <asp:ListItem Value="SCMA">SCMA - Supply Chain Management Association</asp:ListItem>
                                                                         <asp:ListItem Value="SILF">SILF - Swedish Purchasing and Logistic Association</asp:ListItem>

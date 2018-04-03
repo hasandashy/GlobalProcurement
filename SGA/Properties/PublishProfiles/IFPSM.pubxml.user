@@ -52,7 +52,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2015 21:01:50</publishTime>
     </File>
     <File Include="bin/SGA.dll">
-      <publishTime>04/02/2018 01:46:41</publishTime>
+      <publishTime>04/04/2018 01:51:05</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>08/20/2016 13:00:24</publishTime>
@@ -154,7 +154,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/20/2016 13:00:25</publishTime>
     </File>
     <File Include="Contribute.aspx">
-      <publishTime>04/01/2018 15:46:36</publishTime>
+      <publishTime>04/03/2018 23:45:40</publishTime>
     </File>
     <File Include="controls/ctrlCMCGraph.ascx">
       <publishTime>03/29/2018 03:13:05</publishTime>
@@ -169,7 +169,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/02/2018 01:04:19</publishTime>
     </File>
     <File Include="controls/ctrlLeftMenu.ascx">
-      <publishTime>03/23/2018 01:57:40</publishTime>
+      <publishTime>04/04/2018 01:33:15</publishTime>
     </File>
     <File Include="controls/ctrlMoreInformation.ascx">
       <publishTime>10/10/2016 10:55:47</publishTime>
@@ -235,7 +235,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/13/2017 16:58:37</publishTime>
     </File>
     <File Include="default.aspx">
-      <publishTime>03/26/2018 02:56:56</publishTime>
+      <publishTime>04/03/2018 23:52:12</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>08/20/2016 13:01:07</publishTime>
@@ -1870,7 +1870,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/22/2018 23:57:29</publishTime>
     </File>
     <File Include="Registration.aspx">
-      <publishTime>04/01/2018 15:46:00</publishTime>
+      <publishTime>04/03/2018 23:44:27</publishTime>
     </File>
     <File Include="Reset_Password.aspx">
       <publishTime>03/26/2018 19:28:06</publishTime>
@@ -1945,7 +1945,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/22/2018 23:48:38</publishTime>
     </File>
     <File Include="Test.htm">
-      <publishTime>03/26/2018 01:00:55</publishTime>
+      <publishTime>04/03/2018 23:48:11</publishTime>
     </File>
     <File Include="tna/assessment-Instructions-dimensions.aspx">
       <publishTime>03/27/2018 00:58:40</publishTime>
@@ -1957,7 +1957,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/26/2018 04:09:05</publishTime>
     </File>
     <File Include="tna/assessments-pillar-quotes.aspx">
-      <publishTime>03/27/2018 00:46:21</publishTime>
+      <publishTime>04/04/2018 00:22:35</publishTime>
     </File>
     <File Include="tna/Association.aspx">
       <publishTime>04/02/2018 01:03:35</publishTime>
@@ -2059,7 +2059,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/20/2016 13:01:03</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>03/29/2018 01:11:55</publishTime>
+      <publishTime>04/04/2018 01:51:07</publishTime>
     </File>
     <File Include="webadmin/AdminMaster.Master">
       <publishTime>08/20/2016 13:01:03</publishTime>
@@ -2099,6 +2099,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="webadmin/EditCMStest.aspx">
       <publishTime>03/27/2018 01:02:01</publishTime>
+    </File>
+    <File Include="webadmin/EditPillars.aspx">
+      <publishTime>04/04/2018 01:11:00</publishTime>
     </File>
     <File Include="webadmin/EditTemplate.aspx">
       <publishTime>08/20/2016 13:01:04</publishTime>
@@ -2320,10 +2323,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/20/2016 13:01:05</publishTime>
     </File>
     <File Include="webadmin/ListUsers.aspx">
-      <publishTime>03/29/2018 00:20:10</publishTime>
+      <publishTime>04/03/2018 23:47:50</publishTime>
     </File>
     <File Include="webadmin/Manage-diagnostic-needs-analysis.aspx">
       <publishTime>02/04/2017 08:26:29</publishTime>
+    </File>
+    <File Include="webadmin/ManageAssessmentPillars.aspx">
+      <publishTime>04/04/2018 00:29:09</publishTime>
     </File>
     <File Include="webadmin/ManageCMC.aspx">
       <publishTime>03/27/2018 01:02:30</publishTime>

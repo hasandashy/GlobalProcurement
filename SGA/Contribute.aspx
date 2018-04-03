@@ -119,7 +119,7 @@ Please complete the form below and we will be in touch.
                                     <option value="PROCURE">PROCURE - procure.ch Swiss Association for Purchasing and Supply Management</option>
                                     <option value="PROLOG">PROLOG - Estonian Purchasing and Supply Chain Management Association</option>
                                     <option value="PSCMT">PSCMT - Purchasing and Supply Chain Management Association of Thailand</option>
-                                    <option value="PSML">PSML - Polskie Stowarzyszenie Menedżerów Logistyki</option>
+                                    <option value="PSML">PSML - Polish Supply Management Leaders</option>
                                     <option value="SAPPP">SAPPP - Serbian Association of Professionals in Public Procurement</option>
                                     <option value="SCMA">SCMA - Supply Chain Management Association</option>
                                     <option value="SILF">SILF - Swedish Purchasing and Logistic Association</option>

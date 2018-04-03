@@ -243,7 +243,7 @@ an Assessment on Procurement Skills and Knowledge.
   <li> <div class="member-logo"><img title="PROCURE - procure.ch Swiss Association for Purchasing and Supply Management" alt="PROCURE - procure.ch Swiss Association for Purchasing and Supply Management" src="images/logo28.png" ></div></li>
   <li> <div class="member-logo"><img title="PROLOG - Estonian Purchasing and Supply Chain Management Association" alt="PROLOG - Estonian Purchasing and Supply Chain Management Association" src="images/logo29.png" ></div></li>
   <li> <div class="member-logo"><img title="PSCMT - Purchasing and Supply Chain Management Association of Thailand" alt="PSCMT - Purchasing and Supply Chain Management Association of Thailand" src="images/logo30.png" ></div></li>
-  <li> <div class="member-logo"><img title="PSML - Polskie Stowarzyszenie Menedżerów Logistyki" alt="PSML - Polskie Stowarzyszenie Menedżerów Logistyki" src="images/logo31.png" ></div></li>
+  <li> <div class="member-logo"><img title="PSML - Polish Supply Management Leaders" alt="PSML - Polish Supply Management Leaders" src="images/logo31.png" ></div></li>
   <li> <div class="member-logo"><img title="SAPPP - Serbian Association of Professionals in Public Procurement" alt="SAPPP - Serbian Association of Professionals in Public Procurement" src="images/logo32.png" ></div></li>
   <li> <div class="member-logo"><img title="SCMA - Supply Chain Management Association" alt="SCMA - Supply Chain Management Association" src="images/logo33.png" ></div></li>
   <li> <div class="member-logo"><img title="SILF - Swedish Purchasing and Logistic Association" alt="SILF - Swedish Purchasing and Logistic Association" src="images/logo34.png" ></div></li>

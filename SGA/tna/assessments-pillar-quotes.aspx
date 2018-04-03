@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="dis-block clearfix center marT1">
-                        <img src='<%#Eval("imagePath").ToString()%>' alt=""></div>
+                        <img src='<%# "../Images/pillarThoughts/" + Eval("ImagePath") %>' alt=""></div>
 
                 </ItemTemplate>
             </asp:ListView>

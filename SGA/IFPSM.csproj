@@ -450,6 +450,13 @@
     <Compile Include="webadmin\EditCMStest.aspx.designer.cs">
       <DependentUpon>EditCMStest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="webadmin\EditPillars.aspx.cs">
+      <DependentUpon>EditPillars.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\EditPillars.aspx.designer.cs">
+      <DependentUpon>EditPillars.aspx</DependentUpon>
+    </Compile>
     <Compile Include="webadmin\EditTemplate.aspx.cs">
       <DependentUpon>EditTemplate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -477,6 +484,13 @@
     </Compile>
     <Compile Include="webadmin\Manage-diagnostic-needs-analysis.aspx.designer.cs">
       <DependentUpon>Manage-diagnostic-needs-analysis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webadmin\ManageAssessmentPillars.aspx.cs">
+      <DependentUpon>ManageAssessmentPillars.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webadmin\ManageAssessmentPillars.aspx.designer.cs">
+      <DependentUpon>ManageAssessmentPillars.aspx</DependentUpon>
     </Compile>
     <Compile Include="webadmin\ManageCMC.aspx.cs">
       <DependentUpon>ManageCMC.aspx</DependentUpon>
@@ -1011,7 +1025,9 @@
     <None Include="webadmin\fonts\myriadpro-regular-webfont.svg" />
     <None Include="webadmin\fonts\myriadpro-regular-webfont.ttf" />
     <None Include="webadmin\fonts\myriadpro-regular-webfont.woff" />
+    <Content Include="webadmin\EditPillars.aspx" />
     <Content Include="webadmin\Manage-diagnostic-needs-analysis.aspx" />
+    <Content Include="webadmin\ManageAssessmentPillars.aspx" />
     <Content Include="webadmin\ManageJobSuggestions.aspx" />
     <Content Include="webadmin\ManagePlans.aspx" />
     <Content Include="webadmin\ManageReviewAssess.aspx" />
