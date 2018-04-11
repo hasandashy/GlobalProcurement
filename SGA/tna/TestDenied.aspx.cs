@@ -12,10 +12,7 @@ namespace SGA.tna
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
-            {
-                lblName.Text = "Hi " + SGACommon.GetName() + "!";
-            }
+           
         }
     }
 }

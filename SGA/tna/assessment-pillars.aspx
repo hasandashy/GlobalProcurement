@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="dis-block clearfix pad15 marT1 top-space">
+        <div class="menu-icon"><a href="MainMenu.aspx"><img src="../images/menu-icon.png" alt=""></a></div>
         <div class="main-heading dis-block clearfix">
             <h1>
                 <asp:Label ID="lblName" runat="server" Style="color: #F9A12A; font-size: 24px; font-family: 'HelveticaBold';"></asp:Label><span>Capability Pillars </span></h1>
@@ -23,7 +24,8 @@
             </LayoutTemplate>
             <ItemTemplate>
                  <li id="list" runat="server">
-                    <a href='assessments-pillar-quotes.aspx?pillerId=<%#Eval("topicId")%>'>
+                  <%--  <a href='assessments-pillar-quotes.aspx?pillerId=<%#Eval("topicId")%>'>--%>
+                     <a id="anchorLink" runat="server" href='#'>
                         <div class="pillers-txt"><%#Eval("topicName").ToString().Replace("<br />"," ")%>
                             <div class="starthere" id="start" runat="server" visible="false">Start here >></div>
                         </div>

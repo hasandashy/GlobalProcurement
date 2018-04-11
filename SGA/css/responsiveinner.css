@@ -1,0 +1,29 @@
+@media only screen and (max-width:420px){
+	.tab-links {
+	width: 94%;
+	margin: auto;
+}
+.tab-links ul li{ font-size:11px}
+	}
+
+@media only screen and (max-width:359px){
+body{ font-size:16px;}	
+h1,h2{    font-size: 22px;}
+.assesment-box em{right:10px}
+p {margin-bottom: 16px;line-height: 22px;}
+ .assesment-box p{ font-size:20px;}
+.assesment-box i {width: 86px;}
+.pillers-txt{ font-size:13px;}
+.heading-wrapper h1{ font-size:22px;}
+
+.tab-links ul li{ font-size:10px;}
+.tab-links {
+	width: 100%;
+	margin: auto;
+}
+.region-name-block {
+	font-size: 12px;
+}
+.tab .pad10{ padding-left:0; padding-right:0;}
+}
+

@@ -175,6 +175,14 @@ p { margin-bottom:20px; line-height:24px;}
 
 .gray-strip-fill{ background:#6d6f71; position:absolute; left:15px; top:6px; height:10px; z-index:2;}
 .width1{ width:11.11%;}
+.width2{ width:22.22%;}
+.width3{ width:33.33%;}
+.width4{ width:44.44%;}
+.width5{ width:55.55%;}
+.width6{ width:66.66%;}
+.width7{ width:77.77%;}
+.width8{ width:88.88%;}
+.width9{ width:99.99%;}
 .member-info{ margin-bottom:22px;}
 .member-info .title{ font-size:14px; font-weight:normal; font-family:'HelveticaBold'; margin:0 0 6px 0; padding-left:12px; display:inline-block; width:100%;}
 
@@ -349,3 +357,18 @@ border-right: 2px solid #fff;
 }
 
 .disable-btn{ background:#d1d2d4 !important; color:#fff !important;}
+
+/*10 april 2017*/
+.logo-group {
+	display: inline-block;
+	text-align: center;
+	vertical-align: bottom;
+	width: auto;
+}
+
+.logo-group i {
+	text-align: center;
+	clear: both;
+	display: block;
+	margin-bottom: 5px;
+}

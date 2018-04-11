@@ -348,33 +348,12 @@ namespace SGA.webadmin
         {
             if (e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.Item)
             {
-                bool isSga = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "sgaResult"));
-                //bool isTna = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "tnaResult"));
-                //bool isPmp = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "pmpResult"));
-                //bool isDmp = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "dmpResult"));
-                //bool isNP = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "npResult"));
-                //bool isCMA = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "cmaResult"));
-                //bool isDNA = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "viewDNA"));
-                //bool isSCKE = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "viewSCKEResult"));
-                //bool isSCSA = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "viewSCSAResult"));
-                //bool isLeadership = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "viewLeadershipResult"));
+                bool isSga = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "viewSGA"));
+               
 
-
-                bool isTakeSgt = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "takeSGT"));
-                //bool isTakeTna = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "takeTNA"));
-                //bool isTakePmp = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "takePMP"));
-                //bool isTakeDmp = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "takeDMP"));
-                //bool isTakeNP = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "takeNP"));
-                //bool isTakeCMA = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "takeCMA"));
-                //bool isTakeDNA = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "takeDNA"));
-                //bool isTakeCMASGA = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "takeCMASGATest"));
-                //bool isTakeSCKE = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "takeSCKE"));
-                //bool isTakeSCSA = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "takeSCSA"));
-                //bool isTakeLeadership = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "takeLeadershipTest"));
-                //viewleadershipassessment-->chkLeadership
-                //chkLeadershiptest --> takeLeadershipTest
-
-                if (isSga && isTakeSgt)
+                bool isTakeSga = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "takeSGA"));
+             
+                if (isSga && isTakeSga)
                 {
                     e.Item.BackColor = Color.FromArgb(133, 195, 233);
                 }
@@ -392,32 +371,10 @@ namespace SGA.webadmin
             foreach (DataGridItem item in this.dtgList.Items)
             {
                 HtmlInputCheckBox chkSga = (HtmlInputCheckBox)item.FindControl("chkSga");
-                //HtmlInputCheckBox chkTna = (HtmlInputCheckBox)item.FindControl("chkTna");
-                //HtmlInputCheckBox chkPMp = (HtmlInputCheckBox)item.FindControl("chkPmp");
-                //HtmlInputCheckBox chkDmp = (HtmlInputCheckBox)item.FindControl("chkDmp");
-                //HtmlInputCheckBox chkNP = (HtmlInputCheckBox)item.FindControl("chkNP");
-                //HtmlInputCheckBox chkCMA = (HtmlInputCheckBox)item.FindControl("chkCMA");
-                //HtmlInputCheckBox chkDNA = (HtmlInputCheckBox)item.FindControl("chkDNA");
-                //HtmlInputCheckBox chkCMASGA = (HtmlInputCheckBox)item.FindControl("chkCMASGA");
-                //HtmlInputCheckBox chkSCKE = (HtmlInputCheckBox)item.FindControl("chkSCKE");
-                //HtmlInputCheckBox chkSCSA = (HtmlInputCheckBox)item.FindControl("chkSCSA");
-                //HtmlInputCheckBox chkLeadership = (HtmlInputCheckBox)item.FindControl("chkLeadership");
-                //bool isLeadership = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "chkLeadership"));
+              
 
                 HtmlInputCheckBox chkSgatest = (HtmlInputCheckBox)item.FindControl("chkSgatest");
-                //HtmlInputCheckBox chkTnatest = (HtmlInputCheckBox)item.FindControl("chkTnatest");
-                //HtmlInputCheckBox chkPmptest = (HtmlInputCheckBox)item.FindControl("chkPmptest");
-                //HtmlInputCheckBox chkDmptest = (HtmlInputCheckBox)item.FindControl("chkDmptest");
-                //HtmlInputCheckBox chkNPtest = (HtmlInputCheckBox)item.FindControl("chkNPtest");
-                //HtmlInputCheckBox chkCMAtest = (HtmlInputCheckBox)item.FindControl("chkCMAtest");
-                //HtmlInputCheckBox chkDNAtest = (HtmlInputCheckBox)item.FindControl("chkDNAtest");
-                //HtmlInputCheckBox chkCMKtest = (HtmlInputCheckBox)item.FindControl("chkCmktest");
-                //HtmlInputCheckBox chkCmaSgatest = (HtmlInputCheckBox)item.FindControl("chkCmaSgatest");
-                //HtmlInputCheckBox chkCMK = (HtmlInputCheckBox)item.FindControl("chkCMK");
-                //HtmlInputCheckBox chkSCKEtest = (HtmlInputCheckBox)item.FindControl("chkSCKEtest");
-                //HtmlInputCheckBox chkSCSAtest = (HtmlInputCheckBox)item.FindControl("chkSCSAtest");
-                //HtmlInputCheckBox chkLeadershiptest = (HtmlInputCheckBox)item.FindControl("chkLeadershiptest");
-                //bool isTakeLeadership = System.Convert.ToBoolean(DataBinder.Eval(e.Item.DataItem, "chkLeadershiptest"));
+              
 
                 if (chkSga != null && chkSgatest != null)
                 {

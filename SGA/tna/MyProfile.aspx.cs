@@ -16,13 +16,14 @@ namespace SGA.tna
 {
     public partial class MyProfile : System.Web.UI.Page
     {
-        protected string _direct = "";
+        protected string isComplete = "false";
 
         protected string _indirect = "";
 
         protected void Page_Load(object sender, System.EventArgs e)
         {
             SGACommon.AddPageTitle(this.Page, "The individuals profile page", "");
+            isProfileComplete();
             if (!base.IsPostBack)
             {
                 MasterPage mp = this.Page.Master;
@@ -55,20 +56,20 @@ namespace SGA.tna
             {
                 if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
                 {
-                    procModel.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["pmodel"].ToString()) ? "Procurement model" : Profile.GetProcurementModel(Convert.ToInt32( ds.Tables[0].Rows[0]["pmodel"]));
-                    reportingLine.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["reportline"].ToString()) ? "Reporting line" : Profile.GetReportLineTo(Convert.ToInt32(ds.Tables[0].Rows[0]["reportline"]));
-                    spenUnderInfluence.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["spendunder"].ToString()) ? "Spend under influence" : Profile.GetSpendUnderInfluence(Convert.ToInt32(ds.Tables[0].Rows[0]["spendunder"]));
-                    sector.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["sector"].ToString()) ? "Sector" : Profile.GetSector(Convert.ToInt32(ds.Tables[0].Rows[0]["sector"]));
-                    numberOfEmp.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["noemployee"].ToString()) ? "Number of employees" : Profile.GetNoOfEmployee(Convert.ToInt32(ds.Tables[0].Rows[0]["noemployee"]));
+                    procModel.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["pmodel"].ToString()) ? "Procurement model<br /> <span style='color:grey'>--select item--</span>" : "Procurement model <br /><span style = 'color:grey'>" + Profile.GetProcurementModel(Convert.ToInt32( ds.Tables[0].Rows[0]["pmodel"])) + "</span>";
+                    reportingLine.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["reportline"].ToString()) ? "Reporting line<br /> <span style='color:grey'>--select item--</span>" : "Reporting line<br /><span style = 'color:grey'>"+ Profile.GetReportLineTo(Convert.ToInt32(ds.Tables[0].Rows[0]["reportline"])) + "</span>";
+                    spenUnderInfluence.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["spendunder"].ToString()) ? "Spend under influence<br /> <span style='color:grey'>--select item--</span>" : "Spend under influence<br /><span style='color:grey'>" + Profile.GetSpendUnderInfluence(Convert.ToInt32(ds.Tables[0].Rows[0]["spendunder"])) + "</span>";
+                    sector.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["sector"].ToString()) ? "Sector<br /> <span style='color:red'>--select item--</span>" : "Sector<br /> <span style='color:red'>" + Profile.GetSector(Convert.ToInt32(ds.Tables[0].Rows[0]["sector"])) + "</span>";
+                    numberOfEmp.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["noemployee"].ToString()) ? "Number of employees<br /> <span style='color:grey'>--select item--</span>" : "Number of employees<br /> <span style='color:grey'>" + Profile.GetNoOfEmployee(Convert.ToInt32(ds.Tables[0].Rows[0]["noemployee"])) + "</span>";
 
-                    jobRole.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["jobRole"].ToString()) ? "Role best described as:" : Profile.GetJobRole(Convert.ToInt32(ds.Tables[0].Rows[0]["jobRole"]));
-                    category.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["categoryId"].ToString()) ? "Category you manage currently:" : Profile.GetCategory(Convert.ToInt32(ds.Tables[0].Rows[0]["categoryId"]));
-                    spendUnderYour.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["spentUnder"].ToString()) ? "Spend under your influence" : Profile.GetSpentUnderYourInfluence(Convert.ToInt32(ds.Tables[0].Rows[0]["spentUnder"]));
-                    geoInfluence.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["geoInfluence"].ToString()) ? "Geographical influence" : Profile.GetGeoInfluence(Convert.ToInt32(ds.Tables[0].Rows[0]["geoInfluence"]));
-                    exp.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["experience"].ToString()) ? "Years of procurement experience" : Profile.GetExp(Convert.ToInt32(ds.Tables[0].Rows[0]["experience"]));
-                    edu.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["education"].ToString()) ? "Level of Education" : Profile.GetEducation(Convert.ToInt32(ds.Tables[0].Rows[0]["education"]));
-                    procQual.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["proLevel"].ToString()) ? "Procurement qualifications" : Profile.GetProcurementLevel(Convert.ToInt32(ds.Tables[0].Rows[0]["proLevel"]));
-                    prevExp.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["prevCatExp"].ToString()) ? "Your previous category experience" : Profile.GetPrevCatExp(Convert.ToInt32(ds.Tables[0].Rows[0]["prevCatExp"]));
+                    jobRole.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["jobRole"].ToString()) ? "Role best described as:<br /> <span style='color:red'>--select item--</span>" : "Role best described as:<br /> <span style='color:red'>" + Profile.GetJobRole(Convert.ToInt32(ds.Tables[0].Rows[0]["jobRole"])) + "</span>";
+                    category.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["categoryId"].ToString()) ? "Category you manage currently:<br /> <span style='color:grey'>--select item--</span>" : "Category you manage currently:<br /> <span style='color:grey'>" + Profile.GetCategory(Convert.ToInt32(ds.Tables[0].Rows[0]["categoryId"])) + "</span>";
+                    spendUnderYour.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["spentUnder"].ToString()) ? "Spend under your influence<br /> <span style='color:grey'>--select item--</span>" : "Spend under your influence<br /> <span style='color:grey'>" + Profile.GetSpentUnderYourInfluence(Convert.ToInt32(ds.Tables[0].Rows[0]["spentUnder"])) + "</span>";
+                    geoInfluence.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["geoInfluence"].ToString()) ? "Geographical influence<br /> <span style='color:grey'>--select item--</span>" : "Geographical influence<br /> <span style='color:grey'>" + Profile.GetGeoInfluence(Convert.ToInt32(ds.Tables[0].Rows[0]["geoInfluence"])) + "</span>";
+                    exp.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["experience"].ToString()) ? "Years of procurement experience<br /> <span style='color:grey'>--select item--</span>" : "Years of procurement experience<br /> <span style='color:grey'>" + Profile.GetExp(Convert.ToInt32(ds.Tables[0].Rows[0]["experience"])) + "</span>";
+                    edu.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["education"].ToString()) ? "Level of Education<br /> <span style='color:grey'>--select item--</span>" : "Level of Education<br /> <span style='color:grey'>" + Profile.GetEducation(Convert.ToInt32(ds.Tables[0].Rows[0]["education"])) + "</span>";
+                    procQual.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["proLevel"].ToString()) ? "Procurement qualifications<br /> <span style='color:grey'>--select item--</span>" : "Procurement qualifications <br /><span style = 'color:grey' >" + Profile.GetProcurementLevel(Convert.ToInt32(ds.Tables[0].Rows[0]["proLevel"])) + "</span>";
+                    prevExp.InnerHtml = String.IsNullOrEmpty(ds.Tables[0].Rows[0]["prevCatExp"].ToString()) ? "Your previous category experience<br /> <span style='color:grey'>--select item--</span>" : "Your previous category experience<br /> <span style='color:grey'>" + Profile.GetPrevCatExp(Convert.ToInt32(ds.Tables[0].Rows[0]["prevCatExp"])) + "</span>";
 
                     //SGACommon.SelectListItem(this.ddlIndustry, ds.Tables[0].Rows[0]["industry"].ToString());
                     //SGACommon.SelectListItem(this.ddlAnnualRevenue, ds.Tables[0].Rows[0]["arevenue"].ToString());
@@ -97,6 +98,17 @@ namespace SGA.tna
                     //this._indirect = ds.Tables[0].Rows[0]["specialist"].ToString();
                 }
             }
+        }
+
+        protected void isProfileComplete()
+        {
+           
+            int num = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, "select count(1) from UserInfo ui inner join tblUsers tu on tu.Id = ui.userId where jobRole is not null and sector is not null and userid =" + SGACommon.LoginUserInfo.userId + " "));
+            if (num == 1)
+            {
+                isComplete = "true";
+            }
+           
         }
 
         [WebMethod]

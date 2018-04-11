@@ -150,6 +150,13 @@
     <Compile Include="controls\ctrlCMCGraph.ascx.designer.cs">
       <DependentUpon>ctrlCMCGraph.ascx</DependentUpon>
     </Compile>
+    <Compile Include="controls\ctrlCMCGraph2.ascx.cs">
+      <DependentUpon>ctrlCMCGraph2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\ctrlCMCGraph2.ascx.designer.cs">
+      <DependentUpon>ctrlCMCGraph2.ascx</DependentUpon>
+    </Compile>
     <Compile Include="controls\ctrlCMCPdf.ascx.cs">
       <DependentUpon>ctrlCMCPdf.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -331,12 +338,26 @@
     <Compile Include="tna\Help.aspx.designer.cs">
       <DependentUpon>Help.aspx</DependentUpon>
     </Compile>
+    <Compile Include="tna\Leaderboard.aspx.cs">
+      <DependentUpon>Leaderboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tna\Leaderboard.aspx.designer.cs">
+      <DependentUpon>Leaderboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="tna\MainMenu.aspx.cs">
       <DependentUpon>MainMenu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="tna\MainMenu.aspx.designer.cs">
       <DependentUpon>MainMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tna\my-results-bar-graph-gap.aspx.cs">
+      <DependentUpon>my-results-bar-graph-gap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tna\my-results-bar-graph-gap.aspx.designer.cs">
+      <DependentUpon>my-results-bar-graph-gap.aspx</DependentUpon>
     </Compile>
     <Compile Include="tna\my-results-bar-graph.aspx.cs">
       <DependentUpon>my-results-bar-graph.aspx</DependentUpon>
@@ -603,6 +624,7 @@
     <Content Include="App_Browsers\firefox.browser" />
     <Content Include="App_Browsers\ie.browser" />
     <Content Include="Contribute.aspx" />
+    <Content Include="controls\ctrlCMCGraph2.ascx" />
     <Content Include="controls\ctrlUserLeftMenu.ascx" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\jquery.fancybox.css" />
@@ -613,6 +635,8 @@
     <Content Include="css\owl.carousel.css" />
     <Content Include="css\owl.theme.css" />
     <Content Include="css\responsive.css" />
+    <Content Include="css\responsiveinner.css" />
+    <Content Include="css\responsiveouter.css" />
     <Content Include="css\style.css" />
     <Content Include="css\test.htm" />
     <Content Include="css\ifpsm.htm" />
@@ -754,9 +778,11 @@
     <Content Include="Images\Canada.png" />
     <Content Include="Images\cd-top-arrow.svg" />
     <Content Include="Images\China.png" />
+    <Content Include="Images\CIPS.png" />
     <Content Include="Images\cpi.png" />
     <Content Include="Images\Croatia.png" />
     <Content Include="Images\Denmark.png" />
+    <Content Include="Images\diff-logo.png" />
     <Content Include="Images\dot-new.gif" />
     <Content Include="Images\dot.gif" />
     <Content Include="Images\dot2.gif" />
@@ -810,10 +836,12 @@
     <Content Include="Images\Indonesia.png" />
     <Content Include="Images\Instagram.png" />
     <Content Include="Images\Ireland.png" />
+    <Content Include="Images\ISM.png" />
     <Content Include="Images\Israel.png" />
     <Content Include="Images\Italy.png" />
     <Content Include="Images\Japan.png" />
     <Content Include="Images\kenya.png" />
+    <Content Include="Images\kism-logo.png" />
     <Content Include="Images\leaderboard-icon.png" />
     <Content Include="Images\leadership1.jpg" />
     <Content Include="Images\leftarrow.jpg" />
@@ -821,6 +849,8 @@
     <Content Include="Images\line1.gif" />
     <Content Include="Images\linkedIn.png" />
     <Content Include="Images\loading.gif" />
+    <Content Include="Images\loding-orange.gif" />
+    <Content Include="Images\logo.png" />
     <Content Include="Images\logo1.png" />
     <Content Include="Images\logo10.png" />
     <Content Include="Images\logo11.png" />
@@ -872,6 +902,7 @@
     <Content Include="Images\Nigeria.png" />
     <Content Include="Images\Norway.png" />
     <Content Include="Images\npbanner.jpg" />
+    <Content Include="Images\one.png" />
     <Content Include="Images\pasia-logo.png" />
     <Content Include="Images\pasia-logo2.png" />
     <Content Include="Images\Philippines.png" />
@@ -900,6 +931,7 @@
     <Content Include="Images\terms.png" />
     <Content Include="Images\Thailand.jpg" />
     <Content Include="Images\thanksbanner.png" />
+    <Content Include="Images\three.png" />
     <Content Include="Images\tick-icon-green.png" />
     <Content Include="Images\tick-icon..png" />
     <Content Include="Images\tick-icon.png" />
@@ -911,8 +943,9 @@
     <Content Include="Images\Trininddad &amp; Tobago.png" />
     <Content Include="Images\Turkey.png" />
     <Content Include="Images\Twitter.png" />
+    <Content Include="Images\two.png" />
     <Content Include="Images\uganda.png" />
-    <Content Include="Images\United Kingdom.png" />
+    <Content Include="Images\UnitedKingdom.png" />
     <Content Include="Images\usericon.png" />
     <Content Include="Images\victoria-logo.png" />
     <Content Include="Images\white-divider.gif" />
@@ -986,7 +1019,9 @@
     <Content Include="tna\assessment-pillars.aspx" />
     <Content Include="tna\assessments-pillar-quotes.aspx" />
     <Content Include="tna\Association.aspx" />
+    <Content Include="tna\Leaderboard.aspx" />
     <Content Include="tna\MainMenu.aspx" />
+    <Content Include="tna\my-results-bar-graph-gap.aspx" />
     <Content Include="tna\procurement-benchmark-assessment-test.aspx" />
     <Content Include="tna\ProfileDetails.aspx" />
     <Content Include="tna\SuccessMessage.aspx" />

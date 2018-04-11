@@ -1,28 +1,23 @@
 ﻿using DataTier;
 using SGA.App_Code;
-using SGA.controls;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace SGA.tna
 {
-    public partial class my_results_bar_graph : System.Web.UI.Page
+    public partial class my_results_bar_graph_gap : System.Web.UI.Page
     {
-
-
-        protected void Page_Load(object sender, System.EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
             string sessionId = string.Empty;
 
-            if (!isProfileComplete())
-            {
-                Response.Redirect("TestDenied.aspx");
-            }
+
             if (!base.IsPostBack)
             {
                 base.Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", ""));
@@ -41,25 +36,6 @@ namespace SGA.tna
 
             }
 
-
         }
-
-
-        private bool isProfileComplete()
-        {
-            bool isComplete = false;
-            int num = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, "select count(sector) from UserInfo where userid =" + SGACommon.LoginUserInfo.userId + " "));
-
-            int num2 = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, "select count(1) from tblUserSgaTest where userid =" + SGACommon.LoginUserInfo.userId + " "));
-            if (num == 1 && num2 == 1)
-            {
-                isComplete = true;
-            }
-            return isComplete;
-        }
-
-
-
-
     }
 }

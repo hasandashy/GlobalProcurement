@@ -1,0 +1,735 @@
+@media screen and (max-width:1370px) {
+body{font-size:15px}
+
+
+
+.blue-strip{font-size:24px}
+.courses-detail h2{font-size:20px}
+.register a{font-size:16px}
+.logoicon1 > img{width:80px}
+.stamp > img{width:160px}
+/*new*/
+.menu ul li{padding:16px 4px; font-size:13.1px;}
+/*new*/
+.programme-col h2{font-size:20px}
+
+.lineh1{line-height:22px}
+.txt4{font-size:18px}
+.learn-btn a{font-size:18px;padding:14px 28px}
+.txt3{font-size:24px}
+.footer-col h3{font-size:13px}
+.info-detail strong{padding-bottom:24px}
+ul.listing li{background-position:top left}
+.banner-txt1{font-size:42px}
+.banner-txt1 a{font-size:18px}
+.commercially-strip{font-size:20px}
+.banner-txt1{font-size:40px;line-height:43px;padding:12% 0 0;width:100%}
+.font28 p{font-size:20px}
+.tittle1{font-size:20px}
+.bluebg label{font-size:22PX}
+.form-container button{font-size:18px}
+.form-container input[type="submit"]{font-size:18px}
+.line-divide1{margin:40px 0}
+.txt5{font-size:20px}
+.greenbtn a{font-size:16px}
+.pad2{padding:40px 0 30px}
+.heading-block{padding:30px 0 20px}
+.staff ul li .staff-name span{font-size:15px}
+.staff ul li .staff-name p{font-size:13px}
+.staff ul li .slide-wrap .slide-caption span{font-size:15px}
+.staff ul li .slide-wrap .slide-caption p{font-size:13px}
+.staff ul li .slide-wrap .slide-caption a{font-size:13px}
+.peoplebg h1{font-size:36px}
+.peoplebg p{font-size:22px}
+.popup-heading h3{font-size:30px}
+.staff-post{font-size:20px}
+.staff-post em{font-size:14px}
+.plus-box{font-size:18px;padding:20px 24px 30px}
+.plus-box h3{font-size:22px}
+.plus-box p{margin-bottom:5px}
+.interested{font-size:18px}
+.graph-txt{font-size:18px}
+.bluebhtn{font-size:18px}
+.tittle-strip{font-size:26px}
+.training-course .col-right h3{font-size:26px}
+.training-course .btn a{font-size:16px}
+.training-course .col-right{padding:52px 40px 42px}
+.leap-des span{font-size:20px}
+.txt7 i{font-size:24px}
+.stampcol1{margin-top:0}
+
+.aus-logo ul li span{font-size:13px}
+
+.lh26 {
+  line-height: 22px;
+}
+.assessments-detail ul li h2{  font-size: 20px;}
+.btn-info a{ font-size:16px;}
+.program-strip h2{ font-size:26px;}
+.col-head{ font-size:24px;}
+
+
+.mana-d p{ font-size:30px;}
+.free-audit h3{ font-size:22px;}
+.free-audit .btn{ font-size: 18px;}
+
+/*new*/
+.martop1{ margin-top:10px;}
+ul.listing li {font-size: 17px;line-height: 22px;padding: 0 0 8.8px 35px;}
+.blue-btn-large a{ padding:14px 56px;}
+
+}
+@media screen and (max-width:1200px) {
+.banner-txt1{font-size:30px;line-height:32px;padding:8% 0 0;width:100%}
+.banner-txt1 a{font-size:16px;padding:16px 26px}
+}
+@media screen and (max-width:1024px) {
+.menu{font-size:16px}
+
+/*new*/
+.heading-block h1, .heading-block span{font-size:36px}
+/*new*/
+.blue-strip{font-size:22px}
+.courses-detail h2{font-size:18px}
+.register a{font-size:14px}
+.logoicon1 > img{width:70px}
+.stamp > img{width:150px}
+.stamp{right:-1%}
+.programme-col h2{font-size:18px}
+body{font-size:14px}
+
+
+.txt4{font-size:16px}
+.learn-btn a{font-size:16px}
+.txt3{font-size:22px}
+.commercially-strip{font-size:18px}
+.heading-block{padding:36px 0}
+.col-4{padding:0 18px 60px}
+.block1{padding:36px 0}
+.banner-txt1{font-size:36px;line-height:38px;padding:8% 0 0;width:100%}
+.banner-txt1 a{font-size:18px;padding:16px 30px}
+.font28 p{font-size:20px}
+.tittle1{font-size:18px}
+.bluebg label{font-size:20PX}
+.form-container button{font-size:16px}
+.form-container input[type="submit"]{font-size:16px}
+.talk-form{width:80%}
+.line-divide1{margin:32px 0}
+.txt5{font-size:18px}
+.greenbtn a{font-size:14px}
+.peoplebg h1{font-size:30px}
+.peoplebg p{font-size:20px}
+.plus-box{font-size:16px;padding:20px 16px 30px}
+.plus-box h3{font-size:20px}
+.plus-box p{margin-bottom:5px}
+.interested{font-size:15px}
+.graph-txt{font-size:16px}
+.webpage{margin-left:-110px}
+.webpage img{width:400px}
+.bluebhtn{font-size:16px}
+.tittle-strip{font-size:24px}
+.training-course .col-right h3{font-size:24px}
+.training-course .btn a{font-size:15px}
+.training-course .col-right{padding:44px 40px 36px}
+.orange-strip .training-course .col-right{padding:45px 40px 28px}
+.leap-des span{font-size:18px}
+.txt7 i{font-size:22px}
+
+.font18 {
+  font-size: 15px;
+}
+.lh26 {
+  line-height: 20px;
+}
+.assessments-detail ul li h2{  font-size: 18px;}
+.btn-info a{ font-size:14px;}
+.program-strip h2{ font-size:22px;}
+.assessments-detail ul li{ padding:20px 9px;}
+.font18 {font-size: 16px;}
+
+}
+@media screen and (max-width:1023px) {
+.menuImage{height:20px;margin:0;padding:0;position:absolute;right:5px;top:75px;width:30px;z-index:9}
+.menuImage img{background:none;display:block;padding:0}
+.iphon_navigation{background:#1e3873;border-top:medium none;margin:0;position:absolute;top:97px;width:100%;z-index:9999;left:0;right:0;text-shadow:none}
+.iphon_navigation ul{margin:0;padding:0}
+.iphon_navigation ul li{background:none repeat scroll 0 0 transparent;border-bottom:1px solid #000;margin:0;padding:0!important;text-align:left;width:100%}
+.iphon_navigation ul li:first-child{border-top:none}
+.parentMenu > div.subItem{width:50px;height:32px;float:right;background:url(../images/faq-arrowup.png) no-repeat center;cursor:pointer}
+.parentMenuActive > div.subItem{background:url(../images/faq-arrowdown.png) no-repeat scroll right center transparent!important;cursor:pointer;float:none;height:32px;position:absolute;width:100%;z-index:3}
+.parentMenu > div.subItem{background:url(../images/faq-arrowup.png) no-repeat scroll right center transparent;cursor:pointer;float:right;height:32px;position:relative;width:50px;z-index:3}
+.iphon_navigation ul li a{background:none repeat scroll 0 0 #1e3873;color:#fff!important;display:block;font-size:14px;font-weight:400;list-style:outside none none;margin:0;padding:8px 10px;text-decoration:none}
+.iphon_navigation ul li a:hover{color:#fff;text-shadow:inherit;text-decoration:none;background:#f9a22b}
+.iphon_navigation > ul ul{padding:0;width:100%;display:none;margin:0}
+.iphon_navigation ul ul li{background:none repeat scroll 0 0 transparent;border-bottom:none;margin:0;padding:0!important;text-align:left;width:100%}
+.iphon_navigation ul ul li a{background:#343434;color:#fff;display:block;font-size:13x;font-weight:400;list-style:outside none none;margin:0;padding:8px 10px 8px 15px;text-decoration:none;border-bottom:1px solid #4a4a4a}
+.iphon_navigation ul ul li a:hover{color:#fff;text-shadow:inherit;text-decoration:none}
+.iphon_navigation ul ul ul{margin:0;padding:0;text-align:center;width:100%;list-style:none}
+.iphon_navigation ul ul ul li a{background:#9a0b11;color:#fff;display:block;font-size:12px;font-weight:400;list-style:outside none none;margin:0 0 1px;padding:8px 10px 8px 20px;text-decoration:none;text-transform:uppercase}
+.iphon_navigation ul ul ul ul li a{background:#c62128;color:#fff;display:block;font-size:12px;font-weight:400;list-style:outside none none;margin:0 0 1px;padding:8px 10px 8px 25px;text-decoration:none;text-transform:uppercase}
+.iphon_navigation ul ul ul li a:hover{color:#000;text-shadow:inherit;text-decoration:none}
+.sub-menu.subMenu{background:none repeat scroll 0 0 #000}
+.header{position: relative;height:auto !important;padding:8px 0 36px}
+.main-banner{margin:102px 0 0}
+/*.shrink.header{height:80px}
+.shrink.header .menuImage{top:48px}
+.shrink.header .iphon_navigation{top:72px}*/
+.acedemy-logo{width:200px}
+/*.shrink.header .acedemy-logo{width:132px}*/
+.toparrow{display:none}
+.info-detail{padding:0 0 54px 40px}
+.top1{margin-top:102px}
+.mnone1{margin-top:0}
+.padtopnone{padding-top:0}
+.popwidth{width:680px;padding:18px}
+.chart-detail .bg5{clear:both;margin-left:14px}
+.learning-tags{display:table;float:none;margin:0 auto;width:auto}
+.learning-col{width:23.5%}
+.current-menu-item a{color:#fff!important}
+a.register-link{padding: 2px 0;}
+}
+@media only screen and (max-width:1023px) {
+.social-icon{margin-top:-17px}
+}
+
+
+
+@media screen and (max-width:991px) {
+.slider-text {
+font-size: 28px;
+font-weight: normal;
+line-height: 31px;
+padding: 18px;
+width: 298px;
+}
+.blue-btn a {font-size: 15px;padding: 10px 20px;}
+.heading-block p{font-size:22px;margin-top:10px}
+.heading h2{font-size:38px}
+.heading-block h1, .heading-block span { font-size:38px;}
+.blue-btn-large a { font-size:16px; padding:14px 48px}
+.logo-group h2{ line-height:40px;}
+.inner-title strong { padding-bottom:5px;}
+ul.listing li {font-size: 15.5px;line-height: 19px;padding: 0 0 8.8px 35px;}
+.inner-gray-bg{ padding:16px 15px 5px 23px;}
+.member-associations ul li {padding: 0 20px 32px;width: 24%;}
+.global-title {font-size: 24px;}
+.header {padding: 8px 0 47px;}
+.menuImage {top: 76px;}
+.heading p { font-size:22px;}
+
+.slider-text2{ top: 12px;}
+.slider-text2 > p { font-size:50px;}
+.slider-text2 > span{ font-size:64px; line-height:56px;}
+.slider-text2 {font-size: 29px; line-height: 30px;}
+.slider-text3 .blue-btn {padding-top: 0;}
+.slider-text2 > em{ padding-top: 13px;}
+
+	}
+
+
+@media screen and (max-width:980px) {
+.webpage{margin-left:-80px}
+.webpage img{width:300px}
+.associated-logo .owl-buttons .owl-prev{left:-27px}
+.associated-logo .owl-buttons .owl-next{right:-27px}
+.assessments-detail ul li p{ min-height:200px;}
+.font28 p {
+  font-size: 18px;
+}
+.txtw1 {
+  padding: 30px 180px 0 0;
+}
+}
+@media screen and (max-width:900px) {
+.colleft{width:66%}
+.colright{width:34%}
+.banner-txt1{font-size:28px;line-height:30px;padding:8% 0 0;width:100%}
+.banner-txt1 a{font-size:16px;padding:14px 20px}
+.staff ul li .slide-wrap .slide-caption span{margin-bottom:7px}
+.staff ul li .slide-wrap .slide-caption p{margin-bottom:10px}
+.staff ul li .slide-wrap:hover .slide-caption{padding-top:3%}
+.popup-heading h3{font-size:28px}
+.staff-post{font-size:18px}
+.tittle-strip{font-size:22px}
+.training-course .col-right h3{font-size:22px;line-height:normal}
+/*.shrink .social-icon{top:22px}
+.shrink .social-icon i img{height:22px;width:22px}*/
+
+.col-head {
+  font-size: 22px;
+}
+}
+@media screen and (max-width:800px) {
+.training-course .col-right{padding:18px 18px 22px}
+.orange-strip .training-course .col-right{padding:18px 18px 22px}
+.training-course .col-right p{margin-bottom:15px}
+.training-course .btn a{padding:10px 12px}
+.training-course .col-right h3{margin-bottom:10px}
+.training-course .col-right span{margin-bottom:7px}
+}
+
+@media screen and (min-width:768px) {
+.padbottom-1{ padding-bottom:80px;}
+}
+
+@media screen and (max-width:767px) {
+.colleft{width:100%}
+.colright{width:100%;padding:10px 0 0;text-align:left}
+
+.blue-strip{font-size:20px}
+.top-login span{display:none}
+.top-login i{display:block}
+.top-login a{padding:12px 18px}
+.heading-block{padding:40px 0}
+.menuImage{right:-1px}
+.sort{width:100%}
+.pagging{width:100%;padding:10px 0 0 74px}
+.pagging ul li{margin:0 0 0 7px}
+.pagging ul li a{padding:4px 10px}
+.red-theme .heading-block span{width:73%}
+.heading h2{font-size:28px}
+.heading p{font-size:18px}
+.txt4{font-size:14px;width:100%;text-align:center}
+.learn-btn{float:left;position:relative;right:0;text-align:center;top:0;width:100%;padding-top:15px; transform:none;}
+.txt3{font-size:20px}
+.commercially-strip{font-size:16px}
+.heading-block{padding:30px 0}
+.block1{padding:30px 0}
+.col-4{width:100%;border-left:0;border-bottom:1px solid #e7e7e7;padding:30px 18px}
+.program-strip{padding:20px 0}
+.learn-btn a{padding:14px 16px;border-width:1px;font-size:14px;float:none}
+.learn-bt a{padding:14px 16px}
+.col-4:first-child{padding-top:0}
+.info-pic{float:left;width:100%;text-align:center}
+.info-detail{float:left;padding:20px 0 10px;position:relative;width:100%}
+.info-block{margin:24px 0 0}
+.info-detail p{padding:0 0 18px}
+.info-detail strong{padding-bottom:18px}
+ul.listing li{padding:0 0 18px 35px}
+.exchange1 .info-pic{width:100%;margin:0}
+.exchange1 .info-detail{padding:20px 0 10px;width:100%}
+.program-strip{margin:0}
+.footer{margin:30px 0 40px}
+.fwidth1{width:48%;padding:0}
+.fwidth2{width:48%;padding:0}
+.fwidth3{width:48%;padding:0}
+.fwidth4{width:100%;padding:0;text-align:center}
+.footer-col{margin:30px 0 0}
+/*.container{width:90%}*/
+.learn-bt{bottom:0;display:block;float:left;position:relative;width:100%;font-size:13px}
+.learn-btn a{font-size:13px}
+.banner-txt1{font-size:24px;line-height:normal;padding:8% 0 0;width:100%}
+.banner-txt1 a{font-size:14px;padding:14px 20px;margin:20px 0 0}
+.pad1 .info-pic{width:100%}
+.pad1 .info-detail{padding:15px 0 0;width:100%}
+.font28 p{font-size:18px}
+.info-col-1{float:left;padding:0;width:100%}
+.info-col-2{float:left;padding:15px 0 0;width:100%}
+.bluebg label{font-size:18PX}
+.form-container button{font-size:14px}
+.form-container input[type="submit"]{font-size:14px}
+.talk-form{width:78%}
+.stamp2{text-align:center}
+.comprara-design{text-align:center}
+.template{text-align:center}
+.template2{text-align:center;display:inline-block;float:none;width:auto}
+.template img{width:auto}
+.template2 img{width:auto}
+.abs-btn{bottom:0;left:0;position:relative;text-align:center}
+.stamp2{margin:16px 0 0}
+.mtop1{margin-top:0}
+.learning-list{margin-bottom:0}
+.padtopnone{padding-top:0}
+.procurement-team-program .info-col-1{width:100%}
+.procurement-team-program .info-col-2{width:100%;text-align:center}
+.procurement-team-program .info-col-2 .stamp-top{text-align:center}
+.staff ul{margin:0;width:100%}
+.staff ul li{margin:0 0 40px;width:100%}
+.staff ul li .slide-wrap .slide-caption span{margin-bottom:20px}
+.staff ul li .slide-wrap .slide-caption p{margin-bottom:15px}
+.staff ul li .slide-wrap:hover .slide-caption{padding-top:10%}
+.peoplebg h1{font-size:28px}
+.peoplebg p{font-size:18px}
+.popwidth{width:100%;padding:18px}
+.staff-post em{padding-left:0;display:block}
+.tail-academy .info-col-1{width:100%}
+.tail-academy .info-col-2{width:100%}
+.webpage{margin-left:0}
+.webpage img{width:auto;max-width:100%}
+.graph-col{text-align:center;width:100%}
+.graph-txt{width:100%;text-align:left}
+.tail-academy .procurement-leadership div p br{display:none}
+.txt6{padding-right:0}
+.tail-academy{padding-top:0}
+.txt6{margin-bottom:0}
+.training-course .col-left{width:100%;text-align:center;margin-bottom:10px}
+.training-course .col-right{width:100%}
+.bluebhtn{font-size:14px}
+.tittle-strip{font-size:20px}
+.training-course .col-right h3{font-size:20px;line-height:normal}
+.training-course .btn a{font-size:14px}
+.training-course .col-right{padding:44px 40px 36px}
+.orange-strip .training-course .col-right{padding:45px 40px 28px}
+.leap-logo{bottom:0;left:0;position:absolute;right:0;text-align:center}
+.stampcol1{text-align:center;width:100%}
+.leap-right{width:100%}
+.leap-tailored .info-col-2{float:right;padding:0;text-align:center;width:100%}
+.leap-tailored .info-col-1{width:100%}
+.header{ position: relative !important; height:auto !important;}
+.top1 {
+  margin-top: 0;
+}
+.top-login {
+  text-align: center;
+
+}
+a.register-link {
+  padding: 2px 0 !important; text-align:right;
+}
+.menuImage {
+  top: 124px; right: 19px;
+}
+.social-icon {
+  margin-top: -3px;
+}
+/*10 april 2018*/
+.header{ padding:8px 0 0px;}
+/*10 april 2018*/
+/*.shrink.header .menuImage {
+  top: 0;
+}*/
+
+.dis_block1{ display:block; width:100%; position: relative;}
+.social-icon{right:10px}
+.social-icon i img{width:28px;height:28px}
+/*.shrink .social-icon i img{width:26px;height:26px}*/
+.social-icon {
+  float: left;
+  position: relative;
+  right: 0;
+  top: 0;
+}
+
+/*.shrink.header {
+  height: auto !important;
+}*/
+/*.shrink .social-icon {
+  top: 0;
+}*/
+.assessments-detail ul li{ width:100%; padding-bottom:30px; margin-bottom:30px; border:1px solid #ccc;}
+.assessments-detail ul li p {
+  min-height: inherit;
+}
+.padright1 {
+  padding-right: 0;
+  text-align: center;
+}
+.aus-logo ul li {text-align: center !important;width: 100%; padding:0;}
+.aus-logo ul li span {font-size: 12px; border-bottom:1px solid #ccc; padding-bottom:20px; margin-bottom:20px;}
+.head-icon i {
+  left: 0;
+  position: relative;
+  top: 0;
+  width: 29px;
+  width: 10px;
+}
+.head-icon i img {
+  width: 59px;
+}
+.evimg{ display:none;}
+.col-w{width:100%; padding:0 0 30px 0; text-align:center;}
+.col-w i{ position:relative; text-align:center;}
+.col-w i img {width:30px; position:relative;}
+.blubiocn .txtcol {
+  padding-left: 0;
+}
+.txtcol {
+  padding: 0 0 0 0px;
+  width: 100%;
+}
+.forme p{ padding-left:40px; padding-top:3px;}
+.management-pic {
+  border-bottom: 1px solid #ccc;
+  bottom: -8px;
+  float: left;
+  left: 0;
+  margin-bottom: 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.mana-d {
+  float: left;
+  min-height: inherit;
+  padding: 22px 0 0;
+  width: 100%;
+}
+.txtw1 {
+  padding: 30px 0px 0 0;
+}
+
+/*new*/
+.container {padding-left:15px; padding-right:15px;}
+
+/*10 april 2018*/
+.acedemy-logo {
+float: none;
+margin: 0;
+text-align: left;
+width: 100%;
+margin: auto;
+float: none;
+display: table;
+text-align: center;
+}
+
+.acedemy-logo img {
+	width: 150px;
+}
+/*10 april 2018*/
+nav {
+  float: right;
+  width: auto;
+}
+.commercially-strip {
+  font-size: 14px;
+}
+.menuImage {
+  right: 15px;
+  top: 2px;
+}
+.acedemy-logo img {
+	width: 160px !important;
+}
+/*10 april 2018*/
+.top-login {
+	float: right;
+	position: relative;
+	right: 10px;
+	top: 0;
+	text-align: right;
+	margin-top: -14px;
+	margin-bottom: 10px;
+}
+/*10 april 2018*/
+
+.slider-text {
+  bottom: 15px;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 20px;
+  padding: 8px;
+  right: 15px;
+  width: 212px;
+  z-index: 5;
+}
+.blue-btn {
+  margin-top: 8px;
+}
+.heading-block h1, .heading-block span {
+  font-size: 28px;
+}
+.heading-block p {
+  font-size: 18px;
+  line-height: normal;
+  margin-top: 7px;
+}
+.info-block {
+  margin: 10px 0 0;
+}
+.btn-bottom {
+  bottom: 0;
+  float: left;
+  left: 0;
+  padding-left: 0;
+  position: relative;
+  width: 100%;
+}
+.blue-btn-large a {
+  display: inline-block;
+  font-size: 14px;
+  padding: 14px 16px;
+  text-align: center;
+  width: 100%;
+}
+.exchange1 .info-pic {
+  margin: 20px 0 0;
+  width: 100%;
+}
+.logo-group h2 {
+  line-height: 30px;
+}
+.member-associations ul li {
+  padding: 0 20px 32px;
+  width: 49.8%;
+}
+.col-sm-6 {
+  margin-bottom: 20px;
+  width: 100%;
+}
+.global-box { height:auto !important;}
+.global-title {
+  font-size: 22px;
+}
+.btn-bottom2 {
+  bottom: 10px;
+  padding: 10px;
+  position: relative;
+  right: 0;
+}
+.powered-comprara {
+  color: #58595b;
+  font-size: 14px;
+  margin-top: 0;
+  padding-top: 10px;
+  text-align: center;
+}
+/*10 april 2018*/
+.iphon_navigation {
+  top: 89px;
+}
+/*10 april 2018*/
+.mtop-1 {
+  margin-bottom: 12px;
+  margin-top: 37px;
+}
+/*new*/
+.audit-form {margin: 0 auto;  width: 100%; padding:0 30px;}
+
+.marT50 {margin-top: 40px;}
+.marB50 {margin-bottom: 40px;}
+footer .col-1 { width:100%; text-align:center; margin-bottom:20px;}
+
+.slider-text2{ top: 12px;}
+.slider-text2 > p { font-size:24px; margin-bottom:5px;}
+.slider-text2 > span {
+  font-size: 24px;
+  line-height: 24px;  padding-left: 24px;
+}
+.slider-text2 {
+  font-size: 18px;
+  line-height: 19px;
+}
+.slider-text3 .blue-btn {padding-top: 0;}
+.slider-text2 > em{ padding-top: 7px; margin-bottom: 13px;}
+.slider-text2 {
+  padding: 0;
+  top: 12px;
+}
+.slider-text2 > span i {
+  display: block;
+  font-style: normal;
+  margin-left: -31px;
+}
+.blue-btn a {
+  font-size: 13px;
+  padding: 10px 17px;
+}
+.slider-text3 > span {
+  padding-left: 5px;
+}
+.slider-text3 > span i { margin-left:18px;}
+.slider-text3 > em {
+  padding-left: 19px;
+}
+.slider-text3 .blue-btn{ padding-left: 20px;}
+}
+
+@media screen and (max-width:640px) {
+.footer{margin:30px 0 40px;text-align:center}
+.fwidth1{width:100%;padding:0}
+.fwidth2{width:100%;padding:0}
+.fwidth3{width:100%;padding:0}
+.fwidth4{width:100%;padding:0;text-align:center}
+.footer-col{margin:30px 0 0}
+.banner-txt1{text-align:center;padding:12px 0 0;position:relative;float:left;width:100%}
+.banner-txt1 br{display:none}
+.banner-txt1 a{font-size:12px;padding:12px 18px;margin:10px 0 0}
+.talk-form{width:100%;margin:0}
+.talk-form .from-group{width:100%;margin:0 0 15px}
+.form-container button{float:left;width:100%;position:relative;right:0;bottom:0}
+.form-container input[type="submit"]{float:left;width:100%;position:relative;right:0;bottom:0}
+.padtopnone{padding-top:0}
+.staff-information .staff-pic{float:none;margin:0 auto;text-align:center;width:40%}
+.staff-information .staff-details{color:#231f20;float:left;font-size:14px;padding-left:0;padding-top:8px;width:100%}
+.learning-col{width:48.5%}
+.leap-tittle{float:left;width:100%}
+.leap-tittle img{width:150px}
+.leap-des{float:left;padding:10px 0 20px;width:100%}
+.chart-detail .bg3{clear:both}
+.chart-detail .bg7{clear:both}
+.chart-detail .bg5{margin-left:0}
+.slidebg2{background:none;padding:0;color:#000}
+.slidebg3{background:none;padding:0;color:#002046}
+.associated-logo .owl-carousel .owl-item{float:left}
+.associated-logo{padding-bottom:0}
+
+/*10 april 2018*/
+.social-icon {
+	left: 10px;
+	font-size: 12px;
+	display: inline-block;
+	top: 6px;
+	width: 100%;
+	text-align: center;
+}
+
+.top-login {
+	float: right;
+	position: relative;
+	right: 10px;
+	top: 0;
+	text-align: right;
+	margin-top: -36px;
+	margin-bottom: 10px;
+}
+/*10 april 2018*/
+.social-icon p{ font-size:14px;}
+
+
+
+
+
+}
+
+
+
+@media only screen and (max-width:500px) {
+
+.txt1{width:100%}
+.txt2{width:100%;padding:0}
+.grey-strip i{display:none}
+.banner-txt1{font-size:20px}
+}
+@media screen and (max-width:480px) {
+.logoicon1{top:-30px}
+.logoicon1 > img{width:50px}
+.stamp > img{width:80px}
+/*.acedemy-logo{width:170px;float:left}*/
+.acedemy-logo img{width:100%}
+/*.header{height:98px}*/
+.main-banner{margin:92px 0 0}
+.orange-theme .logoicon1{top:-50px}
+.orange-theme .logoicon1 > img{width:30px}
+.top1{margin-top:0px}
+.mnone1{margin-top:0}
+.greenbtn a br{display:none}
+.greenbtn a{margin:0}
+.learning-col{width:100%}
+.colheight1{height:auto!important}
+.colheight2{height:auto!important}
+.colheight3{height:auto!important}
+.colheight4{height:auto!important}
+.associated-logo .owl-buttons .owl-prev{left:-20px}
+.associated-logo .owl-buttons .owl-next{right:-20px}
+.free-audit {padding: 12px;width: 100%;}
+.fancybox-close {right: 0; top: -1px;}
+.free-audit h3{ font-size:16px;}
+.free-audit .btn {font-size: 16px;height: 40px;padding: 6px 14px;}
+.home-banner #owl-demo2 .item img { height:196px;}
+}
+@media screen and (max-width:400px) {
+.logoicon1 > img{width:40px}
+.logoicon1{top:-40px}
+}
+

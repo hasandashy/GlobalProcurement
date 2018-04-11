@@ -3,10 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="dis-block clearfix  marT1 top-space">
         <div class="main-heading dis-block clearfix pad15 font18 head-graybg padbottom-none padtop4 marTnone">
-            <div class="menu-icon">
-                <a href="MainMenu.aspx">
-                    <img src="../images/menu-icon.png" alt=""></a>
-            </div>
+           <div class="menu-icon"><a href="MainMenu.aspx"><img src="../images/menu-icon.png" alt=""></a></div>
             <h1>Member Information<span> </span></h1>
         </div>
         <asp:MultiView ID="multiView" runat="server">

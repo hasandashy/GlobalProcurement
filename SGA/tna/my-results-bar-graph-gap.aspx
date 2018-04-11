@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/tnaMaster.Master"  AutoEventWireup="true" CodeBehind="my-results-bar-graph.aspx.cs" Inherits="SGA.tna.my_results_bar_graph" %>
-<%@ Register Src="~/controls/ctrlCMCGraph.ascx" TagName="cmcGragh" TagPrefix="sga" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/tnaMaster.Master" AutoEventWireup="true" CodeBehind="my-results-bar-graph-gap.aspx.cs" Inherits="SGA.tna.my_results_bar_graph_gap" %>
+<%@ Register Src="~/controls/ctrlCMCGraph2.ascx" TagName="cmcGragh" TagPrefix="sga" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    <%-- <script type="text/javascript" src="../Scripts/jquery.colorbox.js"></script>
 <script type="text/javascript" src="../js/ddaccordion.js"></script>
@@ -11,6 +11,8 @@
 </div>
 <sga:cmcGragh id="graph1" showCompare="0" runat="server"></sga:cmcGragh>
 
+        
+
 
 
 
@@ -21,11 +23,12 @@
 
 
 <div class="bottom-btn">
-<div class="fright blue-btn"><a href="my-results-bar-graph-gap.aspx" class="rightbt">NEXT >> </a></div>
+<div class="fright blue-btn"><a href="Association.aspx" class="rightbt">NEXT >> </a></div>
 
 
 </div>
 </div>
 
 </asp:Content>
+
 

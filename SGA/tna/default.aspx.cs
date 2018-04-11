@@ -28,40 +28,22 @@ namespace SGA.tna
 					new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
 				});
                 bool isSgaTest = false;
-                bool isTnaTest = false;
-                bool isPmpTest = false;
-                bool isDmpTest = false;
-                bool isNpTest = false;
-                bool isCMAtest = false;
-                bool istakeCMASGAtest = false; 
-                bool isLeadershiptest = false;
-                bool isDNAtest = false;
-                bool isCMKtest = false;
-                bool isSCKEtest = false;
-                bool isSCSAtest = false;
+                bool takeSgaTest = false;
+              
 
                 if (dsPermission != null)
                 {
                     if (dsPermission.Tables.Count > 0 && dsPermission.Tables[0].Rows.Count > 0)
                     {
-                        isSgaTest = System.Convert.ToBoolean(dsPermission.Tables[0].Rows[0]["viewSgaTest"].ToString());
-                        isTnaTest = System.Convert.ToBoolean(dsPermission.Tables[0].Rows[0]["viewTnaTest"].ToString());
-                        isPmpTest = System.Convert.ToBoolean(dsPermission.Tables[0].Rows[0]["viewPmpTest"].ToString());
-                        isDmpTest = System.Convert.ToBoolean(dsPermission.Tables[0].Rows[0]["viewDmpTest"].ToString());
-                        isNpTest = System.Convert.ToBoolean(dsPermission.Tables[0].Rows[0]["viewNpTest"].ToString());
-                        isCMAtest = System.Convert.ToBoolean(dsPermission.Tables[0].Rows[0]["takeCMATest"].ToString());
-                        istakeCMASGAtest = System.Convert.ToBoolean(dsPermission.Tables[0].Rows[0]["takeCMASGATest"].ToString());
-                        isLeadershiptest = System.Convert.ToBoolean(dsPermission.Tables[0].Rows[0]["takeLeadershipTest"].ToString());
-                        isDNAtest = System.Convert.ToBoolean(dsPermission.Tables[0].Rows[0]["takeDNA"].ToString());
-                        isCMKtest = System.Convert.ToBoolean(dsPermission.Tables[0].Rows[0]["takeCMK"].ToString());
-                        isSCKEtest = System.Convert.ToBoolean(dsPermission.Tables[0].Rows[0]["takeSCKE"].ToString());
-                        isSCSAtest = System.Convert.ToBoolean(dsPermission.Tables[0].Rows[0]["takeSCSA"].ToString());
+                        isSgaTest = System.Convert.ToBoolean(dsPermission.Tables[0].Rows[0]["viewSga"].ToString());
+                        takeSgaTest = System.Convert.ToBoolean(dsPermission.Tables[0].Rows[0]["takeSga"].ToString());
+                      
                     }
                 }
                 /*  */
-              
 
-
+                
+            
              
              
 

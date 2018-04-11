@@ -42,6 +42,7 @@ namespace SGA.tna
             {
                 HtmlGenericControl div = e.Item.FindControl("start") as HtmlGenericControl;
                 HtmlGenericControl li = e.Item.FindControl("list") as HtmlGenericControl;
+                HtmlAnchor a = (HtmlAnchor)e.Item.FindControl("anchorLink");
                 int row = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "spGetTopicQuestionAnswered", new SqlParameter[]
                  {
                     new SqlParameter("@topicId", Int32.Parse(DataBinder.Eval(e.Item.DataItem, "topicId").ToString())),
@@ -55,12 +56,14 @@ namespace SGA.tna
                     IsCurrent = true;
                     div.Visible = true;
                     li.Attributes.Add("class", "active");
+                    a.HRef = "assessments-pillar-quotes.aspx?pillerId=" + DataBinder.Eval(e.Item.DataItem, "topicId").ToString();
                 }
                 if(row < 9 && IsCurrent != true)
                 {
                     IsCurrent = true;
                     div.Visible = true;
                     li.Attributes.Add("class", "active");
+                    a.HRef = "assessments-pillar-quotes.aspx?pillerId=" + DataBinder.Eval(e.Item.DataItem, "topicId").ToString();
                 }
 
                 if(row==9)

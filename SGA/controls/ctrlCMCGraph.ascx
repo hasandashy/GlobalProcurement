@@ -85,7 +85,6 @@
 
 
 
-
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
     
@@ -113,7 +112,8 @@
 <div class="redtitle"></div>
 </div>
 
-<div class="dis-block clearfix  graph" id="container"> 
+<div class="dis-block clearfix  graph">
+     <div id="container" style="width:100%;margin: 0 auto"></div> 
 </div>
 </div>
 
@@ -123,7 +123,9 @@
 <div class="redtitle"></div>
 </div>
 
-<div class="dis-block clearfix graph" id="container1"></div>
+<div class="dis-block clearfix graph">
+    <div id="container1" style="width:100%;margin: 0 auto"></div>
+</div>
 </div>
 
 <div id="tab3" class="tab">
@@ -133,7 +135,9 @@
 <div class="redtitle"></div>
 </div>
 
-<div class="dis-block clearfix  graph" id="container2"></div>
+<div class="dis-block clearfix graph">
+     <div id="container2" style="width:100%;margin: 0 auto"></div>
+</div>
 </div>
 
 </div>
@@ -143,11 +147,12 @@
 
 </div>
 
-<script>
-    Highcharts.chart('container', {
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {        
+   var chart1 = Highcharts.chart('container', {
         chart: {
-            type: 'column',
-            width: 1300
+            type: 'column'
         },
         title: {
             text: 'Procurement Benchmark Assessment'
@@ -191,6 +196,7 @@
             name: 'Marks',
             data: [ <%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>]
         }]
+
         //}, {
         //    name: 'New York',
         //    data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
@@ -205,149 +211,155 @@
 
         //}]
     });
-</script>
 
-<script>
-    Highcharts.chart('container1', {
-        chart: {
-            type: 'column',
-            width: 1300
-        },
-        title: {
-            text: 'Procurement Benchmark Assessment'
-        },
-        subtitle: {
-            text: ''
-        },
-        xAxis: {
-            categories: [
-                '<%= topic1name %>',
-                '<%= topic2name %>',
-                '<%= topic3name %>',
-                '<%= topic4name %>',
-                '<%= topic5name %>',
-                '<%= topic6name %>',
-                '<%= topic7name %>'
-            ],
-            crosshair: true
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: 'Marks (avg)'
-            }
-        },
-        tooltip: {
-            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f} %</b></td></tr>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true
-        },
-        plotOptions: {
-            column: {
-                pointPadding: 0.2,
-                borderWidth: 0
-            }
-        },
-        series: [{
-            name: 'Your Marks',
-            data: [ <%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>]
-        
-        }, {
-            name: 'Average Marks',
-            data: [83.6, 78.8, 98.5, 93.4, 32.0, 55.5, 40.0]
-        }]
+      
+     
 
-        //}, {
-        //    name: 'London',
-        //    data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
-
-        //}, {
-        //    name: 'Berlin',
-        //    data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
-
-        //}]
-    });
-</script>
-
-<script>
-    Highcharts.chart('container2', {
-        chart: {
-            type: 'column',
-            width: 1300
-        },
-        title: {
-            text: 'Procurement Benchmark Assessment'
-        },
-        subtitle: {
-            text: ''
-        },
-        xAxis: {
-            categories: [
-                '<%= topic1name %>',
-                '<%= topic2name %>',
-                '<%= topic3name %>',
-                '<%= topic4name %>',
-                '<%= topic5name %>',
-                '<%= topic6name %>',
-                '<%= topic7name %>'
-            ],
-            crosshair: true
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: 'Marks (avg)'
-            }
-        },
-        tooltip: {
-            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f} %</b></td></tr>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true
-        },
-        plotOptions: {
-            column: {
-                pointPadding: 0.2,
-                borderWidth: 0
-            }
-        },
-        series: [{
-            name: 'Your Marks',
-            data: [ <%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>]
-        
-        }, {
-            name: 'Average Marks',
-            data: [40.6, 30.8, 65.5, 45.4, 76.0, 12.5, 33.0]
-        }]
-
-        //}, {
-        //    name: 'London',
-        //    data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
-
-        //}, {
-        //    name: 'Berlin',
-        //    data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
-
-        //}]
-    });
-</script>
-<script type="text/javascript">
-jQuery(document).ready(function() {
-    jQuery('.tabs .tab-links a').on('click', function(e)  {
+    jQuery('.tabs .tab-links a').on('click', function (e) {
         var currentAttrValue = jQuery(this).attr('href');
- 
+      
         // Show/Hide Tabs
         jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
- 
+       
         // Change/remove current tab to active
         jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
- 
+
+
+          if (currentAttrValue === '#tab1') {
+            chart1.reflow();
+        }
+
+        if (currentAttrValue === '#tab2') {
+              var chart2 = Highcharts.chart('container1', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Procurement Benchmark Assessment'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: [
+                '<%= topic1name %>',
+                '<%= topic2name %>',
+                '<%= topic3name %>',
+                '<%= topic4name %>',
+                '<%= topic5name %>',
+                '<%= topic6name %>',
+                '<%= topic7name %>'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Marks (avg)'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} %</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Your Marks',
+            data: [ <%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>]
+        
+        }, {
+            name: 'Average Marks',
+            data: [<%= medain1 %>,<%= medain2 %>,<%= medain3 %>,<%= medain4 %>,<%= medain5 %>,<%= medain6 %>,<%= medain7 %>]
+        }]
+
+        //}, {
+        //    name: 'London',
+        //    data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+
+        //}, {
+        //    name: 'Berlin',
+        //    data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+
+        //}]
+    });
+
+        }
+
+        if (currentAttrValue === '#tab3') {
+              var chart3 = Highcharts.chart('container2', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Procurement Benchmark Assessment'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: [
+                '<%= topic1name %>',
+                '<%= topic2name %>',
+                '<%= topic3name %>',
+                '<%= topic4name %>',
+                '<%= topic5name %>',
+                '<%= topic6name %>',
+                '<%= topic7name %>'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Marks (avg)'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} %</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Your Marks',
+            data: [ <%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>]
+        
+        }, {
+            name: 'Average Marks',
+            data: [<%= sectormedain1 %>,<%= sectormedain2 %>,<%= sectormedain3 %>,<%= sectormedain4 %>,<%= sectormedain5 %>,<%= sectormedain6 %>,<%= sectormedain7 %>]
+        }]
+
+        //}, {
+        //    name: 'London',
+        //    data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+
+        //}, {
+        //    name: 'Berlin',
+        //    data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+
+        //}]
+    });
+        }
         e.preventDefault();
+
+       
     });
 });
 

@@ -1074,124 +1074,16 @@
                                                     </asp:BoundColumn>--%>
                                                                 <asp:TemplateColumn HeaderText="PKE Result" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
                                                                     <ItemTemplate>
-                                                                        <input type="checkbox" id="chkSga" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("sgaResult") %>' />
+                                                                        <input type="checkbox" id="chkSga" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("viewSGA") %>' />
                                                                     </ItemTemplate>
                                                                 </asp:TemplateColumn>
-                                                                <%-- <asp:TemplateColumn HeaderText="SSA Result" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkTna" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("tnaResult") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="BA Result" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkPmp" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("pmpResult") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="NP Result" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkNP" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("npResult") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="MP Result" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkDmp" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("dmpResult") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="CMA Result" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkCMA" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("cmaResult") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="CMSA Result" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkCMASGA" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("viewCMASGAResult") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="Leadership Result" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkLeadership" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("viewLeadershipResult") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="DNA Result" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkDNA" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("viewDNA") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="CMKE Result" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkCMK" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("viewCMK") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="SCKE Result" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkSCKE" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("viewSCKEResult") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="SCSA Result" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkSCSA" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("viewSCSAResult") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>--%>
+                                                              
                                                                 <asp:TemplateColumn HeaderText="PKE Test" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
                                                                     <ItemTemplate>
-                                                                        <input type="checkbox" id="chkSgatest" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("takeTNA") %>' />
+                                                                        <input type="checkbox" id="chkSgatest" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("takeSGA") %>' />
                                                                     </ItemTemplate>
                                                                 </asp:TemplateColumn>
-                                                                <%--<asp:TemplateColumn HeaderText="SSA Test" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkTnatest" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("takeTNA") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="BA Test" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkPmptest" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("takePMP") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="NP Test" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkNPtest" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("takeNP") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="MP Test" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkDmptest" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("takeDMP") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="CMA Test" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkCmatest" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("takeCMA") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="CMSA Test" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkCmaSgatest" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("takeCMASGATest") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="Leadership Test" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkLeadershiptest" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("takeLeadershipTest") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="DNA Test" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkDNAtest" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("takeDNA") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="CMKE Test" ItemStyle-Width="7%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkCmktest" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("takeCMK") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="SCKE Test" ItemStyle-Width="7%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkSCKEtest" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("takeSCKE") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                                <asp:TemplateColumn HeaderText="SCSA Test" ItemStyle-Width="7%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkSCSAtest" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("takeSCSA") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>--%>
+                                                               
                                                             </Columns>
                                                         </asp:DataGrid>
                                                         <asp:Button ID="btnUpdate1" runat="server" CausesValidation="false" OnClick="btnUpdate_Click" Text="Update Permission" />

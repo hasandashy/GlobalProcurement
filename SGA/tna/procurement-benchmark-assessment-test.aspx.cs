@@ -82,7 +82,7 @@ namespace SGA.tna
             {
                 int CurrentPage = ((DataPager1.StartRowIndex) / DataPager1.MaximumRows) + 1;
                 Label lblNumber = (Label)e.Item.FindControl("lblNumber");
-                pgLbl.InnerText = "Question " + CurrentPage + "of " + (DataPager1.TotalRowCount == 0 ? 9 : DataPager1.TotalRowCount); 
+                pgLbl.InnerText = "Question " + CurrentPage + " of " + (DataPager1.TotalRowCount == 0 ? 9 : DataPager1.TotalRowCount); 
                 if (lblNumber != null)
                 {
                     if (CurrentPage <= 9)

@@ -14,7 +14,7 @@
        
         <div class="dis-block clearfix white-bg pad15 full-height pillar-question">
             <div class="gray-strip"></div>
-            <div class="gray-strip-fill width1"></div>
+            <div id="gray-strip-fill"></div>
             <div class="question-number" runat="server" id="pgLbl"></div>
             <asp:ListView ID="parentRepeater" runat="server" OnItemDataBound="parentRepeater_ItemDataBound" OnPagePropertiesChanged="parentRepeater_PagePropertiesChanged">
                 <LayoutTemplate>
@@ -78,6 +78,8 @@
             if ($('#lblNumber').text() == '01') {
                 $("#lb1").css("visibility", "hidden");
             }
+            var cls = 'width' + $('#lblNumber').text().substring(1) + ' gray-strip-fill';
+            $("#gray-strip-fill").attr('class', cls);
         });
         $("#optionlist li").click(function () {
             $('#optionlist li').removeAttr('id');

@@ -29,9 +29,9 @@ namespace SGA.App_Code
                 {
                     cu = new User();
                     string[] args = HttpContext.Current.User.Identity.Name.Split(new char[]
-					{
-						':'
-					});
+                    {
+                        ':'
+                    });
                     if (args.Length > 0)
                     {
                         cu.userId = System.Convert.ToInt32(args[1]);
@@ -87,12 +87,12 @@ namespace SGA.App_Code
         public static void SaveBrowserDetails(int userId, string browserName, string userAgent, string sessionId)
         {
             SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "spProcessSessionDetails", new SqlParameter[]
-			{
-				new SqlParameter("@userId", userId),
-				new SqlParameter("@browserName", browserName),
-				new SqlParameter("@userAgent", userAgent),
-				new SqlParameter("@sessionId", sessionId)
-			});
+            {
+                new SqlParameter("@userId", userId),
+                new SqlParameter("@browserName", browserName),
+                new SqlParameter("@userAgent", userAgent),
+                new SqlParameter("@sessionId", sessionId)
+            });
         }
 
         public static string CmcRatingByPercentage(double percentage)
@@ -137,9 +137,9 @@ namespace SGA.App_Code
         {
             bool isView = true;
             DataSet dsPermission = SqlHelper.ExecuteDataset(CommandType.StoredProcedure, "spGetPremission", new SqlParameter[]
-			{
-				new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
-			});
+            {
+                new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
+            });
             if (dsPermission != null)
             {
                 isView = System.Convert.ToBoolean(dsPermission.Tables[0].Rows[0][colName].ToString());
@@ -154,9 +154,9 @@ namespace SGA.App_Code
         {
             bool isView = true;
             DataSet dsPermission = SqlHelper.ExecuteDataset(CommandType.StoredProcedure, "spGetPremission", new SqlParameter[]
-			{
-				new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
-			});
+            {
+                new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
+            });
             if (dsPermission != null)
             {
                 isView = System.Convert.ToBoolean(dsPermission.Tables[0].Rows[0][colName].ToString());
@@ -176,10 +176,10 @@ namespace SGA.App_Code
         public static void GetEmailTemplate(int id, ref string subject, ref string body)
         {
             DataSet ds = SqlHelper.ExecuteDataset(CommandType.StoredProcedure, "spManageTemplate", new SqlParameter[]
-			{
-				new SqlParameter("@flag", "0"),
-				new SqlParameter("@id", id)
-			});
+            {
+                new SqlParameter("@flag", "0"),
+                new SqlParameter("@id", id)
+            });
             if (ds != null)
             {
                 if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
@@ -201,7 +201,7 @@ namespace SGA.App_Code
         {
             string strValue = "";
             switch (roleId)
-            {                 
+            {
                 case 1:
                     strValue = "Analyst";
                     break;
@@ -241,7 +241,7 @@ namespace SGA.App_Code
                 case 13:
                     strValue = "Other";
                     break;
-                
+
             }
             return strValue;
         }
@@ -472,9 +472,9 @@ namespace SGA.App_Code
             if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 name = SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "spGetName", new SqlParameter[]
-				{
-					new SqlParameter("@Id", SGACommon.LoginUserInfo.userId)
-				}).ToString();
+                {
+                    new SqlParameter("@Id", SGACommon.LoginUserInfo.userId)
+                }).ToString();
             }
             return SGACommon.ToTitleCase(name);
         }
@@ -482,9 +482,9 @@ namespace SGA.App_Code
         public static string GetName(int userId)
         {
             string name = SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "spGetName", new SqlParameter[]
-			{
-				new SqlParameter("@Id", userId)
-			}).ToString();
+            {
+                new SqlParameter("@Id", userId)
+            }).ToString();
             return SGACommon.ToTitleCase(name);
         }
 
@@ -494,9 +494,9 @@ namespace SGA.App_Code
             if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 name = SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "spGetFullName", new SqlParameter[]
-				{
-					new SqlParameter("@Id", SGACommon.LoginUserInfo.userId)
-				}).ToString();
+                {
+                    new SqlParameter("@Id", SGACommon.LoginUserInfo.userId)
+                }).ToString();
             }
             return SGACommon.ToTitleCase(name);
         }
@@ -507,9 +507,9 @@ namespace SGA.App_Code
             if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 name = SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "spGetCompanyByUser", new SqlParameter[]
-				{
-					new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
-				}).ToString();
+                {
+                    new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
+                }).ToString();
             }
             return SGACommon.ToTitleCase(name);
         }
@@ -683,6 +683,125 @@ namespace SGA.App_Code
             provider.GetBytes(data);
             return System.Convert.ToBase64String(data);
         }
+
+        public static string GetLogoNameByMembership(string membership)
+        {
+            string strValue = string.Empty;
+            switch (membership)
+            {
+                case "AACAM": strValue = "aacam.png"; break;
+                case "ABCAL": strValue = "logo1.png"; break;
+                case "ADACI": strValue = "adaci.png"; break;
+                case "AERCE": strValue = "logo2.png"; break;
+                case "APCADEC": strValue = "logo3.png"; break;
+                case "APPI": strValue = "dpnappi.png"; break;
+                case "APROCAL": strValue = "aprocal.png"; break;
+                case "BME": strValue = "logo4.png"; break;
+                case "BMOE": strValue = "bmo.png"; break;
+                case "CAP": strValue = "hund.png"; break;
+                case "CAPP": strValue = "cpi.png"; break;
+                case "CBEC": strValue = "logo5.png"; break;
+                case "CFLP": strValue = "logo6.png"; break;
+                case "CIPSMN": strValue = "logo7.png"; break;
+                case "DILF": strValue = "logo8.png"; break;
+                case "Forum Einkauf": strValue = "logo9.png"; break;
+                case "FZUP": strValue = "logo10.png"; break;
+                case "HALPIM": strValue = "logo11.png"; break;
+                case "HPI": strValue = "logo12.png"; break;
+                case "IAPI": strValue = "logo13.png"; break;
+                case "IFPSM": strValue = "ifpsm.png"; break;
+                case "IIMM": strValue = "logo14.png"; break;
+                case "IIPMM": strValue = "logo15.png"; break;
+                case "IPLMA": strValue = "logo16.png"; break;
+                case "IPPU": strValue = "ppu.png"; break;
+                case "IPSHK": strValue = "logo17.png"; break;
+                case "ISMM": strValue = "logo18.png"; break;
+                case "JMMA": strValue = "logo19.png"; break;
+                case "KISM": strValue = "logo20.png"; break;
+                case "LOGY": strValue = "logo22.png"; break;
+                case "MIPMM": strValue = "logo23.png"; break;
+                case "MIPS": strValue = "aips.png"; break;
+                case "NEVI": strValue = "logo24.png"; break;
+                case "NIMA": strValue = "logo25.png"; break;
+                case "PASIA": strValue = "logo26.png"; break;
+                case "PISM ": strValue = "logo27.png"; break;
+                case "PROCURE": strValue = "logo28.png"; break;
+                case "PROLOG": strValue = "logo29.png"; break;
+                case "PSCMT": strValue = "logo30.png"; break;
+                case "PSML": strValue = "logo31.png"; break;
+                case "SAPPP": strValue = "logo32.png"; break;
+                case "SCMA": strValue = "logo33.png"; break;
+                case "SILF ": strValue = "logo34.png"; break;
+                case "SIMM": strValue = "logo35.png"; break;
+                case "SMIT": strValue = "logo36.png"; break;
+                case "SSCPA": strValue = "spa.png"; break;
+                case "TUSAYDER": strValue = "logo37.png"; break;
+                case "ZNS": strValue = "logo38.png"; break;
+                case "Other - CIPS": strValue = "CIPS.png"; break;
+                case "Other - ISM": strValue = "ISM.png"; break;
+                default: strValue = string.Empty; break;
+            }
+            return strValue;
+        }
+        public static string GetMembershipNameByMembership(string membership)
+        {
+            string strValue = string.Empty;
+            switch (membership)
+            {
+                case "AACAM": strValue = "Asociación Argentina de Compras Administracion de Materiales y Logistica"; break;
+                case "ABCAL": strValue = "Association Belge des Cardes d’Achat et de Logistique"; break;
+                case "ADACI": strValue = "Associazione Italiana Acquiste E Supply Management"; break;
+                case "AERCE": strValue = "Associación Espanola de Professionales de Compras, Contractión y Aprovisionamientos"; break;
+                case "APCADEC": strValue = "Portuguese association for Purchasing and Supply Management"; break;
+                case "APPI": strValue = "Asosiasi Pengacara Pengadaan Indonesia"; break;
+                case "APROCAL": strValue = "Asociación de Profesionales en Compras, Abastecimiento y Logística, A.C."; break;
+                case "BME": strValue = "Bundesverband Materialwirtschaft, Einkauf und Logistik"; break;
+                case "BMOE": strValue = "Bundesverband Materialwirtschaft, Einkauf und Logistik in Osterreich"; break;
+                case "CAP": strValue = "Croatian Association of Purchasing"; break;
+                case "CAPP": strValue = "Caribbean Association of Procurement Professionals"; break;
+                case "CBEC": strValue = "Brazilian Council of Purchasing Executives"; break;
+                case "CFLP": strValue = "China Federation of Logistics and Purchasing"; break;
+                case "CIPSMN": strValue = "Chartered Institute of Purchasing & Supply Management of Nigeria"; break;
+                case "DILF": strValue = "Danish Purchasing and Logistics Forum"; break;
+                case "Forum Einkauf": strValue = "Forum Einkauf"; break;
+                case "FZUP": strValue = "Federation of Purchases and Supply Management of Russia"; break;
+                case "HALPIM": strValue = "Hungarian Association of Logistics, Purchasing and Inventory Management"; break;
+                case "HPI": strValue = "Hellenic Purchasing Institute"; break;
+                case "IAPI": strValue = "Ikatan Ahli Pengadaan Indonesia"; break;
+                case "IFPSM": strValue = "International Federation of Purchasing & Supply Management"; break;
+                case "IIMM": strValue = "Indian Institute of Materials Management"; break;
+                case "IIPMM": strValue = "Irish Institute of Purchasing and Materials Management"; break;
+                case "IPLMA": strValue = "Israeli Purchasing & Logistics Managers Association"; break;
+                case "IPPU": strValue = "Institute of Procurement Professionals of Uganda"; break;
+                case "IPSHK": strValue = "The Institute of Purchasing and Supply of Hong Kong"; break;
+                case "ISMM": strValue = "Institute of Supply and Materials Management"; break;
+                case "JMMA": strValue = "Japan Materials Management Association"; break;
+                case "KISM": strValue = "Kenya Institute of Supplies Management"; break;
+                case "LOGY": strValue = "Finnish Association of Purchasing and Logistics"; break;
+                case "MIPMM": strValue = "Malaysian Institute of Purchasing & Materials Management"; break;
+                case "MIPS": strValue = "Malawi Institute of Procurement and Supply"; break;
+                case "NEVI": strValue = "Nederlandse Vereniging voor Inkoop Management"; break;
+                case "NIMA": strValue = "Norsk Forbund for Innkjøp og Logistikk (The Norwegian Association of Purchasing and Logistics)"; break;
+                case "PASIA": strValue = "Procurement and Supply Institute of Asia"; break;
+                case "PISM": strValue = "Philippine Institute for Supply Management"; break;
+                case "PROCURE": strValue = "procure.ch Swiss Association for Purchasing and Supply Management"; break;
+                case "PROLOG": strValue = "Estonian Purchasing and Supply Chain Management Association"; break;
+                case "PSCMT": strValue = "Purchasing and Supply Chain Management Association of Thailand"; break;
+                case "PSML": strValue = "Polish Supply Management Leaders"; break;
+                case "SAPPP": strValue = "Serbian Association of Professionals in Public Procurement"; break;
+                case "SCMA": strValue = "Supply Chain Management Association"; break;
+                case "SILF": strValue = "Swedish Purchasing and Logistic Association"; break;
+                case "SIMM": strValue = "Singapore Institute of Materials Management"; break;
+                case "SMIT": strValue = "Supply Management Institute, Taiwan"; break;
+                case "SSCPA": strValue = "Serbian Supply Chain Professionals Association"; break;
+                case "TUSAYDER": strValue = "TUSAYDER"; break;
+                case "ZNS": strValue = "Zdruzenje nabavnikov Slovenije (Slovenian Purchasing Association)"; break;
+                case "Other - CIPS": strValue = "Other: CIPS – Chartered Institute of Purchasing & Supply"; break;
+                case "Other - ISM": strValue = "Other:ISM – Institute of Supply Management"; break;
+                default: strValue = string.Empty; break;
+            }
+            return strValue;
+        }
     }
 
     public class User
@@ -746,7 +865,7 @@ namespace SGA.App_Code
             }
         }
 
-        
+
 
     }
 
@@ -917,7 +1036,7 @@ namespace SGA.App_Code
                     strValue = "Procurement strategy is centralised, but execution is de-centralised";
                     break;
                 default:
-                    strValue = "Procurement Model";
+                    strValue = "--select item--";
                     break;
             }
             return strValue;
@@ -953,7 +1072,7 @@ namespace SGA.App_Code
                     strValue = "Regional or Global Procurement";
                     break;
                 default:
-                    strValue = "Reporting line";
+                    strValue = "--select item--";
                     break;
             }
             return strValue;
@@ -998,7 +1117,7 @@ namespace SGA.App_Code
                     strValue = "Less than $500,000";
                     break;
                 default:
-                    strValue = "Spend under influence";
+                    strValue = "--select item--";
                     break;
             }
             return strValue;
@@ -1018,9 +1137,9 @@ namespace SGA.App_Code
                 case 3:
                     strValue = "Non Profit";
                     break;
-             
+
                 default:
-                    strValue = "Sector";
+                    strValue = "--select item--";
                     break;
             }
             return strValue;
@@ -1066,7 +1185,7 @@ namespace SGA.App_Code
                     strValue = "Less than $500,000";
                     break;
                 default:
-                    strValue = "Spend under your influence";
+                    strValue = "--select item--";
                     break;
             }
             return strValue;
@@ -1123,7 +1242,7 @@ namespace SGA.App_Code
                     strValue = "1";
                     break;
                 default:
-                    strValue = "Number of employees";
+                    strValue = "--select item--";
                     break;
             }
             return strValue;
@@ -1144,7 +1263,7 @@ namespace SGA.App_Code
                     strValue = "Global";
                     break;
                 default:
-                    strValue = "Geographical influence";
+                    strValue = "--select item--";
                     break;
             }
             return strValue;
@@ -1191,9 +1310,9 @@ namespace SGA.App_Code
                 case 12:
                     strValue = "Non-Procurement: Trainee";
                     break;
-                
+
                 default:
-                    strValue = "Role best described as:";
+                    strValue = "--select item--";
                     break;
             }
             return strValue;
@@ -1262,7 +1381,7 @@ namespace SGA.App_Code
                     strValue = "Wardrobe & Workwear";
                     break;
                 default:
-                    strValue = "Category you manage currently";
+                    strValue = "--select item--";
                     break;
             }
             return strValue;
@@ -1298,7 +1417,7 @@ namespace SGA.App_Code
                     strValue = "Not applicable";
                     break;
                 default:
-                    strValue = "Procurement qualifications";
+                    strValue = "--select item--";
                     break;
             }
             return strValue;
@@ -1334,7 +1453,7 @@ namespace SGA.App_Code
                     strValue = "Doctorate";
                     break;
                 default:
-                    strValue = "Level of Education";
+                    strValue = "--select item--";
                     break;
             }
             return strValue;
@@ -1362,9 +1481,9 @@ namespace SGA.App_Code
                     break;
                 case 6:
                     strValue = "Not Applicable";
-                    break;               
+                    break;
                 default:
-                    strValue = "Years of procurement experience";
+                    strValue = "--select item--";
                     break;
             }
             return strValue;
@@ -1433,7 +1552,7 @@ namespace SGA.App_Code
                     strValue = "Other";
                     break;
                 default:
-                    strValue = "Your previous category experience";
+                    strValue = "--select item--";
                     break;
             }
             return strValue;

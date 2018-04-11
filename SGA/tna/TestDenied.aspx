@@ -1,20 +1,22 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/tnaMaster.Master" AutoEventWireup="true" CodeBehind="TestDenied.aspx.cs" Inherits="SGA.tna.TestDenied" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script type="text/javascript" src="../Scripts/jquery.colorbox.js"></script>
-<article id="container">
-					<section class="welcome">
-						<p class="title40-orange"><asp:Label ID="lblName" runat="server"></asp:Label>
-						</p>
-						<p class="title40">Test Restricted</p>
-						<p>Your assessment setting for this test is restricted.</p>
-					</section>
-					<div class="dot-line">&nbsp;</div>
-					<section class="color-box">
-						<p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-					</section>
-					<div class="dot-line">&nbsp;</div>
-				</article>                
+    <div class="dis-block clearfix  marT1 top-space">
+        <div class="main-heading dis-block clearfix pad15 font18 head-graybg padbottom-none padtop1 marTnone">
+            <div class="menu-icon"><a href="MainMenu.aspx"><img src="../images/menu-icon.png" alt=""></a></div>
+            <h1>Access Denied</h1>
+        </div>
+<div class="main-heading dis-block clearfix pad15 padtop1">
+<h1><span>Please complete your assesment to view results. </span></h1>
+</div>
+
+
+<%--<div class="dis-block clearfix gray-light-bg pad15 full-height">
+
+<div class="sub-heading  dis-block clearfix">
+<h2 class="font18">Please complete your assesment to view results.</h2>
+</div>--%>
+
+
+</div>
+</div>          
 </asp:Content>
