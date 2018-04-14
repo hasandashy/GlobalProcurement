@@ -64,28 +64,29 @@ namespace SGA.webadmin
             {
                 if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
                 {
-                    SGACommon.SelectListItem(this.ddlEditIndustry, ds.Tables[0].Rows[0]["industry"].ToString());
-                    SGACommon.SelectListItem(this.ddlEditAnnualRevenue, ds.Tables[0].Rows[0]["arevenue"].ToString());
+                    SGACommon.SelectListItem(this.ddlEditCatExp, ds.Tables[0].Rows[0]["prevCatExp"].ToString());
+                    SGACommon.SelectListItem(this.ddEditSector, ds.Tables[0].Rows[0]["sector"].ToString());
+                    SGACommon.SelectListItem(this.ddlMembeship, ds.Tables[0].Rows[0]["membershipAssociation"].ToString());
                     SGACommon.SelectListItem(this.ddlEditModel, ds.Tables[0].Rows[0]["pmodel"].ToString());
                     SGACommon.SelectListItem(this.ddlEditEmployeeCompany, ds.Tables[0].Rows[0]["noemployee"].ToString());
-                    SGACommon.SelectListItem(this.ddlEditCompanyRevenue, ds.Tables[0].Rows[0]["spendunder"].ToString());
+                    SGACommon.SelectListItem(this.ddlEditSpentUnder, ds.Tables[0].Rows[0]["spentunder"].ToString());
                     SGACommon.SelectListItem(this.ddlEditProcurementYear, ds.Tables[0].Rows[0]["experience"].ToString());
                     SGACommon.SelectListItem(this.cboEditQualifications, ds.Tables[0].Rows[0]["education"].ToString());
                     SGACommon.SelectListItem(this.ddlEditExpertise, ds.Tables[0].Rows[0]["categoryId"].ToString());
                     SGACommon.SelectListItem(this.ddlEditReportingLine, ds.Tables[0].Rows[0]["reportline"].ToString());
-                    SGACommon.SelectListItem(this.ddlEditSpendUnder, ds.Tables[0].Rows[0]["spentUnder"].ToString());
+                    SGACommon.SelectListItem(this.ddlEditSpendUnder, ds.Tables[0].Rows[0]["spendUnder"].ToString());
                     SGACommon.SelectListItem(this.ddlEditJobRole, ds.Tables[0].Rows[0]["jobRole"].ToString());
                     SGACommon.SelectListItem(this.ddlEditProLevel, ds.Tables[0].Rows[0]["proLevel"].ToString());
                     SGACommon.SelectListItem(this.ddlEditGeographical, ds.Tables[0].Rows[0]["geoInfluence"].ToString());
                     SGACommon.SelectListItem(this.ddlEditCountry, ds.Tables[0].Rows[0]["country"].ToString());
                     this.txtEditFname.Text = ds.Tables[0].Rows[0]["firstname"].ToString();
                     this.txtEditLname.Text = ds.Tables[0].Rows[0]["lastname"].ToString();
-                    this.txtEditCompany.Text = ds.Tables[0].Rows[0]["company"].ToString();
+                    
                     this.txtEditPassword.Text = ds.Tables[0].Rows[0]["plainpassword"].ToString();
-                    this.txtEditPhone.Text = ((ds.Tables[0].Rows[0]["Phone"].ToString().Length > 0) ? ds.Tables[0].Rows[0]["Phone"].ToString() : "");
-                    this.txtEditstate.Text = ((ds.Tables[0].Rows[0]["State"].ToString().Length > 0) ? ds.Tables[0].Rows[0]["State"].ToString() : "");
-                    this.txtEditpostcode.Text = ((ds.Tables[0].Rows[0]["postcode"].ToString().Length > 0) ? ds.Tables[0].Rows[0]["postcode"].ToString() : "");
-                    this.txtEditJobTitle.Text = ((ds.Tables[0].Rows[0]["jobtitle"].ToString().Length > 0) ? ds.Tables[0].Rows[0]["jobtitle"].ToString() : "");
+                    //this.txtEditPhone.Text = ((ds.Tables[0].Rows[0]["Phone"].ToString().Length > 0) ? ds.Tables[0].Rows[0]["Phone"].ToString() : "");
+                    //this.txtEditstate.Text = ((ds.Tables[0].Rows[0]["State"].ToString().Length > 0) ? ds.Tables[0].Rows[0]["State"].ToString() : "");
+                    //this.txtEditpostcode.Text = ((ds.Tables[0].Rows[0]["postcode"].ToString().Length > 0) ? ds.Tables[0].Rows[0]["postcode"].ToString() : "");
+                    //this.txtEditJobTitle.Text = ((ds.Tables[0].Rows[0]["jobtitle"].ToString().Length > 0) ? ds.Tables[0].Rows[0]["jobtitle"].ToString() : "");
                     this.txtEditExiryDate.Text = System.Convert.ToDateTime(ds.Tables[0].Rows[0]["expiryDate"]).ToShortDateString();
                     if (System.Convert.ToBoolean(ds.Tables[0].Rows[0]["expired"]))
                     {
@@ -99,88 +100,76 @@ namespace SGA.webadmin
                     this.lblEditStatus.Text = (System.Convert.ToBoolean(ds.Tables[0].Rows[0]["expired"]) ? "Expired" : "Running");
                     this._direct = ds.Tables[0].Rows[0]["directgenneral"].ToString();
                     this._indirect = ds.Tables[0].Rows[0]["specialist"].ToString();
-                    trLinkedIn.Visible = false;
-                    if (Convert.ToBoolean(ds.Tables[0].Rows[0]["isLinkedinAssociated"].ToString()))
-                    {
-                        trLinkedIn.Visible = true; 
-                        lblLinkedIn.Text = ds.Tables[0].Rows[0]["linkedinProfileUrl"].ToString();
-                    }
+                    //trLinkedIn.Visible = false;
+                    //if (Convert.ToBoolean(ds.Tables[0].Rows[0]["isLinkedinAssociated"].ToString()))
+                    //{
+                    //    trLinkedIn.Visible = true; 
+                    //    lblLinkedIn.Text = ds.Tables[0].Rows[0]["linkedinProfileUrl"].ToString();
+                    //}
 
-                    if (ds.Tables[0].Rows[0]["facebookProfileId"].ToString().Length > 0) {
-                        trFacebook.Visible = true;
-                        lblFacebook.Text = ds.Tables[0].Rows[0]["facebookProfileId"].ToString();
-                    }
+                    //if (ds.Tables[0].Rows[0]["facebookProfileId"].ToString().Length > 0) {
+                    //    trFacebook.Visible = true;
+                    //    lblFacebook.Text = ds.Tables[0].Rows[0]["facebookProfileId"].ToString();
+                    //}
                     
 
                 }
             }
         }
 
-        public void UpdateProfile(int industry, int arevenue, int pmodel, int noemployee, int category, int spent, int experience, int education, string specialist, int reportingLine, int spentUnder, int jobRole, int proLevel, string directGeneral, string fname, string lname, string company, string phone, int geoInfluence, string password, string state, string postcode, string country, string jobtitle, System.DateTime dtExpiryDate, bool isExpired)
+        public void UpdateProfile(string fname, string lname, string password, int jobRole, string membership, string country, int pmodel,int reportingLine, int spendUnder, int noemployee, int sector,int category,int spentUnder,int geoInfluence, int experience, int proLevel, int education,int catExp, System.DateTime dtExpiryDate, bool isExpired)
         {
             string passwordSalt = SGACommon.CreateSalt(5);
             string passwordHash = SGACommon.CreatePasswordHash(password, passwordSalt);
-            SqlParameter[] param = new SqlParameter[29];
-            param[0] = new SqlParameter("@industry", SqlDbType.Int);
-            param[0].Value = industry;
-            param[1] = new SqlParameter("@arevenue", SqlDbType.Int);
-            param[1].Value = arevenue;
-            param[2] = new SqlParameter("@pmodel", SqlDbType.Int);
-            param[2].Value = pmodel;
-            param[3] = new SqlParameter("@noemployee", SqlDbType.Int);
-            param[3].Value = noemployee;
-            param[4] = new SqlParameter("@categoryId", SqlDbType.Int);
-            param[4].Value = category;
-            param[5] = new SqlParameter("@spendunder", SqlDbType.Int);
-            param[5].Value = spent;
-            param[6] = new SqlParameter("@experience", SqlDbType.Int);
-            param[6].Value = experience;
-            param[7] = new SqlParameter("@education", SqlDbType.Int);
-            param[7].Value = education;
-            param[8] = new SqlParameter("@specialist", SqlDbType.VarChar);
-            param[8].Value = specialist;
-            param[9] = new SqlParameter("@userId", SqlDbType.Int);
-            param[9].Value = this.userId;
+            SqlParameter[] param = new SqlParameter[25];
+            param[1] = new SqlParameter("@fname", SqlDbType.VarChar);
+            param[1].Value = fname;
+            param[2] = new SqlParameter("@lname", SqlDbType.VarChar);
+            param[2].Value = lname;
+            param[3] = new SqlParameter("@passwordSalt", SqlDbType.VarChar);
+            param[3].Value = passwordSalt;
+            param[4] = new SqlParameter("@passwordHash", SqlDbType.VarChar);
+            param[4].Value = passwordHash;
+            param[5] = new SqlParameter("@plainpassword", SqlDbType.VarChar);
+            param[5].Value = password;
+            param[6] = new SqlParameter("@jobRole", SqlDbType.Int);
+            param[6].Value = jobRole;
+            param[7] = new SqlParameter("@membership", SqlDbType.VarChar);
+            param[7].Value = membership;
+            param[8] = new SqlParameter("@country", SqlDbType.VarChar);
+            param[8].Value = country;
+            param[9] = new SqlParameter("@pmodel", SqlDbType.Int);
+            param[9].Value = pmodel;
             param[10] = new SqlParameter("@reportline", SqlDbType.Int);
             param[10].Value = reportingLine;
-            param[11] = new SqlParameter("@spentUnder", SqlDbType.Int);
-            param[11].Value = spentUnder;
-            param[12] = new SqlParameter("@jobRole", SqlDbType.Int);
-            param[12].Value = jobRole;
-            param[13] = new SqlParameter("@proLevel", SqlDbType.Int);
-            param[13].Value = proLevel;
-            param[14] = new SqlParameter("@directGeneral", SqlDbType.VarChar);
-            param[14].Value = directGeneral;
-            param[15] = new SqlParameter("@fname", SqlDbType.VarChar);
-            param[15].Value = fname;
-            param[16] = new SqlParameter("@lname", SqlDbType.VarChar);
-            param[16].Value = lname;
-            param[17] = new SqlParameter("@company", SqlDbType.VarChar);
-            param[17].Value = company;
-            param[18] = new SqlParameter("@phone", SqlDbType.VarChar);
-            param[18].Value = phone;
-            param[19] = new SqlParameter("@geoInfluence", SqlDbType.Int);
-            param[19].Value = geoInfluence;
-            param[20] = new SqlParameter("@passwordSalt", SqlDbType.VarChar);
-            param[20].Value = passwordSalt;
-            param[21] = new SqlParameter("@passwordHash", SqlDbType.VarChar);
-            param[21].Value = passwordHash;
-            param[22] = new SqlParameter("@plainpassword", SqlDbType.VarChar);
-            param[22].Value = password;
-            param[23] = new SqlParameter("@state", SqlDbType.VarChar);
-            param[23].Value = state;
-            param[24] = new SqlParameter("@postcode", SqlDbType.VarChar);
-            param[24].Value = postcode;
-            param[25] = new SqlParameter("@country", SqlDbType.VarChar);
-            param[25].Value = country;
-            param[26] = new SqlParameter("@jobtitle", SqlDbType.VarChar);
-            param[26].Value = jobtitle;
-            param[27] = new SqlParameter("@expiryDate", SqlDbType.DateTime);
-            param[27].Value = dtExpiryDate;
-            param[28] = new SqlParameter("@isExpired", SqlDbType.VarChar);
-            param[28].Value = isExpired;
-            param[28] = new SqlParameter("@flag", SqlDbType.Int);
-            param[28].Value = 2;
+            param[11] = new SqlParameter("@spendunder", SqlDbType.Int);
+            param[11].Value = spendUnder;
+            param[12] = new SqlParameter("@noemployee", SqlDbType.Int);
+            param[12].Value = noemployee;
+            param[13] = new SqlParameter("@sector", SqlDbType.Int);
+            param[13].Value = sector;
+            param[14] = new SqlParameter("@categoryId", SqlDbType.Int);
+            param[14].Value = category;
+            param[15] = new SqlParameter("@spentUnder", SqlDbType.Int);
+            param[15].Value = spentUnder;
+            param[16] = new SqlParameter("@geoInfluence", SqlDbType.Int);
+            param[16].Value = geoInfluence;
+            param[17] = new SqlParameter("@experience", SqlDbType.Int);
+            param[17].Value = experience;
+            param[18] = new SqlParameter("@proLevel", SqlDbType.Int);
+            param[18].Value = proLevel;
+            param[19] = new SqlParameter("@education", SqlDbType.Int);
+            param[19].Value = education;
+            param[20] = new SqlParameter("@catExp", SqlDbType.Int);
+            param[20].Value = catExp;
+            param[21] = new SqlParameter("@userId", SqlDbType.Int);
+            param[21].Value = this.userId; 
+            param[22] = new SqlParameter("@expiryDate", SqlDbType.DateTime);
+            param[22].Value = dtExpiryDate;
+            param[23] = new SqlParameter("@isExpired", SqlDbType.VarChar);
+            param[23].Value = isExpired;
+            param[24] = new SqlParameter("@flag", SqlDbType.Int);
+            param[24].Value = 2;
             int result = System.Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "spUpdateProfileAdmin", param));
 
 
@@ -196,13 +185,8 @@ namespace SGA.webadmin
                 userId = System.Convert.ToInt32(resultFound[0]["Id"].ToString());
                 Contact.Add("FirstName", fname);
                 Contact.Add("LastName", lname);
-                Contact.Add("JobTitle", jobtitle);
                 Contact.Add("Email", txtEditEmailAddress.Text.Trim () );
-                Contact.Add("Company", company);
-                Contact.Add("State", state);
-                Contact.Add("PostalCode", postcode);
                 Contact.Add("Country", country);
-                Contact.Add("Fax1", phone);
                 Contact.Add("_Jobrolebestdescribedas", SGACommon.GetJobRole(System.Convert.ToInt32(jobRole)));
 
                 Contact.Add("ContactType", "Customer");
@@ -235,7 +219,7 @@ namespace SGA.webadmin
         {
             string strIndirect = (base.Request["indirect"] == null) ? "" : base.Request["indirect"].ToString();
             string strDirect = (base.Request["direct"] == null) ? "" : base.Request["direct"].ToString();
-            this.UpdateProfile(System.Convert.ToInt32(this.ddlEditIndustry.SelectedValue), System.Convert.ToInt32(this.ddlEditAnnualRevenue.SelectedValue), System.Convert.ToInt32(this.ddlEditModel.SelectedValue), System.Convert.ToInt32(this.ddlEditEmployeeCompany.SelectedValue), System.Convert.ToInt32(this.ddlEditExpertise.SelectedValue), System.Convert.ToInt32(this.ddlEditCompanyRevenue.SelectedValue), System.Convert.ToInt32(this.ddlEditProcurementYear.SelectedValue), System.Convert.ToInt32(this.cboEditQualifications.SelectedValue), strIndirect, System.Convert.ToInt32(this.ddlEditReportingLine.SelectedValue), System.Convert.ToInt32(this.ddlEditSpendUnder.SelectedValue), System.Convert.ToInt32(this.ddlEditJobRole.SelectedValue), System.Convert.ToInt32(this.ddlEditProLevel.SelectedValue), strDirect, this.txtEditFname.Text, this.txtEditLname.Text, this.txtEditCompany.Text, this.txtEditPhone.Text, System.Convert.ToInt32(this.ddlEditGeographical.SelectedValue), this.txtEditPassword.Text, this.txtEditstate.Text, this.txtEditpostcode.Text, this.ddlEditCountry.SelectedItem.Text.ToString(), this.txtEditJobTitle.Text, System.Convert.ToDateTime(this.txtEditExiryDate.Text), false);
+            this.UpdateProfile(this.txtEditFname.Text, this.txtEditLname.Text, this.txtEditPassword.Text, System.Convert.ToInt32(this.ddlEditJobRole.SelectedValue), this.ddlMembeship.SelectedValue, this.ddlEditCountry.SelectedValue, System.Convert.ToInt32(this.ddlEditModel.SelectedValue), System.Convert.ToInt32(this.ddlEditReportingLine.SelectedValue), System.Convert.ToInt32(this.ddlEditSpendUnder.SelectedValue), System.Convert.ToInt32(this.ddlEditEmployeeCompany.SelectedValue), System.Convert.ToInt32(this.ddEditSector.SelectedValue), System.Convert.ToInt32(this.ddlEditExpertise.SelectedValue), System.Convert.ToInt32(this.ddlEditSpentUnder.SelectedValue), System.Convert.ToInt32(this.ddlEditGeographical.SelectedValue), System.Convert.ToInt32(this.ddlEditProcurementYear.SelectedValue), System.Convert.ToInt32(this.ddlEditProLevel.SelectedValue), System.Convert.ToInt32(this.cboEditQualifications.SelectedValue), System.Convert.ToInt32(this.ddlEditCatExp.SelectedValue), System.Convert.ToDateTime(this.txtEditExiryDate.Text), false);
             this.LoadProfile();
         }
 

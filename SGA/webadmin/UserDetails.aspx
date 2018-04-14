@@ -25,10 +25,10 @@
                 <td>
                     <asp:TextBox name="txtEditLname" ID="txtEditLname" runat="server" MaxLength="100" />
                 </td>
-                <td class="txtrht">Company
+                <td class="txtrht">Password
                 </td>
                 <td>
-                    <asp:TextBox name="txtEditCompany" ID="txtEditCompany" runat="server" MaxLength="100" />
+                    <asp:TextBox name="txtEditPassword" ID="txtEditPassword" runat="server" MaxLength="20" />
                 </td>
             </tr>
             <tr>
@@ -57,116 +57,65 @@
                         <asp:ListItem Value="12">Non-Procurement: Trainee</asp:ListItem>
                     </asp:DropDownList>
                 </td>
-                <td class="txtrht">Password
+                <td class="txtrht">Membership Association
                 </td>
                 <td>
-                    <asp:TextBox name="txtEditPassword" ID="txtEditPassword" runat="server" MaxLength="20" />
-                </td>
-            </tr>
-            <tr>
-                <td class="txtrht">Job Title
-                </td>
-                <td>
-                    <asp:TextBox name="txtEditJobTitle" ID="txtEditJobTitle" runat="server" MaxLength="100" />
-                </td>
-                <td class="txtrht">Phone
-                </td>
-                <td>
-                    <asp:TextBox name="txtEditPhone" ID="txtEditPhone" runat="server" MaxLength="100" />
-                </td>
-                <td>State
-                </td>
-                <td>
-                    <asp:TextBox ID="txtEditstate" name="txtEditstate" MaxLength="50" runat="server" />
-                </td>
-            </tr>
-            <tr>
-                <td>Postal Code
-                </td>
-                <td colspan="5" class="ssec">
-                    <asp:TextBox ID="txtEditpostcode" name="txtEditpostcode" MaxLength="20" runat="server" />
-                </td>
-            </tr>
-            <tr id="trLinkedIn" runat="server">
-                <td colspan="6">Linkedin Profile Url :
-                    <asp:Label ID="lblLinkedIn" runat="server"></asp:Label>
-                </td>
-            </tr>
-            <tr id="trFacebook" visible="false" runat="server">
-                <td colspan="6">FaceBook Profile Url :
-                    <asp:Label ID="lblFacebook" runat="server"></asp:Label>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="6">Which best describes the main industry in which your organization operates? Please
-                select one of the following
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td colspan="5" class="ssec">
-                    <asp:DropDownList ID="ddlEditIndustry" runat="server" class="styled">
-                        <asp:ListItem Value="0" Selected="True">Industry</asp:ListItem>
-                        <asp:ListItem Value="1">Advertising, Media &amp; Communications</asp:ListItem>
-                        <asp:ListItem Value="2">Agribusiness</asp:ListItem>
-                        <asp:ListItem Value="3">Associations</asp:ListItem>
-                        <asp:ListItem Value="4">Automotive</asp:ListItem>
-                        <asp:ListItem Value="5">Business Services</asp:ListItem>
-                        <asp:ListItem Value="6">Consulting &amp; Business Strategy</asp:ListItem>
-                        <asp:ListItem Value="7">Defence</asp:ListItem>
-                        <asp:ListItem Value="8">Diversified</asp:ListItem>
-                        <asp:ListItem Value="9">Education &amp; Training</asp:ListItem>
-                        <asp:ListItem Value="10">Energy</asp:ListItem>
-                        <asp:ListItem Value="11">Environment</asp:ListItem>
-                        <asp:ListItem Value="12">Financial Services</asp:ListItem>
-                        <asp:ListItem Value="13">FMCG</asp:ListItem>
-                        <asp:ListItem Value="14">Government</asp:ListItem>
-                        <asp:ListItem Value="15">Healthcare &amp; Medical</asp:ListItem>
-                        <asp:ListItem Value="16">Hospitality, Tourism &amp; Entertainment</asp:ListItem>
-                        <asp:ListItem Value="17">HR &amp; Recruitment</asp:ListItem>
-                        <asp:ListItem Value="18">Information Technology</asp:ListItem>
-                        <asp:ListItem Value="19">Infrastructure</asp:ListItem>
-                        <asp:ListItem Value="20">Legal</asp:ListItem>
-                        <asp:ListItem Value="21">Manufacturing</asp:ListItem>
-                        <asp:ListItem Value="22">Mining, Oil, Gas &amp; Resources</asp:ListItem>
-                        <asp:ListItem Value="23">Not for Profit</asp:ListItem>
-                        <asp:ListItem Value="24">Pharmaceuticals</asp:ListItem>
-                        <asp:ListItem Value="25">Property, Construction &amp; Engineering</asp:ListItem>
-                        <asp:ListItem Value="26">Retail</asp:ListItem>
-                        <asp:ListItem Value="27">Sports &amp; Community</asp:ListItem>
-                        <asp:ListItem Value="28">Supply Chain, Logistics &amp; Transport</asp:ListItem>
-                        <asp:ListItem Value="29">Telecommunications</asp:ListItem>
-                        <asp:ListItem Value="30">Trade &amp; Services
-                        </asp:ListItem>
+                    <asp:DropDownList ID="ddlMembeship" runat="server" class="styled">
+                        <asp:ListItem Value="0">Membership Association *</asp:ListItem>
+                        <asp:ListItem Value="AACAM">AACAM - Asociación Argentina de Compras Administracion de Materiales y Logistica</asp:ListItem>
+                        <asp:ListItem Value="ABCAL">ABCAL - Association Belge des Cardes d’Achat et de Logistique</asp:ListItem>
+                        <asp:ListItem Value="ADACI">ADACI - Associazione Italiana Acquiste E Supply Management</asp:ListItem>
+                        <asp:ListItem Value="AERCE">AERCE - Associación Espanola de Professionales de Compras, Contractión y Aprovisionamientos</asp:ListItem>
+                        <asp:ListItem Value="APCADEC">APCADEC - Portuguese association for Purchasing and Supply Management</asp:ListItem>
+                        <asp:ListItem Value="APPI">APPI - Asosiasi Pengacara Pengadaan Indonesia</asp:ListItem>
+                        <asp:ListItem Value="APROCAL">APROCAL - Asociación de Profesionales en Compras, Abastecimiento y Logística, A.C.</asp:ListItem>
+                        <asp:ListItem Value="BME">BME - Bundesverband Materialwirtschaft, Einkauf und Logistik</asp:ListItem>
+                        <asp:ListItem Value="BMOE">BMOE - Bundesverband Materialwirtschaft, Einkauf und Logistik in Osterreich</asp:ListItem>
+                        <asp:ListItem Value="CAP">CAP - Croatian Association of Purchasing</asp:ListItem>
+                        <asp:ListItem Value="CAPP">CAPP - Caribbean Association of Procurement Professionals</asp:ListItem>
+                        <asp:ListItem Value="CBEC">CBEC - Brazilian Council of Purchasing Executives</asp:ListItem>
+                        <asp:ListItem Value="CFLP">CFLP - China Federation of Logistics and Purchasing</asp:ListItem>
+                        <asp:ListItem Value="CIPSMN">CIPSMN - Chartered Institute of Purchasing & Supply Management of Nigeria</asp:ListItem>
+                        <asp:ListItem Value="DILF">DILF - Danish Purchasing and Logistics Forum</asp:ListItem>
+                        <asp:ListItem Value="Forum Einkauf">Forum Einkauf - Forum Einkauf</asp:ListItem>
+                        <asp:ListItem Value="FZUP">FZUP - Federation of Purchases and Supply Management of Russia</asp:ListItem>
+                        <asp:ListItem Value="HALPIM">HALPIM - Hungarian Association of Logistics, Purchasing and Inventory Management</asp:ListItem>
+                        <asp:ListItem Value="HPI">HPI - Hellenic Purchasing Institute</asp:ListItem>
+                        <asp:ListItem Value="IAPI">IAPI - Ikatan Ahli Pengadaan Indonesia</asp:ListItem>
+                        <asp:ListItem Value="IFPSM">IFPSM - International Federation of Purchasing & Supply Management</asp:ListItem>
+                        <asp:ListItem Value="IIMM">IIMM - Indian Institute of Materials Management</asp:ListItem>
+                        <asp:ListItem Value="IIPMM">IIPMM - Irish Institute of Purchasing and Materials Management</asp:ListItem>
+                        <asp:ListItem Value="IPLMA">IPLMA - Israeli Purchasing & Logistics Managers Association</asp:ListItem>
+                        <asp:ListItem Value="IPPU">IPPU - Institute of Procurement Professionals of Uganda</asp:ListItem>
+                        <asp:ListItem Value="IPSHK">IPSHK - The Institute of Purchasing and Supply of Hong Kong</asp:ListItem>
+                        <asp:ListItem Value="ISMM">ISMM - Institute of Supply and Materials Management</asp:ListItem>
+                        <asp:ListItem Value="JMMA">JMMA - Japan Materials Management Association</asp:ListItem>
+                        <asp:ListItem Value="KISM">KISM - Kenya Institute of Supplies Management</asp:ListItem>
+                        <asp:ListItem Value="LOGY">LOGY - Finnish Association of Purchasing and Logistics</asp:ListItem>
+                        <asp:ListItem Value="MIPMM">MIPMM - Malaysian Institute of Purchasing & Materials Management</asp:ListItem>
+                        <asp:ListItem Value="MIPS">MIPS - Malawi Institute of Procurement and Supply</asp:ListItem>
+                        <asp:ListItem Value="NEVI">NEVI - Nederlandse Vereniging voor Inkoop Management</asp:ListItem>
+                        <asp:ListItem Value="NIMA">NIMA - Norsk Forbund for Innkjøp og Logistikk (The Norwegian Association of Purchasing and Logistics)</asp:ListItem>
+                        <asp:ListItem Value="PASIA">PASIA - Procurement and Supply Institute of Asia</asp:ListItem>
+                        <asp:ListItem Value="PISM">PISM - Philippine Institute for Supply Management</asp:ListItem>
+                        <asp:ListItem Value="PROCURE">PROCURE - procure.ch Swiss Association for Purchasing and Supply Management</asp:ListItem>
+                        <asp:ListItem Value="PROLOG">PROLOG - Estonian Purchasing and Supply Chain Management Association</asp:ListItem>
+                        <asp:ListItem Value="PSCMT">PSCMT - Purchasing and Supply Chain Management Association of Thailand</asp:ListItem>
+                        <asp:ListItem Value="PSML">PSML - Polish Supply Management Leaders</asp:ListItem>
+                        <asp:ListItem Value="SAPPP">SAPPP - Serbian Association of Professionals in Public Procurement</asp:ListItem>
+                        <asp:ListItem Value="SCMA">SCMA - Supply Chain Management Association</asp:ListItem>
+                        <asp:ListItem Value="SILF">SILF - Swedish Purchasing and Logistic Association</asp:ListItem>
+                        <asp:ListItem Value="SIMM">SIMM - Singapore Institute of Materials Management</asp:ListItem>
+                        <asp:ListItem Value="SMIT">SMIT - Supply Management Institute, Taiwan</asp:ListItem>
+                        <asp:ListItem Value="SSCPA">SSCPA - Serbian Supply Chain Professionals Association</asp:ListItem>
+                        <asp:ListItem Value="TUSAYDER">TUSAYDER - TUSAYDER</asp:ListItem>
+                        <asp:ListItem Value="ZNS">ZNS - Zdruzenje nabavnikov Slovenije (Slovenian Purchasing Association)</asp:ListItem>
+                        <asp:ListItem Value="Other - CIPS">Other: CIPS – Chartered Institute of Purchasing & Supply</asp:ListItem>
+                        <asp:ListItem Value="Other - ISM">Other: ISM – Institute of Supply Management</asp:ListItem>
                     </asp:DropDownList>
                 </td>
-            </tr>
-            <tr>
-                <td colspan="6">What is your company's approximate gross annual revenue ?
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td colspan="5" class="ssec">
-                    <asp:DropDownList ID="ddlEditCompanyRevenue" runat="server" CssClass="styled">
-                        <asp:ListItem Value="0" Selected="True">Annualised revenues</asp:ListItem>
-                        <asp:ListItem Value="1">$1 billion or more</asp:ListItem>
-                        <asp:ListItem Value="2">$500 million to $999.9 million</asp:ListItem>
-                        <asp:ListItem Value="3">$100 million to $499.9 million</asp:ListItem>
-                        <asp:ListItem Value="4">$50 million to $99.9 million</asp:ListItem>
-                        <asp:ListItem Value="5">$20 million to $49.9 million</asp:ListItem>
-                        <asp:ListItem Value="6">$10 million to $19.9 million</asp:ListItem>
-                        <asp:ListItem Value="7">$5 million to $9.9 million</asp:ListItem>
-                        <asp:ListItem Value="8">$2.5 million to $4.9 million</asp:ListItem>
-                        <asp:ListItem Value="9">$1 million to $2.49 million</asp:ListItem>
-                        <asp:ListItem Value="10">$500,000 to $999,999</asp:ListItem>
-                        <asp:ListItem Value="11">Less than $500,000</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
-            </tr>
-            <tr>
-            </tr>
 
+            </tr>
             <tr>
                 <td colspan="6">Country
                 </td>
@@ -421,28 +370,26 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="6">What is your Procurement Organisational Model?
-                </td>
+                <td colspan="4">What is your Procurement Organisational Model?</td>
             </tr>
             <tr>
                 <td></td>
-                <td colspan="5" class="ssec">
+                <td colspan="3" class="ssec">
                     <asp:DropDownList ID="ddlEditModel" CssClass="styled" runat="server">
                         <asp:ListItem Value="0" Selected="True">Procurement model</asp:ListItem>
                         <asp:ListItem Value="1">Centralised Procurement Function</asp:ListItem>
                         <asp:ListItem Value="2">Decentralised Procurement Function</asp:ListItem>
                         <asp:ListItem Value="3">Centre-Led Procurement Function</asp:ListItem>
                         <asp:ListItem Value="4">Procurement strategy is centralised, but execution is de-centralised</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
+
+                    </asp:DropDownList></td>
             </tr>
             <tr>
-                <td colspan="6">To whom does procurement report in your organisation?
-                </td>
+                <td colspan="4">To whom does procurement report in your organisation?</td>
             </tr>
             <tr>
                 <td></td>
-                <td colspan="5" class="ssec">
+                <td colspan="3" class="ssec">
                     <asp:DropDownList ID="ddlEditReportingLine" CssClass="styled" runat="server">
                         <asp:ListItem Value="0" Selected="True">Procurement function reports to…</asp:ListItem>
                         <asp:ListItem Value="1">CEO</asp:ListItem>
@@ -453,16 +400,15 @@
                         <asp:ListItem Value="6">Head of Supply Chain</asp:ListItem>
                         <asp:ListItem Value="7">Division or Business Unit Head</asp:ListItem>
                         <asp:ListItem Value="8">Regional or Global Procurement</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
+
+                    </asp:DropDownList></td>
             </tr>
             <tr>
-                <td colspan="6">What is the approximate amount of expenditure you are responsible for or manage?
-                </td>
+                <td colspan="4">Spend Under Influence</td>
             </tr>
             <tr>
                 <td></td>
-                <td colspan="5" class="ssec">
+                <td colspan="3" class="ssec">
                     <asp:DropDownList ID="ddlEditSpendUnder" runat="server" CssClass="styled">
                         <asp:ListItem Value="0" Selected="True">Spend under influence</asp:ListItem>
                         <asp:ListItem Value="1">$1 billion or more</asp:ListItem>
@@ -476,16 +422,14 @@
                         <asp:ListItem Value="9">$1 million to $2.49 million</asp:ListItem>
                         <asp:ListItem Value="10">$500,000 to $999,999</asp:ListItem>
                         <asp:ListItem Value="11">Less than $500,000</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
+                    </asp:DropDownList></td>
             </tr>
             <tr>
-                <td colspan="6">How many people work in the procurement & contracting department?
-                </td>
+                <td colspan="4">How many people work in the procurement & contracting department? </td>
             </tr>
             <tr>
                 <td></td>
-                <td colspan="5" class="ssec">
+                <td colspan="3" class="ssec">
                     <asp:DropDownList ID="ddlEditEmployeeCompany" runat="server" CssClass="styled">
                         <asp:ListItem Value="0" Selected="True">Number of employees</asp:ListItem>
                         <asp:ListItem Value="1">100+</asp:ListItem>
@@ -503,16 +447,27 @@
                         <asp:ListItem Value="13">3</asp:ListItem>
                         <asp:ListItem Value="14">2</asp:ListItem>
                         <asp:ListItem Value="15">1</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
+                    </asp:DropDownList></td>
             </tr>
             <tr>
-                <td colspan="6">Which of the below best describes your category domain expertise:
-                </td>
+                <td colspan="4">Sector </td>
             </tr>
             <tr>
                 <td></td>
-                <td colspan="5" class="ssec">
+                <td colspan="3" class="ssec">
+                    <asp:DropDownList ID="ddEditSector" runat="server" CssClass="styled">
+                        <asp:ListItem Value="0" Selected="True">Sector</asp:ListItem>
+                        <asp:ListItem Value="1">Public</asp:ListItem>
+                        <asp:ListItem Value="2">Private</asp:ListItem>
+                        <asp:ListItem Value="3">Not for Profit</asp:ListItem>
+                    </asp:DropDownList></td>
+            </tr>
+            <tr>
+                <td colspan="4">Which of the below best describes your category domain expertise: </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="3" class="ssec">
                     <asp:DropDownList ID="ddlEditExpertise" CssClass="styled" runat="server">
                         <asp:ListItem Value="0" Selected="True">Category you manage currently</asp:ListItem>
                         <asp:ListItem Value="1">Generalist Direct & Indirects</asp:ListItem>
@@ -534,17 +489,15 @@
                         <asp:ListItem Value="17">Raw Materials</asp:ListItem>
                         <asp:ListItem Value="18">Travel</asp:ListItem>
                         <asp:ListItem Value="19">Wardrobe & Workwear</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
+                    </asp:DropDownList></td>
             </tr>
             <tr>
-                <td colspan="6">Procurement Annual revenue :
-                </td>
+                <td colspan="4">Spent under your influence :</td>
             </tr>
             <tr>
                 <td></td>
-                <td colspan="5" class="ssec">
-                    <asp:DropDownList ID="ddlEditAnnualRevenue" runat="server" CssClass="styled">
+                <td colspan="3" class="ssec">
+                    <asp:DropDownList ID="ddlEditSpentUnder" runat="server" CssClass="styled">
                         <asp:ListItem Value="0" Selected="True">Spend under your influence </asp:ListItem>
                         <asp:ListItem Value="1">$1 billion or more</asp:ListItem>
                         <asp:ListItem Value="2">$500 million to $999.9 million</asp:ListItem>
@@ -557,50 +510,44 @@
                         <asp:ListItem Value="9">$1 million to $2.49 million</asp:ListItem>
                         <asp:ListItem Value="10">$500,000 to $999,999</asp:ListItem>
                         <asp:ListItem Value="11">Less than $500,000</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
+                    </asp:DropDownList></td>
             </tr>
+           
             <tr>
-                <td colspan="6">Geographical influence
-                </td>
+                <td colspan="4">Geographical influence </td>
             </tr>
             <tr>
                 <td></td>
-                <td colspan="5" class="ssec">
+                <td colspan="3" class="ssec">
                     <asp:DropDownList ID="ddlEditGeographical" runat="server" CssClass="styled">
                         <asp:ListItem Value="0" Selected="True">Geographical influence</asp:ListItem>
                         <asp:ListItem Value="1">Local</asp:ListItem>
                         <asp:ListItem Value="2">Regional</asp:ListItem>
                         <asp:ListItem Value="3">Global</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
+                    </asp:DropDownList></td>
             </tr>
             <tr>
-                <td colspan="6">How many years have you worked in procurement and supply chain? (Round up to the
-                nearest whole year)?
-                </td>
+                <td colspan="4">How many years have you worked in procurement and supply chain? (Round up to the nearest whole year)?</td>
             </tr>
             <tr>
                 <td></td>
-                <td colspan="5" class="ssec">
+                <td colspan="3" class="ssec">
                     <asp:DropDownList ID="ddlEditProcurementYear" runat="server" CssClass="styled">
                         <asp:ListItem Value="0" Selected="True">Years of procurement experience</asp:ListItem>
                         <asp:ListItem Value="1">Less than 1 year</asp:ListItem>
-                        <asp:ListItem Value="3">1 - 3 years</asp:ListItem>
-                        <asp:ListItem Value="5">3 - 5 years</asp:ListItem>
-                        <asp:ListItem Value="10">5 - 10 years</asp:ListItem>
-                        <asp:ListItem Value="11">10 or more years</asp:ListItem>
-                        <asp:ListItem Value="12">Not applicable</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
+                        <asp:ListItem Value="2">1 - 3 years</asp:ListItem>
+                        <asp:ListItem Value="3">3 - 5 years</asp:ListItem>
+                        <asp:ListItem Value="4">5 - 10 years</asp:ListItem>
+                        <asp:ListItem Value="5">10 or more years</asp:ListItem>
+                        <asp:ListItem Value="6">Not applicable</asp:ListItem>
+                    </asp:DropDownList></td>
             </tr>
             <tr>
-                <td colspan="6">What is your Procurement qualification?
-                </td>
+                <td colspan="4">What is your Procurement qualification? </td>
             </tr>
             <tr>
                 <td></td>
-                <td colspan="5" class="ssec">
+                <td colspan="3" class="ssec">
                     <asp:DropDownList ID="ddlEditProLevel" CssClass="styled" runat="server">
                         <asp:ListItem Value="0" Selected="True">Procurement qualifications</asp:ListItem>
                         <asp:ListItem Value="1">Undergraduate degree in procurement / supply chain </asp:ListItem>
@@ -611,16 +558,14 @@
                         <asp:ListItem Value="6">AAPCM: Fellow </asp:ListItem>
                         <asp:ListItem Value="7">Other </asp:ListItem>
                         <asp:ListItem Value="8">Not applicable</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
+                    </asp:DropDownList></td>
             </tr>
             <tr>
-                <td colspan="6">What is your highest level of education?
-                </td>
+                <td colspan="4">What is your highest level of education?</td>
             </tr>
             <tr>
                 <td></td>
-                <td colspan="5" class="ssec">
+                <td colspan="3" class="ssec">
                     <asp:DropDownList ID="cboEditQualifications" CssClass="styled" runat="server">
                         <asp:ListItem Value="0" Selected="True">Level of education</asp:ListItem>
                         <asp:ListItem Value="1">Secondary school</asp:ListItem>
@@ -631,8 +576,36 @@
                         <asp:ListItem Value="6">Postgraduate</asp:ListItem>
                         <asp:ListItem Value="7">Masters</asp:ListItem>
                         <asp:ListItem Value="8">Doctorate</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
+                    </asp:DropDownList></td>
+            </tr>
+            <tr>
+                <td colspan="4">What is your previous category Experience?</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="3" class="ssec">
+                    <asp:DropDownList ID="ddlEditCatExp" CssClass="styled" runat="server">
+                        <asp:ListItem Value="0" Selected="True">Category Experience</asp:ListItem>
+                        <asp:ListItem Value="1">Indirect- General</asp:ListItem>
+                        <asp:ListItem Value="2">Directs - General</asp:ListItem>
+                        <asp:ListItem Value="3">IT&T Services: Software, Hardware, Telco etc.</asp:ListItem>
+                        <asp:ListItem Value="4">Packaging: PET, Glass, Print, Labels, etc.</asp:ListItem>
+                        <asp:ListItem Value="5">Marketing Services: ABT, BTL, Print, etc.</asp:ListItem>
+                        <asp:ListItem Value="6">Ingredients</asp:ListItem>
+                        <asp:ListItem Value="7">HR Services: Labour hire, Recruitment, Training, etc.</asp:ListItem>
+                        <asp:ListItem Value="8">Chemicals</asp:ListItem>
+                        <asp:ListItem Value="9">Professional Services: Legal, Audit & Accounting, Security, etc.</asp:ListItem>
+                        <asp:ListItem Value="10">Industry specific production material</asp:ListItem>
+                        <asp:ListItem Value="11">Facilities and Corporate Real Estate (FM/CRE</asp:ListItem>
+                        <asp:ListItem Value="12">Utilities: Gas, Electricity, Water</asp:ListItem>
+                        <asp:ListItem Value="13">Capex: Heavy machinery and equipment</asp:ListItem>
+                        <asp:ListItem Value="14">MRO Maintenance, Repairs, Operations and Consumables</asp:ListItem>
+                        <asp:ListItem Value="15">Office: Stationery, post</asp:ListItem>
+                        <asp:ListItem Value="16">Travel</asp:ListItem>
+                        <asp:ListItem Value="17">Fleet</asp:ListItem>
+                        <asp:ListItem Value="18">Logistics</asp:ListItem>
+                        <asp:ListItem Value="19">Other</asp:ListItem>
+                    </asp:DropDownList></td>
             </tr>
 
             <tr>
@@ -650,195 +623,109 @@
                 <asp:Label ID="lblEditStatus" runat="server"></asp:Label><br>
                 </td>
             </tr>
+
+            <tr>
+                <td colspan="6" align="center">
+                    <asp:ImageButton runat="server" ID="btnEditSaveProfile" OnClick="btnEditSaveProfile_Click"
+                        ImageUrl="images/save.png" Width="96" Height="37" />
+                    <asp:ImageButton runat="server" ID="btnEditProfileClose" ImageUrl="images/close.png"
+                        Width="96" Height="37" />
+                    <asp:ImageButton runat="server" ID="btnEditProfileExpire" OnClick="btnEditProfileExpire_Click"
+                        ImageUrl="images/expired.png" Width="192" Height="37" />
+                </td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <table width="100%" border="0" cellspacing="1" cellpadding="1" class="tform">
+            <tr>
+                <td colspan="6"><b>Test Permission</b></td>
+            </tr>
+            <tr>
+                <td style="height: 10px" colspan="6"></td>
+            </tr>
             <tr>
                 <td colspan="6">
-                    <b>Your previous category experience</b>
+                    <asp:DataGrid ID="dtgPermission" runat="server" AllowPaging="false" AllowSorting="false"
+                        AutoGenerateColumns="False" CssClass="grdMain"
+                        Width="100%" GridLines="None" PageSize="20">
+                        <HeaderStyle CssClass="gridHeader" />
+                        <PagerStyle Mode="NumericPages" CssClass="pager" HorizontalAlign="Center" />
+                        <ItemStyle CssClass="gridItem" />
+                        <Columns>
+                            <asp:BoundColumn DataField="fullName" ItemStyle-Width="12%" HeaderText="Name" HeaderStyle-Width="12%" SortExpression="fullName"></asp:BoundColumn>
+
+                            <asp:BoundColumn DataField="email" HeaderText="Email" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="20%" HeaderStyle-Width="20%" SortExpression="email"></asp:BoundColumn>
+                            <asp:TemplateColumn HeaderText="PKE Result" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
+                                <ItemTemplate>
+                                    <input type="checkbox" id="chkSga" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("viewSGA") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateColumn>
+
+                            <asp:TemplateColumn HeaderText="PKE Test" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
+                                <ItemTemplate>
+                                    <input type="checkbox" id="chkSgatest" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("takeSGA") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateColumn>
+
+                        </Columns>
+                    </asp:DataGrid></td>
+            </tr>
+            <tr>
+                <td colspan="6" align="center">
+                    <asp:ImageButton runat="server" ID="ibtnUpdate" OnClick="ibtnUpdate_Click"
+                        ImageUrl="images/save.png" Width="96" Height="37" />
                 </td>
             </tr>
             <tr>
-                <td valign="top" colspan="3">
-                    <input type="checkbox" name="indirect" value="15" class="styled" />
-                    <b>Indirect</b> - General
-                <div>
-                    <input type="checkbox" name="indirect" value="1" class="styled" />
-                    <b>IT&amp;T Services:</b> Software, Hardware, Telco, etc.
-                </div>
-                    <div>
-                        <input type="checkbox" name="indirect" value="2" class="styled" />
-                        <b>Marketing Services:</b> ABT, BTL, Print, etc.
-                    </div>
-                    <div>
-                        <input type="checkbox" name="indirect" value="3" class="styled" />
-                        <b>HR Services:</b> Labour hire, Recruitment, Training, etc.
-                    </div>
-                    <div>
-                        <input type="checkbox" name="indirect" value="4" class="styled" />
-                        <b>Professional Services:</b> Legal, Audit & Accounting, Security, etc.
-                    </div>
-                    <div>
-                        <input type="checkbox" name="indirect" value="5" class="styled" />
-                        <b>Facilities</b> and Corporate Real Estate (FM/CRE)
-                    </div>
-                    <div>
-                        <input type="checkbox" name="indirect" value="6" class="styled" />
-                        <b>Utilities:</b> Gas, Electricity, Water
-                    </div>
-                    <div>
-                        <input type="checkbox" name="indirect" value="7" class="styled" />
-                        <b>Capex:</b> Heavy machinery and equipment
-                    </div>
-                    <div>
-                        <input type="checkbox" name="indirect" value="8" class="styled" />
-                        <b>MRO</b> Maintenance, Repairs, Operations and Consumables
-                    </div>
-                    <div>
-                        <input type="checkbox" name="indirect" value="9" class="styled" />
-                        <b>Office:</b> Stationery, post,
-                    </div>
-                    <div>
-                        <input type="checkbox" name="indirect" value="10" class="styled" />
-                        <b>Travel</b>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="indirect" value="11" class="styled" />
-                        <b>Fleet</b>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="indirect" value="13" class="styled" />
-                        <b>Logistics</b>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="indirect" value="14" class="styled" />
-                        <b>Other</b>
-                    </div>
-                </td>
-                <td valign="top" colspan="3">
-                    <input type="checkbox" name="direct" value="6" class="styled" />
-                    <b>Directs</b> - General
-                <br />
-                <div>
-                    <input type="checkbox" name="direct" value="1" class="styled" />
-                    <b>Packaging:</b> PET, Glass, Print, Labels, etc.
-                </div>
-                <div>
-                    <input type="checkbox" name="direct" value="2" class="styled" />
-                    <b>Ingredients</b>
-                </div>
-                <div>
-                    <input type="checkbox" name="direct" value="3" class="styled" />
-                    <b>Chemicals</b>
-                </div>
-                <div>
-                    <input type="checkbox" name="direct" value="4" class="styled" />
-                    <b>Industry specific</b> production material
-                </div>
-                <div>
-                    <input type="checkbox" name="direct" value="5" class="styled" />
-                    <b>Other</b>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="6" align="center">
-                <asp:ImageButton runat="server" ID="btnEditSaveProfile" OnClick="btnEditSaveProfile_Click"
-                    ImageUrl="images/save.png" Width="96" Height="37" />
-                <asp:ImageButton runat="server" ID="btnEditProfileClose" ImageUrl="images/close.png"
-                    Width="96" Height="37" />
-                <asp:ImageButton runat="server" ID="btnEditProfileExpire" OnClick="btnEditProfileExpire_Click"
-                    ImageUrl="images/expired.png" Width="192" Height="37" />
-            </td>
-        </tr>
-    </table>
-    <br /><br />
-    <table width="100%" border="0" cellspacing="1" cellpadding="1" class="tform">
-        <tr>
-            <td colspan="6"><b>Test Permission</b></td>
-        </tr>
-       <tr>
-            <td style="height:10px" colspan="6"></td>
-        </tr>
-        <tr>
-            <td colspan="6"><asp:DataGrid ID="dtgPermission" runat="server" AllowPaging="false" AllowSorting="false"
-                AutoGenerateColumns="False" CssClass="grdMain" 
-                Width="100%" GridLines="None" PageSize="20">
-                <HeaderStyle CssClass="gridHeader" />
-                <PagerStyle Mode="NumericPages"  CssClass="pager" HorizontalAlign="Center"  />
-                <ItemStyle CssClass="gridItem"  />
-                <Columns>
-                    <asp:BoundColumn DataField="fullName" ItemStyle-Width="12%" HeaderText="Name" HeaderStyle-Width="12%" SortExpression="fullName"></asp:BoundColumn>
-
-                                                                <asp:BoundColumn DataField="email" HeaderText="Email" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="20%" HeaderStyle-Width="20%" SortExpression="email"></asp:BoundColumn>
-                                                              <asp:TemplateColumn HeaderText="PKE Result" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkSga" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("viewSGA") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                              
-                                                                <asp:TemplateColumn HeaderText="PKE Test" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
-                                                                    <ItemTemplate>
-                                                                        <input type="checkbox" id="chkSgatest" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("takeSGA") %>' />
-                                                                    </ItemTemplate>
-                                                                </asp:TemplateColumn>
-                                                               
-                </Columns>
-            </asp:DataGrid></td>
-        </tr>
-        <tr>
-            <td colspan="6" align="center">
-                <asp:ImageButton runat="server" ID="ibtnUpdate" OnClick="ibtnUpdate_Click"
-                    ImageUrl="images/save.png" Width="96" Height="37" />
-            </td>
-        </tr> 
-        <tr>
-            <td style="height:10px" colspan="6"></td>
-        </tr>
-    </table>
-    <br />
-    <table width="100%" border="0" cellspacing="1" cellpadding="1" class="tform">
-        <tr>
-            <td colspan="6"><b> Procurement Benchmark Assessment</b></td>
-        </tr>
-        <tr>
-            <td style="height:10px" colspan="6"></td>
-        </tr>
-        <tr>
-            <td colspan="6"><asp:DataGrid ID="grdCMC" runat="server" AllowPaging="false" AllowSorting="false"
-                                                AutoGenerateColumns="False" CssClass="grdMain" 
-                                                OnItemDataBound="grdCMC_ItemDataBound" OnItemCommand="grdCMC_ItemCommand" 
-                                                Width="100%" GridLines="None" PageSize="20">
-                                                <HeaderStyle CssClass="gridHeader" />
-                                                <PagerStyle Mode="NumericPages"  CssClass="pager" HorizontalAlign="Center"  />
-                                                <ItemStyle CssClass="gridItem"  />
-                                                <Columns>
-                                                    <asp:BoundColumn DataField="name" ItemStyle-Width="16%" HeaderText="Name" HeaderStyle-Width="16%" SortExpression="name">
-                                                    </asp:BoundColumn>
-                                                    <asp:BoundColumn DataField="company" HeaderText="Company" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="14%" HeaderStyle-Width="15%" SortExpression="company">
-                                                    </asp:BoundColumn>
-                                                    <asp:TemplateColumn ItemStyle-Width="8%" HeaderStyle-Width="10%" SortExpression="marks" HeaderText="Marks">
-                                                        <ItemTemplate>
-                                                           <%#Eval("marks")%>
-                                                        </ItemTemplate>
-                                                    </asp:TemplateColumn>
-                                                    <asp:TemplateColumn ItemStyle-Width="12%" HeaderStyle-Width="12%" SortExpression="minDiff" HeaderText="Duration">
-                                                        <ItemTemplate>
-                                                           <asp:Label ID="lblDuration" runat="server"></asp:Label>
-                                                        </ItemTemplate>
-                                                    </asp:TemplateColumn>
-                                                    <asp:TemplateColumn ItemStyle-Width="12%" HeaderStyle-Width="12%" SortExpression="testDate" HeaderText="Assesment Date">
-                                                        <ItemTemplate>
-                                                            <asp:Label ID="lblAssesmentDate" runat="server"></asp:Label>
-                                                        </ItemTemplate>
-                                                    </asp:TemplateColumn>
-                                                 <%--   <asp:TemplateColumn ItemStyle-Width="11%" HeaderStyle-Width="11%"  HeaderText="Report Link">
+                <td style="height: 10px" colspan="6"></td>
+            </tr>
+        </table>
+        <br />
+        <table width="100%" border="0" cellspacing="1" cellpadding="1" class="tform">
+            <tr>
+                <td colspan="6"><b>Procurement Benchmark Assessment</b></td>
+            </tr>
+            <tr>
+                <td style="height: 10px" colspan="6"></td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <asp:DataGrid ID="grdCMC" runat="server" AllowPaging="false" AllowSorting="false"
+                        AutoGenerateColumns="False" CssClass="grdMain"
+                        OnItemDataBound="grdCMC_ItemDataBound" OnItemCommand="grdCMC_ItemCommand"
+                        Width="100%" GridLines="None" PageSize="20">
+                        <HeaderStyle CssClass="gridHeader" />
+                        <PagerStyle Mode="NumericPages" CssClass="pager" HorizontalAlign="Center" />
+                        <ItemStyle CssClass="gridItem" />
+                        <Columns>
+                            <asp:BoundColumn DataField="name" ItemStyle-Width="16%" HeaderText="Name" HeaderStyle-Width="16%" SortExpression="name"></asp:BoundColumn>
+                            <asp:BoundColumn DataField="company" HeaderText="Company" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="14%" HeaderStyle-Width="15%" SortExpression="company"></asp:BoundColumn>
+                            <asp:TemplateColumn ItemStyle-Width="8%" HeaderStyle-Width="10%" SortExpression="marks" HeaderText="Marks">
+                                <ItemTemplate>
+                                    <%#Eval("marks")%>
+                                </ItemTemplate>
+                            </asp:TemplateColumn>
+                            <asp:TemplateColumn ItemStyle-Width="12%" HeaderStyle-Width="12%" SortExpression="minDiff" HeaderText="Duration">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblDuration" runat="server"></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateColumn>
+                            <asp:TemplateColumn ItemStyle-Width="12%" HeaderStyle-Width="12%" SortExpression="testDate" HeaderText="Assesment Date">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblAssesmentDate" runat="server"></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateColumn>
+                            <%--   <asp:TemplateColumn ItemStyle-Width="11%" HeaderStyle-Width="11%"  HeaderText="Report Link">
                                                         <ItemTemplate>
                                                             <asp:HyperLink ID="hylLink" runat="server"></asp:HyperLink>
                                                             
                                                         </ItemTemplate>
                                                     </asp:TemplateColumn>--%>
-                                                    <asp:TemplateColumn ItemStyle-Width="15%" HeaderStyle-Width="15%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderText="Action">
-                                                        <ItemTemplate>
-                                                            <asp:ImageButton ID="iBtnDelete" runat="server" CausesValidation="false" AlternateText="Delete" style="height:25px;width:25px;" OnClientClick="return confirm('Are you sure you want to delete this record?');" CommandArgument='<%#Eval("testId") %>' CommandName="Delete" ToolTip="Delete" ImageUrl="~/webadmin/images/disapprove_icon.png" />
-                                                            <%--&nbsp;
+                            <asp:TemplateColumn ItemStyle-Width="15%" HeaderStyle-Width="15%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderText="Action">
+                                <ItemTemplate>
+                                    <asp:ImageButton ID="iBtnDelete" runat="server" CausesValidation="false" AlternateText="Delete" Style="height: 25px; width: 25px;" OnClientClick="return confirm('Are you sure you want to delete this record?');" CommandArgument='<%#Eval("testId") %>' CommandName="Delete" ToolTip="Delete" ImageUrl="~/webadmin/images/disapprove_icon.png" />
+                                    <%--&nbsp;
                                                             <a target="_blank" href="ShowCMCPdf.aspx?id=<%#Eval("testId") %>&userId=<%#Eval("userId") %>">
                                             <img src="../innerimages/icon-pdf.gif" style="height:25px;width:25px;" alt="" /></a>--%>
                                                             &nbsp;
@@ -857,7 +744,7 @@
             </tr>
         </table>
         <br />
-       
+
     </form>
 </body>
 </html>

@@ -20,11 +20,7 @@
 
 
 
-<div class="bottom-btn">
-<div class="fright blue-btn"><a href="my-results-bar-graph-gap.aspx" class="rightbt">NEXT >> </a></div>
 
-
-</div>
 </div>
 
 </asp:Content>

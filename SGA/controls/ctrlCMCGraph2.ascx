@@ -13,9 +13,9 @@
         <div class="tabs">
             <div class="tab-links">
                 <ul>
-                    <li class="active"><a href="#tab1">BY NATION</a></li>
-                    <li><a href="#tab2">BY REGION</a></li>
-                    <li><a href="#tab3">BY HEATMAP</a></li>
+                    <li id="first"class="active"><a href="#tab1">BY REGION</a></li>
+                    <li id="second"><a href="#tab2">BY NATION</a></li>
+                    <li id="third"><a href="#tab3">BY HEATMAP</a></li>
                 </ul>
             </div>
 
@@ -62,10 +62,11 @@
 
 </div>
 
-<script>
-   
-</script>
+<div class="bottom-btn">
+<div class="fright blue-btn"><a href="#tab1" class="rightbt">NEXT >> </a></div>
 
+
+</div>
 
 <script type="text/javascript">
     jQuery(document).ready(function () {
@@ -137,7 +138,7 @@
 
         jQuery('.tabs .tab-links a').on('click', function (e) {
             var currentAttrValue = jQuery(this).attr('href');
-
+            jQuery('.rightbt').attr('href', currentAttrValue);
             // Show/Hide Tabs
             jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
 
@@ -211,6 +212,101 @@
              });
 
 }
+        e.preventDefault();
+        });
+         //next btn click
+        jQuery('.rightbt').on('click', function (e) {
+            var currentAttrValue = jQuery(this).attr('href');
+           
+            // Change/remove current tab to active
+            jQuery('.tabs .tab-links a').parent('li').siblings().removeClass('active');
+
+        if(currentAttrValue == '#tab1'){
+            jQuery(this).attr('href', '#tab2');
+            jQuery('.tabs ' + '#tab2').show().siblings().hide();
+            jQuery('#second').addClass('active')
+        }
+        if(currentAttrValue == '#tab2'){
+            jQuery(this).attr('href', '#tab3');
+            jQuery('.tabs ' + '#tab3').show().siblings().hide();
+            jQuery('#third').addClass('active')
+        }
+        if(currentAttrValue == '#tab3'){
+            window.location.href = "association.aspx"
+            e.preventDefault();
+        }
+
+            // Show/Hide Tabs
+        
+
+        
+
+         
+
+        if (currentAttrValue === '#tab1') {
+            var chart2 = Highcharts.chart('container1', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Procurement Benchmark Assessment'
+                },
+                subtitle: {
+                    text: ''
+                },
+                xAxis: {
+                    categories: [
+                        '<%= topic1name %>',
+            '<%= topic2name %>',
+            '<%= topic3name %>',
+            '<%= topic4name %>',
+            '<%= topic5name %>',
+            '<%= topic6name %>',
+            '<%= topic7name %>'
+                    ],
+                    crosshair: true
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Marks (avg)'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>{point.y:.1f} %</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: 'Your Marks',
+                    data: [ <%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>]
+
+                }, {
+                    name: 'Average Marks',
+                    data: [<%= countrymedain1 %>,<%= countrymedain2 %>,<%= countrymedain3 %>,<%= countrymedain4 %>,<%= countrymedain5 %>,<%= countrymedain6 %>,<%= countrymedain7 %>]
+                }]
+
+                //}, {
+                //    name: 'London',
+                //    data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+
+                //}, {
+                //    name: 'Berlin',
+                //    data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+
+                //}]
+            });
+
+        }
         e.preventDefault();
     });
     });

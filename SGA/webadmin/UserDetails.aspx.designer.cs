@@ -49,13 +49,13 @@ namespace SGA.webadmin {
         protected global::System.Web.UI.WebControls.TextBox txtEditLname;
         
         /// <summary>
-        /// txtEditCompany control.
+        /// txtEditPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEditCompany;
+        protected global::System.Web.UI.WebControls.TextBox txtEditPassword;
         
         /// <summary>
         /// txtEditEmailAddress control.
@@ -76,103 +76,13 @@ namespace SGA.webadmin {
         protected global::System.Web.UI.WebControls.DropDownList ddlEditJobRole;
         
         /// <summary>
-        /// txtEditPassword control.
+        /// ddlMembeship control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEditPassword;
-        
-        /// <summary>
-        /// txtEditJobTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEditJobTitle;
-        
-        /// <summary>
-        /// txtEditPhone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEditPhone;
-        
-        /// <summary>
-        /// txtEditstate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEditstate;
-        
-        /// <summary>
-        /// txtEditpostcode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEditpostcode;
-        
-        /// <summary>
-        /// trLinkedIn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow trLinkedIn;
-        
-        /// <summary>
-        /// lblLinkedIn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLinkedIn;
-        
-        /// <summary>
-        /// trFacebook control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow trFacebook;
-        
-        /// <summary>
-        /// lblFacebook control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFacebook;
-        
-        /// <summary>
-        /// ddlEditIndustry control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEditIndustry;
-        
-        /// <summary>
-        /// ddlEditCompanyRevenue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEditCompanyRevenue;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMembeship;
         
         /// <summary>
         /// ddlEditCountry control.
@@ -220,6 +130,15 @@ namespace SGA.webadmin {
         protected global::System.Web.UI.WebControls.DropDownList ddlEditEmployeeCompany;
         
         /// <summary>
+        /// ddEditSector control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddEditSector;
+        
+        /// <summary>
         /// ddlEditExpertise control.
         /// </summary>
         /// <remarks>
@@ -229,13 +148,13 @@ namespace SGA.webadmin {
         protected global::System.Web.UI.WebControls.DropDownList ddlEditExpertise;
         
         /// <summary>
-        /// ddlEditAnnualRevenue control.
+        /// ddlEditSpentUnder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEditAnnualRevenue;
+        protected global::System.Web.UI.WebControls.DropDownList ddlEditSpentUnder;
         
         /// <summary>
         /// ddlEditGeographical control.
@@ -272,6 +191,15 @@ namespace SGA.webadmin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cboEditQualifications;
+        
+        /// <summary>
+        /// ddlEditCatExp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlEditCatExp;
         
         /// <summary>
         /// txtEditExiryDate control.
