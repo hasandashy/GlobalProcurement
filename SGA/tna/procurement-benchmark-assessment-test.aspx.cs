@@ -147,5 +147,15 @@ namespace SGA.tna
             SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "spUpdateOptions", param);
         }
 
+        [WebMethod]
+        public static void CompleteAssessment(int testId)
+        {
+            SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "spRestrictTest", new SqlParameter[]
+            {
+                new SqlParameter("@flag", "0"),
+                new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
+            });
+        }
+
     }
 }

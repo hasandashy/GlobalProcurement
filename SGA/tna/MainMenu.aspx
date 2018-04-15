@@ -14,7 +14,7 @@
 <ul>
 <li><a href="MyProfile.aspx"><i><img src="../images/usericon.png" alt=""></i>My Profile</a></li>
 <li><a href="default.aspx"><i><img src="../images/assessments-icon.png" alt=""></i>My Assessments</a></li>
-<li><a href="my-results-bar-graph.aspx"><i><img src="../images/result-icon.png" alt=""></i>My Results</a></li>
+<li><a href="my-results.aspx"><i><img src="../images/result-icon.png" alt=""></i>My Results</a></li>
 <li><a href="Leaderboard.aspx"><i><img src="../images/leaderboard-icon.png" alt=""></i>Leaderboard</a></li>
 
     <li><asp:LinkButton ID="lnkLogout" runat="server" CausesValidation="false" onclick="lnkLogout_Click"  ><i><img src="../images/logout-icon.png" alt=""></i>Logout</asp:LinkButton></li>

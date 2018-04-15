@@ -10,7 +10,7 @@
 namespace SGA.tna {
     
     
-    public partial class _default {
+    public partial class my_results {
         
         /// <summary>
         /// lblName control.

@@ -366,6 +366,13 @@
     <Compile Include="tna\my-results-bar-graph.aspx.designer.cs">
       <DependentUpon>my-results-bar-graph.aspx</DependentUpon>
     </Compile>
+    <Compile Include="tna\my-results.aspx.cs">
+      <DependentUpon>my-results.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tna\my-results.aspx.designer.cs">
+      <DependentUpon>my-results.aspx</DependentUpon>
+    </Compile>
     <Compile Include="tna\MyProfile.aspx.cs">
       <DependentUpon>MyProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -923,6 +930,7 @@
     <Content Include="Images\Slovenia.png" />
     <Content Include="Images\spa.png" />
     <Content Include="Images\Spain.png" />
+    <Content Include="js\img\sprites.png" />
     <Content Include="Images\Srilanka.jpg" />
     <Content Include="Images\sub_menu_icon.png" />
     <Content Include="Images\Sweden.png" />
@@ -967,6 +975,7 @@
     <Content Include="js\jquery-validate.js" />
     <Content Include="js\jquery.fancybox.pack.js" />
     <Content Include="js\jquery.nice-select.min.js" />
+    <Content Include="js\jquery.preloaders.min.js" />
     <Content Include="js\modernizr-2.5.3.min.js" />
     <Content Include="js\owl.carousel-logo.js" />
     <Content Include="js\owl.carousel.js" />
@@ -1022,6 +1031,7 @@
     <Content Include="tna\Leaderboard.aspx" />
     <Content Include="tna\MainMenu.aspx" />
     <Content Include="tna\my-results-bar-graph-gap.aspx" />
+    <Content Include="tna\my-results.aspx" />
     <Content Include="tna\procurement-benchmark-assessment-test.aspx" />
     <Content Include="tna\ProfileDetails.aspx" />
     <Content Include="tna\SuccessMessage.aspx" />

@@ -14,6 +14,8 @@ namespace SGA.tna
 {
     public partial class _default : System.Web.UI.Page
     {
+        protected bool isSgaTest = false;
+        protected bool takeSgaTest = false;
         protected void Page_Load(object sender, System.EventArgs e)
         {
             SGACommon.AddPageTitle(this.Page, "Multiple Assessment Landing page", "");
@@ -27,8 +29,7 @@ namespace SGA.tna
 				{
 					new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
 				});
-                bool isSgaTest = false;
-                bool takeSgaTest = false;
+             
               
 
                 if (dsPermission != null)
@@ -39,11 +40,21 @@ namespace SGA.tna
                         takeSgaTest = System.Convert.ToBoolean(dsPermission.Tables[0].Rows[0]["takeSga"].ToString());
                       
                     }
+                   
                 }
                 /*  */
 
-                
-            
+
+                if (takeSgaTest)
+                {
+                    assesactive.Visible = true;
+                    asseslocked.Visible = false;
+                }
+                else
+                {
+                    assesactive.Visible = false;
+                    asseslocked.Visible = true;
+                }
              
              
 

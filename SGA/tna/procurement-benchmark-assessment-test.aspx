@@ -2,16 +2,16 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style type="text/css">
-    .itemselected {
-        background:#f9a03d;
-    }
-</style>
+        .itemselected {
+            background: #f9a03d;
+        }
+    </style>
     <div class="dis-block clearfix  marT1 top-space">
         <div class="main-heading dis-block clearfix pad15 font18 head-graybg padbottom-none padtop1 marTnone">
             <h1>Pillar <%= pillarId %><span runat="server" id="pillarNameSpan">Data, Analysis & Insights  </span></h1>
         </div>
 
-       
+
         <div class="dis-block clearfix white-bg pad15 full-height pillar-question">
             <div class="gray-strip"></div>
             <div id="gray-strip-fill"></div>
@@ -53,7 +53,7 @@
                     <PagerTemplate>
                         <div class="bottom-btn">
                             <div class="fleft blue-btn">
-                                <asp:LinkButton ID="lb1" ClientIDMode="Static" Text="<< BACK" CommandName="Previous" runat="server" CssClass="leftbt"/>
+                                <asp:LinkButton ID="lb1" ClientIDMode="Static" Text="<< BACK" CommandName="Previous" runat="server" CssClass="leftbt" />
                             </div>
                             <div class="fright blue-btn">
                                 <asp:LinkButton ID="lb2" ClientIDMode="Static" Text="Next >>" CommandName="Next" runat="server" CssClass="rightbt" />
@@ -98,6 +98,7 @@
                 event.preventDefault();
                 if(<%=this.pillarId%> == 7)
                 {
+                    CompleteAssessment()
                     window.location.href = "/tna/SuccessMessage.aspx";
                 }
                 else{
@@ -107,8 +108,13 @@
         });
 
         function SaveAssessment()
-        {           
+        {    
             if ($(this).attr("selected")) {
+                $.preloader.start({
+                    modal: true,
+                    src: 'sprites.png'
+                });
+              
                 var json =
                              $.ajax({
                                  type: "POST",
@@ -119,21 +125,50 @@
                                  contentType: "application/json; charset=utf-8",
                                  success: function (data) {
                                      //alert('success')
-                                  
+                                     $.preloader.stop();
                                  },
                                  error: (error) => {
+                                     $.preloader.stop();
                                      alert('Error while saving data');
                                      event.preventDefault();
                                      return false;
                                  }
                              });
-            }
-            else {
-                alert('please select some value');
-                event.preventDefault();
-                return false;
-            }
-        }
+                         }
+                         else {
+                             alert('please select some value');
+                             event.preventDefault();
+                             return false;
+                         }
+                     }
+
+                     function CompleteAssessment()
+                     {           
+                         $.preloader.start({
+                             modal: true,
+                             src: 'sprites.png'
+                         });
+                         var json =
+                                      $.ajax({
+                                          type: "POST",
+                                          async: false,
+                                          url: "procurement-benchmark-assessment-test.aspx/CompleteAssessment",
+                                          data: JSON.stringify({'testId': <%=this.testId%> }),
+                                 dataType: "json",
+                                 contentType: "application/json; charset=utf-8",
+                                 success: function (data) {
+                                     //alert('success')
+                                     $.preloader.stop();
+                                 },
+                                 error: (error) => {
+                                     $.preloader.stop();
+                                     alert('Error while saving data');
+                                     event.preventDefault();
+                                     return false;
+                                 }
+                             });
+           
+                         }
 
     </script>
 </asp:Content>

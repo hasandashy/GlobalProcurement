@@ -14,7 +14,7 @@
     <link href="css/jquery.fancybox.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="js/jquery-validate.js"></script>
-
+    <script src="js/jquery.preloaders.min.js"></script>
 
 
 </head>
@@ -215,6 +215,10 @@
         jQuery(document).ready(function () {
 
             jQuery(document).on('click', '#frm_basic_info', function (e) {
+                $.preloader.start({
+                    modal: true,
+                    src: 'sprites.png'
+                });
                 jQuery("#infusion-form").validate({
                     debug: true,
                     rules: {
@@ -250,12 +254,14 @@
                             data: { 'firstName': $("#inf_field_FirstName").val(), 'lastName': $("#inf_field_LastName").val(), 'emailAddress': $("#inf_field_Email").val(), 'country': $("#country").val(), 'jobRole': $("#jobRole").val(), 'membershipAssociation': $("#membershipAssociation").val(), 'ifpsmComments': '', 'ifpsmJobRole': '0' },
                             success: function (data) {
                                 if (data == "d") {
+                                    $.preloader.stop();
                                     e.preventDefault();
                                     window.location.href = 'Register_Success.aspx';
                                 }
                             },
 
                             error: function (jqXHR, exception) {
+                                $.preloader.stop();
                                 var msg = '';
                                 if (jqXHR.status === 0) {
                                     msg = 'Not connect.\n Verify Network.';
@@ -282,6 +288,10 @@
 
             //Login
             jQuery(document).on('click', '#homehide', function (e) {
+                $.preloader.start({
+                    modal: true,
+                    src: 'sprites.png'
+                });
                 jQuery("#infusion-form-login").validate({
                     debug: true,
                     rules: {
@@ -303,6 +313,7 @@
                             dataType: "jsonp",
                             data: { 'username': $("#inf_field_UserName").val(), 'password': $("#inf_field_Password").val() },
                             success: function (data) {
+                                $.preloader.stop();
                                 if (data == "s") {
                                     e.preventDefault();
                                     window.location.href = 'index.aspx';
@@ -316,6 +327,7 @@
                             },
 
                             error: function (jqXHR, exception) {
+                                $.preloader.stop();
                                 var msg = '';
                                 if (jqXHR.status === 0) {
                                     msg = 'Not connect.\n Verify Network.';
@@ -341,6 +353,10 @@
 
             //Reset Password
             jQuery(document).on('click', '#restpassword', function (e) {
+                $.preloader.start({
+                    modal: true,
+                    src: 'sprites.png'
+                });
                 jQuery("#infusion-form-reset").validate({
                     debug: true,
                     rules: {
@@ -358,6 +374,7 @@
                             dataType: "jsonp",
                             data: { 'email': $("#inf_field_Email").val() },
                             success: function (data) {
+                                $.preloader.stop();
                                 if (data == "s") {
                                     //$('#lblErrorReset').text("Please check your email.");
                                     window.location.href = 'login.aspx';
@@ -369,6 +386,7 @@
                             },
 
                             error: function (jqXHR, exception) {
+                                $.preloader.stop();
                                 var msg = '';
                                 if (jqXHR.status === 0) {
                                     msg = 'Not connect.\n Verify Network.';

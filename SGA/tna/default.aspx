@@ -13,9 +13,15 @@
 
 
 
-<div class="yellow-bg assesment-box ">
+<div class="yellow-bg assesment-box " id="assesactive" runat="server" visible="false">
 <a href="assessment-instructions.aspx"><i><img src="../images/icon1.png" alt="Procurement Benchmark Assessment" /></i>
 <p>Procurement Benchmark Assessment </p> <em>>></em></a>
+
+</div>
+
+<div class="yellow-bg assesment-box " id="asseslocked" runat="server" visible="false">
+<a><i><img src="../images/icon1.png" alt="Procurement Benchmark Assessment" /></i>
+<p>Procurement Benchmark Assessment <img src="../innerimages/icon-locked.png" style="float:right;"/></p></a>
 
 </div>
 

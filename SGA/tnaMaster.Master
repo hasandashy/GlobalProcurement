@@ -22,7 +22,8 @@
 
 <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
 <script src="../js/modernizr-2.5.3.min.js" type="text/javascript"></script>
- <script src="../js/jquery-validate.js"></script>
+<script src="../js/jquery-validate.js"></script>
+<script src="../js/jquery.preloaders.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
