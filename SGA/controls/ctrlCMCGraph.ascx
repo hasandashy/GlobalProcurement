@@ -1,7 +1,13 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrlCMCGraph.ascx.cs" Inherits="SGA.controls.ctrlCMCGraph" %> 
-<script src="../js/plotly-latest.min.js"></script>
+<script src="../js/Chart.min.js"></script>
 <div class="dis-block clearfix white-bg pad15 full-height padtop3">
-
+    <style>
+	canvas {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	</style>
     <div class="dis-block clearfix">
         <div class="question-number"></div>
 
@@ -22,8 +28,8 @@
                         <div class="redtitle"></div>
                     </div>
 
-                    <div class="dis-block clearfix  graph">
-                      <div id="container"></div>
+                    <div class="dis-block clearfix graph">
+                        <canvas id="container"></canvas>
                     </div>
                 </div>
 
@@ -34,8 +40,8 @@
                         <div class="redtitle"></div>
                     </div>
 
-                    <div class="dis-block clearfix graph">
-                         <div id="container1"></div>
+                    <div class="dis-block clearfix marT3 graph">
+                        <canvas id="container1"></canvas>
                     </div>
                 </div>
 
@@ -47,8 +53,8 @@
                         <div class="redtitle"></div>
                     </div>
 
-                    <div class="dis-block clearfix graph">
-                        <div id="container2"></div>
+                    <div class="dis-block clearfix marT3 graph">
+                        <canvas id="container2"></canvas>
                     </div>
                 </div>
 
@@ -68,23 +74,137 @@
 <script type="text/javascript">
     jQuery(document).ready(function () {
         $('.leftbt').hide();
-        var data = [{
-            x: ['<%= topic1name %>',
-                    '<%= topic2name %>',
-                    '<%= topic3name %>',
-                    '<%= topic4name %>',
-                    '<%= topic5name %>',
-                    '<%= topic6name %>',
-                    '<%= topic7name %>'],
-            y: [<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>],
-            type: 'bar'
-        }];
-        var layout = {
-            barmode: 'group',
-            autosize: true // set autosize to rescale
-        };
-        Plotly.newPlot('container', data, layout);
+        var color = Chart.helpers.color;
+        var barChartData1 = {
+           labels: ['<%= topic1name %>'.replace('<span>', '').replace('</span>', ''),
+                            '<%= topic2name %>'.replace('<span>', '').replace('</span>', ''),
+                            '<%= topic3name %>'.replace('<span>', '').replace('</span>', ''),
+                            '<%= topic4name %>'.replace('<span>', '').replace('</span>', ''),
+                            '<%= topic5name %>'.replace('<span>', '').replace('</span>', ''),
+                            '<%= topic6name %>'.replace('<span>', '').replace('</span>', ''),
+                            '<%= topic7name %>'.replace('<span>', '').replace('</span>', '') ],
+            datasets: [{
+                label: 'Your marks',
+                backgroundColor: '#FF8C00',
+                borderColor: '#FF8C00',
+                borderWidth: 1,
+                data: [
+					<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>
+                ]
+            }]
 
+        };
+
+        var barChartData2 = {
+            labels: ['<%= topic1name %>'.replace('<span>', '').replace('</span>', ''),
+                            '<%= topic2name %>'.replace('<span>', '').replace('</span>', ''),
+                            '<%= topic3name %>'.replace('<span>', '').replace('</span>', ''),
+                            '<%= topic4name %>'.replace('<span>', '').replace('</span>', ''),
+                            '<%= topic5name %>'.replace('<span>', '').replace('</span>', ''),
+                            '<%= topic6name %>'.replace('<span>', '').replace('</span>', ''),
+                            '<%= topic7name %>'.replace('<span>', '').replace('</span>', '') ],
+            datasets: [{
+                label: 'Your marks',
+                borderWidth: 1,
+                backgroundColor: '#FF8C00',
+                borderColor: '#FF8C00',
+                data: [
+					<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>
+                ]
+            }, {
+                label: 'Avg marks',
+                backgroundColor: '#4682B4',
+                borderColor: '#4682B4',
+                borderWidth: 1,
+                data: [
+					<%= medain1 %>,<%= medain2 %>,<%= medain3 %>,<%= medain4 %>,<%= medain5 %>,<%= medain6 %>,<%= medain7 %>
+                ]
+            }]
+
+        };
+
+         var barChartData3 = {
+            labels: ['<%= topic1name %>'.replace('<span>', '').replace('</span>', ''),
+                            '<%= topic2name %>'.replace('<span>', '').replace('</span>', ''),
+                            '<%= topic3name %>'.replace('<span>', '').replace('</span>', ''),
+                            '<%= topic4name %>'.replace('<span>', '').replace('</span>', ''),
+                            '<%= topic5name %>'.replace('<span>', '').replace('</span>', ''),
+                            '<%= topic6name %>'.replace('<span>', '').replace('</span>', ''),
+                            '<%= topic7name %>'.replace('<span>', '').replace('</span>', '') ],
+            datasets: [{
+                label: 'Your marks',
+                borderWidth: 1,
+                backgroundColor: '#FF8C00',
+                borderColor: '#FF8C00',
+                data: [
+					<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>
+                ]
+            }, {
+                label: 'Avg marks',
+                borderWidth: 1,
+                backgroundColor: '#4682B4',
+                borderColor: '#4682B4',
+                data: [
+					<%= sectormedain1 %>,<%= sectormedain2 %>,<%= sectormedain3 %>,<%= sectormedain4 %>,<%= sectormedain5 %>,<%= sectormedain6 %>,<%= sectormedain7 %>
+                ]
+            }]
+
+        };
+        //-------------------------------------------------------------------------
+       
+        var ctx = document.getElementById('container').getContext('2d');
+        window.myBar = new Chart(ctx, {
+            type: 'bar',
+            data: barChartData1,
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'top',
+                },
+                scales:
+       {
+           xAxes: [{
+               display: false
+           }]
+       }
+            }
+        });
+
+        var ctx1 = document.getElementById('container1').getContext('2d');
+        window.myBar = new Chart(ctx1, {
+            type: 'bar',
+            data: barChartData2,
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'top',
+                },
+                scales:
+       {
+           xAxes: [{
+               display: false
+           }]
+       }
+            }
+        });
+
+        var ctx2 = document.getElementById('container2').getContext('2d');
+        window.myBar = new Chart(ctx2, {
+            type: 'bar',
+            data: barChartData3,
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'top',
+                },
+                scales:
+       {
+           xAxes: [{
+               display: false
+           }]
+       }
+            }
+        });
 
 
 
@@ -105,77 +225,12 @@
 
             if (currentAttrValue === '#tab2') {
                 $('.leftbt').show();
-                var trace1 = {
-                    x: [ '<%= topic1name %>',
-                            '<%= topic2name %>',
-                            '<%= topic3name %>',
-                            '<%= topic4name %>',
-                            '<%= topic5name %>',
-                            '<%= topic6name %>',
-                            '<%= topic7name %>'],
-                    y: [<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>],
-                    name: 'Your Marks',
-                    type: 'bar'
-                };
-
-                var trace2 = {
-                    x: [ '<%= topic1name %>',
-                            '<%= topic2name %>',
-                            '<%= topic3name %>',
-                            '<%= topic4name %>',
-                            '<%= topic5name %>',
-                            '<%= topic6name %>',
-                            '<%= topic7name %>'],
-                    y: [<%= medain1 %>,<%= medain2 %>,<%= medain3 %>,<%= medain4 %>,<%= medain5 %>,<%= medain6 %>,<%= medain7 %>],
-                    name: 'Average Marks',
-                    type: 'bar'
-                };
-
-                var data = [trace1, trace2];
-
-                var layout = { barmode: 'group',
-                    autosize: true // set autosize to rescale
-                };
-
-                Plotly.newPlot('container1', data, layout);
+               
             }
 
             if (currentAttrValue === '#tab3') {
                 $('.leftbt').show();
-                  var trace3 = {
-                    x: [ '<%= topic1name %>',
-                            '<%= topic2name %>',
-                            '<%= topic3name %>',
-                            '<%= topic4name %>',
-                            '<%= topic5name %>',
-                            '<%= topic6name %>',
-                            '<%= topic7name %>'],
-                    y: [<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>],
-                    name: 'Your Marks',
-                    type: 'bar'
-                };
-
-                var trace4 = {
-                    x: [ '<%= topic1name %>',
-                            '<%= topic2name %>',
-                            '<%= topic3name %>',
-                            '<%= topic4name %>',
-                            '<%= topic5name %>',
-                            '<%= topic6name %>',
-                            '<%= topic7name %>'],
-                    y: [<%= sectormedain1 %>,<%= sectormedain2 %>,<%= sectormedain3 %>,<%= sectormedain4 %>,<%= sectormedain5 %>,<%= sectormedain6 %>,<%= sectormedain7 %>],
-                    name: 'Average Marks',
-                    type: 'bar'
-                };
-
-                var data = [trace3, trace4];
-
-                var layout = {
-                    barmode: 'group',
-                    autosize: true // set autosize to rescale
-                };
-
-                Plotly.newPlot('container2', data, layout);
+                
             }
             e.preventDefault();
 
@@ -209,80 +264,6 @@
             }
 
             // Show/Hide Tabs
-            if (currentAttrValue === '#tab1') {
-               var trace1 = {
-                    x: [ '<%= topic1name %>',
-                            '<%= topic2name %>',
-                            '<%= topic3name %>',
-                            '<%= topic4name %>',
-                            '<%= topic5name %>',
-                            '<%= topic6name %>',
-                            '<%= topic7name %>'],
-                    y: [<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>],
-                    name: 'Your Marks',
-                    type: 'bar'
-                };
-
-                var trace2 = {
-                    x: [ '<%= topic1name %>',
-                            '<%= topic2name %>',
-                            '<%= topic3name %>',
-                            '<%= topic4name %>',
-                            '<%= topic5name %>',
-                            '<%= topic6name %>',
-                            '<%= topic7name %>'],
-                    y: [<%= medain1 %>,<%= medain2 %>,<%= medain3 %>,<%= medain4 %>,<%= medain5 %>,<%= medain6 %>,<%= medain7 %>],
-                    name: 'Average Marks',
-                    type: 'bar'
-                };
-
-                var data = [trace1, trace2];
-
-                var layout = {
-                    barmode: 'group',
-                    autosize: true // set autosize to rescale
-                };
-
-                Plotly.newPlot('container1', data, layout);
-
-}
-
-            if (currentAttrValue === '#tab2') {
-               var trace3 = {
-                    x: [ '<%= topic1name %>',
-                            '<%= topic2name %>',
-                            '<%= topic3name %>',
-                            '<%= topic4name %>',
-                            '<%= topic5name %>',
-                            '<%= topic6name %>',
-                            '<%= topic7name %>'],
-                    y: [<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>],
-                    name: 'Your Marks',
-                    type: 'bar'
-                };
-
-                var trace4 = {
-                    x: [ '<%= topic1name %>',
-                            '<%= topic2name %>',
-                            '<%= topic3name %>',
-                            '<%= topic4name %>',
-                            '<%= topic5name %>',
-                            '<%= topic6name %>',
-                            '<%= topic7name %>'],
-                    y: [<%= sectormedain1 %>,<%= sectormedain2 %>,<%= sectormedain3 %>,<%= sectormedain4 %>,<%= sectormedain5 %>,<%= sectormedain6 %>,<%= sectormedain7 %>],
-                    name: 'Average Marks',
-                    type: 'bar'
-                };
-
-                var data = [trace3, trace4];
-
-                var layout = {
-                    barmode: 'group',
-                    autosize: true // set autosize to rescale
-                };
-
-                Plotly.newPlot('container2', data, layout);
-}
             e.preventDefault();
 
 
@@ -313,109 +294,8 @@
                 jQuery('.tabs ' + '#tab2').show().siblings().hide();
                 jQuery('#second').addClass('active')
             }
-
-            // Show/Hide Tabs
-            if (currentAttrValue === '#tab3') {
-               var trace1 = {
-                    x: [ '<%= topic1name %>',
-                            '<%= topic2name %>',
-                            '<%= topic3name %>',
-                            '<%= topic4name %>',
-                            '<%= topic5name %>',
-                            '<%= topic6name %>',
-                            '<%= topic7name %>'],
-                    y: [<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>],
-                    name: 'Your Marks',
-                    type: 'bar'
-                };
-
-                var trace2 = {
-                    x: [ '<%= topic1name %>',
-                            '<%= topic2name %>',
-                            '<%= topic3name %>',
-                            '<%= topic4name %>',
-                            '<%= topic5name %>',
-                            '<%= topic6name %>',
-                            '<%= topic7name %>'],
-                    y: [<%= medain1 %>,<%= medain2 %>,<%= medain3 %>,<%= medain4 %>,<%= medain5 %>,<%= medain6 %>,<%= medain7 %>],
-                    name: 'Average Marks',
-                    type: 'bar'
-                };
-
-                var data = [trace1, trace2];
-
-                var layout = {
-                    barmode: 'group',
-                    autosize: true // set autosize to rescale
-                };
-
-                Plotly.newPlot('container1', data, layout);
-
-}
-
-            if (currentAttrValue === '#tab2') {
-              var data = [{
-            x: ['<%= topic1name %>',
-                    '<%= topic2name %>',
-                    '<%= topic3name %>',
-                    '<%= topic4name %>',
-                    '<%= topic5name %>',
-                    '<%= topic6name %>',
-                    '<%= topic7name %>'],
-            y: [<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>],
-            type: 'bar'
-        }];
-        var layout = {
-            barmode: 'group',
-            autosize: true // set autosize to rescale
-        };
-        Plotly.newPlot('container', data, layout);
-
-}
             e.preventDefault();
-
-
         });
-
-        window.onresize = function () {
-            window.onresize = function () {
-                var currentAttrValue = jQuery('.rightbt').attr('href');
-                Plotly.Plots.resize('container');
-                var window_height = window.innerHeight;
-                var content_div_height = document.getElementById('container').offsetHeight;
-                // workaround for bug in Plotly: when flexbox container gets smaller, graph does not shrink
-                if (content_div_height > (window_height - 40)) {
-                    var svg_container = document.getElementById('container').getElementsByClassName('plot-container')[0].getElementsByClassName('svg-container')[0];
-                    svg_container.style.height = (window_height - 40) + 'px';
-                    Plotly.Plots.resize(gd);
-                }
-
-                if (currentAttrValue === '#tab2') {
-                    Plotly.Plots.resize('container1');
-                    var window_height = window.innerHeight;
-                    var content_div_height = document.getElementById('container1').offsetHeight;
-                    // workaround for bug in Plotly: when flexbox container gets smaller, graph does not shrink
-                    if (content_div_height > (window_height - 40)) {
-                        var svg_container = document.getElementById('container1').getElementsByClassName('plot-container')[0].getElementsByClassName('svg-container')[0];
-                        svg_container.style.height = (window_height - 40) + 'px';
-                        Plotly.Plots.resize(gd);
-                    }
-                }
-                if (currentAttrValue === '#tab3') {
-                    Plotly.Plots.resize('container2');
-                    var window_height = window.innerHeight;
-                    var content_div_height = document.getElementById('container2').offsetHeight;
-                    // workaround for bug in Plotly: when flexbox container gets smaller, graph does not shrink
-                    if (content_div_height > (window_height - 40)) {
-                        var svg_container = document.getElementById('container2').getElementsByClassName('plot-container')[0].getElementsByClassName('svg-container')[0];
-                        svg_container.style.height = (window_height - 40) + 'px';
-                        Plotly.Plots.resize(gd);
-                    }
-                }
-            };
-
-        };
-
     });
 
 

@@ -149,6 +149,20 @@
     <Compile Include="Controller\SgtResultController.cs" />
     <Compile Include="Controller\SubdomainController.cs" />
     <Compile Include="Controller\TnaResultController.cs" />
+    <Compile Include="controls\ctrlCMCDesktopGraph2.ascx.cs">
+      <DependentUpon>ctrlCMCDesktopGraph2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\ctrlCMCDesktopGraph2.ascx.designer.cs">
+      <DependentUpon>ctrlCMCDesktopGraph2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ctrlDesktopCMCGraph.ascx.cs">
+      <DependentUpon>ctrlDesktopCMCGraph.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\ctrlDesktopCMCGraph.ascx.designer.cs">
+      <DependentUpon>ctrlDesktopCMCGraph.ascx</DependentUpon>
+    </Compile>
     <Compile Include="controls\ctrlCMCGraph.ascx.cs">
       <DependentUpon>ctrlCMCGraph.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -763,6 +777,8 @@
     <Content Include="App_Browsers\firefox.browser" />
     <Content Include="App_Browsers\ie.browser" />
     <Content Include="Contribute.aspx" />
+    <Content Include="controls\ctrlCMCDesktopGraph2.ascx" />
+    <Content Include="controls\ctrlDesktopCMCGraph.ascx" />
     <Content Include="controls\ctrlCMCGraph2.ascx" />
     <Content Include="controls\ctrldeskTopFooter.ascx" />
     <Content Include="controls\ctrlDesktopHeader.ascx" />
@@ -1079,6 +1095,7 @@
     <Content Include="Images\Slovenia.png" />
     <Content Include="Images\spa.png" />
     <Content Include="Images\Spain.png" />
+    <Content Include="js\Chart.min.js" />
     <Content Include="js\img\sprites.png" />
     <Content Include="Images\Srilanka.jpg" />
     <Content Include="Images\sub_menu_icon.png" />

@@ -39,7 +39,7 @@
          }
          prm.add_endRequest(EndRequestHandler);
     </script>
-    <div class="comman-page">
+    <div class="comman-page" id="wrapper">
 				<sga:header id="header1" runat="server"></sga:header>
 				<!-- Header end // -->
 				<!-- Content Area start -->

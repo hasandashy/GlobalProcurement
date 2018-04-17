@@ -1,28 +1,81 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/tnaDesktopResult.Master" AutoEventWireup="true" CodeBehind="my-results-bar-graph-gap.aspx.cs" Inherits="SGA.ifpsmtna.my_results_bar_graph_gap" %>
-<%@ Register Src="~/controls/ctrlCMCGraph2.ascx" TagName="cmcGragh" TagPrefix="sga" %>
+<%@ Register Src="~/controls/ctrlCMCDesktopGraph2.ascx" TagName="cmcGragh" TagPrefix="sga" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <style>
-       header {border-bottom:10px solid #e6e1d6; min-height:129px; padding-top:16px; position:relative}
-
-#logo {width:228px; height:110px; margin:0 auto; text-align:center}
-#logo a, #logo a:hover {display:block; width:228px; height:110px; background:url(../innerimages/logo.gif) left top no-repeat; text-decoration:none; text-indent:-999em}
-
-nav {position:absolute; right:34px; top:22px; font-size:12px; color:#231f20; width:inherit}
-nav li {float:left; margin-left:12px}
-nav li a {color:#231f20 !important; text-decoration:none}
-nav li a:hover {color:#ea4320 !important; text-decoration:none}
-/* Footer */
-footer {padding:18px 0; position:relative}
-#footer-logo {margin:0 auto; width:158px; height:50px; text-align:center; font-size:10px}
-#footer-logo a, #footer-logo a:hover {display:block; width:158px; height:50px; background:url(../innerimages/logo-footer.gif) top left no-repeat; text-decoration:none; text-indent:-999em}
-.powered {position:absolute; top:18px; right:55px; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#58595b; text-align:right; line-height:50px}
-/* -- -- -- -- */
+    <script src="../js/Chart.min.js"></script>
+<script type="text/javascript" src="../js/ddaccordion.js"></script>
+<script type="text/javascript" src="../js/ddaccordion-menu.js"></script>
+   <link href="../css/style_old.css" rel="stylesheet" />
+    <style>
+        nav {width:inherit}
     </style>
-<div class="dis-block clearfix  marT1 top-space">
-<div class="main-heading dis-block clearfix pad15 font18 head-graybg padbottom-none padtop1 marTnone">
-<h1>Visualisation<span>of your assessment </span></h1>
-</div>
-<sga:cmcGragh id="graph1" showCompare="0" runat="server"></sga:cmcGragh>
-</div>
+<!-- Content Area start -->
+				<article>
+					<section class="welcome-test">
+						<p class="title40 floatL orange">Congratulations! <span class="txt20">You have completed your assessment.</span></p>
+						
+						<div class="clear"></div>
+					</section>
+					<div class="dot-line">&nbsp;</div>
+					<section class="color-box">
+						<article class="test-info-box">
+							<p class="title orange">My Results and Reports</p>
+							<p>&nbsp;</p>
+							<p><span class="dark">INSTRUCTIONS:</span> Below you will find the results and report for each assessment you have taken. In the left hand column you will note the menu where you can easily navigate. If you would like to access your reports or compare your results, simply navigate through the links. We encourage you to share the 'Negotiation Profile Assessment' since aggregate data from this challenge will provide an important insight into 'Category Management Capability' in Australia. The richer the data - the greater the insights.</p>
+						</article>
+					</section>
+					<section class="my-result-box">
+						<article class="breadcrumb">
+							<a href="#">Report Centre</a>&nbsp; &gt; &nbsp;<a href="#">Skills Test Results</a>&nbsp; <span>&gt; &nbsp;Bar Graph</span>
+						</article>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+						<div class="my-result-container">
+							<div class="col-lft">
+								<p class="title18"><span id="spCategory" runat="server">Procurement Knowledge Evaluation</span></p>
+								<% if(isSgaResult) { %>
+								<div class="acrd-menu">
+									<p><a href="#" class="menuitem submenuheader">Display Results</a></p>
+									<div class="submenu">
+										<ul>
+											<li><a href="my-results-bar-graph.aspx" class="active">&bull; Bar Graph</a></li>
+											<li><a href="my-results-reports.aspx">&bull; Reports</a></li>
+										</ul>
+									</div>
+									<p><a href="#" class="menuitem submenuheader">Compare Results</a></p>
+									<div class="submenu">
+										<ul>
+											<li><asp:LinkButton ID="lnkAverage" runat="server" CommandArgument="4" onclick="lnkLower_Click"  >&bull; Average</asp:LinkButton></li>
+                                            <li>
+                                            <asp:LinkButton ID="lnkLower" runat="server" CommandArgument="1" onclick="lnkLower_Click" >&bull; Lower Quartile</asp:LinkButton></li>
+											<li><asp:LinkButton ID="lnkMiddle" runat="server" CommandArgument="2" onclick="lnkLower_Click"  >&bull; Median</asp:LinkButton></li>
+                                            <li><asp:LinkButton ID="lnkUpper" runat="server" CommandArgument="3" onclick="lnkLower_Click"  >&bull; Upper Quartile</asp:LinkButton></li>
+										</ul>
+									</div>  
+									
+								</div>
+                                <% } else { %>
+                                <div class="result-info icon-score">
+									<p>Your results are restricted of this assessment.</p>
+								</div>
+                                <%} %>
+								
+                                   
+							</div>
+							<div class="col-cnt">								
+								<p class="txtCtr">
+                                 <!-- Graph comes up here -->
+                                 <sga:cmcGragh id="graph1" showCompare="0" runat="server"></sga:cmcGragh>
+                                 </p>
+								<p>&nbsp;</p>
+								<hr class="divider-line" />
+								<p>&nbsp;</p>
+								
+							</div>
+							<div class="clear"></div>
+							<p>&nbsp;</p>
+						</div>
+					</section>
+					<div class="dot-line">&nbsp;</div>
+				</article>
+				<!-- Content Area end // -->
 </asp:Content>
-

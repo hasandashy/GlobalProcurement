@@ -13,12 +13,57 @@ namespace SGA.ifpsmtna {
     public partial class my_results_bar_graph_gap {
         
         /// <summary>
+        /// spCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl spCategory;
+        
+        /// <summary>
+        /// lnkAverage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkAverage;
+        
+        /// <summary>
+        /// lnkLower control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkLower;
+        
+        /// <summary>
+        /// lnkMiddle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkMiddle;
+        
+        /// <summary>
+        /// lnkUpper control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkUpper;
+        
+        /// <summary>
         /// graph1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SGA.controls.ctrlCMCGraph2 graph1;
+        protected global::SGA.controls.ctrlCMCDesktopGraph2 graph1;
     }
 }

@@ -13,21 +13,39 @@ namespace SGA.ifpsmtna {
     public partial class MyResults {
         
         /// <summary>
-        /// lblName control.
+        /// menu1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblName;
+        protected global::SGA.controls.ctrlUserLeftMenu menu1;
         
         /// <summary>
-        /// hylSga control.
+        /// rptSgaTest control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hylSga;
+        protected global::System.Web.UI.WebControls.Repeater rptSgaTest;
+        
+        /// <summary>
+        /// btnprev control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnprev;
+        
+        /// <summary>
+        /// btnnext control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnnext;
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrlCMCGraph2.ascx.cs" Inherits="SGA.controls.ctrlCMCGraph2" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrlCMCDesktopGraph2.ascx.cs" Inherits="SGA.controls.ctrlCMCDesktopGraph2" %>
 <script src="../js/Chart.min.js"></script>
 
 <div class="dis-block clearfix white-bg pad15 full-height padtop3">
@@ -63,7 +63,7 @@
 
 </div>
 
-<div class="bottom-btn">
+<div>
     <div class="fleft blue-btn">
         <a href="#tab1" class="leftbt"><< BACK </a>
     </div>
