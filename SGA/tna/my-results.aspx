@@ -37,7 +37,7 @@
 
 
         <%--<div class="gray-bg assesment-box marT3">
-<a href="javascript:void(0)"><i><img src="images/icon1.png" alt=""></i> <p>Procurement Knowledge Assessment </p><em>>></em>  </a>
+<a href="javascript:void(0)"><i><img src="images/icon1.png" alt=""></i> <p>Procurement Benchmark Assessment </p><em>>></em>  </a>
 </div>--%>
     </div>
 

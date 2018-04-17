@@ -13,17 +13,25 @@ namespace SGA
         {
             if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
-                if (HttpContext.Current.User.IsInRole("User"))
+                if (Request.Browser["IsMobile"] == "True")
                 {
-                    base.Response.Redirect("~/tna/updatepassword.aspx", false);
+                    if (HttpContext.Current.User.IsInRole("User"))
+                    {
+                        base.Response.Redirect("~/tna/updatepassword.aspx", false);
+                    }                                  
+                   
                 }
-                else if (HttpContext.Current.User.IsInRole("Manager"))
+                else
                 {
-                    base.Response.Redirect("~/Manager/Dashboard.aspx", false);
-                }
-                else if (HttpContext.Current.User.IsInRole("Administrator"))
-                {
-                    base.Response.Redirect("~/webadmin/DashBoard.aspx", false);
+                    if (HttpContext.Current.User.IsInRole("User"))
+                    {
+                        base.Response.Redirect("~/ifpsmtna/updatepassword.aspx", false);
+                    }
+                    else if (HttpContext.Current.User.IsInRole("Administrator"))
+                    {
+                        base.Response.Redirect("~/webadmin/DashBoard.aspx", false);
+                    }
+
                 }
             }
             else

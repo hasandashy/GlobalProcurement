@@ -36,7 +36,7 @@ namespace SGA.tna
             /*  */
 
 
-            if (takeSgaTest)
+            if (takeSgaTest && !isProfileComplete())
             {
                 assesactive.Visible = false;
                 asseslocked.Visible = true;
@@ -47,6 +47,17 @@ namespace SGA.tna
                 assesactive.Visible = true;
                 asseslocked.Visible = false;
             }
+        }
+
+        private bool isProfileComplete()
+        {
+            bool isComplete = false;
+            int num = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, "select count(sector) from UserInfo where userid =" + SGACommon.LoginUserInfo.userId + " "));
+            if (num == 1)
+            {
+                isComplete = true;
+            }
+            return isComplete;
         }
     }
 }

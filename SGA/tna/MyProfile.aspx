@@ -53,7 +53,7 @@
                alert("Sector and Jobrole are mandatory fields.");
             }
         else{
-                window.location.href = "/tna/my-results.aspx";
+                window.location.href = "/tna/mainmenu.aspx";
         }
         });
     </script>

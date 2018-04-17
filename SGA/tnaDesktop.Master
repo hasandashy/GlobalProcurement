@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="tnaDesktop.master.cs" Inherits="SGA.tnaDesktop" %>
+
+<%@ Register TagName="header" TagPrefix="sga" Src="~/controls/ctrlDesktopHeader.ascx"   %>
+<%@ Register TagName="footer" TagPrefix="sga" Src="~/controls/ctrlDesktopFooter.ascx"   %>
+
+<!DOCTYPE HTML>
+<html>
+	<head id="Head1" runat="server">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>skillsGAP Analysis - Multiple Assessment</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		
+		<!-- Favicons -->
+		<link rel="shortcut icon" href="favicon.ico" />
+		
+		<!-- Stylesheet -->
+		<link rel="stylesheet" href="~/css/style_old.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="~/css/mediaquery_old.css" type="text/css" media="screen" />
+		
+		<!--[if lt IE 9]>
+			<script src="<%# Page.ResolveClientUrl("~/js/html5.js")%>"></script>
+		<![endif]-->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> 
+        
+	</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+     </asp:ScriptManager>
+     <script type="text/javascript">
+         var prm = Sys.WebForms.PageRequestManager.getInstance();
+
+         function EndRequestHandler(sender, args) {
+             window.scrollTo(0, 0)
+         }
+         prm.add_endRequest(EndRequestHandler);
+    </script>
+    <!-- Outer start -->
+		<div id="outer">
+			<!-- Wrapper start -->
+			<div id="wrapper">
+				<!-- Header start -->
+				<sga:header id="header1" runat="server"></sga:header>
+				<!-- Header end // -->
+				<!-- Content Area start -->
+				<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+				<!-- Content Area end // -->
+				<sga:footer id="footer" runat="server"></sga:footer>
+			</div>
+			<!-- Wrapper end // -->
+		</div>
+		<div id="outer-btm">&nbsp;</div>
+		<!-- Outer end // -->
+    
+    </form>
+   </body>
+</html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41955815-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-41955815-1');
+</script>
+<script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+        $(".help").colorbox({
+            href: "https://comprara.atlassian.net/servicedesk/customer/portal/5",
+            width: "892px",
+            height: "620px",
+            iframe: true,
+            onComplete: function () {
+                    $('#colorbox').css({ "display": "block" });
+                    $('#alertMessage').text("Help");
+            }
+        });
+        $(".help").click(function () {
+        });
+        
+    });
+</script>

@@ -264,7 +264,7 @@ ol.list1 > li:before {content:counter(li); counter-increment:li; position:absolu
 .banner-inner-ssa .banner-cnt .banner-icn {float:left; width:156px}
 .banner-inner-ssa .banner-cnt .banner-txt {float:left; width:844px; font-family:'cleargothic-lightregular', Arial, Helvetica, sans-serif; font-size:20px; line-height:23px; color:#231f20}
 
-/* Procurement Knowledge Evaluation */
+/* Procurement Benchmark Assessment */
 .banner-inner-pke {background:url(../images/Businessmen.jpg) top no-repeat; background-size:cover}
 .banner-inner-pke .banner-cnt {min-height:508px;}
 .banner-inner-pke .banner-cnt .banner-heading {font-family:'cleargothic-mediumregular', Arial, Helvetica, sans-serif; font-size:50px; line-height:70px; color:#231f20; margin:0 0 10px 30px; padding-top:10px}
@@ -272,7 +272,7 @@ ol.list1 > li:before {content:counter(li); counter-increment:li; position:absolu
 .banner-inner-pke .banner-cnt .banner-icn {float:left; width:156px}
 .banner-inner-pke .banner-cnt .banner-txt {float:left; width:844px; font-family:'cleargothic-lightregular', Arial, Helvetica, sans-serif; font-size:20px; line-height:23px; color:#231f20}
 
-/* Procurement Knowledge Evaluation */
+/* Procurement Benchmark Assessment */
 .banner-inner-np {background:url(../images/npbanner.jpg) top no-repeat; background-size:cover}
 .banner-inner-np .banner-cnt {min-height:630px;}
 .banner-inner-np .banner-cnt .banner-heading {font-family:'cleargothic-mediumregular', Arial, Helvetica, sans-serif; font-size:50px; line-height:70px; color:#231f20; margin:0 0 0px 0px; padding-top:10px}

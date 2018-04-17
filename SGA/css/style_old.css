@@ -198,10 +198,10 @@ input.btn-next {font-family:'helvetica_neueregular', Arial, Helvetica, sans-seri
 .welcome-test .timer {float:right; font-family:'helvetica_neueregular', Arial, Helvetica, sans-serif; font-size:40px; color:#ea4320; line-height:normal;margin-right:127px;margin-top:-5px;position:fixed;display:inline;right:0px;top:0px;}
 /*.welcome-test-cmc {padding:28px 31px 10px;position:fixed;}
 .welcome-test-cmc .timer {float:right; font-family:'helvetica_neueregular', Arial, Helvetica, sans-serif; font-size:40px; color:#ea4320; line-height:normal;margin-right:127px;margin-top:-5px;position:fixed;}*/
-.navigation {background:#414042; text-align:center; border-top:30px solid #eae5dc; height:48px}
+.navigation {background:#414042; text-align:center; border-top:30px solid #eae5dc; min-height:48px; height:auto;}
 .navigation ul {display:inline-block; margin:0 auto; padding:9px 0; list-style:none}
 .navigation ul li {display:inline}
-.navigation ul li a {display:block; height:30px; float:left; font-size:14px; line-height:15px; color:#fff; text-decoration:none; padding:0 20px; border-left:1px solid #fff}
+.navigation ul li a {display:block; min-height:30px; height:auto; float:left; font-size:14px; line-height:15px; color:#fff; text-decoration:none; padding:0 20px; border-left:1px solid #fff}
 .navigation ul li a:hover {color:#f79548; text-decoration:none}
 .navigation ul li.active a, .navigation ul li.active a:hover {color:#f79548; text-decoration:none}
 .navigation ul li:first-child a, .navigation ul li:first-child a:hover {border-left:0 none}
@@ -211,7 +211,10 @@ input.btn-next {font-family:'helvetica_neueregular', Arial, Helvetica, sans-seri
 .test-box {}
 .test-cnt {border-bottom:1px solid #e1dacd; padding:14px 40px; font-size:16px; line-height:19px}
 .test-cnt .num {float:left; width:44px; font-size:18px; line-height:normal; margin-top:8px}
-.test-cnt .dtl {float:left; width:718px}
+.test-cnt .dtl {
+	display: inline-block;
+	width: calc(100% - 50px);
+}
 .test-cnt .dtl .title {font-family:'HelveticaBold', Arial, Helvetica, sans-serif; font-size:18px; line-height:normal; margin-bottom:10px}
 .test-cnt .dtl p {margin:8px 0}
 .score-box {}
@@ -442,6 +445,8 @@ ol.list3 > li:before {content:counter(li); counter-increment:li; position:absolu
 	text-decoration:underline;
 	cursor:pointer;
 }
+
+
 
 
 

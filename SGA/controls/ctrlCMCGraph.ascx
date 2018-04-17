@@ -1,531 +1,421 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrlCMCGraph.ascx.cs" Inherits="SGA.controls.ctrlCMCGraph" %>
-<%--<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<style>div.google-visualization-tooltip { font-weight:bold; }</style>
-<script type="text/javascript">
-    google.load("visualization", "1", { packages: ["corechart"] });
-    //google.setOnLoadCallback(drawChart);
-    function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-	        ['Topic Name', 'My Score', { role: 'style' }, { role: 'tooltip' }],
-            ['<%= topic1name %>', <%= topic1mark %>, '#F89F5A', '<%= topic1name %>' + "\r\n My Score " + <%= topic1mark %> +"%"],            // RGB value
-	        ['<%= topic2name %>', <%= topic2mark %>, '#7B7C7F', '<%= topic2name %>' + "\r\n My Score " + <%= topic2mark %> +"%"],            // English color name
-	        ['<%= topic3name %>', <%= topic3mark %>, '#F89F5A', '<%= topic3name %>' + "\r\n My Score " + <%= topic3mark %> +"%"],
-	        ['<%= topic4name %>', <%= topic4mark %>, '#7B7C7F', '<%= topic4name %>' + "\r\n My Score " + <%= topic4mark %> +"%"], // CSS-style declaration
-            ['<%= topic5name %>', <%= topic5mark %>, '#F89F5A', '<%= topic5name %>' + "\r\n My Score " + <%= topic5mark %> +"%"], // CSS-style declaration
-            ['<%= topic6name %>', <%= topic6mark %>, '#7B7C7F', '<%= topic6name %>' + "\r\n My Score " + <%= topic6mark %> +"%"], // CSS-style declaration
-            ['<%= topic7name %>', <%= topic7mark %>, '#F89F5A', '<%= topic7name %>' + "\r\n My Score " + <%= topic7mark %> +"%"], // CSS-style declaration
-            ['<%= topic8name %>', <%= topic8mark %>, '#7B7C7F', '<%= topic8name %>' + "\r\n My Score " + <%= topic8mark %> +"%"] // CSS-style declaration
-          ]);
-        var options = {
-                tooltip: { isHtml: true },
-                title: ' ',
-                hAxis: { title: ' ', titleTextStyle: { color: 'red'} },
-                legend: {position: 'none'}
-            };
-       
-        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-    }
-    
-    function drawChartAverage() {
-    
-        var data = google.visualization.arrayToDataTable([
-          ['Topic', 'My Score','<%= median %>'],
-          ['<%= topic1name %>', <%= topic1mark %>, <%= medain1 %>],
-          ['<%= topic2name %>', <%= topic2mark %>, <%= medain2 %>],
-          ['<%= topic3name %>', <%= topic3mark %>, <%= medain3 %>],
-          ['<%= topic4name %>', <%= topic4mark %>, <%= medain4 %>],
-          ['<%= topic5name %>', <%= topic5mark %>, <%= medain5 %>],
-          ['<%= topic6name %>', <%= topic6mark %>, <%= medain6 %>],
-          ['<%= topic7name %>', <%= topic7mark %>, <%= medain7 %>],
-          ['<%= topic8name %>', <%= topic8mark %>, <%= medain8 %>]
-        ]
-        );
-        var options = {
-            title: ' ',
-            hAxis: { title: ' ', titleTextStyle: { color: 'red'} },
-            seriesType: "bars",
-            series: {5: {type: "line"}},
-            legend: {position: 'right'},
-            colors: ['#EA4320','#7B7C7F']
-        };
-       
-        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-    }
-</script>
-<table width="100%" border="0" cellspacing="1" cellpadding="1" id="tblCompare" runat="server" class="tform">
-    <tr>
-        <td width="30%" class="txtrht">
-            Compare results againest:
-        </td>
-        <td width="45%">
-            <asp:RadioButtonList ID="rdlQuartile" runat="server" RepeatDirection="Horizontal">
-                <asp:ListItem Text="Average" Value="4"></asp:ListItem>
-                <asp:ListItem Text="Lower Quartile" Value="1"></asp:ListItem>
-                <asp:ListItem Text="Median" Selected="True" Value="2"></asp:ListItem>
-                <asp:ListItem Text="Upper Quartile" Value="3"></asp:ListItem>
-            </asp:RadioButtonList>
-            
-        </td>
-        <td width="25%" class="txtlht"><asp:LinkButton ID="lnkCompare" runat="server" CausesValidation="false" Text="Compare"
-                CssClass="rdbut" OnClick="lnkCompare_Click"></asp:LinkButton>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="3">&nbsp;</td>
-    </tr>
-    <tr>
-        <td colspan="3"></td>
-    </tr>
-</table>
-<div id="chart_div" style="width: 725px; height: 500px;">
-</div>--%>
-<%----%>
-
-
-
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-    
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrlCMCGraph.ascx.cs" Inherits="SGA.controls.ctrlCMCGraph" %> 
+<script src="../js/plotly-latest.min.js"></script>
 <div class="dis-block clearfix white-bg pad15 full-height padtop3">
 
-<div class="dis-block clearfix">
-<div class="question-number"></div>
+    <div class="dis-block clearfix">
+        <div class="question-number"></div>
 
-<div class="tabs">
-<div class="tab-links">
-<ul>
-<li id="first" class="active"><a href="#tab1">YOUR SCORE</a></li>
-<li id="second"><a href="#tab2">BY ROLE</a></li>
-<li id="third"><a href="#tab3">BY SECTOR</a></li>
-</ul>
-</div>
+        <div class="tabs">
+            <div class="tab-links">
+                <ul>
+                    <li id="first" class="active"><a href="#tab1">YOUR SCORE</a></li>
+                    <li id="second"><a href="#tab2">BY ROLE</a></li>
+                    <li id="third"><a href="#tab3">BY SECTOR</a></li>
+                </ul>
+            </div>
+            <div class=" dis-block clearfix tab-content">
 
+                <div id="tab1" class="tab active">
+                    <div class="question-heading">
+                        <i>01</i> <span>In the graph below you can see your results for each pillar. This provides a visual display of your strengths and development opportunities
+                        </span>
+                        <div class="redtitle"></div>
+                    </div>
 
+                    <div class="dis-block clearfix  graph">
+                      <div id="container"></div>
+                    </div>
+                </div>
 
-<div class=" dis-block clearfix tab-content">
+                <div id="tab2" class="tab">
+                    <div class="question-heading">
+                        <i>02</i> <span>In the graph below you can see a benchmark of your result against users in the same job role
+                        </span>
+                        <div class="redtitle"></div>
+                    </div>
 
-<div id="tab1" class="tab active">
-<div class="question-heading"><i>01</i> <span>In the graph below you can see your results for each pillar. This provides a visual display of your strengths and development opportunities
-</span>
-<div class="redtitle"></div>
-</div>
+                    <div class="dis-block clearfix graph">
+                         <div id="container1"></div>
+                    </div>
+                </div>
 
-<div class="dis-block clearfix  graph">
-     <div id="container" style="width:100%;margin: 0 auto"></div> 
-</div>
-</div>
+                <div id="tab3" class="tab">
+                    <div class="question-heading">
+                        <i>03</i> <span>In the graph below you can see a benchmark of your result against users in the same sector.
 
-<div id="tab2" class="tab">
-<div class="question-heading"><i>02</i> <span>In the graph below you can see a benchmark of your result against users in the same job role
-</span>
-<div class="redtitle"></div>
-</div>
+                        </span>
+                        <div class="redtitle"></div>
+                    </div>
 
-<div class="dis-block clearfix graph">
-    <div id="container1" style="width:100%;margin: 0 auto"></div>
-</div>
-</div>
+                    <div class="dis-block clearfix graph">
+                        <div id="container2"></div>
+                    </div>
+                </div>
 
-<div id="tab3" class="tab">
-<div class="question-heading"><i>03</i> <span>In the graph below you can see a benchmark of your result against users in the same sector.
+            </div>
+        </div>
 
-</span>
-<div class="redtitle"></div>
-</div>
-
-<div class="dis-block clearfix graph">
-     <div id="container2" style="width:100%;margin: 0 auto"></div>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
+    </div>
 
 </div>
 
 <div class="bottom-btn">
-<div class="fright blue-btn"><a href="#tab1" class="rightbt">NEXT >> </a></div>
-
-
+    <div class="fleft blue-btn">
+        <a href="#tab1" class="leftbt"><< BACK </a>
+      </div>
+    <div class="fright blue-btn"><a href="#tab1" class="rightbt">NEXT >> </a></div>
 </div>
 <script type="text/javascript">
-    jQuery(document).ready(function () {        
-        var chart1 = Highcharts.chart('container', {
-            chart: {
-                type: 'column'
-            },
-            title: {
-                text: 'Procurement Benchmark Assessment'
-            },
-            subtitle: {
-                text: ''
-            },
-            xAxis: {
-                categories: [
-                    '<%= topic1name %>',
+    jQuery(document).ready(function () {
+        $('.leftbt').hide();
+        var data = [{
+            x: ['<%= topic1name %>',
                     '<%= topic2name %>',
                     '<%= topic3name %>',
                     '<%= topic4name %>',
                     '<%= topic5name %>',
                     '<%= topic6name %>',
-                    '<%= topic7name %>'
-                ],
-                crosshair: true
-            },
-            yAxis: {
-                min: 0,
-                title: {
-                    text: 'Marks (avg)'
-                }
-            },
-            tooltip: {
-                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                    '<td style="padding:0"><b>{point.y:.1f} %</b></td></tr>',
-                footerFormat: '</table>',
-                shared: true,
-                useHTML: true
-            },
-            plotOptions: {
-                column: {
-                    pointPadding: 0.2,
-                    borderWidth: 0
-                }
-            },
-            series: [{
-                name: 'Marks',
-                data: [ <%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>]
-            }]
+                    '<%= topic7name %>'],
+            y: [<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>],
+            type: 'bar'
+        }];
+        var layout = {
+            barmode: 'group',
+            autosize: true // set autosize to rescale
+        };
+        Plotly.newPlot('container', data, layout);
 
-            //}, {
-            //    name: 'New York',
-            //    data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
 
-            //}, {
-            //    name: 'London',
-            //    data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
 
-            //}, {
-            //    name: 'Berlin',
-            //    data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
-
-            //}]
-        });
-
-      
-     
 
         jQuery('.tabs .tab-links a').on('click', function (e) {
             var currentAttrValue = jQuery(this).attr('href');
             jQuery('.rightbt').attr('href', currentAttrValue);
+            jQuery('.leftbt').attr('href', currentAttrValue);
             // Show/Hide Tabs
             jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
-       
+
             // Change/remove current tab to active
             jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
 
 
             if (currentAttrValue === '#tab1') {
-                chart1.reflow();
+                $('.leftbt').hide();
             }
 
             if (currentAttrValue === '#tab2') {
-                var chart2 = Highcharts.chart('container1', {
-                    chart: {
-                        type: 'column'
-                    },
-                    title: {
-                        text: 'Procurement Benchmark Assessment'
-                    },
-                    subtitle: {
-                        text: ''
-                    },
-                    xAxis: {
-                        categories: [
-                            '<%= topic1name %>',
+                $('.leftbt').show();
+                var trace1 = {
+                    x: [ '<%= topic1name %>',
                             '<%= topic2name %>',
                             '<%= topic3name %>',
                             '<%= topic4name %>',
                             '<%= topic5name %>',
                             '<%= topic6name %>',
-                            '<%= topic7name %>'
-                        ],
-                        crosshair: true
-                    },
-                    yAxis: {
-                        min: 0,
-                        title: {
-                            text: 'Marks (avg)'
-                        }
-                    },
-                    tooltip: {
-                        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                            '<td style="padding:0"><b>{point.y:.1f} %</b></td></tr>',
-                        footerFormat: '</table>',
-                        shared: true,
-                        useHTML: true
-                    },
-                    plotOptions: {
-                        column: {
-                            pointPadding: 0.2,
-                            borderWidth: 0
-                        }
-                    },
-                    series: [{
-                        name: 'Your Marks',
-                        data: [ <%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>]
-        
-                    }, {
-                        name: 'Average Marks',
-                        data: [<%= medain1 %>,<%= medain2 %>,<%= medain3 %>,<%= medain4 %>,<%= medain5 %>,<%= medain6 %>,<%= medain7 %>]
-                    }]
+                            '<%= topic7name %>'],
+                    y: [<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>],
+                    name: 'Your Marks',
+                    type: 'bar'
+                };
 
-                    //}, {
-                    //    name: 'London',
-                    //    data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+                var trace2 = {
+                    x: [ '<%= topic1name %>',
+                            '<%= topic2name %>',
+                            '<%= topic3name %>',
+                            '<%= topic4name %>',
+                            '<%= topic5name %>',
+                            '<%= topic6name %>',
+                            '<%= topic7name %>'],
+                    y: [<%= medain1 %>,<%= medain2 %>,<%= medain3 %>,<%= medain4 %>,<%= medain5 %>,<%= medain6 %>,<%= medain7 %>],
+                    name: 'Average Marks',
+                    type: 'bar'
+                };
 
-                    //}, {
-                    //    name: 'Berlin',
-                    //    data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+                var data = [trace1, trace2];
 
-                    //}]
-                });
+                var layout = { barmode: 'group',
+                    autosize: true // set autosize to rescale
+                };
 
+                Plotly.newPlot('container1', data, layout);
             }
 
             if (currentAttrValue === '#tab3') {
-                var chart3 = Highcharts.chart('container2', {
-                    chart: {
-                        type: 'column'
-                    },
-                    title: {
-                        text: 'Procurement Benchmark Assessment'
-                    },
-                    subtitle: {
-                        text: ''
-                    },
-                    xAxis: {
-                        categories: [
-                            '<%= topic1name %>',
+                $('.leftbt').show();
+                  var trace3 = {
+                    x: [ '<%= topic1name %>',
                             '<%= topic2name %>',
                             '<%= topic3name %>',
                             '<%= topic4name %>',
                             '<%= topic5name %>',
                             '<%= topic6name %>',
-                            '<%= topic7name %>'
-                        ],
-                        crosshair: true
-                    },
-                    yAxis: {
-                        min: 0,
-                        title: {
-                            text: 'Marks (avg)'
-                        }
-                    },
-                    tooltip: {
-                        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                            '<td style="padding:0"><b>{point.y:.1f} %</b></td></tr>',
-                        footerFormat: '</table>',
-                        shared: true,
-                        useHTML: true
-                    },
-                    plotOptions: {
-                        column: {
-                            pointPadding: 0.2,
-                            borderWidth: 0
-                        }
-                    },
-                    series: [{
-                        name: 'Your Marks',
-                        data: [ <%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>]
-        
-                    }, {
-                        name: 'Average Marks',
-                        data: [<%= sectormedain1 %>,<%= sectormedain2 %>,<%= sectormedain3 %>,<%= sectormedain4 %>,<%= sectormedain5 %>,<%= sectormedain6 %>,<%= sectormedain7 %>]
-                    }]
+                            '<%= topic7name %>'],
+                    y: [<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>],
+                    name: 'Your Marks',
+                    type: 'bar'
+                };
 
-                    //}, {
-                    //    name: 'London',
-                    //    data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+                var trace4 = {
+                    x: [ '<%= topic1name %>',
+                            '<%= topic2name %>',
+                            '<%= topic3name %>',
+                            '<%= topic4name %>',
+                            '<%= topic5name %>',
+                            '<%= topic6name %>',
+                            '<%= topic7name %>'],
+                    y: [<%= sectormedain1 %>,<%= sectormedain2 %>,<%= sectormedain3 %>,<%= sectormedain4 %>,<%= sectormedain5 %>,<%= sectormedain6 %>,<%= sectormedain7 %>],
+                    name: 'Average Marks',
+                    type: 'bar'
+                };
 
-                    //}, {
-                    //    name: 'Berlin',
-                    //    data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+                var data = [trace3, trace4];
 
-                    //}]
-                });
+                var layout = {
+                    barmode: 'group',
+                    autosize: true // set autosize to rescale
+                };
+
+                Plotly.newPlot('container2', data, layout);
             }
             e.preventDefault();
 
-       
+
         });
         //next btn click
         jQuery('.rightbt').on('click', function (e) {
             var currentAttrValue = jQuery(this).attr('href');
-           
+
             // Change/remove current tab to active
             jQuery('.tabs .tab-links a').parent('li').siblings().removeClass('active');
 
-        if(currentAttrValue == '#tab1'){
-            jQuery(this).attr('href', '#tab2');
-            jQuery('.tabs ' + '#tab2').show().siblings().hide();
-            jQuery('#second').addClass('active')
-        }
-        if(currentAttrValue == '#tab2'){
-            jQuery(this).attr('href', '#tab3');
-            jQuery('.tabs ' + '#tab3').show().siblings().hide();
-            jQuery('#third').addClass('active')
-        }
-        if(currentAttrValue == '#tab3'){
-            window.location.href = "my-results-bar-graph-gap.aspx"
-            e.preventDefault();
-        }
+            if (currentAttrValue == '#tab1') {
+                $('.leftbt').show();
+                jQuery(this).attr('href', '#tab2');
+                jQuery('.leftbt').attr('href', '#tab2');
+                jQuery('.tabs ' + '#tab2').show().siblings().hide();
+                jQuery('#second').addClass('active')                
+            }
+            if (currentAttrValue == '#tab2') {
+                $('.leftbt').show();
+                jQuery(this).attr('href', '#tab3');
+                jQuery('.leftbt').attr('href', '#tab3');
+                jQuery('.tabs ' + '#tab3').show().siblings().hide();
+                jQuery('#third').addClass('active')
+
+            }
+            if (currentAttrValue == '#tab3') {
+                window.location.href = "my-results-bar-graph-gap.aspx"
+                e.preventDefault();
+            }
 
             // Show/Hide Tabs
-        
+            if (currentAttrValue === '#tab1') {
+               var trace1 = {
+                    x: [ '<%= topic1name %>',
+                            '<%= topic2name %>',
+                            '<%= topic3name %>',
+                            '<%= topic4name %>',
+                            '<%= topic5name %>',
+                            '<%= topic6name %>',
+                            '<%= topic7name %>'],
+                    y: [<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>],
+                    name: 'Your Marks',
+                    type: 'bar'
+                };
 
-        
+                var trace2 = {
+                    x: [ '<%= topic1name %>',
+                            '<%= topic2name %>',
+                            '<%= topic3name %>',
+                            '<%= topic4name %>',
+                            '<%= topic5name %>',
+                            '<%= topic6name %>',
+                            '<%= topic7name %>'],
+                    y: [<%= medain1 %>,<%= medain2 %>,<%= medain3 %>,<%= medain4 %>,<%= medain5 %>,<%= medain6 %>,<%= medain7 %>],
+                    name: 'Average Marks',
+                    type: 'bar'
+                };
 
-         
+                var data = [trace1, trace2];
 
-        if (currentAttrValue === '#tab1') {
-              var chart2 = Highcharts.chart('container1', {
-        chart: {
-            type: 'column'
-        },
-        title: {
-            text: 'Procurement Benchmark Assessment'
-        },
-        subtitle: {
-            text: ''
-        },
-        xAxis: {
-            categories: [
-                '<%= topic1name %>',
-                '<%= topic2name %>',
-                '<%= topic3name %>',
-                '<%= topic4name %>',
-                '<%= topic5name %>',
-                '<%= topic6name %>',
-                '<%= topic7name %>'
-            ],
-            crosshair: true
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: 'Marks (avg)'
+                var layout = {
+                    barmode: 'group',
+                    autosize: true // set autosize to rescale
+                };
+
+                Plotly.newPlot('container1', data, layout);
+
+}
+
+            if (currentAttrValue === '#tab2') {
+               var trace3 = {
+                    x: [ '<%= topic1name %>',
+                            '<%= topic2name %>',
+                            '<%= topic3name %>',
+                            '<%= topic4name %>',
+                            '<%= topic5name %>',
+                            '<%= topic6name %>',
+                            '<%= topic7name %>'],
+                    y: [<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>],
+                    name: 'Your Marks',
+                    type: 'bar'
+                };
+
+                var trace4 = {
+                    x: [ '<%= topic1name %>',
+                            '<%= topic2name %>',
+                            '<%= topic3name %>',
+                            '<%= topic4name %>',
+                            '<%= topic5name %>',
+                            '<%= topic6name %>',
+                            '<%= topic7name %>'],
+                    y: [<%= sectormedain1 %>,<%= sectormedain2 %>,<%= sectormedain3 %>,<%= sectormedain4 %>,<%= sectormedain5 %>,<%= sectormedain6 %>,<%= sectormedain7 %>],
+                    name: 'Average Marks',
+                    type: 'bar'
+                };
+
+                var data = [trace3, trace4];
+
+                var layout = {
+                    barmode: 'group',
+                    autosize: true // set autosize to rescale
+                };
+
+                Plotly.newPlot('container2', data, layout);
+}
+            e.preventDefault();
+
+
+        });
+
+
+         //back btn click
+        jQuery('.leftbt').on('click', function (e) {
+            var currentAttrValue = jQuery(this).attr('href');
+
+            // Change/remove current tab to active
+            jQuery('.tabs .tab-links a').parent('li').siblings().removeClass('active');
+
+            if (currentAttrValue == '#tab1') {
+                $('.leftbt').hide();
             }
-        },
-        tooltip: {
-            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f} %</b></td></tr>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true
-        },
-        plotOptions: {
-            column: {
-                pointPadding: 0.2,
-                borderWidth: 0
+            if (currentAttrValue == '#tab2') {
+                $('.leftbt').hide();
+                jQuery(this).attr('href', '#tab1');
+                jQuery('.rightbt').attr('href', '#tab1');
+                jQuery('.tabs ' + '#tab1').show().siblings().hide();
+                jQuery('#first').addClass('active')
             }
-        },
-        series: [{
-            name: 'Your Marks',
-            data: [ <%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>]
-        
-        }, {
-            name: 'Average Marks',
-            data: [<%= medain1 %>,<%= medain2 %>,<%= medain3 %>,<%= medain4 %>,<%= medain5 %>,<%= medain6 %>,<%= medain7 %>]
-        }]
-
-        //}, {
-        //    name: 'London',
-        //    data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
-
-        //}, {
-        //    name: 'Berlin',
-        //    data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
-
-        //}]
-    });
-
-        }
-
-        if (currentAttrValue === '#tab2') {
-              var chart3 = Highcharts.chart('container2', {
-        chart: {
-            type: 'column'
-        },
-        title: {
-            text: 'Procurement Benchmark Assessment'
-        },
-        subtitle: {
-            text: ''
-        },
-        xAxis: {
-            categories: [
-                '<%= topic1name %>',
-                '<%= topic2name %>',
-                '<%= topic3name %>',
-                '<%= topic4name %>',
-                '<%= topic5name %>',
-                '<%= topic6name %>',
-                '<%= topic7name %>'
-            ],
-            crosshair: true
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: 'Marks (avg)'
+            if (currentAttrValue == '#tab3') {
+                $('.leftbt').show();
+                jQuery(this).attr('href', '#tab2');
+                jQuery('.rightbt').attr('href', '#tab2');
+                jQuery('.tabs ' + '#tab2').show().siblings().hide();
+                jQuery('#second').addClass('active')
             }
-        },
-        tooltip: {
-            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f} %</b></td></tr>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true
-        },
-        plotOptions: {
-            column: {
-                pointPadding: 0.2,
-                borderWidth: 0
-            }
-        },
-        series: [{
-            name: 'Your Marks',
-            data: [ <%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>]
-        
-        }, {
-            name: 'Average Marks',
-            data: [<%= sectormedain1 %>,<%= sectormedain2 %>,<%= sectormedain3 %>,<%= sectormedain4 %>,<%= sectormedain5 %>,<%= sectormedain6 %>,<%= sectormedain7 %>]
-        }]
 
-        //}, {
-        //    name: 'London',
-        //    data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+            // Show/Hide Tabs
+            if (currentAttrValue === '#tab3') {
+               var trace1 = {
+                    x: [ '<%= topic1name %>',
+                            '<%= topic2name %>',
+                            '<%= topic3name %>',
+                            '<%= topic4name %>',
+                            '<%= topic5name %>',
+                            '<%= topic6name %>',
+                            '<%= topic7name %>'],
+                    y: [<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>],
+                    name: 'Your Marks',
+                    type: 'bar'
+                };
 
-        //}, {
-        //    name: 'Berlin',
-        //    data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+                var trace2 = {
+                    x: [ '<%= topic1name %>',
+                            '<%= topic2name %>',
+                            '<%= topic3name %>',
+                            '<%= topic4name %>',
+                            '<%= topic5name %>',
+                            '<%= topic6name %>',
+                            '<%= topic7name %>'],
+                    y: [<%= medain1 %>,<%= medain2 %>,<%= medain3 %>,<%= medain4 %>,<%= medain5 %>,<%= medain6 %>,<%= medain7 %>],
+                    name: 'Average Marks',
+                    type: 'bar'
+                };
 
-        //}]
-    });
-        }
-        e.preventDefault();
+                var data = [trace1, trace2];
 
-       
-    });
+                var layout = {
+                    barmode: 'group',
+                    autosize: true // set autosize to rescale
+                };
+
+                Plotly.newPlot('container1', data, layout);
+
+}
+
+            if (currentAttrValue === '#tab2') {
+              var data = [{
+            x: ['<%= topic1name %>',
+                    '<%= topic2name %>',
+                    '<%= topic3name %>',
+                    '<%= topic4name %>',
+                    '<%= topic5name %>',
+                    '<%= topic6name %>',
+                    '<%= topic7name %>'],
+            y: [<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>],
+            type: 'bar'
+        }];
+        var layout = {
+            barmode: 'group',
+            autosize: true // set autosize to rescale
+        };
+        Plotly.newPlot('container', data, layout);
+
+}
+            e.preventDefault();
+
+
+        });
+
+        window.onresize = function () {
+            window.onresize = function () {
+                var currentAttrValue = jQuery('.rightbt').attr('href');
+                Plotly.Plots.resize('container');
+                var window_height = window.innerHeight;
+                var content_div_height = document.getElementById('container').offsetHeight;
+                // workaround for bug in Plotly: when flexbox container gets smaller, graph does not shrink
+                if (content_div_height > (window_height - 40)) {
+                    var svg_container = document.getElementById('container').getElementsByClassName('plot-container')[0].getElementsByClassName('svg-container')[0];
+                    svg_container.style.height = (window_height - 40) + 'px';
+                    Plotly.Plots.resize(gd);
+                }
+
+                if (currentAttrValue === '#tab2') {
+                    Plotly.Plots.resize('container1');
+                    var window_height = window.innerHeight;
+                    var content_div_height = document.getElementById('container1').offsetHeight;
+                    // workaround for bug in Plotly: when flexbox container gets smaller, graph does not shrink
+                    if (content_div_height > (window_height - 40)) {
+                        var svg_container = document.getElementById('container1').getElementsByClassName('plot-container')[0].getElementsByClassName('svg-container')[0];
+                        svg_container.style.height = (window_height - 40) + 'px';
+                        Plotly.Plots.resize(gd);
+                    }
+                }
+                if (currentAttrValue === '#tab3') {
+                    Plotly.Plots.resize('container2');
+                    var window_height = window.innerHeight;
+                    var content_div_height = document.getElementById('container2').offsetHeight;
+                    // workaround for bug in Plotly: when flexbox container gets smaller, graph does not shrink
+                    if (content_div_height > (window_height - 40)) {
+                        var svg_container = document.getElementById('container2').getElementsByClassName('plot-container')[0].getElementsByClassName('svg-container')[0];
+                        svg_container.style.height = (window_height - 40) + 'px';
+                        Plotly.Plots.resize(gd);
+                    }
+                }
+            };
+
+        };
+
     });
 
 

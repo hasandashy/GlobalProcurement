@@ -67,6 +67,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>RequiredDll\Facebook.dll</HintPath>
     </Reference>
+    <Reference Include="FiftyOne.Foundation, Version=3.2.19.2, Culture=neutral, PublicKeyToken=e0b3a8da0bbce49c, processorArchitecture=MSIL">
+      <HintPath>..\packages\51Degrees.mobi-core.3.2.19.2\lib\NET40\FiftyOne.Foundation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FredCK.FCKeditorV2">
       <HintPath>..\..\..\Projectsource\SGA\SGA\bin\FredCK.FCKeditorV2.dll</HintPath>
     </Reference>
@@ -80,8 +84,10 @@
       <HintPath>..\..\..\Projectsource\SGA\SGA\bin\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Web.Infrastructure">
-      <HintPath>..\..\..\..\Microsoft.Web.Infrastructure.dll</HintPath>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -164,6 +170,20 @@
     <Compile Include="controls\ctrlCMCPdf.ascx.designer.cs">
       <DependentUpon>ctrlCMCPdf.ascx</DependentUpon>
     </Compile>
+    <Compile Include="controls\ctrldeskTopFooter.ascx.cs">
+      <DependentUpon>ctrldeskTopFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\ctrldeskTopFooter.ascx.designer.cs">
+      <DependentUpon>ctrldeskTopFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ctrlDesktopHeader.ascx.cs">
+      <DependentUpon>ctrlDesktopHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\ctrlDesktopHeader.ascx.designer.cs">
+      <DependentUpon>ctrlDesktopHeader.ascx</DependentUpon>
+    </Compile>
     <Compile Include="controls\ctrlFooter.ascx.cs">
       <DependentUpon>ctrlFooter.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -177,6 +197,13 @@
     </Compile>
     <Compile Include="controls\ctrlHeader.ascx.designer.cs">
       <DependentUpon>ctrlHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ctrlHelp.ascx.cs">
+      <DependentUpon>ctrlHelp.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\ctrlHelp.ascx.designer.cs">
+      <DependentUpon>ctrlHelp.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\ctrlLeftMenu.ascx.cs">
       <DependentUpon>ctrlLeftMenu.ascx</DependentUpon>
@@ -216,6 +243,90 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ifpsmtna\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ifpsmtna\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ifpsmtna\Help.aspx.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ifpsmtna\Help.aspx.designer.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ifpsmtna\Leadership.aspx.cs">
+      <DependentUpon>Leadership.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ifpsmtna\Leadership.aspx.designer.cs">
+      <DependentUpon>Leadership.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ifpsmtna\my-results-bar-graph-gap.aspx.cs">
+      <DependentUpon>my-results-bar-graph-gap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ifpsmtna\my-results-bar-graph-gap.aspx.designer.cs">
+      <DependentUpon>my-results-bar-graph-gap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ifpsmtna\my-results-bar-graph.aspx.cs">
+      <DependentUpon>my-results-bar-graph.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ifpsmtna\my-results-bar-graph.aspx.designer.cs">
+      <DependentUpon>my-results-bar-graph.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ifpsmtna\MyProfile.aspx.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ifpsmtna\MyProfile.aspx.designer.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ifpsmtna\MyResults.aspx.cs">
+      <DependentUpon>MyResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ifpsmtna\MyResults.aspx.designer.cs">
+      <DependentUpon>MyResults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ifpsmtna\pk-evaluation-instructions.aspx.cs">
+      <DependentUpon>pk-evaluation-instructions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ifpsmtna\pk-evaluation-instructions.aspx.designer.cs">
+      <DependentUpon>pk-evaluation-instructions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ifpsmtna\procurement-knowledge-evaluation-test.aspx.cs">
+      <DependentUpon>procurement-knowledge-evaluation-test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ifpsmtna\procurement-knowledge-evaluation-test.aspx.designer.cs">
+      <DependentUpon>procurement-knowledge-evaluation-test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ifpsmtna\ResultDenied.aspx.cs">
+      <DependentUpon>ResultDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ifpsmtna\ResultDenied.aspx.designer.cs">
+      <DependentUpon>ResultDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ifpsmtna\TestDenied.aspx.cs">
+      <DependentUpon>TestDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ifpsmtna\TestDenied.aspx.designer.cs">
+      <DependentUpon>TestDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ifpsmtna\UpdatePassword.aspx.cs">
+      <DependentUpon>UpdatePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ifpsmtna\UpdatePassword.aspx.designer.cs">
+      <DependentUpon>UpdatePassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -229,6 +340,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Popup.aspx.cs">
+      <DependentUpon>Popup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Popup.aspx.designer.cs">
+      <DependentUpon>Popup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Privacy.aspx.cs">
       <DependentUpon>Privacy.aspx</DependentUpon>
@@ -281,6 +399,20 @@
     </Compile>
     <Compile Include="Terms.aspx.designer.cs">
       <DependentUpon>Terms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tnaDesktop.Master.cs">
+      <DependentUpon>tnaDesktop.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tnaDesktop.Master.designer.cs">
+      <DependentUpon>tnaDesktop.Master</DependentUpon>
+    </Compile>
+    <Compile Include="tnaDesktopResult.Master.cs">
+      <DependentUpon>tnaDesktopResult.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tnaDesktopResult.Master.designer.cs">
+      <DependentUpon>tnaDesktopResult.Master</DependentUpon>
     </Compile>
     <Compile Include="tnaMaster.Master.cs">
       <DependentUpon>tnaMaster.Master</DependentUpon>
@@ -632,6 +764,9 @@
     <Content Include="App_Browsers\ie.browser" />
     <Content Include="Contribute.aspx" />
     <Content Include="controls\ctrlCMCGraph2.ascx" />
+    <Content Include="controls\ctrldeskTopFooter.ascx" />
+    <Content Include="controls\ctrlDesktopHeader.ascx" />
+    <Content Include="controls\ctrlHelp.ascx" />
     <Content Include="controls\ctrlUserLeftMenu.ascx" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\jquery.fancybox.css" />
@@ -650,6 +785,8 @@
     <Content Include="css\aopemail.htm" />
     <Content Include="Feedback.aspx" />
     <Content Include="Fonts\arial.ttf" />
+    <Content Include="App_Data\51Degrees.dat" />
+    <Content Include="51Degrees.config" />
     <None Include="Fonts\cleargothic-demibold-webfont.eot" />
     <None Include="Fonts\cleargothic-demibold-webfont.svg" />
     <None Include="Fonts\cleargothic-demibold-webfont.ttf" />
@@ -743,6 +880,18 @@
     <Content Include="Fonts\miserablylose-webfont.svg" />
     <Content Include="Fonts\newcleargothic_regular_1-webfont.svg" />
     <Content Include="Fonts\OpenSans-Regular-webfont.svg" />
+    <Content Include="ifpsmtna\default.aspx" />
+    <Content Include="ifpsmtna\Help.aspx" />
+    <Content Include="ifpsmtna\Leadership.aspx" />
+    <Content Include="ifpsmtna\my-results-bar-graph-gap.aspx" />
+    <Content Include="ifpsmtna\my-results-bar-graph.aspx" />
+    <Content Include="ifpsmtna\MyProfile.aspx" />
+    <Content Include="ifpsmtna\MyResults.aspx" />
+    <Content Include="ifpsmtna\pk-evaluation-instructions.aspx" />
+    <Content Include="ifpsmtna\procurement-knowledge-evaluation-test.aspx" />
+    <Content Include="ifpsmtna\ResultDenied.aspx" />
+    <Content Include="ifpsmtna\TestDenied.aspx" />
+    <Content Include="ifpsmtna\UpdatePassword.aspx" />
     <Content Include="Images\1.png" />
     <Content Include="Images\2.png" />
     <Content Include="Images\3.png" />
@@ -980,6 +1129,7 @@
     <Content Include="js\owl.carousel-logo.js" />
     <Content Include="js\owl.carousel.js" />
     <Content Include="js\placeholder.js" />
+    <Content Include="js\plotly-latest.min.js" />
     <Content Include="js\script.js" />
     <Content Include="js\viewportchecker.js" />
     <Content Include="Fonts\newcleargothic_regular_1-webfont.eot" />
@@ -1000,12 +1150,15 @@
     <Content Include="Fonts\OpenSans-Regular-webfont.ttf" />
     <Content Include="Fonts\OpenSans-Regular-webfont.woff" />
     <Content Include="login.aspx" />
+    <Content Include="Popup.aspx" />
     <Content Include="Register_Success.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="Scripts\jquery.blockUI.js" />
     <Content Include="Scripts\jquery.colorbox-1.6.4.js" />
     <Content Include="Scripts\jquery.loadmask.min.js" />
     <Content Include="Scripts\test.js" />
+    <Content Include="ifpsmtna\Web.config" />
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\IFPSM.pubxml" />
     <None Include="Service References\skillsser\skillsservice.disco" />
     <None Include="Service References\skillsser\configuration91.svcinfo" />
@@ -1064,6 +1217,8 @@
     <Content Include="template\Users.xlsx" />
     <Content Include="Views\Home\SCSAResult.cshtml" />
     <Content Include="Views\Home\SCKEResult.cshtml" />
+    <Content Include="tnaDesktop.Master" />
+    <Content Include="tnaDesktopResult.Master" />
     <None Include="webadmin\css\jquery-ui.cssold" />
     <None Include="webadmin\docs\SGAUsers_Upload_Template.xlsx" />
     <None Include="webadmin\fonts\myriadpro-regular-webfont.eot" />

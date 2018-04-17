@@ -32,7 +32,7 @@ namespace SGA.tna
                 {
                     if (System.Convert.ToBoolean(ds.Tables[0].Rows[0]["passwordUpdated"].ToString()))
                     {
-                        base.Response.Redirect("~/tna/default.aspx", false);
+                        base.Response.Redirect("~/tna/mainmenu.aspx", false);
                     }
                 }
             }

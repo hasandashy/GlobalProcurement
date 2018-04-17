@@ -54,7 +54,7 @@
                                                                 <td>
                                                                     <asp:DropDownList ID="ddlAssessmentType" runat="server">
                                                                         <asp:ListItem Selected="True" Value="0" >Select Assessment Type</asp:ListItem>
-                                                                        <asp:ListItem Value="1" >Procurement Knowledge Evaluation</asp:ListItem>
+                                                                        <asp:ListItem Value="1" >Procurement Benchmark Assessment</asp:ListItem>
                                                                         <asp:ListItem Value="2" >Procurement Self Assessment</asp:ListItem>
                                                                         <asp:ListItem Value="3" >Behavioural Assessment</asp:ListItem>
                                                                         <asp:ListItem Value="4" >Negotiation Profile</asp:ListItem>

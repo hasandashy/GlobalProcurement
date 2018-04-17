@@ -12,15 +12,6 @@
 <sga:cmcGragh id="graph1" showCompare="0" runat="server"></sga:cmcGragh>
 
 
-
-
-
-
-
-
-
-
-
 </div>
 
 </asp:Content>
