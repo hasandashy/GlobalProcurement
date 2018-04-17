@@ -81,6 +81,15 @@ namespace SGA.controls
 
         protected string median = "";
 
+
+        protected decimal asiaAvg = 0.0m;
+
+        protected decimal africaAvg = 0.0m;
+
+        protected decimal americaAvg = 0.0m;
+
+        protected decimal europeAvg = 0.0m;
+
         public int testId
         {
             get
@@ -111,6 +120,7 @@ namespace SGA.controls
             {
                 //tblCompare.Visible = (this.showCompare == 1);
                 BindGraph();
+                GetTestAverageByRegion();
                 //Page.ClientScript.RegisterStartupScript(base.GetType(), "CallMyFunction", "drawChart()", true);
 
             
@@ -224,6 +234,40 @@ namespace SGA.controls
             return marks;
         }
 
+
+        public decimal GetTestAverageByRegion()
+        {
+            decimal marks = 0.00m;
+            DataSet dsMarks = SqlHelper.ExecuteDataset(CommandType.StoredProcedure, "spGetPercentageAllRegions");
+
+          
+            if (dsMarks != null)
+            {
+                if (dsMarks.Tables.Count > 0 && dsMarks.Tables[0].Rows.Count > 0)
+                {
+                  for(int i = 0; i< dsMarks.Tables[0].Rows.Count; i++)
+                    {
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "apac")
+                        {
+                            asiaAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "america")
+                        {
+                            americaAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "europe")
+                        {
+                            europeAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "africa")
+                        {
+                            africaAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                    }
+                }
+            }
+            return marks;
+        }
 
         public decimal GetAverageByCountry(int topicId)
         {

@@ -204,23 +204,105 @@ footer {padding:18px 0; position:relative}
         </div>
 
 
-        <%--<div class="bottom-btn">
-<div class="fright blue-btn"><a href="my-results-bar-graph-gap.aspx" class="rightbt">NEXT >> </a></div>
-
-
-</div>--%>
+         <div class="bottom-btn">
+    <div class="fleft blue-btn">
+        <a href="#tab1" class="leftbt"><< BACK </a>
+      </div>
+    <div class="fright blue-btn"><a href="#tab1" class="rightbt">NEXT >> </a></div>
+</div>
     </div>
-    <script type="text/javascript">
+   <script type="text/javascript">
         jQuery(document).ready(function () {
+            $('.leftbt').hide();
             jQuery('.tabs .tab-links a').on('click', function (e) {
                 var currentAttrValue = jQuery(this).attr('href');
-
+                jQuery('.rightbt').attr('href', currentAttrValue);
+                jQuery('.leftbt').attr('href', currentAttrValue);
                 // Show/Hide Tabs
                 jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
 
                 // Change/remove current tab to active
                 jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+                if (currentAttrValue === '#tab1') {
+                    $('.leftbt').hide();
+                    $('.rightbt').show();
+                }
 
+                if (currentAttrValue === '#tab2') {
+                    $('.leftbt').show();
+                    $('.rightbt').show();
+                }
+
+                if (currentAttrValue === '#tab3') {
+                    $('.leftbt').show();
+                    $('.rightbt').hide();
+                }
+                e.preventDefault();
+            });
+
+            //next btn click
+            jQuery('.rightbt').on('click', function (e) {
+                var currentAttrValue = jQuery(this).attr('href');
+
+                // Change/remove current tab to active
+                jQuery('.tabs .tab-links a').parent('li').siblings().removeClass('active');
+
+                if (currentAttrValue == '#tab1') {
+                    $('.leftbt').show();
+                    $('.rightbt').show();
+                    jQuery(this).attr('href', '#tab2');
+                    jQuery('.leftbt').attr('href', '#tab2');
+                    jQuery('.tabs ' + '#tab2').show().siblings().hide();
+                    jQuery('#second').addClass('active')
+                }
+                if (currentAttrValue == '#tab2') {
+                    $('.leftbt').show();
+                    $('.rightbt').hide();
+                    jQuery(this).attr('href', '#tab3');
+                    jQuery('.leftbt').attr('href', '#tab3');
+                    jQuery('.tabs ' + '#tab3').show().siblings().hide();
+                    jQuery('#third').addClass('active')
+
+                }
+                if (currentAttrValue == '#tab3') {
+                    $('.rightbt').hide();
+                    $('.leftbt').show();
+                }
+
+                // Show/Hide Tabs
+                e.preventDefault();
+
+
+            });
+
+
+            //back btn click
+            jQuery('.leftbt').on('click', function (e) {
+                var currentAttrValue = jQuery(this).attr('href');
+
+                // Change/remove current tab to active
+                jQuery('.tabs .tab-links a').parent('li').siblings().removeClass('active');
+
+                if (currentAttrValue == '#tab1') {
+                    $('.leftbt').hide();
+                    $('.rightbt').show();
+                }
+                if (currentAttrValue == '#tab2') {
+                    $('.leftbt').hide();
+                    $('.rightbt').show();
+                    jQuery(this).attr('href', '#tab1');
+                    jQuery('.rightbt').attr('href', '#tab1');
+                    jQuery('.tabs ' + '#tab1').show().siblings().hide();
+                    jQuery('#first').addClass('active')
+                }
+                if (currentAttrValue == '#tab3') {
+                    $('.leftbt').show();
+                    $('.rightbt').show();
+                    jQuery(this).attr('href', '#tab2');
+                    jQuery('.rightbt').attr('href', '#tab2');
+                    jQuery('.tabs ' + '#tab2').show().siblings().hide();
+                    jQuery('#second').addClass('active')
+                }
                 e.preventDefault();
             });
         });

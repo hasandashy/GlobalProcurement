@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrlCMCDesktopGraph2.ascx.cs" Inherits="SGA.controls.ctrlCMCDesktopGraph2" %>
 <script src="../js/Chart.min.js"></script>
-
+<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['geochart']}]}"></script>
 <div class="dis-block clearfix white-bg pad15 full-height padtop3">
 
     <div class="dis-block clearfix">
@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="dis-block clearfix marT3 graph">
-                        <canvas id="container2"></canvas>
+                       <div id="container2"></div>
                     </div>
                 </div>
 
@@ -164,6 +164,31 @@
             }
         });
 
+       
+        function drawRegionsMap() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Region Code', 'Continent', 'Avg Score'],
+                ['142', 'Asia', <%= this.asiaAvg%>],
+                ['150', 'Europe', <%= this.europeAvg%>],
+                ['019', 'Americas', <%= this.americaAvg%>],
+                //['009', 'Oceania', 600],
+                ['002', 'Africa', <%= this.africaAvg%>]
+            ]);
+
+            var options = {
+                resolution: 'continents',
+                colorAxis: { colors: ['orange', 'red'] }
+            };
+
+
+            var chart = new google.visualization.GeoChart(document.getElementById('container2'));
+
+            chart.draw(data, options);
+        }
+
+
+
         jQuery('.tabs .tab-links a').on('click', function (e) {
             var currentAttrValue = jQuery(this).attr('href');
             jQuery('.rightbt').attr('href', currentAttrValue);
@@ -173,6 +198,11 @@
 
             // Change/remove current tab to active
             jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+
+            if (currentAttrValue === '#tab3') {
+                drawRegionsMap();
+
+            }
 
         });
         //next btn click
@@ -204,7 +234,9 @@
             }
 
             // Show/Hide Tabs
-
+            if (currentAttrValue === '#tab2') {
+                drawRegionsMap();
+            }
 
 
 

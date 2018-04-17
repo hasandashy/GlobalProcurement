@@ -6,7 +6,7 @@
 									<p><a href="#" class="menuitem submenuheader">Display Results</a></p>
 									<div class="submenu">
 										<ul>
-											<li><a href="~/tna/my-results-bar-graph.aspx"  id="hylPKEGraph" runat="server">&bull; Bar Graph</a></li>
+											<li><a href="~/ifpsmtna/my-results-bar-graph.aspx"  id="hylPKEGraph" runat="server">&bull; Bar Graph</a></li>
 											
 										</ul>
 									</div>
