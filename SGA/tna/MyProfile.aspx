@@ -52,8 +52,13 @@
             if ('<%=this.isComplete%>'=== 'false') {
                alert("Sector and Jobrole are mandatory fields.");
             }
-        else{
-                window.location.href = "/tna/mainmenu.aspx";
+            else {
+                if ('<%=this.source%>' === 'menu') {
+                    window.location.href = "/tna/mainmenu.aspx";
+                }
+                else {
+                    window.location.href = "/tna/myresults.aspx"
+                }
         }
         });
     </script>

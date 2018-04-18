@@ -103,7 +103,7 @@
                                             <li><a href="#tabs-2">View/Edit User </a></li>
                                             <li><a href="#tabs-3">Permissions </a></li>
                                             <li><a href="#tabs-4">User Tests</a></li>
-                                            <li><a href="#tabs-5">PKE Test</a></li>
+                                            <li><a href="#tabs-5">PBA Test</a></li>
                                             <%-- <li><a href="#tabs-6">PSA Test</a></li>
                                             <li><a href="#tabs-7">BA Test</a></li>
                                             <li><a href="#tabs-8">NP Test</a></li>
@@ -991,13 +991,13 @@
                                                                 <asp:BoundColumn DataField="email" HeaderText="Email" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="20%" HeaderStyle-Width="20%" SortExpression="email"></asp:BoundColumn>
                                                                 <%--<asp:BoundColumn DataField="company" HeaderText="Company" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="10%" HeaderStyle-Width="10%" SortExpression="company">
                                                     </asp:BoundColumn>--%>
-                                                                <asp:TemplateColumn HeaderText="PKE Result" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
+                                                                <asp:TemplateColumn HeaderText="PBA Result" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
                                                                     <ItemTemplate>
                                                                         <input type="checkbox" id="chkSga" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("viewSGA") %>' />
                                                                     </ItemTemplate>
                                                                 </asp:TemplateColumn>
 
-                                                                <asp:TemplateColumn HeaderText="PKE Test" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
+                                                                <asp:TemplateColumn HeaderText="PBA Test" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="10%">
                                                                     <ItemTemplate>
                                                                         <input type="checkbox" id="chkSgatest" runat="server" value='<%#Eval("Id") %>' checked='<%#Eval("takeSGA") %>' />
                                                                     </ItemTemplate>
@@ -1031,7 +1031,7 @@
 
                                                                 <asp:BoundColumn DataField="email" HeaderText="Email" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="20%" HeaderStyle-Width="20%"></asp:BoundColumn>
                                                                 <asp:BoundColumn DataField="company" HeaderText="Company" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="10%" HeaderStyle-Width="10%"></asp:BoundColumn>
-                                                                <asp:BoundColumn DataField="SGATest" HeaderText="PKE" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" ItemStyle-Width="10%" HeaderStyle-Width="10%"></asp:BoundColumn>
+                                                                <asp:BoundColumn DataField="SGATest" HeaderText="PBA" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" ItemStyle-Width="10%" HeaderStyle-Width="10%"></asp:BoundColumn>
                                                                 <%-- <asp:BoundColumn DataField="SSAtest" HeaderText="PSA" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" ItemStyle-Width="10%" HeaderStyle-Width="10%"></asp:BoundColumn>
                                                                 <asp:BoundColumn DataField="BAtest" HeaderStyle-HorizontalAlign="Center" HeaderText="BA" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="10%" HeaderStyle-Width="10%"></asp:BoundColumn>
                                                                 <asp:BoundColumn DataField="NPtest" HeaderStyle-HorizontalAlign="Center" HeaderText="NP" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="10%" HeaderStyle-Width="10%"></asp:BoundColumn>
@@ -1527,7 +1527,10 @@
 
                                                                 </td>
                                                             </tr>
-
+                                                            <tr>
+                                                                <td colspan="2" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:CheckBox ID="chkInclude" runat="server" Text="Include welcome email" /></td>
+                                                                <td colspan="2">&nbsp;</td>
+                                                            </tr>
                                                             <tr>
                                                                 <td colspan="4" align="center">
                                                                     <asp:Label ID="lblError" runat="server" CssClass="error"></asp:Label>
@@ -1571,6 +1574,10 @@
                                                                 <td>
                                                                     <asp:HyperLink ID="hylExcelupload" runat="server" NavigateUrl="~/webadmin/docs/SGAUsers_Upload_Template.xlsx" Style="text-decoration: underline; font-size: small;">Download sample copy of excel upload</asp:HyperLink>
                                                                 </td>
+                                                            </tr>
+                                                             <tr>
+                                                                <td colspan="2" style="padding-left:158px"><asp:CheckBox ID="chkBulkInclude" runat="server" Text="Include welcome email" /></td>    
+                                                               
                                                             </tr>
                                                             <tr>
                                                                 <td colspan="2">

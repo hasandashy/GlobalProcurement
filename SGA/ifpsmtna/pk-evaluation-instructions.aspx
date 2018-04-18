@@ -55,7 +55,8 @@
             } else {
                 // show confirmation
                 lastpage = 'y';
-                alertHtml = 'You are about to begin your Procurement Benchmark Assessment. This is a timed event and must be taken in a single sitting. Are you ready to begin?';
+                alertHtml = 'You are about to begin your Procurement Benchmark Assessment. Are you ready to begin?';
+                //alertHtml = 'You are about to begin your Procurement Benchmark Assessment. This is a timed event and must be taken in a single sitting. Are you ready to begin?';
             }
         });
     });
@@ -109,11 +110,11 @@
                            </div>
 							<div class="clear"></div>
 							<p>&nbsp;</p>
-							<div class="timed-task">
+							<%--<div class="timed-task">
 								<p class="title"><span>THIS IS A<br /><font class="orange">TIMED TASK!</font></span></p>
 								<p>&nbsp;</p>
 								<p>You are given 60 minutes to complete the evaluation. There are eight sections with nine questions in each. You will see the clock throughout the evaluation in the top right hand side of the page in orange and you are given a guide of your completion progress as you go. </p>
-							</div>
+							</div>--%>
 						</article>
 					</section>
 					<div class="dot-line">&nbsp;</div>

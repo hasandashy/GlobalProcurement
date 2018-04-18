@@ -20,6 +20,8 @@ namespace SGA.tna
 
         protected string _indirect = "";
 
+        protected string source = "";
+
         protected void Page_Load(object sender, System.EventArgs e)
         {
             SGACommon.AddPageTitle(this.Page, "The individuals profile page", "");
@@ -40,8 +42,31 @@ namespace SGA.tna
                     }
                 }
                 //this.lblName.Text = "Hi " + SGACommon.GetName() + "!";
+                if(Request.QueryString["source"] != null)
+                {
+                    source = Request.QueryString["source"].ToString();
+                    AppendQueryString();
+                }
+
                 this.LoadProfile();
             }
+        }
+
+        protected void AppendQueryString()
+        {
+            procModel.HRef = procModel.HRef + "&source=" + source;
+            reportingLine.HRef = reportingLine.HRef + "&source=" + source;
+            spenUnderInfluence.HRef = spenUnderInfluence.HRef + "&source=" + source;
+            sector.HRef = sector.HRef + "&source=" + source;
+            numberOfEmp.HRef = numberOfEmp.HRef + "&source=" + source;
+            jobRole.HRef = jobRole.HRef + "&source=" + source;
+            category.HRef = category.HRef + "&source=" + source;
+            spendUnderYour.HRef = spendUnderYour.HRef + "&source=" + source;
+            geoInfluence.HRef = geoInfluence.HRef + "&source=" + source;
+            exp.HRef = exp.HRef + "&source=" + source;
+            edu.HRef = edu.HRef + "&source=" + source;
+            procQual.HRef = procQual.HRef + "&source=" + source;
+            prevExp.HRef = prevExp.HRef + "&source=" + source;
         }
 
         private void LoadProfile()

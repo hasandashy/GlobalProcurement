@@ -12,7 +12,7 @@
 
 <div class="dis-block clearfix main-link">
 <ul>
-<li><a href="MyProfile.aspx"><i><img src="../images/usericon.png" alt=""></i>My Profile</a></li>
+<li><a href="MyProfile.aspx?source=menu"><i><img src="../images/usericon.png" alt=""></i>My Profile</a></li>
 <li><a href="default.aspx"><i><img src="../images/assessments-icon.png" alt=""></i>My Assessments</a></li>
 <li><a href="my-results.aspx"><i><img src="../images/result-icon.png" alt=""></i>My Results</a></li>
 <li><a href="Leaderboard.aspx"><i><img src="../images/leaderboard-icon.png" alt=""></i>Leaderboard</a></li>

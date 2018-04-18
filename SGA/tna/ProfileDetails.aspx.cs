@@ -15,9 +15,14 @@ namespace SGA.tna
     public partial class ProfileDetails : System.Web.UI.Page
     {
         public static int id = 0;
+        protected string source = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             id = Convert.ToInt32(Request.QueryString["id"]);
+            if (Request.QueryString["source"] != null)
+            {
+                source = Request.QueryString["source"].ToString();
+            }
             if (id != 0)
             {
                 multiView.ActiveViewIndex = Convert.ToInt32(id) - 1;

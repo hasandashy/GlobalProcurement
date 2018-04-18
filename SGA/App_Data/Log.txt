@@ -58,3 +58,199 @@
    at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync)
    at System.IO.FileInfo.OpenRead()
    at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '1000' by '0'.
+2018-04-17T22:00:36.5882839Z - 2152 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\Images\India.png' generated exception 'System.Exception: A Graphics object cannot be created from an image that has an indexed pixel format.
+   at System.Drawing.Graphics.FromImage(Image image)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image src, Bitmap dest)
+   at FiftyOne.Foundation.Image.Processor.ShrinkToSeekStream(Image image, Stream seekStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image image, Stream outStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Stream inStream, Stream outStream)
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '275' by '183'.
+2018-04-17T22:00:36.6022937Z - 2152 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\Images\UnitedKingdom.png' generated exception 'System.Exception: A Graphics object cannot be created from an image that has an indexed pixel format.
+   at System.Drawing.Graphics.FromImage(Image image)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image src, Bitmap dest)
+   at FiftyOne.Foundation.Image.Processor.ShrinkToSeekStream(Image image, Stream seekStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image image, Stream outStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Stream inStream, Stream outStream)
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '318' by '159'.
+2018-04-17T22:00:36.6173040Z - 2152 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\Images\India.png' generated exception 'System.Exception: A Graphics object cannot be created from an image that has an indexed pixel format.
+   at System.Drawing.Graphics.FromImage(Image image)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image src, Bitmap dest)
+   at FiftyOne.Foundation.Image.Processor.ShrinkToSeekStream(Image image, Stream seekStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image image, Stream outStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Stream inStream, Stream outStream)
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '275' by '183'.
+2018-04-17T22:00:36.6183044Z - 2152 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\Images\UnitedKingdom.png' generated exception 'System.Exception: A Graphics object cannot be created from an image that has an indexed pixel format.
+   at System.Drawing.Graphics.FromImage(Image image)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image src, Bitmap dest)
+   at FiftyOne.Foundation.Image.Processor.ShrinkToSeekStream(Image image, Stream seekStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image image, Stream outStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Stream inStream, Stream outStream)
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '318' by '159'.
+2018-04-17T22:01:39.7308688Z - 2152 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\Images\UnitedKingdom.png' generated exception 'System.Exception: A Graphics object cannot be created from an image that has an indexed pixel format.
+   at System.Drawing.Graphics.FromImage(Image image)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image src, Bitmap dest)
+   at FiftyOne.Foundation.Image.Processor.ShrinkToSeekStream(Image image, Stream seekStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image image, Stream outStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Stream inStream, Stream outStream)
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '318' by '159'.
+2018-04-17T22:01:39.7458790Z - 2152 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\Images\UnitedKingdom.png' generated exception 'System.Exception: A Graphics object cannot be created from an image that has an indexed pixel format.
+   at System.Drawing.Graphics.FromImage(Image image)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image src, Bitmap dest)
+   at FiftyOne.Foundation.Image.Processor.ShrinkToSeekStream(Image image, Stream seekStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image image, Stream outStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Stream inStream, Stream outStream)
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '318' by '159'.
+2018-04-17T22:01:39.8074253Z - 2152 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\Images\India.png' generated exception 'System.Exception: A Graphics object cannot be created from an image that has an indexed pixel format.
+   at System.Drawing.Graphics.FromImage(Image image)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image src, Bitmap dest)
+   at FiftyOne.Foundation.Image.Processor.ShrinkToSeekStream(Image image, Stream seekStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image image, Stream outStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Stream inStream, Stream outStream)
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '275' by '183'.
+2018-04-17T22:01:39.8284400Z - 2152 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\Images\India.png' generated exception 'System.Exception: A Graphics object cannot be created from an image that has an indexed pixel format.
+   at System.Drawing.Graphics.FromImage(Image image)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image src, Bitmap dest)
+   at FiftyOne.Foundation.Image.Processor.ShrinkToSeekStream(Image image, Stream seekStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image image, Stream outStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Stream inStream, Stream outStream)
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '275' by '183'.
+2018-04-18T12:48:19.0383406Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\images\skill_h.png' generated exception 'System.Exception: A Graphics object cannot be created from an image that has an indexed pixel format.
+   at System.Drawing.Graphics.FromImage(Image image)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image src, Bitmap dest)
+   at FiftyOne.Foundation.Image.Processor.ShrinkToSeekStream(Image image, Stream seekStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image image, Stream outStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Stream inStream, Stream outStream)
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '19' by '19'.
+2018-04-18T12:48:19.0743411Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\images\skill_h.png' generated exception 'System.Exception: A Graphics object cannot be created from an image that has an indexed pixel format.
+   at System.Drawing.Graphics.FromImage(Image image)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image src, Bitmap dest)
+   at FiftyOne.Foundation.Image.Processor.ShrinkToSeekStream(Image image, Stream seekStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image image, Stream outStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Stream inStream, Stream outStream)
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '19' by '19'.
+2018-04-18T12:48:26.6856040Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\images\home_h.png' generated exception 'System.Exception: A Graphics object cannot be created from an image that has an indexed pixel format.
+   at System.Drawing.Graphics.FromImage(Image image)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image src, Bitmap dest)
+   at FiftyOne.Foundation.Image.Processor.ShrinkToSeekStream(Image image, Stream seekStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image image, Stream outStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Stream inStream, Stream outStream)
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '19' by '19'.
+2018-04-18T12:48:26.6976037Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\images\home_h.png' generated exception 'System.Exception: A Graphics object cannot be created from an image that has an indexed pixel format.
+   at System.Drawing.Graphics.FromImage(Image image)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image src, Bitmap dest)
+   at FiftyOne.Foundation.Image.Processor.ShrinkToSeekStream(Image image, Stream seekStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image image, Stream outStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Stream inStream, Stream outStream)
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '19' by '19'.
+2018-04-18T12:48:26.7496041Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\images\user_h.png' generated exception 'System.Exception: A Graphics object cannot be created from an image that has an indexed pixel format.
+   at System.Drawing.Graphics.FromImage(Image image)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image src, Bitmap dest)
+   at FiftyOne.Foundation.Image.Processor.ShrinkToSeekStream(Image image, Stream seekStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image image, Stream outStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Stream inStream, Stream outStream)
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '19' by '19'.
+2018-04-18T12:48:26.7536039Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\images\user_h.png' generated exception 'System.Exception: A Graphics object cannot be created from an image that has an indexed pixel format.
+   at System.Drawing.Graphics.FromImage(Image image)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image src, Bitmap dest)
+   at FiftyOne.Foundation.Image.Processor.ShrinkToSeekStream(Image image, Stream seekStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Image image, Stream outStream)
+   at FiftyOne.Foundation.Image.Processor.Shrink(Stream inStream, Stream outStream)
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '19' by '19'.
+2018-04-18T13:11:43.5438632Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png' generated exception 'System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync)
+   at System.IO.FileInfo.OpenRead()
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '1000' by '0'.
+2018-04-18T13:11:43.5478629Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png' generated exception 'System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync)
+   at System.IO.FileInfo.OpenRead()
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '1000' by '0'.
+2018-04-18T13:11:54.7060357Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png' generated exception 'System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync)
+   at System.IO.FileInfo.OpenRead()
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '1000' by '0'.
+2018-04-18T13:11:54.7540369Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png' generated exception 'System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync)
+   at System.IO.FileInfo.OpenRead()
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '1000' by '0'.
+2018-04-18T13:41:35.1302704Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png' generated exception 'System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync)
+   at System.IO.FileInfo.OpenRead()
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '1000' by '0'.
+2018-04-18T13:41:35.1472805Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png' generated exception 'System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync)
+   at System.IO.FileInfo.OpenRead()
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '1000' by '0'.
+2018-04-18T14:10:01.1798747Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png' generated exception 'System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync)
+   at System.IO.FileInfo.OpenRead()
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '1000' by '0'.
+2018-04-18T14:10:01.2018893Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png' generated exception 'System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync)
+   at System.IO.FileInfo.OpenRead()
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '1000' by '0'.
+2018-04-18T14:10:07.5388831Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png' generated exception 'System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync)
+   at System.IO.FileInfo.OpenRead()
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '1000' by '0'.
+2018-04-18T14:10:07.5428857Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png' generated exception 'System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync)
+   at System.IO.FileInfo.OpenRead()
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '1000' by '0'.
+2018-04-18T14:11:39.6095221Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png' generated exception 'System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync)
+   at System.IO.FileInfo.OpenRead()
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '1000' by '0'.
+2018-04-18T14:11:39.6125243Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png' generated exception 'System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync)
+   at System.IO.FileInfo.OpenRead()
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '1000' by '0'.
+2018-04-18T14:11:46.0033576Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png' generated exception 'System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync)
+   at System.IO.FileInfo.OpenRead()
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '1000' by '0'.
+2018-04-18T14:11:46.0113350Z - 7388 - Warn - Source file 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png' generated exception 'System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\MyGitProject\IFPSM\SGA\webadmin\css\images\ui-bg_glass_65_ffffff_1x400.png'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync)
+   at System.IO.FileInfo.OpenRead()
+   at FiftyOne.Foundation.Mobile.Detection.Feature.ImageOptimiser.OptimisedImageResponse(HttpContext context)' shrinking to '1000' by '0'.

@@ -30,9 +30,9 @@
                 <div class="tabs">
                     <div class="tab-links">
                         <ul>
-                            <li class="active"><a href="#tab1">BY REGION</a></li>
-                            <li><a href="#tab2">BY NATION</a></li>
-                            <li><a href="#tab3">BY ASSOCIATION</a></li>
+                            <li id="first" class="active"><a href="#tab1">BY REGION</a></li>
+                            <li id="second"><a href="#tab2">BY NATION</a></li>
+                            <li id="third"><a href="#tab3">BY ASSOCIATION</a></li>
                         </ul>
                     </div>
 
@@ -105,7 +105,7 @@
                                     <ItemTemplate>
                                         <div class="region-strip">
                                             <div class="region-map">
-                                                <img src='<%# "../Images/" + Eval("country").ToString().Replace(" ", String.Empty) + ".png" %>' alt="">
+                                                <img src='<%# "../Images/" + Eval("country").ToString().Replace(" ","-") + ".png" %>' alt="">
                                             </div>
 
                                             <div class="region-name-block">

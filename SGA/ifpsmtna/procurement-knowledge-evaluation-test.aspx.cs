@@ -87,9 +87,9 @@ namespace SGA.ifpsmtna
                 }
             }
             SGACommon.IsTakeTest("viewSga");
-            this.Cronometro1.ScriptPath = "~/js/";
-            this.Cronometro1.ImagesPath = "~/images/";
-            this.Cronometro1.Ascendente = false;
+            //this.Cronometro1.ScriptPath = "~/js/";
+            //this.Cronometro1.ImagesPath = "~/images/";
+            //this.Cronometro1.Ascendente = false;
             if (!base.IsPostBack)
             {
                 DataSet ds = SqlHelper.ExecuteDataset(CommandType.StoredProcedure, "spInitalizeSgaTest", new SqlParameter[]
@@ -102,7 +102,7 @@ namespace SGA.ifpsmtna
 
                 });
                 this.testId = System.Convert.ToInt32(ds.Tables[0].Rows[0]["testId"].ToString());
-                this.Cronometro1.Duracion = new System.TimeSpan(0, System.Convert.ToInt32(ds.Tables[0].Rows[0]["time"].ToString()), 0);
+                //this.Cronometro1.Duracion = new System.TimeSpan(0, System.Convert.ToInt32(ds.Tables[0].Rows[0]["time"].ToString()), 0);
                 this.LoadAllTopics();
                 this.Percentage();
                 this.SetClass();

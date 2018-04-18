@@ -9,14 +9,14 @@
 
 
 
-<div class="loading-screen"><img src="../Images/loding-orange.gif" alt=""></div>
+<div class="loading-screen"><img src="../Images/loading.gif" id="loading" alt=""></div>
 
 
 
 
 <div class="bottom-btn">
 
-<div class="fright blue-btn"><a href="MyProfile.aspx" class="rightbt">NEXT >> </a></div>
+<div class="fright blue-btn"><a id="nextBtn" href="MyProfile.aspx" class="rightbt disable-btn">NEXT >> </a></div>
 
 
 </div>
@@ -27,5 +27,13 @@
 
 
 </div>
+    <script>
+        $(document).ready(function () {           
+            setInterval(function () {
+                $('#loading').attr('src', '../Images/loding-orange.gif')
+                $('#nextBtn').attr('class', 'rightbt')
+            }, 5000);
+        });
+    </script>
 </asp:Content>
 

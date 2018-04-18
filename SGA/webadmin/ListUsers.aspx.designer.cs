@@ -787,6 +787,15 @@ namespace SGA.webadmin {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
         
         /// <summary>
+        /// chkInclude control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkInclude;
+        
+        /// <summary>
         /// lblError control.
         /// </summary>
         /// <remarks>
@@ -839,6 +848,15 @@ namespace SGA.webadmin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hylExcelupload;
+        
+        /// <summary>
+        /// chkBulkInclude control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkBulkInclude;
         
         /// <summary>
         /// lblEmailErrors control.

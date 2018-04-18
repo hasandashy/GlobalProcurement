@@ -247,9 +247,9 @@
 				<article id="container">
 					<section class="welcome-test">
 						<p class="title40 floatL">Procurement Benchmark Assessment</p>
-						<div class="timer"><cc1:Cronometro ID="Cronometro1" runat="server" OnTimeOut="Cronometro1_TimeOut" Height="35px"
+						<%--<div class="timer"><cc1:Cronometro ID="Cronometro1" runat="server" OnTimeOut="Cronometro1_TimeOut" Height="35px"
                                                     Width="22px" CausaPostBack="true"  Ascendente="False" Mensaje="" Duracion="00:01:00">
-                                                </cc1:Cronometro></div>
+                                                </cc1:Cronometro></div>--%>
 						<div class="clear"></div>
 					</section>
 					<div class="dot-line">&nbsp;</div>
@@ -258,7 +258,7 @@
 						<ul><asp:Repeater ID="rptrTopics" runat="server" OnItemCommand="rptrTopics_ItemCommand"
                                         OnItemDataBound="rptrTopics_ItemDataBound">
                                         <ItemTemplate>
-                                        <li><asp:LinkButton ID="lnkBtn" CssClass="color" runat="server" Text='<%#Eval("topicName")%>' CommandArgument='<%#Eval("topicId") %>'  CommandName="select">LinkButton</asp:LinkButton></li>    
+                                        <li><asp:LinkButton ID="lnkBtn" CssClass="color" runat="server" Text='<%#Eval("topicName").ToString().Replace(" ","<br />")%>' CommandArgument='<%#Eval("topicId") %>'  CommandName="select">LinkButton</asp:LinkButton></li>    
                                   
                                         </ItemTemplate>
                                     </asp:Repeater>							

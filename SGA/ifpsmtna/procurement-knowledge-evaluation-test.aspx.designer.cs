@@ -13,15 +13,6 @@ namespace SGA.ifpsmtna {
     public partial class procurement_knowledge_evaluation_test {
         
         /// <summary>
-        /// Cronometro1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Flanders.Componentes.Cronometro Cronometro1;
-        
-        /// <summary>
         /// pgNumber control.
         /// </summary>
         /// <remarks>

@@ -559,6 +559,15 @@ namespace SGA.webadmin
                     else
                     {
                         UpdateValueinIS(this.txtEmailAddress.Value, this.txtFirstname.Value, this.txtLastname.Value, this.ddlCountry.SelectedValue, this.ddlMembership.SelectedValue, "", "", plainpassword, Convert.ToInt32(this.ddlJobRole.SelectedValue));
+
+                        string subject = "";
+                        string body = "";
+                        if (chkInclude.Checked)
+                        {
+                            SGACommon.GetEmailTemplate(8, ref subject, ref body);
+                            body = body.Replace("@v0", this.txtFirstname.Value.Trim()).Replace("@v1", this.txtLastname.Value.Trim()).Replace("@v2", "").Replace("@v3", this.txtEmailAddress.Value.Trim()).Replace("@v5", plainpassword).Replace("@v4", SGACommon.GetJobRole(System.Convert.ToInt32(this.ddlJobRole.SelectedValue)));
+                            MailSending.SendMail(ConfigurationManager.AppSettings["nameDisplay"].ToString(), ConfigurationManager.AppSettings["UserName"].ToString(), this.txtEmailAddress.Value.Trim(), subject, body, "");
+                        }
                         //string subject = "";
                         //string body = "";
                         //SGACommon.GetEmailTemplate(8, ref subject, ref body);
@@ -843,6 +852,16 @@ namespace SGA.webadmin
                                     if (result > 0)
                                     {
                                         UpdateValueinIS(email, fName, lName, Country, membership, "", "", plainpassword, Convert.ToInt32(jobRoleId));
+
+                                        string subject = "";
+                                        string body = "";
+                                        if (chkBulkInclude.Checked)
+                                        {
+                                            SGACommon.GetEmailTemplate(8, ref subject, ref body);
+                                            body = body.Replace("@v0", fName).Replace("@v1", lName).Replace("@v2", "").Replace("@v3", email).Replace("@v5", plainpassword);
+                                            MailSending.SendMail(ConfigurationManager.AppSettings["nameDisplay"].ToString(), ConfigurationManager.AppSettings["UserName"].ToString(), email, subject, body, "");
+                                        }
+
                                         //string subject = "";
                                         //string body = "";
                                         //SGACommon.GetEmailTemplate(8, ref subject, ref body);

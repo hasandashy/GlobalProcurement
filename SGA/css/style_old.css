@@ -198,7 +198,7 @@ input.btn-next {font-family:'helvetica_neueregular', Arial, Helvetica, sans-seri
 .welcome-test .timer {float:right; font-family:'helvetica_neueregular', Arial, Helvetica, sans-serif; font-size:40px; color:#f6b054; line-height:normal;margin-right:127px;margin-top:-5px;position:fixed;display:inline;right:0px;top:0px;}
 /*.welcome-test-cmc {padding:28px 31px 10px;position:fixed;}
 .welcome-test-cmc .timer {float:right; font-family:'helvetica_neueregular', Arial, Helvetica, sans-serif; font-size:40px; color:#f6b054; line-height:normal;margin-right:127px;margin-top:-5px;position:fixed;}*/
-.navigation {background:#414042; text-align:center; border-top:30px solid #eae5dc; min-height:48px; height:auto;}
+.navigation {background:#1e3873; text-align:center; border-top:30px solid #eae5dc; min-height:48px; height:auto;}
 .navigation ul {display:inline-block; margin:0 auto; padding:9px 0; list-style:none}
 .navigation ul li {display:inline}
 .navigation ul li a {display:block; min-height:30px; height:auto; float:left; font-size:14px; line-height:15px; color:#fff; text-decoration:none; padding:0 20px; border-left:1px solid #fff}
