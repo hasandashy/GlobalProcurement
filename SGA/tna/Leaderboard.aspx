@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/tnaMaster.Master" AutoEventWireup="true" CodeBehind="Leaderboard.aspx.cs" Inherits="SGA.tna.Leaderboard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     
+
     <div class="dis-block clearfix  marT1 top-space">
         <div class="menu-icon">
             <a href="MainMenu.aspx">
@@ -30,6 +30,11 @@
                     <div class=" dis-block clearfix tab-content">
 
                         <div id="tab1" class="tab active">
+                            <div class="question-heading">
+                                <span>In the board below you can see the ranking of user registration by region.
+                                </span>
+                                <div class="redtitle"></div>
+                            </div>
                             <div class=" dis-block clearfix pad10">
                                 <div class="strip-heading">
                                     <i>
@@ -44,25 +49,25 @@
                                         </div>
                                     </LayoutTemplate>
                                     <ItemTemplate>
-                                     <div class="region-strip">
-                                    <div class="region-map">
-                                        <img id="regionImage" runat="server" alt="">
-                                    </div>
+                                        <div class="region-strip">
+                                            <div class="region-map">
+                                                <img id="regionImage" runat="server" alt="">
+                                            </div>
 
-                                    <div class="region-name-block">
-                                        <div class="region-name"><%# Container.DataItemIndex + 1%>. <%# Eval("countryRegion") %></div>
-                                        <div class="region-user"><%# Eval("nouser") %> users</div>
-                                        <div class="clear"></div>
-                                        <div class="dis-block clearfix progress-top">
-                                            <div class="progress-bar"></div>
-                                            <div class="fill-progress-bar" runat="server" id="progressBar"></div>
+                                            <div class="region-name-block">
+                                                <div class="region-name"><%# Container.DataItemIndex + 1%>. <%# Eval("countryRegion") %></div>
+                                                <div class="region-user"><%# Eval("nouser") %> users</div>
+                                                <div class="clear"></div>
+                                                <div class="dis-block clearfix progress-top">
+                                                    <div class="progress-bar"></div>
+                                                    <div class="fill-progress-bar" runat="server" id="progressBar"></div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="region-bdr"></div>
+
                                         </div>
-
-                                    </div>
-
-                                    <div class="region-bdr"></div>
-
-                                </div>
                                     </ItemTemplate>
                                 </asp:ListView>
                                 <div class="clearfix"></div>
@@ -77,6 +82,11 @@
                         </div>
 
                         <div id="tab2" class="tab">
+                            <div class="question-heading">
+                                <span>In the board below you can see the ranking of the number of users who have completed assessments by nation.
+                                </span>
+                                <div class="redtitle"></div>
+                            </div>
                             <div class=" dis-block clearfix pad10 nation-leaderboard">
                                 <div class="strip-heading">
                                     <i>
@@ -125,52 +135,63 @@
                         </div>
 
                         <div id="tab3" class="tab">
-                            
-<div class=" dis-block clearfix pad10 association-tab">
-<div class="strip-heading"><i><img src="../images/association-icon.png" alt=""></i><span>Association</span></div>
-<div class="dis-block clearfix pad3 light-gray-bg">
-<div class="association-block">
-<div ID="membershipName" runat="server"></div>
+                            <div class="question-heading">
+                                <span>In the board below you can see the ranking of the number of users who have completed assessments by membership association.
+                                </span>
+                                <div class="redtitle"></div>
+                            </div>
+                            <div class=" dis-block clearfix pad10 association-tab">
+                                <div class="strip-heading"><i>
+                                    <img src="../images/association-icon.png" alt=""></i><span>Association</span></div>
+                                <div class="dis-block clearfix pad3 light-gray-bg">
+                                    <div class="association-block">
+                                        <div id="membershipName" runat="server"></div>
 
 
 
 
-</div>
+                                    </div>
 
-<div class="dis-block clearfix center assessments-icon-logo">
+                                    <div class="dis-block clearfix center assessments-icon-logo">
 
-<div class="logo-group" runat="server" id="logo2div" visible ="false">
-<i><img runat="server" id="imglogo2" alt=""></i>
-<span><img src="../images/two.png" alt=""></span>
-</div>
-
-
-<div class="logo-group" runat="server" id="logo1div" visible ="false">
-<i><img runat="server" id="imglogo1" alt=""></i>
-<span><img src="../images/one.png" alt=""></span>
-</div>
-
-<div class="logo-group" runat="server" id="logo3div" visible ="false">
-<i><img runat="server" id="imglogo3"  alt=""></i>
-<span><img src="../images/three.png" alt=""></span>
-</div>
+                                        <div class="logo-group" runat="server" id="logo2div" visible="false">
+                                            <i>
+                                                <img runat="server" id="imglogo2" alt=""></i>
+                                            <span>
+                                                <img src="../images/two.png" alt=""></span>
+                                        </div>
 
 
+                                        <div class="logo-group" runat="server" id="logo1div" visible="false">
+                                            <i>
+                                                <img runat="server" id="imglogo1" alt=""></i>
+                                            <span>
+                                                <img src="../images/one.png" alt=""></span>
+                                        </div>
 
-
-</div>
-
-
-
+                                        <div class="logo-group" runat="server" id="logo3div" visible="false">
+                                            <i>
+                                                <img runat="server" id="imglogo3" alt=""></i>
+                                            <span>
+                                                <img src="../images/three.png" alt=""></span>
+                                        </div>
 
 
 
-<div class="clearfix"></div>
-</div>
 
-<div class="clearfix"></div>
+                                    </div>
 
-</div>
+
+
+
+
+
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="clearfix"></div>
+
+                            </div>
 
 
 
@@ -188,14 +209,14 @@
         </div>
 
 
-         <div class="bottom-btn">
-    <div class="fleft blue-btn">
-        <a href="#tab1" class="leftbt"><< BACK </a>
-      </div>
-    <div class="fright blue-btn"><a href="#tab1" class="rightbt">NEXT >> </a></div>
-</div>
+        <div class="bottom-btn" style="bottom: 15px;">
+            <div class="fleft blue-btn">
+                <a href="#tab1" class="leftbt"><< BACK </a>
+            </div>
+            <div class="fright blue-btn"><a href="#tab1" class="rightbt">NEXT >> </a></div>
+        </div>
     </div>
-   <script type="text/javascript">
+    <script type="text/javascript">
         jQuery(document).ready(function () {
             $('.leftbt').hide();
             jQuery('.tabs .tab-links a').on('click', function (e) {

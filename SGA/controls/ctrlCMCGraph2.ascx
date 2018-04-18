@@ -171,14 +171,42 @@
                 ['142', 'Asia', <%= this.asiaAvg%>],
                 ['150', 'Europe', <%= this.europeAvg%>],
                 ['019', 'Americas', <%= this.americaAvg%>],
-                //['009', 'Oceania', 600],
+                //['009', 'Oceania', 0],
                 ['002', 'Africa', <%= this.africaAvg%>]
             ]);
 
+            // extract column index 1 for color values
+            var colorValues = [<%= this.asiaAvg%>,<%= this.europeAvg%>,<%=this.americaAvg%>,<%=this.africaAvg%>]          
+            // sort ascending
+            colorValues.sort(function (a, b) { return a - b });
+            // build color names red <= -10 > yellow <= 10 > green
+            var colorNames = [];
+            colorValues.forEach(function (value) {
+                if (value < 1) {
+                    colorNames.push('grey');
+                } else if ((value > 0) && (value <= 40)) {
+                    colorNames.push('orange');
+                } else if ((value > 41) && (value <= 70)) {
+                    colorNames.push('yellow');
+                } else {
+                    colorNames.push('#87ceeb');
+                }
+            });
+
             var options = {
                 resolution: 'continents',
-                colorAxis: { colors: ['orange', 'red'] }
+                colorAxis: {
+                    colors: colorNames,
+                    values: colorValues
+                },
+                datalessRegionColor: 'grey',
             };
+
+            //var options = {
+            //    resolution: 'continents',
+            //    colorAxis: { colors: ['grey','yellow', 'orange'] }
+            //};
+
 
             var chart = new google.visualization.GeoChart(document.getElementById('container2'));
 

@@ -7,7 +7,7 @@
 </div>
 
 
-<p>Below you will see the assessments that you currently have access to. By clicking 'go' against each assessment, you will be directed to that particular assessment. </p> 
+<p>Below you will see the assessments you currently have access to. By selecting the assessment, you will be directed to that particular assessment.</p> 
 
 <p>Once access is granted, this assessment will be unlocked and you will be able to access it.</p>
 

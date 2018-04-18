@@ -57,7 +57,7 @@
                     window.location.href = "/tna/mainmenu.aspx";
                 }
                 else {
-                    window.location.href = "/tna/myresults.aspx"
+                    window.location.href = "/tna/my-results.aspx"
                 }
         }
         });

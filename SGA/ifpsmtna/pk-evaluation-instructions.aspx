@@ -73,33 +73,32 @@
 						<article class="info-box-shdw-inner">
 							<p class="title40">Instructions</p>
 							<p>&nbsp;</p>
-							<p class="txt16-bold">You are about to complete an evaluation of your procurement knowledge.</p>
+							<p class="txt16-bold">You are about to complete an evaluation of your knowledge.</p>
 							<p>&nbsp;</p>
+                            <p>This evaluation focuses on the skills required to perform in procurement and is future-looking in its design. This is the purpose of the benchmark, to prepare ourselves for 2025. So, don't be alarmed if you see themes emerging that are new.</p>
+                            <p>&nbsp;</p>
 							<p class="txt30">01</p>
-							<p>This assessment focuses on eight dimensions that drive effective procurement.</p>
+							<p>The assessment focuses on seven capability pillar.</p>
 							<p>&nbsp;</p>
-							<p class="txt16-bold">The eight dimensions are:</p>
+							<p class="txt16-bold">The 7 capability pillars are:</p>
 							<div class="step1">
-								<p>1. Opportunity Analysis</p>
-								<p>2. Market Analysis</p>
-								<p>3. Strategy Development</p>
-								<p>4. Market Engagement</p>
+								<p>1. Relationships & Value</p>
+								<p>2. Data, Analysis & Insights</p>
+								<p>3. Category Management & Innovation</p>
+								<p>4. Business Partnership & Brand</p>
 							</div>
 							<div class="step2">
-								<p>5. Negotiation</p>
-								<p>6. Contract Implementation</p>
-								<p>7. Supplier Relationship Management</p>
-								<p>8. Strategy Refresh</p>
+								<p>5. Performance & Results</p>
+								<p>6. Operate & Negotiate</p>
+								<p>7. Sustainability & Ethics</p>
 							</div>
-                            <p>&nbsp;</p>
-                            <p>As you work through the assessment you may find themes that are not directly relevant to your current role. This is likely to happen for many people as this diagnostic considers a broad range of procurement capabilities. It has purposefully been designed not to be role specific, instead it seeks to understand the South Australian Government procurement capability as a whole.</p>
-							<div class="clear"></div>
+                           <div class="clear"></div>
 							<hr class="divider-line" />
 							<p class="txt30">02</p>
-							<p>For each procurement dimension you will be asked nine multiple choice questions.</p>
+							<p>For each capability pillar, you will be asked nine multiple-choice questions.</p>
 							<hr class="divider-line" />
 							<p class="txt30">03</p>
-							<p>Each multiple choice question has four answer options. Choose whichever you feel is the most correct answer. </p>
+							<p>On completion of the evaluation you will have access to your results as a visualisation of your results against the benchmark. You can use your results for your own records – as an evaluation of your knowledge, as it stands today against what may be required of you in the future. Please feel free to click through the various graphs to explore the benchmark data across the world.</p>
 							<p>&nbsp;</p>
 							<p>&nbsp;</p>
 							<div class="floatR">

@@ -38,19 +38,9 @@
 									<div class="submenu">
 										<ul>
 											<li><a href="my-results-bar-graph.aspx" class="active">&bull; Bar Graph</a></li>
-											<li><a href="my-results-reports.aspx">&bull; Reports</a></li>
 										</ul>
 									</div>
-									<p><a href="#" class="menuitem submenuheader">Compare Results</a></p>
-									<div class="submenu">
-										<ul>
-											<li><asp:LinkButton ID="lnkAverage" runat="server" CommandArgument="4" onclick="lnkLower_Click"  >&bull; Average</asp:LinkButton></li>
-                                            <li>
-                                            <asp:LinkButton ID="lnkLower" runat="server" CommandArgument="1" onclick="lnkLower_Click" >&bull; Lower Quartile</asp:LinkButton></li>
-											<li><asp:LinkButton ID="lnkMiddle" runat="server" CommandArgument="2" onclick="lnkLower_Click"  >&bull; Median</asp:LinkButton></li>
-                                            <li><asp:LinkButton ID="lnkUpper" runat="server" CommandArgument="3" onclick="lnkLower_Click"  >&bull; Upper Quartile</asp:LinkButton></li>
-										</ul>
-									</div>  
+								
 									
 								</div>
                                 <% } else { %>

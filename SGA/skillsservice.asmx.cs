@@ -188,7 +188,7 @@ namespace SGA
                         subject = "";
                         string body = "";
 
-                        SGACommon.GetEmailTemplate(8, ref subject, ref body);
+                        SGACommon.GetEmailTemplate(10, ref subject, ref body);
                         body = body.Replace("@v0", firstName).Replace("@v1", lastName).Replace("@v2", "").Replace("@v3", emailAddress).Replace("@v5", plainpassword);
                         MailSending.SendMail(ConfigurationManager.AppSettings["nameDisplay"].ToString(), ConfigurationManager.AppSettings["UserName"].ToString(), emailAddress, subject, body, "");
 
