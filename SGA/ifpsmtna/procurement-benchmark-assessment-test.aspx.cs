@@ -144,9 +144,9 @@ namespace SGA.ifpsmtna
                     case 6:
                         this.Number = 54;
                         break;
-                    //case 7:
-                    //    this.Number = 63;
-                    //    break;
+                        //case 7:
+                        //    this.Number = 63;
+                        //    break;
                 }
                 this.SetClass();
                 this.setPrevButton();
@@ -179,13 +179,13 @@ namespace SGA.ifpsmtna
                 int questionId = System.Convert.ToInt32(DataBinder.Eval(e.Item.DataItem, "questionid"));
                 RadioButtonList rdb = (RadioButtonList)e.Item.FindControl("RadioButtonList1");
                 string strQuery = string.Concat(new object[]
-				{
-					"SELECT isNull(optionId,'') from  tblSgaOptions where optionId = (select optionId from tblSgaQuestionReply where testId=",
-					this.testId,
-					" and questionId=",
-					questionId,
-					")"
-				});
+                {
+                    "SELECT isNull(optionId,'') from  tblSgaOptions where optionId = (select optionId from tblSgaQuestionReply where testId=",
+                    this.testId,
+                    " and questionId=",
+                    questionId,
+                    ")"
+                });
                 object strOption = SqlHelper.ExecuteScalar(CommandType.Text, strQuery);
                 if (strOption != null)
                 {
@@ -220,9 +220,9 @@ namespace SGA.ifpsmtna
         private void BindTopicsQuestions(int topicId)
         {
             DataSet ds = SqlHelper.ExecuteDataset(CommandType.StoredProcedure, "spGetSgaQuestions", new SqlParameter[]
-			{
-				new SqlParameter("@topicId", topicId)
-			});
+            {
+                new SqlParameter("@topicId", topicId)
+            });
             this.parentRepeater.DataSource = ds;
             this.parentRepeater.DataBind();
             this.hdCount.Value = this.parentRepeater.Items.Count.ToString();
@@ -254,9 +254,9 @@ namespace SGA.ifpsmtna
                 case 6:
                     strPercentage = "You're 87.50% through, doing well!";
                     break;
-                //case 7:
-                //    strPercentage = "You're 100% through, congratulations!";
-                //    break;
+                    //case 7:
+                    //    strPercentage = "You're 100% through, congratulations!";
+                    //    break;
             }
             this.lblPercentage.Text = strPercentage;
         }
@@ -319,9 +319,9 @@ namespace SGA.ifpsmtna
                     case 6:
                         this.Number = 54;
                         break;
-                    //case 7:
-                    //    this.Number = 63;
-                    //    break;
+                        //case 7:
+                        //    this.Number = 63;
+                        //    break;
                 }
                 this.SetClass();
                 this.setPrevButton();
@@ -354,12 +354,14 @@ namespace SGA.ifpsmtna
                     SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "spUpdateOptions", param);
                 }
             }
-            this.testId = 0;
+
             SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "spRestrictTest", new SqlParameter[]
-			{
-				new SqlParameter("@flag", "0"),
-				new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
-			});
+            {
+                new SqlParameter("@flag", "0"),
+                 new SqlParameter("@testId", testId),
+                new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
+            });
+            this.testId = 0;
             base.Response.Redirect("~/ifpsmtna/my-results-bar-graph.aspx", false);
         }
 
@@ -385,11 +387,11 @@ namespace SGA.ifpsmtna
                 }
             }
             this.testId = 0;
-           // SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "spRestrictTest", new SqlParameter[]
-           //{
-           //     new SqlParameter("@flag", "0"),
-           //     new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
-           //});
+            // SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "spRestrictTest", new SqlParameter[]
+            //{
+            //     new SqlParameter("@flag", "0"),
+            //     new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
+            //});
             base.ClientScript.RegisterStartupScript(this.Page.GetType(), "time", "timeOut();", true);
             base.Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", ""));
         }
@@ -426,9 +428,9 @@ namespace SGA.ifpsmtna
                 }
             }
             string[] strField = new string[]
-						{
-							"Id"
-						};
+                        {
+                            "Id"
+                        };
             //XmlRpcStruct[] resultFound = isdnAPI.findByEmail(SGACommon.LoginUserInfo.name, strField);
             //int userId;
             //XmlRpcStruct Contact = new XmlRpcStruct();
@@ -445,12 +447,14 @@ namespace SGA.ifpsmtna
             //    isdnAPI.dsUpdate("Contact", userId, Contact);
             //}
 
-            this.testId = 0;
+
             SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "spRestrictTest", new SqlParameter[]
-			{
-				new SqlParameter("@flag", "0"),
-				new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
-			});
+            {
+                new SqlParameter("@flag", "0"),
+                new SqlParameter("@testId", testId),
+                new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
+            });
+            this.testId = 0;
             base.Response.Redirect("~/ifpsmtna/my-results-bar-graph.aspx", false);
         }
 

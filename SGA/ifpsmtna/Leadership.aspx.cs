@@ -99,7 +99,7 @@ namespace SGA.ifpsmtna
                 }
             }
 
-            dsUsers = SqlHelper.ExecuteDataset(CommandType.Text, "select top 10 country,count(1) as nouser from UserInfo where country is not null group by country order by nouser desc");
+            dsUsers = SqlHelper.ExecuteDataset(CommandType.StoredProcedure, "GetUserByCountry");
 
             if (dsUsers != null)
             {
@@ -110,7 +110,7 @@ namespace SGA.ifpsmtna
                 }
             }
 
-            dsUsers = SqlHelper.ExecuteDataset(CommandType.Text, "select top 3 membershipAssociation ,count(1) as nouser from tblUsers where membershipAssociation is not null group by membershipAssociation order by nouser desc");
+            dsUsers = SqlHelper.ExecuteDataset(CommandType.StoredProcedure, "GetUserByMembershipAssociation");
 
             if (dsUsers != null)
             {

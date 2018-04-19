@@ -21,9 +21,10 @@ namespace SGA.tna
             if (!base.IsPostBack)
             {
                 base.Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", ""));
-                sessionId = SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "spGetTestIdByUserId", new SqlParameter[]
-               {
-                    new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)}).ToString();
+                if (Session["sgaTestId"] != null)
+                {
+                    sessionId = Session["sgaTestId"].ToString();
+                }
 
                 if (!String.IsNullOrEmpty(sessionId))
                 {

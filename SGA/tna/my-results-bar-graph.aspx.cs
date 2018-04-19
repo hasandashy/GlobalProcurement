@@ -18,18 +18,18 @@ namespace SGA.tna
         protected void Page_Load(object sender, System.EventArgs e)
         {
             string sessionId = string.Empty;
-
-            if (!isProfileComplete())
+            if (Session["sgaTestId"] != null)
+            {
+                sessionId = Session["sgaTestId"].ToString();
+            }
+            if (!isProfileComplete(sessionId))
             {
                 Response.Redirect("TestDenied.aspx");
             }
             if (!base.IsPostBack)
             {
                 base.Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", ""));
-                sessionId = SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "spGetTestIdByUserId", new SqlParameter[]
-               {
-                    new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)}).ToString();
-
+                
                 if (!String.IsNullOrEmpty(sessionId))
                 {
                     this.graph1.testId = System.Convert.ToInt32(sessionId);
@@ -45,12 +45,12 @@ namespace SGA.tna
         }
 
 
-        private bool isProfileComplete()
+        private bool isProfileComplete(string testId)
         {
             bool isComplete = false;
             int num = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, "select count(sector) from UserInfo where userid =" + SGACommon.LoginUserInfo.userId + " "));
 
-            int num2 = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, "select count(1) from tblUserSgaTest where userid =" + SGACommon.LoginUserInfo.userId + " "));
+            int num2 = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, "select count(1) from tblUserSgaTest where userid =" + SGACommon.LoginUserInfo.userId + " and isCompleted = 1 and testId=" + testId));
             if (num == 1 && num2 == 1)
             {
                 isComplete = true;

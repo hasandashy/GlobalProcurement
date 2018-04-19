@@ -41,7 +41,7 @@
 
                         </LayoutTemplate>
                         <ItemTemplate>
-                            <li attr-val='<%#Eval("optionId")%>'><i><%# Container.DataItemIndex + 1%></i><span><%#Eval("optionText")%></span></li>
+                            <li runat="server" attr-val='<%#Eval("optionId")%>'><i><%# Container.DataItemIndex + 1%></i><span><%#Eval("optionText")%></span></li>
                         </ItemTemplate>
                     </asp:ListView>
                 </ItemTemplate>
@@ -75,6 +75,10 @@
     </div>
     <script>
         $( document ).ready(function() {
+
+            FillValues();
+
+
             if ($('#lblNumber').text() == '01') {
                 $("#lb1").css("visibility", "hidden");
             }
@@ -89,7 +93,7 @@
            
         });
         $("#lb1").click(function (event) {           
-            SaveAssessment();           
+            //SaveAssessment();           
         });
 
         $("#lb2").click(function (event) {
@@ -106,6 +110,31 @@
                 }
             }
         });
+
+        function FillValues(){
+            var json =
+                             $.ajax({
+                                 type: "POST",
+                                 async: false,
+                                 url: "procurement-benchmark-assessment-test.aspx/GetSelectedOption",
+                                 data: JSON.stringify({ 'questionId': $('#ques').attr('attr-val'), 'testId': <%=this.testId%> }),
+                                 dataType: "json",
+                                 contentType: "application/json; charset=utf-8",
+                                 success: function (data) {
+                                     $("#optionlist li").each(function () {   
+                                         var result =data.d;
+                                         var att = $(this).attr('attr-val');
+                                         if( att === result) {
+                                             $(this).attr('id', 'selected');
+                                             $(this).attr('class', 'itemselected');
+                                         }
+                                     }); 
+                                 },
+                                 error: (error) => {
+                                     alert('error');
+                                 }
+                             });
+        }
 
         function SaveAssessment()
         {    

@@ -20,7 +20,7 @@
     }
     function FinalSubmit() {
         $('#colorbox').css({ "display": "none" });
-        window.location.href = '/ifpsmtna/procurement-knowledge-evaluation-test.aspx';
+        window.location.href = '/ifpsmtna/procurement-benchmark-assessment-test.aspx';
     }
 
     $(document).ready(function () {

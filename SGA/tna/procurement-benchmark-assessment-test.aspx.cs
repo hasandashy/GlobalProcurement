@@ -13,7 +13,7 @@ using System.Web.UI.WebControls;
 
 namespace SGA.tna
 {
-   
+
     public partial class procurement_benchmark_assessment_test : System.Web.UI.Page
     {
         public string pillarId;
@@ -68,12 +68,27 @@ namespace SGA.tna
                {
                     new SqlParameter("@action", "getPillarNameById"),
                 new SqlParameter("@pillarId", pillarId)}).ToString();
-            pillarNameSpan.InnerText = pillarName.Replace("<span>","").Replace("</span>","");
+            pillarNameSpan.InnerText = pillarName.Replace("<span>", "").Replace("</span>", "");
         }
 
         protected DataSet GetData(int qid)
         {
             return SqlHelper.ExecuteDataset(CommandType.Text, "select * from tblSgaOptions where questionId=" + qid + " ");
+        }
+
+        [WebMethod]
+        public static string GetSelectedOption(int questionId, int testId)
+        {
+            string strQuery = string.Concat(new object[]
+              {
+                    "SELECT isNull(optionId,'') from  tblSgaOptions where optionId = (select optionId from tblSgaQuestionReply where testId=",
+                   testId ,
+                    " and questionId=",
+                    questionId,
+                    ")"
+              });
+            object strOption = SqlHelper.ExecuteScalar(CommandType.Text, strQuery);
+            return strOption != null ? strOption.ToString() : "";
         }
 
         protected void parentRepeater_ItemDataBound(object sender, ListViewItemEventArgs e)
@@ -82,7 +97,7 @@ namespace SGA.tna
             {
                 int CurrentPage = ((DataPager1.StartRowIndex) / DataPager1.MaximumRows) + 1;
                 Label lblNumber = (Label)e.Item.FindControl("lblNumber");
-                pgLbl.InnerText = "Question " + CurrentPage + " of " + (DataPager1.TotalRowCount == 0 ? 9 : DataPager1.TotalRowCount); 
+                pgLbl.InnerText = "Question " + CurrentPage + " of " + (DataPager1.TotalRowCount == 0 ? 9 : DataPager1.TotalRowCount);
                 if (lblNumber != null)
                 {
                     if (CurrentPage <= 9)
@@ -97,19 +112,17 @@ namespace SGA.tna
 
                 int questionId = System.Convert.ToInt32(DataBinder.Eval(e.Item.DataItem, "questionid"));
                 //HtmlGenericControl rdb = e.Item.FindControl("start") as HtmlGenericControl;
-                string strQuery = string.Concat(new object[]
-                {
-                    "SELECT isNull(optionId,'') from  tblSgaOptions where optionId = (select optionId from tblSgaQuestionReply where testId=",
-                    this.testId,
-                    " and questionId=",
-                    questionId,
-                    ")"
-                });
-                object strOption = SqlHelper.ExecuteScalar(CommandType.Text, strQuery);
-                if (strOption != null)
-                {
-                    //rdb.Items.FindByValue(strOption.ToString()).Selected = true;
-                }
+
+                //object strOption = SqlHelper.ExecuteScalar(CommandType.Text, strQuery);
+                //if (strOption != null)
+                //{
+                //    HtmlGenericControl li = (HtmlGenericControl)e.Item.FindControl(strOption.ToString());
+                //    if (li != null)
+                //    {
+                //        li.ID = "selected";
+                //        li.Attributes.Add("class", "itemselected");
+                //    }
+                //}
             }
         }
 
@@ -136,10 +149,10 @@ namespace SGA.tna
         }
 
         [WebMethod]
-        public static void SaveData(int questionId,int optionId,int testId)
+        public static void SaveData(int questionId, int optionId, int testId)
         {
 
-            SqlParameter[] param = new SqlParameter[4];            
+            SqlParameter[] param = new SqlParameter[4];
             param[0] = new SqlParameter("@questionId", questionId);
             param[1] = new SqlParameter("@OptionId", optionId);
             param[2] = new SqlParameter("@testId", testId);
@@ -153,6 +166,7 @@ namespace SGA.tna
             SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "spRestrictTest", new SqlParameter[]
             {
                 new SqlParameter("@flag", "0"),
+                new SqlParameter("@testId", testId),
                 new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
             });
         }

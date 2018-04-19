@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/tnaDesktop.Master" AutoEventWireup="true" CodeBehind="procurement-knowledge-evaluation-test.aspx.cs" Inherits="SGA.ifpsmtna.procurement_knowledge_evaluation_test" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/tnaDesktop.Master" AutoEventWireup="true" CodeBehind="procurement-benchmark-assessment-test.aspx.cs" Inherits="SGA.ifpsmtna.procurement_knowledge_evaluation_test" %>
 <%@ Register TagPrefix="cc1" Namespace="Flanders.Componentes" Assembly="Cronometro" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- Custom Form -->

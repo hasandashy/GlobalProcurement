@@ -17,35 +17,35 @@ namespace SGA.tna
         protected bool takeSgaTest = false;
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataSet dsPermission = SqlHelper.ExecuteDataset(CommandType.StoredProcedure, "spGetPremission", new SqlParameter[]
-              {
-                    new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
-              });
-
-
-
-            if (dsPermission != null)
+            if (!base.IsPostBack)
             {
-                if (dsPermission.Tables.Count > 0 && dsPermission.Tables[0].Rows.Count > 0)
+                if (!isProfileComplete())
                 {
-                    isSgaTest = System.Convert.ToBoolean(dsPermission.Tables[0].Rows[0]["viewSga"].ToString());
-                    takeSgaTest = System.Convert.ToBoolean(dsPermission.Tables[0].Rows[0]["takeSga"].ToString());
-
+                    Response.Redirect("MyProfile.aspx");
+                }
+                else
+                {
+                    BindResults();
                 }
             }
-            /*  */
+        }
 
+        private void BindResults()
+        {
+            DataSet ds = SqlHelper.ExecuteDataset(CommandType.StoredProcedure, "spGetSGATests", new SqlParameter[]
+            {
+                new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
+            });
+            this.parentRepeater.DataSource = ds;
+            this.parentRepeater.DataBind();
+        }
 
-            if (takeSgaTest && !isProfileComplete())
-            {
-                assesactive.Visible = false;
-                asseslocked.Visible = true;
-               
-            }
-            else
-            {
-                assesactive.Visible = true;
-                asseslocked.Visible = false;
+        protected void parentRepeater_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            if (e.CommandName == "graph")
+            {                
+                Session["sgaTestId"] = e.CommandArgument;
+                Response.Redirect("my-results-bar-graph.aspx");
             }
         }
 

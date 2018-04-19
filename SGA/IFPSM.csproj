@@ -313,12 +313,12 @@
     <Compile Include="ifpsmtna\pk-evaluation-instructions.aspx.designer.cs">
       <DependentUpon>pk-evaluation-instructions.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ifpsmtna\procurement-knowledge-evaluation-test.aspx.cs">
-      <DependentUpon>procurement-knowledge-evaluation-test.aspx</DependentUpon>
+    <Compile Include="ifpsmtna\procurement-benchmark-assessment-test.aspx.cs">
+      <DependentUpon>procurement-benchmark-assessment-test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ifpsmtna\procurement-knowledge-evaluation-test.aspx.designer.cs">
-      <DependentUpon>procurement-knowledge-evaluation-test.aspx</DependentUpon>
+    <Compile Include="ifpsmtna\procurement-benchmark-assessment-test.aspx.designer.cs">
+      <DependentUpon>procurement-benchmark-assessment-test.aspx</DependentUpon>
     </Compile>
     <Compile Include="ifpsmtna\ResultDenied.aspx.cs">
       <DependentUpon>ResultDenied.aspx</DependentUpon>
@@ -904,7 +904,7 @@
     <Content Include="ifpsmtna\MyProfile.aspx" />
     <Content Include="ifpsmtna\MyResults.aspx" />
     <Content Include="ifpsmtna\pk-evaluation-instructions.aspx" />
-    <Content Include="ifpsmtna\procurement-knowledge-evaluation-test.aspx" />
+    <Content Include="ifpsmtna\procurement-benchmark-assessment-test.aspx" />
     <Content Include="ifpsmtna\ResultDenied.aspx" />
     <Content Include="ifpsmtna\TestDenied.aspx" />
     <Content Include="ifpsmtna\UpdatePassword.aspx" />
