@@ -225,70 +225,70 @@
 
 
             <div>
-                <div class="fleft blue-btn">
-                    <a href="#tab1" class="leftbt"><< BACK </a>
+                <div class="fleft">
+                   <asp:Button ID="leftbt" ClientIDMode="Static" attr-val="#tab1" runat="server" Text="Back" CssClass="btn-next" />
                 </div>
-                <div class="fright blue-btn"><a href="#tab1" class="rightbt">NEXT >> </a></div>
+                <div class="fright"> <asp:Button ClientIDMode="Static" ID="rightbt" attr-val="#tab1" runat="server" Text="Next" CssClass="btn-next" /></div>
             </div>
         </div>
         <div class="dot-line">&nbsp;</div>
     </article>
     <script type="text/javascript">
         jQuery(document).ready(function () {
-            $('.leftbt').hide();
+            $('#leftbt').hide();
             jQuery('.tabs .tab-links a').on('click', function (e) {
                 var currentAttrValue = jQuery(this).attr('href');
-                jQuery('.rightbt').attr('href', currentAttrValue);
-                jQuery('.leftbt').attr('href', currentAttrValue);
+                jQuery('#rightbt').attr('attr-val', currentAttrValue);
+                jQuery('#leftbt').attr('attr-val', currentAttrValue);
                 // Show/Hide Tabs
                 jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
 
                 // Change/remove current tab to active
                 jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
                 if (currentAttrValue === '#tab1') {
-                    $('.leftbt').hide();
-                    $('.rightbt').show();
+                    $('#leftbt').hide();
+                    $('#rightbt').show();
                 }
 
                 if (currentAttrValue === '#tab2') {
-                    $('.leftbt').show();
-                    $('.rightbt').show();
+                    $('#leftbt').show();
+                    $('#rightbt').show();
                 }
 
                 if (currentAttrValue === '#tab3') {
-                    $('.leftbt').show();
-                    $('.rightbt').hide();
+                    $('#leftbt').show();
+                    $('#rightbt').hide();
                 }
                 e.preventDefault();
             });
 
             //next btn click
-            jQuery('.rightbt').on('click', function (e) {
-                var currentAttrValue = jQuery(this).attr('href');
+            jQuery('#rightbt').on('click', function (e) {
+                var currentAttrValue = jQuery(this).attr('attr-val');
 
                 // Change/remove current tab to active
                 jQuery('.tabs .tab-links a').parent('li').siblings().removeClass('active');
 
                 if (currentAttrValue == '#tab1') {
-                    $('.leftbt').show();
-                    $('.rightbt').show();
-                    jQuery(this).attr('href', '#tab2');
-                    jQuery('.leftbt').attr('href', '#tab2');
+                    $('#leftbt').show();
+                    $('#rightbt').show();
+                    jQuery(this).attr('attr-val', '#tab2');
+                    jQuery('#leftbt').attr('attr-val', '#tab2');
                     jQuery('.tabs ' + '#tab2').show().siblings().hide();
                     jQuery('#second').addClass('active')
                 }
                 if (currentAttrValue == '#tab2') {
-                    $('.leftbt').show();
-                    $('.rightbt').hide();
-                    jQuery(this).attr('href', '#tab3');
-                    jQuery('.leftbt').attr('href', '#tab3');
+                    $('#leftbt').show();
+                    $('#rightbt').hide();
+                    jQuery(this).attr('attr-val', '#tab3');
+                    jQuery('#leftbt').attr('attr-val', '#tab3');
                     jQuery('.tabs ' + '#tab3').show().siblings().hide();
                     jQuery('#third').addClass('active')
 
                 }
                 if (currentAttrValue == '#tab3') {
-                    $('.rightbt').hide();
-                    $('.leftbt').show();
+                    $('#rightbt').hide();
+                    $('#leftbt').show();
                 }
 
                 // Show/Hide Tabs
@@ -299,29 +299,29 @@
 
 
             //back btn click
-            jQuery('.leftbt').on('click', function (e) {
-                var currentAttrValue = jQuery(this).attr('href');
+            jQuery('#leftbt').on('click', function (e) {
+                var currentAttrValue = jQuery(this).attr('attr-val');
 
                 // Change/remove current tab to active
                 jQuery('.tabs .tab-links a').parent('li').siblings().removeClass('active');
 
                 if (currentAttrValue == '#tab1') {
-                    $('.leftbt').hide();
-                    $('.rightbt').show();
+                    $('#leftbt').hide();
+                    $('#rightbt').show();
                 }
                 if (currentAttrValue == '#tab2') {
-                    $('.leftbt').hide();
-                    $('.rightbt').show();
-                    jQuery(this).attr('href', '#tab1');
-                    jQuery('.rightbt').attr('href', '#tab1');
+                    $('#leftbt').hide();
+                    $('#rightbt').show();
+                    jQuery(this).attr('attr-val', '#tab1');
+                    jQuery('#rightbt').attr('attr-val', '#tab1');
                     jQuery('.tabs ' + '#tab1').show().siblings().hide();
                     jQuery('#first').addClass('active')
                 }
                 if (currentAttrValue == '#tab3') {
-                    $('.leftbt').show();
-                    $('.rightbt').show();
-                    jQuery(this).attr('href', '#tab2');
-                    jQuery('.rightbt').attr('href', '#tab2');
+                    $('#leftbt').show();
+                    $('#rightbt').show();
+                    jQuery(this).attr('attr-val', '#tab2');
+                    jQuery('#rightbt').attr('attr-val', '#tab2');
                     jQuery('.tabs ' + '#tab2').show().siblings().hide();
                     jQuery('#second').addClass('active')
                 }

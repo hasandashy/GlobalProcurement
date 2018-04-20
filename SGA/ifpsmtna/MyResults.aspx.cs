@@ -71,7 +71,7 @@ namespace SGA.ifpsmtna
             if (!base.IsPostBack)
             {
                 this.BindResults();
-                base.Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", ""));
+                //base.Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", ""));
                 base.ClientScript.RegisterStartupScript(this.Page.GetType(), "abc", "$(document).ready(function(){\r\nStyleRadio();\r\n});", true);
             }
         }

@@ -30,13 +30,15 @@
                 <br />
             </ItemTemplate>
             <EmptyDataTemplate>
-                <a><i>
-                    <img src="../images/icon1.png" alt="Procurement Benchmark Assessment" /></i>
-                    <p>
-                        Procurement Benchmark Assessment
+                <div class="yellow-bg assesment-box" runat="server">
+                    <a><i>
+                        <img src="../images/icon1.png" alt="Procurement Benchmark Assessment" /></i>
+                        <p>
+                            Procurement Benchmark Assessment
                     <img src="../innerimages/icon-locked.png" style="float: right;" />
-                    </p>
-                </a>
+                        </p>
+                    </a>
+                </div>
             </EmptyDataTemplate>
         </asp:ListView>
 

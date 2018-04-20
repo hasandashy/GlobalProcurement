@@ -14,7 +14,8 @@
 			<li><a href="/ifpsmtna/default.aspx">Home</a></li>
 			<li><a href="/ifpsmtna/MyProfile.aspx">My Profile</a></li>
             <li><a href="/ifpsmtna/myresults.aspx">My Results</a></li>
-			<li><a href="/ifpsmtna/leadership.aspx">Leadership</a></li>
+			<li><a href="/ifpsmtna/leadership.aspx">Leaderboard</a></li>
+            <li><a href="https://comprara.atlassian.net/servicedesk/customer/portal/5" target="_blank">Help</a></li>
 			<li><asp:LinkButton ID="lnkLogout" runat="server" CausesValidation="false" 
                   Text="Log out" onclick="lnkLogout_Click"  ></asp:LinkButton></li>
 		</ul>

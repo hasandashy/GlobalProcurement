@@ -2,12 +2,12 @@
 
 <div class="dis-block clearfix white-bg pad15 full-height padtop3">
     <style>
-	canvas {
-		-moz-user-select: none;
-		-webkit-user-select: none;
-		-ms-user-select: none;
-	}
-	</style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+    </style>
     <div class="dis-block clearfix">
         <div class="question-number"></div>
 
@@ -66,24 +66,26 @@
 </div>
 
 <div>
-    <div class="fleft blue-btn">
-        <a href="#tab1" class="leftbt"><< BACK </a>
-      </div>
-    <div class="fright blue-btn"><a href="#tab1" class="rightbt">NEXT >> </a></div>
+    <div class="fleft">
+        <asp:Button ID="leftbt" ClientIDMode="Static" attr-val="#tab1" runat="server" Text="Back" CssClass="btn-next" />
+    </div>
+    <div class="fright">
+        <asp:Button ClientIDMode="Static" ID="rightbt" attr-val="#tab1" runat="server" Text="Next" CssClass="btn-next" /></div>
+
 </div>
 
 <script type="text/javascript">
     jQuery(document).ready(function () {
-        $('.leftbt').hide();
+        $('#leftbt').hide();
         var color = Chart.helpers.color;
         var barChartData1 = {
-           labels: ['<%= topic1name %>'.replace('<span>', '').replace('</span>', ''),
-                            '<%= topic2name %>'.replace('<span>', '').replace('</span>', ''),
+            labels: ['<%= topic1name %>'.replace('<span>', '').replace('</span>', ''),
+                             '<%= topic2name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic3name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic4name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic5name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic6name %>'.replace('<span>', '').replace('</span>', ''),
-                            '<%= topic7name %>'.replace('<span>', '').replace('</span>', '') ],
+                            '<%= topic7name %>'.replace('<span>', '').replace('</span>', '')],
             datasets: [{
                 label: 'Your marks',
                 backgroundColor: '#FF8C00',
@@ -103,7 +105,7 @@
                             '<%= topic4name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic5name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic6name %>'.replace('<span>', '').replace('</span>', ''),
-                            '<%= topic7name %>'.replace('<span>', '').replace('</span>', '') ],
+                            '<%= topic7name %>'.replace('<span>', '').replace('</span>', '')],
             datasets: [{
                 label: 'Your marks',
                 borderWidth: 1,
@@ -124,21 +126,21 @@
 
         };
 
-         var barChartData3 = {
+        var barChartData3 = {
             labels: ['<%= topic1name %>'.replace('<span>', '').replace('</span>', ''),
-                            '<%= topic2name %>'.replace('<span>', '').replace('</span>', ''),
+                             '<%= topic2name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic3name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic4name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic5name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic6name %>'.replace('<span>', '').replace('</span>', ''),
-                            '<%= topic7name %>'.replace('<span>', '').replace('</span>', '') ],
-            datasets: [{
-                label: 'Your marks',
-                borderWidth: 1,
-                backgroundColor: '#FF8C00',
-                borderColor: '#FF8C00',
-                data: [
-					<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>
+                            '<%= topic7name %>'.replace('<span>', '').replace('</span>', '')],
+             datasets: [{
+                 label: 'Your marks',
+                 borderWidth: 1,
+                 backgroundColor: '#FF8C00',
+                 borderColor: '#FF8C00',
+                 data: [
+                     <%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>
                 ]
             }, {
                 label: 'Avg marks',
@@ -150,9 +152,9 @@
                 ]
             }]
 
-        };
+         };
         //-------------------------------------------------------------------------
-       
+
         var ctx = document.getElementById('container').getContext('2d');
         window.myBar = new Chart(ctx, {
             type: 'bar',
@@ -211,8 +213,8 @@
 
         jQuery('.tabs .tab-links a').on('click', function (e) {
             var currentAttrValue = jQuery(this).attr('href');
-            jQuery('.rightbt').attr('href', currentAttrValue);
-            jQuery('.leftbt').attr('href', currentAttrValue);
+            jQuery('#rightbt').attr('attr-val', currentAttrValue);
+            jQuery('#leftbt').attr('attr-val', currentAttrValue);
             // Show/Hide Tabs
             jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
 
@@ -221,47 +223,46 @@
 
 
             if (currentAttrValue === '#tab1') {
-                $('.leftbt').hide();
+                $('#leftbt').hide();
             }
 
             if (currentAttrValue === '#tab2') {
-                $('.leftbt').show();
-               
+                $('#leftbt').show();
+
             }
 
             if (currentAttrValue === '#tab3') {
-                $('.leftbt').show();
-                
+                $('#leftbt').show();
+
             }
             e.preventDefault();
 
 
         });
         //next btn click
-        jQuery('.rightbt').on('click', function (e) {
-            var currentAttrValue = jQuery(this).attr('href');
-
+        jQuery('#rightbt').on('click', function (e) {
+            var currentAttrValue = jQuery(this).attr('attr-val');
             // Change/remove current tab to active
             jQuery('.tabs .tab-links a').parent('li').siblings().removeClass('active');
 
             if (currentAttrValue == '#tab1') {
-                $('.leftbt').show();
-                jQuery(this).attr('href', '#tab2');
-                jQuery('.leftbt').attr('href', '#tab2');
+                $('#leftbt').show();
+                jQuery(this).attr('attr-val', '#tab2');
+                jQuery('#leftbt').attr('attr-val', '#tab2');
                 jQuery('.tabs ' + '#tab2').show().siblings().hide();
-                jQuery('#second').addClass('active')                
+                jQuery('#second').addClass('active')
             }
             if (currentAttrValue == '#tab2') {
-                $('.leftbt').show();
-                jQuery(this).attr('href', '#tab3');
-                jQuery('.leftbt').attr('href', '#tab3');
+                $('#leftbt').show();
+                jQuery(this).attr('attr-val', '#tab3');
+                jQuery('#leftbt').attr('attr-val', '#tab3');
                 jQuery('.tabs ' + '#tab3').show().siblings().hide();
                 jQuery('#third').addClass('active')
 
             }
             if (currentAttrValue == '#tab3') {
                 window.location.href = "my-results-bar-graph-gap.aspx"
-                e.preventDefault();
+                //e.preventDefault();
             }
 
             // Show/Hide Tabs
@@ -271,27 +272,27 @@
         });
 
 
-         //back btn click
-        jQuery('.leftbt').on('click', function (e) {
-            var currentAttrValue = jQuery(this).attr('href');
+        //back btn click
+        jQuery('#leftbt').on('click', function (e) {
+            var currentAttrValue = jQuery(this).attr('attr-val');
 
             // Change/remove current tab to active
             jQuery('.tabs .tab-links a').parent('li').siblings().removeClass('active');
 
             if (currentAttrValue == '#tab1') {
-                $('.leftbt').hide();
+                $('#leftbt').hide();
             }
             if (currentAttrValue == '#tab2') {
-                $('.leftbt').hide();
-                jQuery(this).attr('href', '#tab1');
-                jQuery('.rightbt').attr('href', '#tab1');
+                $('#leftbt').hide();
+                jQuery(this).attr('attr-val', '#tab1');
+                jQuery('#rightbt').attr('attr-val', '#tab1');
                 jQuery('.tabs ' + '#tab1').show().siblings().hide();
                 jQuery('#first').addClass('active')
             }
             if (currentAttrValue == '#tab3') {
-                $('.leftbt').show();
-                jQuery(this).attr('href', '#tab2');
-                jQuery('.rightbt').attr('href', '#tab2');
+                $('#leftbt').show();
+                jQuery(this).attr('attr-val', '#tab2');
+                jQuery('#rightbt').attr('attr-val', '#tab2');
                 jQuery('.tabs ' + '#tab2').show().siblings().hide();
                 jQuery('#second').addClass('active')
             }

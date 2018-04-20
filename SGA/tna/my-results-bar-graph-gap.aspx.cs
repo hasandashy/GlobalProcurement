@@ -16,16 +16,13 @@ namespace SGA.tna
         protected void Page_Load(object sender, EventArgs e)
         {
             string sessionId = string.Empty;
-
+            if (Session["sgaTestId"] != null)
+            {
+                sessionId = Session["sgaTestId"].ToString();
+            }
 
             if (!base.IsPostBack)
             {
-                base.Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", ""));
-                if (Session["sgaTestId"] != null)
-                {
-                    sessionId = Session["sgaTestId"].ToString();
-                }
-
                 if (!String.IsNullOrEmpty(sessionId))
                 {
                     this.graph1.testId = System.Convert.ToInt32(sessionId);

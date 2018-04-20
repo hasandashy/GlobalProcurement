@@ -393,7 +393,7 @@ namespace SGA.ifpsmtna
             //     new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
             //});
             base.ClientScript.RegisterStartupScript(this.Page.GetType(), "time", "timeOut();", true);
-            base.Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", ""));
+            //base.Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", ""));
         }
 
         public void setPrevButton()

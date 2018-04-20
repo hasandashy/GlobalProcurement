@@ -728,7 +728,8 @@ namespace SGA.webadmin
                         "Last name",
                         "Country",
                         "Job Role ID",
-                        "Membership Accociation"
+                        "Membership Accociation",
+                        "takePBA"
                     };
                     int iRow = 2;
                     using (ExcelPackage xlPackage = new ExcelPackage(newFile))
@@ -760,6 +761,9 @@ namespace SGA.webadmin
                             string Country = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Country")].Value.ToString().Trim();
                             string jobRoleId = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Job Role ID")].Value.ToString().Trim();
                             string membership = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Membership Accociation")].Value.ToString().Trim();
+                            bool takeSga = Convert.ToBoolean(worksheet.Cells[iRow, this.GetColumnIndex(properties, "takePBA")].Value);
+
+                            
                             if (email.Trim().Length <= 0)
                             {
                                 goto Block_12;
@@ -799,6 +803,7 @@ namespace SGA.webadmin
                                 string Country = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Country")].Value.ToString().Trim();
                                 string jobRoleId = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Job Role ID")].Value.ToString().Trim();
                                 string membership = worksheet.Cells[iRow, this.GetColumnIndex(properties, "Membership Accociation")].Value.ToString().Trim();
+                                bool takeSga = Convert.ToBoolean(worksheet.Cells[iRow, this.GetColumnIndex(properties, "takePBA")].Value);
 
                                 SqlParameter[] param = new SqlParameter[]
                                 {
@@ -818,7 +823,7 @@ namespace SGA.webadmin
                                     string passwordSalt = SGACommon.CreateSalt(5);
                                     string passwordHash = SGACommon.CreatePasswordHash(plainpassword, passwordSalt);
 
-                                    param = new SqlParameter[13];
+                                    param = new SqlParameter[14];
                                     param[0] = new SqlParameter("@action", SqlDbType.VarChar);
                                     param[0].Value = "Insert";
                                     param[1] = new SqlParameter("@password", SqlDbType.VarChar);
@@ -846,6 +851,8 @@ namespace SGA.webadmin
                                     param[11].Value = Country;
                                     param[12] = new SqlParameter("@membershipAssociation", SqlDbType.VarChar);
                                     param[12].Value = membership;
+                                    param[13] = new SqlParameter("@takeSga", SqlDbType.Bit);
+                                    param[13].Value = takeSga;
                                     int result = System.Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "spUserMasterGlobalProcurement", param));
 
 

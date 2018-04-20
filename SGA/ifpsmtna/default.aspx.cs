@@ -21,7 +21,7 @@ namespace SGA.ifpsmtna
             {
                 HttpBrowserCapabilities browser = base.Request.Browser;
                 SGACommon.SaveBrowserDetails(SGACommon.LoginUserInfo.userId, browser.Type, base.Request.UserAgent, this.Session.SessionID);
-                base.Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", ""));
+                //base.Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", ""));
                 lblName.Text = "Hi " + SGACommon.GetName() + "!";
                 DataSet dsPermission = SqlHelper.ExecuteDataset(CommandType.StoredProcedure, "spGetPremission", new SqlParameter[]
 				{

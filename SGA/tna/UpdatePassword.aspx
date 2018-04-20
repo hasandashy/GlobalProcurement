@@ -1,21 +1,31 @@
 ﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeBehind="UpdatePassword.aspx.cs" Inherits="SGA.tna.UpdatePassword" %>
 <%@ Register TagName="header" TagPrefix="sga" Src="~/controls/ctrlHeader.ascx"   %>
 <%@ Register TagName="footer" TagPrefix="sga" Src="~/controls/ctrlFooter.ascx"   %>
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>Update Password</title>
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>:Update Password::</title>
+    <link href="../css/font-awesome.min.css" rel="stylesheet">    
     <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/responsive.css" rel="stylesheet">
-    <link href="../css/jquery.fancybox.css" rel="stylesheet">
+    <link href="../css/responsiveouter.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="../js/jquery-validate.js"></script>
+    <script src="../js/jquery.preloaders.min.js"></script>
+
 </head>
+
 <body>
-    <div class="comman-page">
-				<sga:header id="header1" runat="server"></sga:header>
-				<!-- Header end // -->
+    <form id="frm">
+    </form>
+    <!-- Outer start -->
+    <div class="page-layout">
+        <div class="green-theme">
+            <sga:header id="header1" runat="server"></sga:header>
+            <div class="clearfix"></div>
+
+            <div>
     <form class="infusion-form-change" id="infusion-form-change">
         <span class="dotline top1 bdrt1"></span>
 
@@ -82,12 +92,14 @@
         </div>
 
     </form>
-        <!-- Content Area end // -->
-				<sga:footer id="footer" runat="server"></sga:footer>
-			</div>
-		<div id="outer-btm">&nbsp;</div>
-    <script>
-        
+        </div>
+
+            <sga:footer id="footer" runat="server"></sga:footer>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+        <script>
         jQuery(document).ready(function () {
             jQuery(document).on('click', '#updatepassword', function (e) {
                 jQuery("#infusion-form-change").validate({

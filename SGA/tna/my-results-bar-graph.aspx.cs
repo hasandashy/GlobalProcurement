@@ -28,8 +28,6 @@ namespace SGA.tna
             }
             if (!base.IsPostBack)
             {
-                base.Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", ""));
-                
                 if (!String.IsNullOrEmpty(sessionId))
                 {
                     this.graph1.testId = System.Convert.ToInt32(sessionId);

@@ -140,7 +140,7 @@ nav li a:hover {color:#f6b054 !important; text-decoration:none}
 .info-box-shdw .desc {width:500px}
 .info-box-shdw .info {width:112px; padding-top:6px; float:right}
 
-a.btn-go, a.btn-go:hover {display:block; width:51px; height:30px; background:url(../innerimages/btn-go.png) left top no-repeat; font-family:'HelveticaBold', Arial, Helvetica, sans-serif; font-size:20px; color:#fff !important; text-decoration:none; text-align:center; line-height:30px; margin:0 auto}
+a.btn-go, a.btn-go:hover {display:block; width:51px; height:30px; background:url(../innerimages/btn_go_yellow.png) left top no-repeat; font-family:'HelveticaBold', Arial, Helvetica, sans-serif; font-size:20px; color:#fff !important; text-decoration:none; text-align:center; line-height:30px; margin:0 auto}
 /*a.locked, a.locked:hover {display:block; font-size:12px; color:#f6b054; line-height:14px; text-align:center; background:url(../innerimages/icon-locked.png) center top no-repeat; padding-top:42px}*/
 .locked {display:block; font-size:12px; color:#f6b054; line-height:14px; text-align:center; background:url(../innerimages/icon-locked.png) center top no-repeat; padding-top:42px;position:relative;}
 /*.locked:hover {text-decoration:none}*/

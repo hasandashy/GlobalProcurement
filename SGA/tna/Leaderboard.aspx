@@ -156,7 +156,7 @@
 
                                         <div class="logo-group" runat="server" id="logo2div" visible="false">
                                             <i>
-                                                <img runat="server" id="imglogo2" alt=""></i>
+                                                <img runat="server" id="imglogo2" alt="" width="70" height="70"></i>
                                             <span>
                                                 <img src="../images/two.png" alt=""></span>
                                         </div>
@@ -164,14 +164,14 @@
 
                                         <div class="logo-group" runat="server" id="logo1div" visible="false">
                                             <i>
-                                                <img runat="server" id="imglogo1" alt=""></i>
+                                                <img runat="server" id="imglogo1" alt="" width="70" height="70"></i>
                                             <span>
                                                 <img src="../images/one.png" alt=""></span>
                                         </div>
 
                                         <div class="logo-group" runat="server" id="logo3div" visible="false">
                                             <i>
-                                                <img runat="server" id="imglogo3" alt=""></i>
+                                                <img runat="server" id="imglogo3" alt="" width="70" height="70"></i>
                                             <span>
                                                 <img src="../images/three.png" alt=""></span>
                                         </div>

@@ -64,10 +64,11 @@
 </div>
 
 <div>
-    <div class="fleft blue-btn">
-        <a href="#tab1" class="leftbt"><< BACK </a>
+     <div class="fleft">
+        <asp:Button ID="leftbt" ClientIDMode="Static" attr-val="#tab1" runat="server" Text="Back" CssClass="btn-next" />
     </div>
-    <div class="fright blue-btn"><a href="#tab1" class="rightbt">NEXT >> </a></div>
+    <div class="fright">
+        <asp:Button ClientIDMode="Static" ID="rightbt" attr-val="#tab1" runat="server" Text="Next" CssClass="btn-next" /></div>
 </div>
 
 <script type="text/javascript">
@@ -186,11 +187,11 @@
                 if (value < 1) {
                     colorNames.push('grey');
                 } else if ((value > 0) && (value <= 40)) {
-                    colorNames.push('orange');
+                    colorNames.push('red');
                 } else if ((value > 41) && (value <= 70)) {
                     colorNames.push('yellow');
                 } else {
-                    colorNames.push('#87ceeb');
+                    colorNames.push('green');
                 }
             });
 
@@ -218,8 +219,8 @@
 
         jQuery('.tabs .tab-links a').on('click', function (e) {
             var currentAttrValue = jQuery(this).attr('href');
-            jQuery('.rightbt').attr('href', currentAttrValue);
-            jQuery('.leftbt').attr('href', currentAttrValue);
+            jQuery('#rightbt').attr('attr-val', currentAttrValue);
+            jQuery('#leftbt').attr('attr-val', currentAttrValue);
             // Show/Hide Tabs
             jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
 
@@ -233,21 +234,21 @@
 
         });
         //next btn click
-        jQuery('.rightbt').on('click', function (e) {
-            var currentAttrValue = jQuery(this).attr('href');
+        jQuery('#rightbt').on('click', function (e) {
+            var currentAttrValue = jQuery(this).attr('attr-val');
 
             // Change/remove current tab to active
             jQuery('.tabs .tab-links a').parent('li').siblings().removeClass('active');
 
             if (currentAttrValue == '#tab1') {
-                jQuery(this).attr('href', '#tab2');
-                jQuery('.leftbt').attr('href', '#tab2');
+                jQuery(this).attr('attr-val', '#tab2');
+                jQuery('#leftbt').attr('attr-val', '#tab2');
                 jQuery('.tabs ' + '#tab2').show().siblings().hide();
                 jQuery('#second').addClass('active')
             }
             if (currentAttrValue == '#tab2') {
-                jQuery(this).attr('href', '#tab3');
-                jQuery('.leftbt').attr('href', '#tab3');
+                jQuery(this).attr('attr-val', '#tab3');
+                jQuery('#leftbt').attr('href', '#tab3');
                 jQuery('.tabs ' + '#tab3').show().siblings().hide();
                 jQuery('#third').addClass('active')
             }
@@ -266,13 +267,14 @@
             }
 
 
-
+            // Show/Hide Tabs
+            e.preventDefault();
         
         });
 
         //next btn click
-        jQuery('.leftbt').on('click', function (e) {
-            var currentAttrValue = jQuery(this).attr('href');
+        jQuery('#leftbt').on('click', function (e) {
+            var currentAttrValue = jQuery(this).attr('attr-val');
 
             // Change/remove current tab to active
             jQuery('.tabs .tab-links a').parent('li').siblings().removeClass('active');
@@ -282,17 +284,20 @@
                 e.preventDefault();
             }
             if (currentAttrValue == '#tab2') {
-                jQuery(this).attr('href', '#tab1');
-                jQuery('.rightbt').attr('href', '#tab1');
+                jQuery(this).attr('attr-val', '#tab1');
+                jQuery('#rightbt').attr('attr-val', '#tab1');
                 jQuery('.tabs ' + '#tab1').show().siblings().hide();
                 jQuery('#first').addClass('active')
             }
             if (currentAttrValue == '#tab3') {
-                jQuery(this).attr('href', '#tab2');
-                jQuery('.rightbt').attr('href', '#tab2');
+                jQuery(this).attr('attr-val', '#tab2');
+                jQuery('#rightbt').attr('attr-val', '#tab2');
                 jQuery('.tabs ' + '#tab2').show().siblings().hide();
                 jQuery('#second').addClass('active')
             }
+
+            // Show/Hide Tabs
+            e.preventDefault();
          
         });
 

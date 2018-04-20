@@ -185,11 +185,11 @@
                 if (value < 1) {
                     colorNames.push('grey');
                 } else if ((value > 0) && (value <= 40)) {
-                    colorNames.push('orange');
+                    colorNames.push('red');
                 } else if ((value > 41) && (value <= 70)) {
                     colorNames.push('yellow');
                 } else {
-                    colorNames.push('#87ceeb');
+                    colorNames.push('green');
                 }
             });
 

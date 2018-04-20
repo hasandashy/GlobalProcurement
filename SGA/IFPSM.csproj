@@ -1002,6 +1002,7 @@
     <Content Include="Images\Cocos-%28Keeling%29-Islands.png" />
     <Content Include="Images\colombia.png" />
     <Content Include="Images\comoros.png" />
+    <Content Include="Images\contactusicon.png" />
     <Content Include="Images\cook-islands.png" />
     <Content Include="Images\corsica.png" />
     <Content Include="Images\costa-rica.png" />
@@ -1079,6 +1080,7 @@
     <Content Include="Images\guinea.png" />
     <Content Include="Images\haiti.png" />
     <Content Include="Images\hawaii.png" />
+    <Content Include="Images\helpicon.png" />
     <Content Include="Images\honduras.png" />
     <Content Include="Images\Hong Kong.png" />
     <Content Include="Images\hong-kong.png" />
@@ -1321,6 +1323,7 @@
     <Content Include="Images\yemen.png" />
     <Content Include="Images\zambia.png" />
     <Content Include="Images\zimbabwe.png" />
+    <Content Include="innerimages\btn_go_yellow.png" />
     <Content Include="js\Chart.min.js" />
     <Content Include="js\img\sprites.png" />
     <Content Include="Images\sub_menu_icon.png" />

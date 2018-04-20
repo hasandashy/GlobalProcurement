@@ -34,15 +34,13 @@ namespace SGA.ifpsmtna
                 }
             }
 
-
+            if (Session["sgaTestId"] != null)
+            {
+                sessionId = Session["sgaTestId"].ToString();
+            }
             if (!base.IsPostBack)
             {
-                base.Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", ""));
-                if (Session["sgaTestId"] != null)
-                {
-                    sessionId = Session["sgaTestId"].ToString();
-                }
-
+                            
                 if (!String.IsNullOrEmpty(sessionId))
                 {
                     SqlParameter[] param = new SqlParameter[]

@@ -174,15 +174,15 @@ p { margin-bottom:20px; line-height:24px;}
 */
 
 .gray-strip-fill{ background:#6d6f71; position:absolute; left:15px; top:6px; height:10px; z-index:2;}
-.width1{ width:11.11%;}
-.width2{ width:22.22%;}
-.width3{ width:33.33%;}
-.width4{ width:44.44%;}
-.width5{ width:55.55%;}
-.width6{ width:66.66%;}
-.width7{ width:77.77%;}
-.width8{ width:88.88%;}
-.width9{ width:99.99%;}
+.width1{ width:10%;}
+.width2{ width:20%;}
+.width3{ width:30%;}
+.width4{ width:40%;}
+.width5{ width:50%;}
+.width6{ width:60%;}
+.width7{ width:70%;}
+.width8{ width:80%;}
+.width9{ width:90%;}
 .member-info{ margin-bottom:22px;}
 .member-info .title{ font-size:14px; font-weight:normal; font-family:'HelveticaBold'; margin:0 0 6px 0; padding-left:12px; display:inline-block; width:100%;}
 
