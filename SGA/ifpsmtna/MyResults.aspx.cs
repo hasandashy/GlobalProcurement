@@ -70,6 +70,7 @@ namespace SGA.ifpsmtna
             SGACommon.IsViewResult("viewSGA");
             if (!base.IsPostBack)
             {
+              
                 this.BindResults();
                 //base.Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", ""));
                 base.ClientScript.RegisterStartupScript(this.Page.GetType(), "abc", "$(document).ready(function(){\r\nStyleRadio();\r\n});", true);
@@ -83,6 +84,11 @@ namespace SGA.ifpsmtna
                 new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
             });
             int cnt = ds.Tables[0].Rows.Count;
+
+            if(cnt < 1)
+            {
+                Response.Redirect("ResultDenied.aspx");
+            }
             PagedDataSource paged = new PagedDataSource();
             paged.DataSource = ds.Tables[0].DefaultView;
             paged.AllowPaging = true;

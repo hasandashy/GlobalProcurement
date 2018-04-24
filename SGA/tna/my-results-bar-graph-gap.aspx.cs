@@ -20,6 +20,10 @@ namespace SGA.tna
             {
                 sessionId = Session["sgaTestId"].ToString();
             }
+            else
+            {
+                Response.Redirect("TestDenied.aspx");
+            }
 
             if (!base.IsPostBack)
             {

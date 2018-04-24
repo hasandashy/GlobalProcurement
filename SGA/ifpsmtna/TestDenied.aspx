@@ -5,8 +5,8 @@
 					<section class="welcome">
 						<p class="title40-orange"><asp:Label ID="lblName" runat="server"></asp:Label>
 						</p>
-						<p class="title40">Test Restricted</p>
-						<p>Your assessment setting for this test is restricted.</p>
+						<p class="title40">Results Restricted</p>
+						<p>Your assessment setting for this test is restricted. Please update your profle details to view your results.</p>
 					</section>
 					<div class="dot-line">&nbsp;</div>
 					<section class="color-box">

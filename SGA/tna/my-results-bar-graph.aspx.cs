@@ -22,6 +22,10 @@ namespace SGA.tna
             {
                 sessionId = Session["sgaTestId"].ToString();
             }
+            else
+            {
+                Response.Redirect("TestDenied.aspx");
+            }
             if (!isProfileComplete(sessionId))
             {
                 Response.Redirect("TestDenied.aspx");
@@ -46,10 +50,10 @@ namespace SGA.tna
         private bool isProfileComplete(string testId)
         {
             bool isComplete = false;
-            int num = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, "select count(sector) from UserInfo where userid =" + SGACommon.LoginUserInfo.userId + " "));
+            int num = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, "select sector from UserInfo where userid =" + SGACommon.LoginUserInfo.userId + " "));
 
             int num2 = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, "select count(1) from tblUserSgaTest where userid =" + SGACommon.LoginUserInfo.userId + " and isCompleted = 1 and testId=" + testId));
-            if (num == 1 && num2 == 1)
+            if (num > 0 && num2 >= 1)
             {
                 isComplete = true;
             }

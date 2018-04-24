@@ -38,6 +38,15 @@ namespace SGA.ifpsmtna
             {
                 sessionId = Session["sgaTestId"].ToString();
             }
+            else
+            {
+                Response.Redirect("TestDenied.aspx");
+            }
+
+            if (!isProfileComplete(sessionId))
+            {
+                Response.Redirect("TestDenied.aspx");
+            }
             if (!base.IsPostBack)
             {
               
@@ -60,6 +69,19 @@ namespace SGA.ifpsmtna
                     base.Response.Redirect("default.aspx", false);
                 }
             }
+        }
+
+        private bool isProfileComplete(string testId)
+        {
+            bool isComplete = false;
+            int num = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, "select count(sector) from UserInfo where sector != 0 and sector is not null and userid =" + SGACommon.LoginUserInfo.userId + " "));
+
+            int num2 = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, "select count(1) from tblUserSgaTest where userid =" + SGACommon.LoginUserInfo.userId + " and isCompleted = 1 and testId=" + testId));
+            if (num > 0 && num2 >= 1)
+            {
+                isComplete = true;
+            }
+            return isComplete;
         }
 
         protected void lnkLower_Click(object sender, System.EventArgs e)

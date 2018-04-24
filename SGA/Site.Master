@@ -81,7 +81,7 @@
                     </div>
 
                     <div class="top-login">
-                        <a href="login.aspx"><span>LOGIN</span> <i class="fa fa-lock"></i></a>
+                        <a href="login.aspx"><span>LOGIN</span> <i class="fa fa-sign-in"></i></a>
 
                         <a href="Registration.aspx" class="register-link">REGISTER HERE</a>
                     </div>

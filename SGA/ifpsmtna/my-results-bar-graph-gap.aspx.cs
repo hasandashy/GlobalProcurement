@@ -38,6 +38,10 @@ namespace SGA.ifpsmtna
             {
                 sessionId = Session["sgaTestId"].ToString();
             }
+            else
+            {
+                Response.Redirect("TestDenied.aspx");
+            }
             if (!base.IsPostBack)
             {
                             

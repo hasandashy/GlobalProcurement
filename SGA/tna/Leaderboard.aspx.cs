@@ -37,10 +37,10 @@ namespace SGA.tna
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!isProfileComplete())
-            {
-                Response.Redirect("MyProfile.aspx", false);
-            }
+            //if (!isProfileComplete())
+            //{
+            //    Response.Redirect("ResultDenied.aspx");
+            //}
             if (!IsPostBack)
             {
                 TotalUsers = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, "select count(1) as nouser from tblusers where id != 4"));

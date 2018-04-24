@@ -20,7 +20,7 @@
 						<article class="test-info-box">
 							<p class="title orange">My Results and Reports</p>
 							<p>&nbsp;</p>
-							<p><span class="dark">INSTRUCTIONS:</span> Below you will find the results and report for each assessment you have taken. In the left hand column you will note the menu where you can easily navigate. If you would like to access your reports or compare your results, simply navigate through the links. We encourage you to share the 'Negotiation Profile Assessment' since aggregate data from this challenge will provide an important insight into 'Category Management Capability' in Australia. The richer the data - the greater the insights.</p>
+							<p><span class="dark">INSTRUCTIONS:</span> Below you will find the results for each assessment you have taken. In the left hand column you will note the menu where you can easily navigate. If you would like to access your reports or compare your results, simply navigate through the links.</p>
 						</article>
 					</section>
 					<section class="my-result-box">

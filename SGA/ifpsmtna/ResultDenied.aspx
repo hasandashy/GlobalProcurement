@@ -8,7 +8,7 @@
 <!-- Content Area start -->
 				<article id="container">
 					<section class="welcome-test">
-						<p class="title40 floatL orange">Congratulations! <span class="txt20">You have completed your assessment.</span></p>
+						<%--<p class="title40 floatL orange">Congratulations! <span class="txt20">You have completed your assessment.</span></p>--%>
 						<div class="score-ur">
 							
 							<div class="clear"></div>
@@ -20,7 +20,7 @@
 						<article class="test-info-box">
 							<p class="title orange">My Results and Reports</p>
 							<p>&nbsp;</p>
-							<p><span class="dark">INSTRUCTIONS:</span> Below you will find the results and report for each assessment you have taken. In the left hand column you will note the menu where you can easily navigate. If you would like to access your reports or compare your results, simply navigate through the links. We encourage you to share the 'Negotiation Profile Assessment' since aggregate data from this challenge will provide an important insight into 'Category Management Capability' in Australia. The richer the data - the greater the insights.</p>
+							<p><span class="dark">INSTRUCTIONS:</span> Below you will find the results for each assessment you have taken. In the left hand column you will note the menu where you can easily navigate. If you would like to access your reports or compare your results, simply navigate through the links.</p>
 						</article>
 					</section>
 					<section class="my-result-box">
@@ -40,7 +40,7 @@
 									<div class="clear"></div>
 									<p>&nbsp;</p>
 									
-                                    <p class="txt28 orange mrg-bt-5">Thank you for completing the assessment. Your results have been saved. </p>
+                                    <p class="txt28 orange mrg-bt-5">Your results access is restricted. Please complete your assesment to view results.</p>
                                     
 									<p>&nbsp;</p>
 									<p>&nbsp;</p>

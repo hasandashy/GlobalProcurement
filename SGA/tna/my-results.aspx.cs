@@ -21,7 +21,7 @@ namespace SGA.tna
             {
                 if (!isProfileComplete())
                 {
-                    Response.Redirect("MyProfile.aspx");
+                    Response.Redirect("TestDenied.aspx");
                 }
                 else
                 {
@@ -46,6 +46,29 @@ namespace SGA.tna
             {                
                 Session["sgaTestId"] = e.CommandArgument;
                 Response.Redirect("my-results-bar-graph.aspx");
+            }
+        }
+
+        protected void parentRepeater_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListViewItemType.DataItem || e.Item.ItemType == ListViewItemType.EmptyItem)
+            {
+                Label lblConvertedDate = (Label)e.Item.FindControl("lblConvertedDate");
+                Label lblTimeTaken = (Label)e.Item.FindControl("lblTimeTaken");
+                System.DateTime dtTestdate = System.Convert.ToDateTime(DataBinder.Eval(e.Item.DataItem, "testDate"));
+                string timeDiff = DataBinder.Eval(e.Item.DataItem, "diff").ToString();
+                if (lblConvertedDate != null)
+                {
+                    lblConvertedDate.Text = SGACommon.ToAusTimeZone(dtTestdate).ToString("dd/MM/yyyy");
+                }
+                if (lblTimeTaken != null)
+                {
+                    string[] strArr = timeDiff.Split(new char[]
+                    {
+                        ':'
+                    });
+                    lblTimeTaken.Text = strArr[1] + "m " + strArr[2] + "s";
+                }
             }
         }
 
