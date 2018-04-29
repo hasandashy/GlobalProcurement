@@ -32,6 +32,9 @@
                     <form class="infusion-form" id="infusion-form">
 
                         <div class="dis_block clearfix">
+                              <div class="form-group" style="text-align:center;">
+                                           <asp:Label ID="lblErrorRegister" ClientIDMode="Static" runat="server" ForeColor="Red"></asp:Label>
+                               </div>
                             <div class="form-group">
 
                                 <input required class="form-control" id="inf_field_FirstName" maxlength="250" name="inf_field_FirstName" type="text" placeholder="First Name *" />
@@ -383,7 +386,10 @@
                                     <option>Zimbabwe</option>
                                 </select>
                             </div>
-
+                            <div class="form-group">
+                                <input type="checkbox" id="chkTerms"/>
+                                <span>By ticking this box, I agree to the <a href="Terms.aspx" target="_blank">terms and conditions</a> of this website and acknowledge how this service will protect my personal information while aggregating and analysing the data received. Your details will be handled with care and in accordance with GDPR.</span>
+                            </div>
                             <div class="form-group register-btn">
                                 <input type="submit" id="frm_basic_info" class="btn custom-btn" value="Go" />
 

@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -55,20 +56,20 @@ namespace SGA.tna
                     assesactive.Visible = false;
                     asseslocked.Visible = true;
                 }
-             
-             
-
-           
-
-
-                
-                
-                
-
-               
-
 
             }
+        }
+
+        [WebMethod]
+        public static void SendEmail(string PKE, string PTSA, string PBSA, string CMKA, string CMSA, string LSA, string NP, string DMP, string SCKE, string SCSA)
+        {
+            string assessments = PKE + (PKE != string.Empty ? ", " : "") + PTSA + (PTSA != string.Empty ? ", " : "") + PBSA + (PBSA != string.Empty ? ", " : "") + CMKA + (CMKA != string.Empty ? ", " : "") + CMSA + (CMSA != string.Empty ? ", " : "") + LSA + (LSA != string.Empty ? ", " : "") + NP + (NP != string.Empty ? ", " : "") + DMP + (DMP != string.Empty ? ", " : "") + SCKE + (SCKE != string.Empty ? ", " : "") + SCSA + (SCSA != string.Empty ? ", " : "");
+            string subject = "";
+            string body = "";
+            SGACommon.GetEmailTemplate(15, ref subject, ref body);
+            body = body.Replace("@v0", SGACommon.LoginUserInfo.name).Replace("@v1", assessments);
+            MailSending.SendMail(ConfigurationManager.AppSettings["nameDisplay"].ToString(), ConfigurationManager.AppSettings["UserName"].ToString(), "sales@comprara.com.au", subject, body, "");
+
         }
     }
 }

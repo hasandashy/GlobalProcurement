@@ -88,6 +88,8 @@ namespace SGA.controls
 
         protected decimal americaAvg = 0.0m;
 
+        protected decimal oceanaAvg = 0.0m;
+
         protected decimal europeAvg = 0.0m;
 
         public int testId
@@ -262,6 +264,10 @@ namespace SGA.controls
                         if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "africa")
                         {
                             africaAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "oceania")
+                        {
+                            oceanaAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
                         }
                     }
                 }

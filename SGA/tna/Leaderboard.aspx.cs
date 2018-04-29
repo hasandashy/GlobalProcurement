@@ -202,6 +202,11 @@ namespace SGA.tna
                     strImagePath = "~/Images/europe-map.png";
                     region = "Europe";
                 }
+                else if (data.Trim().ToLower() == "oceania")
+                {
+                    strImagePath = "~/Images/oceania-map.png";
+                    region = "Oceania";
+                }
                 img.Src = strImagePath;
                 div.Style.Add("width", width);
 

@@ -20,7 +20,7 @@
 						<article class="test-info-box">
 							<p class="title orange">My Results and Reports</p>
 							<p>&nbsp;</p>
-							<p><span class="dark">INSTRUCTIONS:</span> Below you will find the results for each assessment you have taken. In the left hand column you will note the menu where you can easily navigate. If you would like to access your reports or compare your results, simply navigate through the links.</p>
+							<p><span class="dark">INSTRUCTIONS:</span> Below you will find the result for the assessment you have taken. In the left hand column you will note the menu where you can easily navigate. If you would like to access your reports or compare your results, simply navigate through the links.</p>
 						</article>
 					</section>
 					<section class="my-result-box">

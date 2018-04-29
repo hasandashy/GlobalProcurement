@@ -8,8 +8,8 @@
         </p>
     </div>
     <form action="#" method="post">
-    <input type="button" value="Ok" class="btn-ok" id="btnOk" />&nbsp;
     <input type="button" value="Ok" class="btn-back" style="display:none" id="btnCancel" />
+    <input type="button" value="Ok" class="btn-ok" id="btnOk" />&nbsp;    
     <div class="clear">
     </div>
     </form>

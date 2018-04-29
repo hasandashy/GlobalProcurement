@@ -74,13 +74,14 @@
 <script type="text/javascript">
     jQuery(document).ready(function () {
         var barChartData1 = {
-            labels: ['<%= topic1name %>'.replace('<span>', '').replace('</span>', ''),
+            <%-- labels: ['<%= topic1name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic2name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic3name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic4name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic5name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic6name %>'.replace('<span>', '').replace('</span>', ''),
-                            '<%= topic7name %>'.replace('<span>', '').replace('</span>', '')],
+                            '<%= topic7name %>'.replace('<span>', '').replace('</span>', '')],--%>
+            labels: ['xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx'],
             datasets: [{
                 label: 'Your marks',
                 borderWidth: 1,
@@ -102,13 +103,14 @@
         };
 
         var barChartData2 = {
-            labels: ['<%= topic1name %>'.replace('<span>', '').replace('</span>', ''),
+            <%--  labels: ['<%= topic1name %>'.replace('<span>', '').replace('</span>', ''),
                              '<%= topic2name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic3name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic4name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic5name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic6name %>'.replace('<span>', '').replace('</span>', ''),
-                            '<%= topic7name %>'.replace('<span>', '').replace('</span>', '')],
+                            '<%= topic7name %>'.replace('<span>', '').replace('</span>', '')],--%>
+            labels: ['xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx'],
              datasets: [{
                  label: 'Your marks',
                  borderWidth: 1,
@@ -141,7 +143,20 @@
                 scales:
        {
            xAxes: [{
-               display: false
+               display: true,
+               gridLines: {
+                   display: false
+               }
+           }],
+           yAxes: [{
+               display: true,
+               ticks: {
+                   beginAtZero: true,
+                   max: 100
+               },
+               gridLines: {
+                   display: true
+               }
            }]
        }
             }
@@ -159,7 +174,20 @@
                 scales:
        {
            xAxes: [{
-               display: false
+               display: true,
+               gridLines: {
+                   display: false
+               }
+           }],
+           yAxes: [{
+               display: true,
+               ticks: {
+                   beginAtZero: true,
+                   max: 100
+               },
+               gridLines: {
+                   display: true
+               }
            }]
        }
             }
@@ -173,12 +201,12 @@
                 ['142', 'Asia', <%= this.asiaAvg%>],
                 ['150', 'Europe', <%= this.europeAvg%>],
                 ['019', 'Americas', <%= this.americaAvg%>],
-                //['009', 'Oceania', 0],
+                ['009', 'Oceania', <%=this.oceanaAvg%>],
                 ['002', 'Africa', <%= this.africaAvg%>]
             ]);
 
-            // extract column index 1 for color values
-            var colorValues = [<%= this.asiaAvg%>,<%= this.europeAvg%>,<%=this.americaAvg%>,<%=this.africaAvg%>]          
+          // extract column index 1 for color values
+            var colorValues = [<%= this.asiaAvg%>,<%= this.europeAvg%>,<%=this.americaAvg%>,<%=this.oceanaAvg%>,<%=this.africaAvg%>]      
             // sort ascending
             colorValues.sort(function (a, b) { return a - b });
             // build color names red <= -10 > yellow <= 10 > green
@@ -186,9 +214,13 @@
             colorValues.forEach(function (value) {
                 if (value < 1) {
                     colorNames.push('grey');
-                } else if ((value > 0) && (value <= 40)) {
-                    colorNames.push('red');
-                } else if ((value > 41) && (value <= 70)) {
+                } else if ((value > 0) && (value <= 30)) {
+                    colorNames.push('#ef4135');
+                } else if ((value > 30) && (value <= 50)) {
+                    colorNames.push('#f26522');
+                } else if ((value > 50) && (value <= 70)) {
+                    colorNames.push('#f7941d');
+                } else if ((value > 70) && (value <= 90)) {
                     colorNames.push('yellow');
                 } else {
                     colorNames.push('green');

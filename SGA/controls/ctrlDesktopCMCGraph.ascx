@@ -79,13 +79,14 @@
         $('#leftbt').hide();
         var color = Chart.helpers.color;
         var barChartData1 = {
-            labels: ['<%= topic1name %>'.replace('<span>', '').replace('</span>', ''),
+            <%--  labels: ['<%= topic1name %>'.replace('<span>', '').replace('</span>', ''),
                              '<%= topic2name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic3name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic4name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic5name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic6name %>'.replace('<span>', '').replace('</span>', ''),
-                            '<%= topic7name %>'.replace('<span>', '').replace('</span>', '')],
+                            '<%= topic7name %>'.replace('<span>', '').replace('</span>', '')],--%>
+            labels: ['xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx'],
             datasets: [{
                 label: 'Your marks',
                 backgroundColor: '#FF8C00',
@@ -99,13 +100,14 @@
         };
 
         var barChartData2 = {
-            labels: ['<%= topic1name %>'.replace('<span>', '').replace('</span>', ''),
+            <%-- labels: ['<%= topic1name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic2name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic3name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic4name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic5name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic6name %>'.replace('<span>', '').replace('</span>', ''),
-                            '<%= topic7name %>'.replace('<span>', '').replace('</span>', '')],
+                            '<%= topic7name %>'.replace('<span>', '').replace('</span>', '')],--%>
+            labels: ['xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx'],
             datasets: [{
                 label: 'Your marks',
                 borderWidth: 1,
@@ -127,13 +129,14 @@
         };
 
         var barChartData3 = {
-            labels: ['<%= topic1name %>'.replace('<span>', '').replace('</span>', ''),
+            <%-- labels: ['<%= topic1name %>'.replace('<span>', '').replace('</span>', ''),
                              '<%= topic2name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic3name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic4name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic5name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic6name %>'.replace('<span>', '').replace('</span>', ''),
-                            '<%= topic7name %>'.replace('<span>', '').replace('</span>', '')],
+                            '<%= topic7name %>'.replace('<span>', '').replace('</span>', '')],--%>
+            labels: ['xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx'],
              datasets: [{
                  label: 'Your marks',
                  borderWidth: 1,
@@ -167,7 +170,20 @@
                 scales:
        {
            xAxes: [{
-               display: false
+               display: true,
+               gridLines: {
+                   display: false
+               }
+           }],
+           yAxes: [{
+               display: true,
+               ticks: {
+                   beginAtZero: true,
+                   max: 100
+               },
+               gridLines: {
+                   display: true
+               }
            }]
        }
             }
@@ -185,7 +201,20 @@
                 scales:
        {
            xAxes: [{
-               display: false
+               display: true,
+               gridLines: {
+                   display: false
+               }
+           }],
+           yAxes: [{
+               display: true,
+               ticks: {
+                   beginAtZero: true,
+                   max: 100
+               },
+               gridLines: {
+                   display: true
+               }
            }]
        }
             }
@@ -203,7 +232,20 @@
                 scales:
        {
            xAxes: [{
-               display: false
+               display: true,
+               gridLines: {
+                   display: false
+               }
+           }],
+           yAxes: [{
+               display: true,
+               ticks: {
+                   beginAtZero: true,
+                   max: 100
+               },
+               gridLines: {
+                   display: true
+               }
            }]
        }
             }

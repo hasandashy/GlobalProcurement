@@ -7,7 +7,7 @@
         <div class="container ">
             <div class="heading two-line  marT50 marB50">
                 <h2><span>Reset Password</span></h2>
-                <span>To reset your or password, enter the required details. You will receive a system-generated email with further instructions to complete the password reset.</span>
+                <span>To reset your password, enter your registered email address. Click ‘Go’ and then check your inbox where you will receive a system-generated email with further instructions to complete your password reset.</span>
             </div>
         </div>
         <!-- Content Area start // -->
