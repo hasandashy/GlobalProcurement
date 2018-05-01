@@ -18,6 +18,10 @@ namespace SGA.ifpsmtna
 
         protected void Page_Load(object sender, System.EventArgs e)
         {
+            if (!isProfileComplete())
+            {
+                Response.Redirect("MyProfile.aspx?_directsend=1");
+            }
             SGACommon.AddPageTitle(this.Page, "Procurement Benchmark Assessment Instructions Page", "");
             //SGACommon.IsTakeTest("viewPkeTest");
             if (!base.IsPostBack)
@@ -27,13 +31,15 @@ namespace SGA.ifpsmtna
             }
         }
 
-        private void PassProfile()
+        private bool isProfileComplete()
         {
-            int count = System.Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "spProfileComplete", new SqlParameter[]
-			{
-				new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
-			}));
-            this.directSend = ((count <= 0) ? 0 : 1);
+            bool isComplete = false;
+            int num = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, "select count(sector) from UserInfo where sector != 0 and sector is not null and userid =" + SGACommon.LoginUserInfo.userId + " "));
+            if (num > 0)
+            {
+                isComplete = true;
+            }
+            return isComplete;
         }
     }
 }

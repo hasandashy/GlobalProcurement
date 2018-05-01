@@ -208,6 +208,11 @@ namespace SGA.ifpsmtna
                 {
                     lnkButton.Style.Add("color", "#F79548");
                     this.lblTopic.Text = lnkButton.Text.Replace("<br />", " ");
+                    SqlParameter[] param = new SqlParameter[]
+                  {
+                        new SqlParameter("@topicId", System.Convert.ToInt32(lnkButton.CommandArgument))
+                  };
+                    this.lblDescription.Text = SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "spGetSGATopicDetail", param).ToString();
                     this.BindTopicsQuestions(System.Convert.ToInt32(lnkButton.CommandArgument));
                 }
                 else

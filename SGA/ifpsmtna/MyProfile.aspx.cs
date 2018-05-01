@@ -15,12 +15,16 @@ namespace SGA.ifpsmtna
 {
     public partial class MyProfile : Page
     {
-        
+        protected string _deirectsend = "0";
 
         protected void Page_Load(object sender, System.EventArgs e)
         {
+           
             SGACommon.AddPageTitle(this.Page, "The individuals profile page", "");
-            
+            if(Request.QueryString["_directsend"] != null)
+            {
+                _deirectsend = Request.QueryString["_directsend"].ToString();
+            }
           
             if (!base.IsPostBack)
             {

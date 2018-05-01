@@ -23,7 +23,14 @@
             return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
         }
         function FinalSubmit() {
-            window.location.href = '/ifpsmtna/default.aspx';
+            var snd = <%= this._deirectsend%>;
+            if(snd === 1)
+            {
+                window.location.href = '/ifpsmtna/pk-evaluation-instructions.aspx';
+            }
+            else{
+                window.location.href = '/ifpsmtna/default.aspx';
+            }
         }
 
         function sentBack() {
@@ -50,7 +57,6 @@
                 width: "392px",
                 height: "450px",
                 onComplete: function () {
-                    debugger;
                     if (lastpage == 'y') {
                         if (($("#<%=fname.ClientID %>").val() == '') || $("#<%=lname.ClientID %>").val() == '' || $("#<%=passwordplain.ClientID %>").val() == '' || $("#<%=ddlJobRole.ClientID %>").val() == 0 || $("#<%=ddEditSector.ClientID %>").val() == 0) {
                             redirect = "y";
@@ -64,12 +70,17 @@
                             $('#btnCancel').removeClass("btn-back");
                             $('#btnCancel').addClass("btn-proceed");
                         } else {
+                            debugger;
                             $('#colorbox').css({ "display": "none" });
-                            window.location.href = '/ifpsmtna/default.aspx';
+                            var snd = <%= this._deirectsend%>;
+                            if(snd === 1)
+                            {
+                                window.location.href = '/ifpsmtna/pk-evaluation-instructions.aspx';
+                            }
+                            else{
+                                window.location.href = '/ifpsmtna/default.aspx';
+                            }
                         }
-
-
-
                     }
                     else {
                         redirect = "n";
@@ -207,7 +218,7 @@
 
                     <p>&nbsp;</p>
                     <p class="txt18-bold">MY DETAILS</p>
-                    
+
                     <span class="error"></span>&nbsp;&nbsp;<b>What is your Procurement Organisational Model? </b>
                     <br />
                     <div class="form-box1">
@@ -222,207 +233,219 @@
 
                     </div>
                     <p>&nbsp;</p>
-                     <span class="error"></span>&nbsp;&nbsp;<b>To whom does procurement report in your organisation? </b>
+                    <span class="error"></span>&nbsp;&nbsp;<b>To whom does procurement report in your organisation? </b>
                     <br />
-                    <div class="form-box1"><span class="error"></span>&nbsp;
+                    <div class="form-box1">
+                        <span class="error"></span>&nbsp;
                          <asp:DropDownList ID="ddlEditReportingLine" CssClass="styled" runat="server">
-                                                                        <asp:ListItem Value="0" Selected="True">Procurement function reports to…</asp:ListItem>
-                                                                        <asp:ListItem Value="1">CEO</asp:ListItem>
-                                                                        <asp:ListItem Value="2">CFO</asp:ListItem>
-                                                                        <asp:ListItem Value="3">COO</asp:ListItem>
-                                                                        <asp:ListItem Value="4">CIO</asp:ListItem>
-                                                                        <asp:ListItem Value="5">Legal Council</asp:ListItem>
-                                                                        <asp:ListItem Value="6">Head of Supply Chain</asp:ListItem>
-                                                                        <asp:ListItem Value="7">Division or Business Unit Head</asp:ListItem>
-                                                                        <asp:ListItem Value="8">Regional or Global Procurement</asp:ListItem>
+                             <asp:ListItem Value="0" Selected="True">Procurement function reports to…</asp:ListItem>
+                             <asp:ListItem Value="1">CEO</asp:ListItem>
+                             <asp:ListItem Value="2">CFO</asp:ListItem>
+                             <asp:ListItem Value="3">COO</asp:ListItem>
+                             <asp:ListItem Value="4">CIO</asp:ListItem>
+                             <asp:ListItem Value="5">Legal Council</asp:ListItem>
+                             <asp:ListItem Value="6">Head of Supply Chain</asp:ListItem>
+                             <asp:ListItem Value="7">Division or Business Unit Head</asp:ListItem>
+                             <asp:ListItem Value="8">Regional or Global Procurement</asp:ListItem>
 
-                                                                    </asp:DropDownList>
+                         </asp:DropDownList>
                     </div>
                     <p>&nbsp;</p>
-                     <span class="error"></span>&nbsp;&nbsp;<b>Spend Under Influence? </b>
+                    <span class="error"></span>&nbsp;&nbsp;<b>Spend Under Influence? </b>
                     <br />
-                    <div class="form-box1"><span class="error"></span>&nbsp;
+                    <div class="form-box1">
+                        <span class="error"></span>&nbsp;
                          <asp:DropDownList ID="ddlEditSpendUnder" runat="server" CssClass="styled">
-                                                                        <asp:ListItem Value="0" Selected="True">Spend under influence</asp:ListItem>
-                                                                        <asp:ListItem Value="1">$1 billion or more</asp:ListItem>
-                                                                        <asp:ListItem Value="2">$500 million to $999.9 million</asp:ListItem>
-                                                                        <asp:ListItem Value="3">$100 million to $499.9 million</asp:ListItem>
-                                                                        <asp:ListItem Value="4">$50 million to $99.9 million</asp:ListItem>
-                                                                        <asp:ListItem Value="5">$20 million to $49.9 million</asp:ListItem>
-                                                                        <asp:ListItem Value="6">$10 million to $19.9 million</asp:ListItem>
-                                                                        <asp:ListItem Value="7">$5 million to $9.9 million</asp:ListItem>
-                                                                        <asp:ListItem Value="8">$2.5 million to $4.9 million</asp:ListItem>
-                                                                        <asp:ListItem Value="9">$1 million to $2.49 million</asp:ListItem>
-                                                                        <asp:ListItem Value="10">$500,000 to $999,999</asp:ListItem>
-                                                                        <asp:ListItem Value="11">Less than $500,000</asp:ListItem>
-                                                                    </asp:DropDownList>
+                             <asp:ListItem Value="0" Selected="True">Spend under influence</asp:ListItem>
+                             <asp:ListItem Value="1">$1 billion or more</asp:ListItem>
+                             <asp:ListItem Value="2">$500 million to $999.9 million</asp:ListItem>
+                             <asp:ListItem Value="3">$100 million to $499.9 million</asp:ListItem>
+                             <asp:ListItem Value="4">$50 million to $99.9 million</asp:ListItem>
+                             <asp:ListItem Value="5">$20 million to $49.9 million</asp:ListItem>
+                             <asp:ListItem Value="6">$10 million to $19.9 million</asp:ListItem>
+                             <asp:ListItem Value="7">$5 million to $9.9 million</asp:ListItem>
+                             <asp:ListItem Value="8">$2.5 million to $4.9 million</asp:ListItem>
+                             <asp:ListItem Value="9">$1 million to $2.49 million</asp:ListItem>
+                             <asp:ListItem Value="10">$500,000 to $999,999</asp:ListItem>
+                             <asp:ListItem Value="11">Less than $500,000</asp:ListItem>
+                         </asp:DropDownList>
                     </div>
-                    <p>&nbsp;</p>
-                     <span class="error"></span>&nbsp;&nbsp;<b>How many people work in the procurement & contracting department? </b>
+                     <p>&nbsp;</p>
+                    <span class="error"></span>&nbsp;&nbsp;<b>Sector? </b>
                     <br />
-                    <div class="form-box1"><span class="error"></span>&nbsp;
-                         <asp:DropDownList ID="ddlEditEmployeeCompany" runat="server" CssClass="styled">
-                                                                        <asp:ListItem Value="0" Selected="True">Number of employees</asp:ListItem>
-                                                                        <asp:ListItem Value="1">100+</asp:ListItem>
-                                                                        <asp:ListItem Value="2">75 to 99</asp:ListItem>
-                                                                        <asp:ListItem Value="3">50 to 74</asp:ListItem>
-                                                                        <asp:ListItem Value="4">30 to 49</asp:ListItem>
-                                                                        <asp:ListItem Value="5">15 to 29</asp:ListItem>
-                                                                        <asp:ListItem Value="6">10 to 14</asp:ListItem>
-                                                                        <asp:ListItem Value="7">9</asp:ListItem>
-                                                                        <asp:ListItem Value="8">8</asp:ListItem>
-                                                                        <asp:ListItem Value="9">7</asp:ListItem>
-                                                                        <asp:ListItem Value="10">6</asp:ListItem>
-                                                                        <asp:ListItem Value="11">5</asp:ListItem>
-                                                                        <asp:ListItem Value="12">4</asp:ListItem>
-                                                                        <asp:ListItem Value="13">3</asp:ListItem>
-                                                                        <asp:ListItem Value="14">2</asp:ListItem>
-                                                                        <asp:ListItem Value="15">1</asp:ListItem>
-                                                                    </asp:DropDownList>
-                    </div>
-                    <p>&nbsp;</p>
-                     <span class="error"></span>&nbsp;&nbsp;<b>Sector? </b>
-                    <br />
-                    <div class="form-box1"><span class="error">*</span>&nbsp;
+                    <div class="form-box1">
+                        <span class="error">*</span>&nbsp;
                          <asp:DropDownList ID="ddEditSector" runat="server" CssClass="styled">
-                                                                        <asp:ListItem Value="0" Selected="True">Sector</asp:ListItem>
-                                                                        <asp:ListItem Value="1">Public</asp:ListItem>
-                                                                        <asp:ListItem Value="2">Private</asp:ListItem>
-                                                                        <asp:ListItem Value="3">Not for Profit</asp:ListItem>
-                                                                    </asp:DropDownList>
+                             <asp:ListItem Value="0" Selected="True">Sector you belong to</asp:ListItem>
+                             <asp:ListItem Value="1">Public</asp:ListItem>
+                             <asp:ListItem Value="2">Private</asp:ListItem>
+                             <asp:ListItem Value="3">Not for Profit</asp:ListItem>
+                         </asp:DropDownList>
                     </div>
                     <p>&nbsp;</p>
-                     <span class="error"></span>&nbsp;&nbsp;<b>Which of the below best describes your category domain expertise: </b>
+                    <span class="error"></span>&nbsp;&nbsp;<b>How many people work in the procurement & contracting department? </b>
                     <br />
-                    <div class="form-box1"><span class="error"></span>&nbsp;
+                    <div class="form-box1">
+                        <span class="error"></span>&nbsp;
+                         <asp:DropDownList ID="ddlEditEmployeeCompany" runat="server" CssClass="styled">
+                             <asp:ListItem Value="0" Selected="True">Number of employees</asp:ListItem>
+                             <asp:ListItem Value="1">100+</asp:ListItem>
+                             <asp:ListItem Value="2">75 to 99</asp:ListItem>
+                             <asp:ListItem Value="3">50 to 74</asp:ListItem>
+                             <asp:ListItem Value="4">30 to 49</asp:ListItem>
+                             <asp:ListItem Value="5">15 to 29</asp:ListItem>
+                             <asp:ListItem Value="6">10 to 14</asp:ListItem>
+                             <asp:ListItem Value="7">9</asp:ListItem>
+                             <asp:ListItem Value="8">8</asp:ListItem>
+                             <asp:ListItem Value="9">7</asp:ListItem>
+                             <asp:ListItem Value="10">6</asp:ListItem>
+                             <asp:ListItem Value="11">5</asp:ListItem>
+                             <asp:ListItem Value="12">4</asp:ListItem>
+                             <asp:ListItem Value="13">3</asp:ListItem>
+                             <asp:ListItem Value="14">2</asp:ListItem>
+                             <asp:ListItem Value="15">1</asp:ListItem>
+                         </asp:DropDownList>
+                    </div>
+                   
+                    <p>&nbsp;</p>
+                    <span class="error"></span>&nbsp;&nbsp;<b>Which of the below best describes your category domain expertise: </b>
+                    <br />
+                    <div class="form-box1">
+                        <span class="error"></span>&nbsp;
                         <asp:DropDownList ID="ddlEditExpertise" CssClass="styled" runat="server">
-                                                                        <asp:ListItem Value="0" Selected="True">Category you manage currently</asp:ListItem>
-                                                                        <asp:ListItem Value="1">Generalist Direct & Indirects</asp:ListItem>
-                                                                        <asp:ListItem Value="2">Generalist Directs</asp:ListItem>
-                                                                        <asp:ListItem Value="3">Generalist Indirects</asp:ListItem>
-                                                                        <asp:ListItem Value="4">Chemicals</asp:ListItem>
-                                                                        <asp:ListItem Value="5">Energy</asp:ListItem>
-                                                                        <asp:ListItem Value="6">Facilities</asp:ListItem>
-                                                                        <asp:ListItem Value="7">Fleet</asp:ListItem>
-                                                                        <asp:ListItem Value="8">Heavy Machinery and Equipment</asp:ListItem>
-                                                                        <asp:ListItem Value="9">HR Services</asp:ListItem>
-                                                                        <asp:ListItem Value="10">ICT</asp:ListItem>
-                                                                        <asp:ListItem Value="11">Ingredients</asp:ListItem>
-                                                                        <asp:ListItem Value="12">Marketing</asp:ListItem>
-                                                                        <asp:ListItem Value="13">Mining Equipment</asp:ListItem>
-                                                                        <asp:ListItem Value="14">MRO and Capex</asp:ListItem>
-                                                                        <asp:ListItem Value="15">Packaging</asp:ListItem>
-                                                                        <asp:ListItem Value="16">Professional Services</asp:ListItem>
-                                                                        <asp:ListItem Value="17">Raw Materials</asp:ListItem>
-                                                                        <asp:ListItem Value="18">Travel</asp:ListItem>
-                                                                        <asp:ListItem Value="19">Wardrobe & Workwear</asp:ListItem>
-                                                                    </asp:DropDownList>
+                            <asp:ListItem Value="0" Selected="True">Category you manage currently</asp:ListItem>
+                            <asp:ListItem Value="1">Generalist Direct & Indirects</asp:ListItem>
+                            <asp:ListItem Value="2">Generalist Directs</asp:ListItem>
+                            <asp:ListItem Value="3">Generalist Indirects</asp:ListItem>
+                            <asp:ListItem Value="4">Chemicals</asp:ListItem>
+                            <asp:ListItem Value="5">Energy</asp:ListItem>
+                            <asp:ListItem Value="6">Facilities</asp:ListItem>
+                            <asp:ListItem Value="7">Fleet</asp:ListItem>
+                            <asp:ListItem Value="8">Heavy Machinery and Equipment</asp:ListItem>
+                            <asp:ListItem Value="9">HR Services</asp:ListItem>
+                            <asp:ListItem Value="10">ICT</asp:ListItem>
+                            <asp:ListItem Value="11">Ingredients</asp:ListItem>
+                            <asp:ListItem Value="12">Marketing</asp:ListItem>
+                            <asp:ListItem Value="13">Mining Equipment</asp:ListItem>
+                            <asp:ListItem Value="14">MRO and Capex</asp:ListItem>
+                            <asp:ListItem Value="15">Packaging</asp:ListItem>
+                            <asp:ListItem Value="16">Professional Services</asp:ListItem>
+                            <asp:ListItem Value="17">Raw Materials</asp:ListItem>
+                            <asp:ListItem Value="18">Travel</asp:ListItem>
+                            <asp:ListItem Value="19">Wardrobe & Workwear</asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                     <p>&nbsp;</p>
-                     <span class="error"></span>&nbsp;&nbsp;<b>Spent under your influence : </b>
+                    <span class="error"></span>&nbsp;&nbsp;<b>Spent under your influence : </b>
                     <br />
-                    <div class="form-box1"><span class="error"></span>&nbsp;
+                    <div class="form-box1">
+                        <span class="error"></span>&nbsp;
                         <asp:DropDownList ID="ddlEditSpentUnder" runat="server" CssClass="styled">
-                                                                        <asp:ListItem Value="0" Selected="True">Spend under your influence </asp:ListItem>
-                                                                        <asp:ListItem Value="1">$1 billion or more</asp:ListItem>
-                                                                        <asp:ListItem Value="2">$500 million to $999.9 million</asp:ListItem>
-                                                                        <asp:ListItem Value="3">$100 million to $499.9 million</asp:ListItem>
-                                                                        <asp:ListItem Value="4">$50 million to $99.9 million</asp:ListItem>
-                                                                        <asp:ListItem Value="5">$20 million to $49.9 million</asp:ListItem>
-                                                                        <asp:ListItem Value="6">$10 million to $19.9 million</asp:ListItem>
-                                                                        <asp:ListItem Value="7">$5 million to $9.9 million</asp:ListItem>
-                                                                        <asp:ListItem Value="8">$2.5 million to $4.9 million</asp:ListItem>
-                                                                        <asp:ListItem Value="9">$1 million to $2.49 million</asp:ListItem>
-                                                                        <asp:ListItem Value="10">$500,000 to $999,999</asp:ListItem>
-                                                                        <asp:ListItem Value="11">Less than $500,000</asp:ListItem>
-                                                                    </asp:DropDownList>
+                            <asp:ListItem Value="0" Selected="True">Spend under your influence </asp:ListItem>
+                            <asp:ListItem Value="1">$1 billion or more</asp:ListItem>
+                            <asp:ListItem Value="2">$500 million to $999.9 million</asp:ListItem>
+                            <asp:ListItem Value="3">$100 million to $499.9 million</asp:ListItem>
+                            <asp:ListItem Value="4">$50 million to $99.9 million</asp:ListItem>
+                            <asp:ListItem Value="5">$20 million to $49.9 million</asp:ListItem>
+                            <asp:ListItem Value="6">$10 million to $19.9 million</asp:ListItem>
+                            <asp:ListItem Value="7">$5 million to $9.9 million</asp:ListItem>
+                            <asp:ListItem Value="8">$2.5 million to $4.9 million</asp:ListItem>
+                            <asp:ListItem Value="9">$1 million to $2.49 million</asp:ListItem>
+                            <asp:ListItem Value="10">$500,000 to $999,999</asp:ListItem>
+                            <asp:ListItem Value="11">Less than $500,000</asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                     <p>&nbsp;</p>
-                     <span class="error"></span>&nbsp;&nbsp;<b>Geographical influence? </b>
+                    <span class="error"></span>&nbsp;&nbsp;<b>Geographical influence? </b>
                     <br />
-                    <div class="form-box1"><span class="error"></span>&nbsp;
+                    <div class="form-box1">
+                        <span class="error"></span>&nbsp;
                          <asp:DropDownList ID="ddlEditGeographical" runat="server" CssClass="styled">
-                                                                        <asp:ListItem Value="0" Selected="True">Geographical influence</asp:ListItem>
-                                                                        <asp:ListItem Value="1">Local</asp:ListItem>
-                                                                        <asp:ListItem Value="2">Regional</asp:ListItem>
-                                                                        <asp:ListItem Value="3">Global</asp:ListItem>
-                                                                    </asp:DropDownList>
+                             <asp:ListItem Value="0" Selected="True">Geographical influence</asp:ListItem>
+                             <asp:ListItem Value="1">Local</asp:ListItem>
+                             <asp:ListItem Value="2">Regional</asp:ListItem>
+                             <asp:ListItem Value="3">Global</asp:ListItem>
+                         </asp:DropDownList>
                     </div>
                     <p>&nbsp;</p>
-                     <span class="error"></span>&nbsp;&nbsp;<b>How many years have you worked in procurement and supply chain? (Round up to the nearest whole year)? </b>
+                    <span class="error"></span>&nbsp;&nbsp;<b>How many years have you worked in procurement and supply chain? (Round up to the nearest whole year)? </b>
                     <br />
-                    <div class="form-box1"><span class="error"></span>&nbsp;
+                    <div class="form-box1">
+                        <span class="error"></span>&nbsp;
                          <asp:DropDownList ID="ddlEditProcurementYear" runat="server" CssClass="styled">
-                                                                        <asp:ListItem Value="0" Selected="True">Years of procurement experience</asp:ListItem>
-                                                                        <asp:ListItem Value="1">Less than 1 year</asp:ListItem>
-                                                                        <asp:ListItem Value="2">1 - 3 years</asp:ListItem>
-                                                                        <asp:ListItem Value="3">3 - 5 years</asp:ListItem>
-                                                                        <asp:ListItem Value="4">5 - 10 years</asp:ListItem>
-                                                                        <asp:ListItem Value="5">10 or more years</asp:ListItem>
-                                                                        <asp:ListItem Value="6">Not applicable</asp:ListItem>
-                                                                    </asp:DropDownList>
+                             <asp:ListItem Value="0" Selected="True">Years of procurement experience</asp:ListItem>
+                             <asp:ListItem Value="1">Less than 1 year</asp:ListItem>
+                             <asp:ListItem Value="2">1 - 3 years</asp:ListItem>
+                             <asp:ListItem Value="3">3 - 5 years</asp:ListItem>
+                             <asp:ListItem Value="4">5 - 10 years</asp:ListItem>
+                             <asp:ListItem Value="5">10 or more years</asp:ListItem>
+                             <asp:ListItem Value="6">Not applicable</asp:ListItem>
+                         </asp:DropDownList>
                     </div>
                     <p>&nbsp;</p>
-                     <span class="error"></span>&nbsp;&nbsp;<b>What is your Procurement qualification? </b>
+                    <span class="error"></span>&nbsp;&nbsp;<b>What is your Procurement qualification? </b>
                     <br />
-                    <div class="form-box1"><span class="error"></span>&nbsp;
+                    <div class="form-box1">
+                        <span class="error"></span>&nbsp;
                          <asp:DropDownList ID="ddlEditProLevel" CssClass="styled" runat="server">
-                                                                        <asp:ListItem Value="0" Selected="True">Procurement qualifications</asp:ListItem>
-                                                                        <asp:ListItem Value="1">Undergraduate degree in procurement / supply chain </asp:ListItem>
-                                                                        <asp:ListItem Value="2">Postgraduate degree in procurement / supply chain </asp:ListItem>
-                                                                        <asp:ListItem Value="3">CIPS: Member (MCIPS)</asp:ListItem>
-                                                                        <asp:ListItem Value="4">CIPS: Fellow (FCIPS)</asp:ListItem>
-                                                                        <asp:ListItem Value="5">AAPCM: Member </asp:ListItem>
-                                                                        <asp:ListItem Value="6">AAPCM: Fellow </asp:ListItem>
-                                                                        <asp:ListItem Value="7">Other </asp:ListItem>
-                                                                        <asp:ListItem Value="8">Not applicable</asp:ListItem>
-                                                                    </asp:DropDownList>
+                             <asp:ListItem Value="0" Selected="True">Procurement qualifications</asp:ListItem>
+                             <asp:ListItem Value="1">Undergraduate degree in procurement / supply chain </asp:ListItem>
+                             <asp:ListItem Value="2">Postgraduate degree in procurement / supply chain </asp:ListItem>
+                             <asp:ListItem Value="3">CIPS: Member (MCIPS)</asp:ListItem>
+                             <asp:ListItem Value="4">CIPS: Fellow (FCIPS)</asp:ListItem>
+                             <asp:ListItem Value="5">AAPCM: Member </asp:ListItem>
+                             <asp:ListItem Value="6">AAPCM: Fellow </asp:ListItem>
+                             <asp:ListItem Value="7">Other </asp:ListItem>
+                             <asp:ListItem Value="8">Not applicable</asp:ListItem>
+                         </asp:DropDownList>
                     </div>
                     <p>&nbsp;</p>
-                     <span class="error"></span>&nbsp;&nbsp;<b>What is your highest level of education? </b>
+                    <span class="error"></span>&nbsp;&nbsp;<b>What is your highest level of education? </b>
                     <br />
-                    <div class="form-box1"><span class="error"></span>&nbsp;
+                    <div class="form-box1">
+                        <span class="error"></span>&nbsp;
                         <asp:DropDownList ID="cboEditQualifications" CssClass="styled" runat="server">
-                                                                        <asp:ListItem Value="0" Selected="True">Level of education</asp:ListItem>
-                                                                        <asp:ListItem Value="1">Secondary school</asp:ListItem>
-                                                                        <asp:ListItem Value="2">Certificate</asp:ListItem>
-                                                                        <asp:ListItem Value="3">Diploma</asp:ListItem>
-                                                                        <asp:ListItem Value="4">Advanced Diploma</asp:ListItem>
-                                                                        <asp:ListItem Value="5">Undergraduate</asp:ListItem>
-                                                                        <asp:ListItem Value="6">Postgraduate</asp:ListItem>
-                                                                        <asp:ListItem Value="7">Masters</asp:ListItem>
-                                                                        <asp:ListItem Value="8">Doctorate</asp:ListItem>
-                                                                    </asp:DropDownList>
+                            <asp:ListItem Value="0" Selected="True">Level of education</asp:ListItem>
+                            <asp:ListItem Value="1">Secondary school</asp:ListItem>
+                            <asp:ListItem Value="2">Certificate</asp:ListItem>
+                            <asp:ListItem Value="3">Diploma</asp:ListItem>
+                            <asp:ListItem Value="4">Advanced Diploma</asp:ListItem>
+                            <asp:ListItem Value="5">Undergraduate</asp:ListItem>
+                            <asp:ListItem Value="6">Postgraduate</asp:ListItem>
+                            <asp:ListItem Value="7">Masters</asp:ListItem>
+                            <asp:ListItem Value="8">Doctorate</asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                     <p>&nbsp;</p>
-                     <span class="error"></span>&nbsp;&nbsp;<b>What is your previous category Experience? </b>
+                    <span class="error"></span>&nbsp;&nbsp;<b>What is your previous category Experience? </b>
                     <br />
-                    <div class="form-box1"><span class="error"></span>&nbsp;
+                    <div class="form-box1">
+                        <span class="error"></span>&nbsp;
                          <asp:DropDownList ID="ddlEditCatExp" CssClass="styled" runat="server">
-                                                                        <asp:ListItem Value="0" Selected="True">Category Experience</asp:ListItem>
-                                                                        <asp:ListItem Value="1">Indirect- General</asp:ListItem>
-                                                                        <asp:ListItem Value="2">Directs - General</asp:ListItem>
-                                                                        <asp:ListItem Value="3">IT&T Services: Software, Hardware, Telco etc.</asp:ListItem>
-                                                                        <asp:ListItem Value="4">Packaging: PET, Glass, Print, Labels, etc.</asp:ListItem>
-                                                                        <asp:ListItem Value="5">Marketing Services: ABT, BTL, Print, etc.</asp:ListItem>
-                                                                        <asp:ListItem Value="6">Ingredients</asp:ListItem>
-                                                                        <asp:ListItem Value="7">HR Services: Labour hire, Recruitment, Training, etc.</asp:ListItem>
-                                                                        <asp:ListItem Value="8">Chemicals</asp:ListItem>
-                                                                        <asp:ListItem Value="9">Professional Services: Legal, Audit & Accounting, Security, etc.</asp:ListItem>
-                                                                        <asp:ListItem Value="10">Industry specific production material</asp:ListItem>
-                                                                        <asp:ListItem Value="11">Facilities and Corporate Real Estate (FM/CRE</asp:ListItem>
-                                                                        <asp:ListItem Value="12">Utilities: Gas, Electricity, Water</asp:ListItem>
-                                                                        <asp:ListItem Value="13">Capex: Heavy machinery and equipment</asp:ListItem>
-                                                                        <asp:ListItem Value="14">MRO Maintenance, Repairs, Operations and Consumables</asp:ListItem>
-                                                                        <asp:ListItem Value="15">Office: Stationery, post</asp:ListItem>
-                                                                        <asp:ListItem Value="16">Travel</asp:ListItem>
-                                                                        <asp:ListItem Value="17">Fleet</asp:ListItem>
-                                                                        <asp:ListItem Value="18">Logistics</asp:ListItem>
-                                                                        <asp:ListItem Value="19">Other</asp:ListItem>
-                                                                    </asp:DropDownList>
+                             <asp:ListItem Value="0" Selected="True">Category Experience</asp:ListItem>
+                             <asp:ListItem Value="1">Indirect- General</asp:ListItem>
+                             <asp:ListItem Value="2">Directs - General</asp:ListItem>
+                             <asp:ListItem Value="3">IT&T Services: Software, Hardware, Telco etc.</asp:ListItem>
+                             <asp:ListItem Value="4">Packaging: PET, Glass, Print, Labels, etc.</asp:ListItem>
+                             <asp:ListItem Value="5">Marketing Services: ABT, BTL, Print, etc.</asp:ListItem>
+                             <asp:ListItem Value="6">Ingredients</asp:ListItem>
+                             <asp:ListItem Value="7">HR Services: Labour hire, Recruitment, Training, etc.</asp:ListItem>
+                             <asp:ListItem Value="8">Chemicals</asp:ListItem>
+                             <asp:ListItem Value="9">Professional Services: Legal, Audit & Accounting, Security, etc.</asp:ListItem>
+                             <asp:ListItem Value="10">Industry specific production material</asp:ListItem>
+                             <asp:ListItem Value="11">Facilities and Corporate Real Estate (FM/CRE</asp:ListItem>
+                             <asp:ListItem Value="12">Utilities: Gas, Electricity, Water</asp:ListItem>
+                             <asp:ListItem Value="13">Capex: Heavy machinery and equipment</asp:ListItem>
+                             <asp:ListItem Value="14">MRO Maintenance, Repairs, Operations and Consumables</asp:ListItem>
+                             <asp:ListItem Value="15">Office: Stationery, post</asp:ListItem>
+                             <asp:ListItem Value="16">Travel</asp:ListItem>
+                             <asp:ListItem Value="17">Fleet</asp:ListItem>
+                             <asp:ListItem Value="18">Logistics</asp:ListItem>
+                             <asp:ListItem Value="19">Other</asp:ListItem>
+                         </asp:DropDownList>
                     </div>
                     <p>&nbsp;</p>
-                     
+
                     <div class="clear"></div>
                     <p>&nbsp;</p>
                     <p class="txtRgt">

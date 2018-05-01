@@ -18,9 +18,9 @@
 					<div class="dot-line">&nbsp;</div>
 					<section class="color-box">
 						<article class="test-info-box">
-							<p class="title orange">My Results and Reports</p>
+							<p class="title orange">Your  Personalised Dashboard</p>
 							<p>&nbsp;</p>
-							<p><span class="dark">INSTRUCTIONS:</span> Below you will find the result for the assessment you have taken. In the left hand column you will note the menu where you can easily navigate. If you would like to access your reports or compare your results, simply navigate through the links.</p>
+							<p>Your participation in this Global Capability Benchmark gives you the unique insight on how well you perform against your peers. Click through the graphs below to see how you faired against others with the same role, in the same sector, by region, by nation, etc.</p>
 						</article>
 					</section>
 					<section class="my-result-box">
@@ -53,6 +53,7 @@
 							</div>
 							<div class="col-cnt">								
 								<p class="txtCtr">
+                                 <h3 class="orange">Here are your scores:</h3>
                                  <!-- Graph comes up here -->
                                  <sga:cmcGragh id="graph1" showCompare="0" runat="server"></sga:cmcGragh>
                                  </p>

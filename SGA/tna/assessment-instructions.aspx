@@ -17,17 +17,17 @@
 
             <p><strong>You are about to complete an evaluation of your knowledge.</strong></p>
 
-            <p>This evaluation focuses on the skills required to perform in procurement and is future-looking in its design. This is the purpose of the benchmark, to prepare ourselves for 2025. So, don't be alarmed if you see themes emerging that are new.</p>
+            <p>This evaluation focuses on the skills required to perform in procurement and is future-looking in its design. This is the purpose of the benchmark, to prepare ourselves for 2025. So, don't be alarmed if you see themes emerging that are new!</p>
             <p>The assessment focuses on seven capability pillars and for each, you will be asked nine multiple-choice questions.</p>
             <p><strong>The 7 capability pillars are:</strong></p>
             <p>
-                1. Relationships & Value<br />
-                2. Data, Analysis & Insights<br />
-                3. Category Management & Innovation<br />
-                4. Business Partnership & Brand<br />
-                5. Performance & Results<br />
-                6. Operate & Negotiate<br />
-                7. Sustainability & Ethics
+                1. Analysis & Decisions<br />
+                2. Strategic Alignment<br />
+                3. Category Management<br />
+                4. Sustainable Supply<br />
+                5. Relationships & Value<br />
+                6. Performance<br />
+                7. Business Partnership
             </p>
             <p>On completion of the evaluation you will have access to your results as a visualisation of your results against the benchmark. You can use your results for your own records – as an evaluation of your knowledge, as it stands today against what may be required of you in the future. </p>
             <p>Please feel free to click through the various graphs to explore the benchmark data across the world.</p>

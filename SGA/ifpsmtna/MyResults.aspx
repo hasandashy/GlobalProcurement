@@ -19,9 +19,9 @@
 					<div class="dot-line">&nbsp;</div>
 					<section class="color-box">
 						<article class="test-info-box">
-							<p class="title orange">My Results and Reports</p>
+							<p class="title orange">Your  Personalised Dashboard</p>
 							<p>&nbsp;</p>
-							<p><span class="dark">INSTRUCTIONS:</span> Below you will find the results for each assessment you have taken. In the left hand column you will note the menu where you can easily navigate. If you would like to access your reports or compare your results, simply navigate through the links.</p>
+							<p>Your participation in this Global Capability Benchmark gives you the unique insight on how well you perform against your peers. Click through the graphs below to see how you faired against others with the same role, in the same sector, by region, by nation, etc.</p>
 						</article>
 					</section>
 					<section class="my-result-box">
@@ -74,26 +74,7 @@
 								</div>
 								<hr class="divider-line" />
 								<p>&nbsp;</p>
-								<!--<div class="share-challange-1">
-									<div class="share-cnt-1">
-										<div class="cloud-1"><img src="/innerimages/img-cloud-1.gif" alt="" /></div>
-										<p class="share-title-1">SHARE THE</p>
-										<p class="share-title-2">CHALLENGE</p>
-										<p class="share-title-3">WITH A COLLEAGUE OR PEER!</p>
-										<p>&nbsp;</p>
-										<p>Aggregate data from the challenge will provide an important insight into 'Category Management Capability' in Australia.</p>
-										<p class="txt18-bold">The richer the data - the greater the insights!</p>
-									</div>
-									<div class="share-cnt-2">
-										<div class="cloud-2"><img src="/innerimages/img-cloud-2.gif" alt="" /></div>
-										<p>&nbsp;</p>
-										<p>
-                                        <input type="submit" value="Share" class="btn-share" onclick="window.location.href='share-the-challenge.aspx';return false;">
-                                        
-                                        </p>
-									</div>
-									<div class="clear"></div>
-								</div>-->
+								
 							</div>
 							<div class="clear"></div>
 							<p>&nbsp;</p>

@@ -10,8 +10,8 @@
     <li><a href="ManageAssessmentPillars.aspx" ><span>Manage Assessment Pillars</span></a></li>
     <%--<li><a href="DownloadReport.aspx" ><span>Download Reports</span></a></li>--%>
     <%--<li><a href="ManageJobSuggestions.aspx" ><span>Manage JobRole Suggestions</span></a></li>--%>
-    <li><a href="CompanyUsers.aspx" ><span>Manage Company</span></a></li>
-    <li><a href="CompanyManagers.aspx" ><span>Company Managers</span></a></li>
+   <%-- <li><a href="CompanyUsers.aspx" ><span>Manage Company</span></a></li>
+    <li><a href="CompanyManagers.aspx" ><span>Company Managers</span></a></li>--%>
     <li><a href="EmailTracker.aspx" ><span>Email tracker</span></a></li>
     <li><a href="BrowserTracker.aspx" ><span>Browser tracker</span></a></li>
    <%-- <li><a href="ManagePlans.aspx" ><span>Manage Plans</span></a></li>--%>

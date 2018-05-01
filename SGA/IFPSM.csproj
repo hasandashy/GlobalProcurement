@@ -149,6 +149,20 @@
     <Compile Include="Controller\SgtResultController.cs" />
     <Compile Include="Controller\SubdomainController.cs" />
     <Compile Include="Controller\TnaResultController.cs" />
+    <Compile Include="controls\cmcPersonilisedDashboard.ascx.cs">
+      <DependentUpon>cmcPersonilisedDashboard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\cmcPersonilisedDashboard.ascx.designer.cs">
+      <DependentUpon>cmcPersonilisedDashboard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\cmcPersonilisedDashboard2.ascx.cs">
+      <DependentUpon>cmcPersonilisedDashboard2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\cmcPersonilisedDashboard2.ascx.designer.cs">
+      <DependentUpon>cmcPersonilisedDashboard2.ascx</DependentUpon>
+    </Compile>
     <Compile Include="controls\ctrlCMCDesktopGraph2.ascx.cs">
       <DependentUpon>ctrlCMCDesktopGraph2.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -305,6 +319,13 @@
     </Compile>
     <Compile Include="ifpsmtna\MyResults.aspx.designer.cs">
       <DependentUpon>MyResults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ifpsmtna\personalised-dashboard.aspx.cs">
+      <DependentUpon>personalised-dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ifpsmtna\personalised-dashboard.aspx.designer.cs">
+      <DependentUpon>personalised-dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="ifpsmtna\pk-evaluation-instructions.aspx.cs">
       <DependentUpon>pk-evaluation-instructions.aspx</DependentUpon>
@@ -777,6 +798,8 @@
     <Content Include="App_Browsers\firefox.browser" />
     <Content Include="App_Browsers\ie.browser" />
     <Content Include="Contribute.aspx" />
+    <Content Include="controls\cmcPersonilisedDashboard.ascx" />
+    <Content Include="controls\cmcPersonilisedDashboard2.ascx" />
     <Content Include="controls\ctrlCMCDesktopGraph2.ascx" />
     <Content Include="controls\ctrlDesktopCMCGraph.ascx" />
     <Content Include="controls\ctrlCMCGraph2.ascx" />
@@ -903,6 +926,7 @@
     <Content Include="ifpsmtna\my-results-bar-graph.aspx" />
     <Content Include="ifpsmtna\MyProfile.aspx" />
     <Content Include="ifpsmtna\MyResults.aspx" />
+    <Content Include="ifpsmtna\personalised-dashboard.aspx" />
     <Content Include="ifpsmtna\pk-evaluation-instructions.aspx" />
     <Content Include="ifpsmtna\procurement-benchmark-assessment-test.aspx" />
     <Content Include="ifpsmtna\ResultDenied.aspx" />

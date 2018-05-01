@@ -75,22 +75,22 @@
 							<p>&nbsp;</p>
 							<p class="txt16-bold">You are about to complete an evaluation of your knowledge.</p>
 							<p>&nbsp;</p>
-                            <p>This evaluation focuses on the skills required to perform in procurement and is future-looking in its design. This is the purpose of the benchmark, to prepare ourselves for 2025. So, don't be alarmed if you see themes emerging that are new.</p>
+                            <p>This evaluation focuses on the skills required to perform in procurement and is future-looking in its design. This is the purpose of the benchmark, to prepare ourselves for 2025. So, don't be alarmed if you see themes emerging that are new!</p>
                             <p>&nbsp;</p>
 							<p class="txt30">01</p>
-							<p>The assessment focuses on seven capability pillar.</p>
+							<p>The assessment focuses on seven the capability pillars.</p>
 							<p>&nbsp;</p>
 							<p class="txt16-bold">The 7 capability pillars are:</p>
 							<div class="step1">
-								<p>1. Relationships & Value</p>
-								<p>2. Data, Analysis & Insights</p>
-								<p>3. Category Management & Innovation</p>
-								<p>4. Business Partnership & Brand</p>
+								<p>1. Analysis & Decisions</p>
+								<p>2. Strategic Alignment</p>
+								<p>3. Category Management</p>
+								<p>4. Sustainable Supply</p>
 							</div>
 							<div class="step2">
-								<p>5. Performance & Results</p>
-								<p>6. Operate & Negotiate</p>
-								<p>7. Sustainability & Ethics</p>
+								<p>5. Relationships & Value</p>
+								<p>6. Performance</p>
+								<p>7. Business Partnership</p>
 							</div>
                            <div class="clear"></div>
 							<hr class="divider-line" />

@@ -1,5 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrlCMCDesktopGraph2.ascx.cs" Inherits="SGA.controls.ctrlCMCDesktopGraph2" %>
-<script src="../js/Chart.min.js"></script>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="cmcPersonilisedDashboard2.ascx.cs" Inherits="SGA.controls.cmcPersonilisedDashboard2" %>
 <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['geochart']}]}"></script>
 <div class="dis-block clearfix white-bg pad15 full-height padtop3">
 
@@ -9,9 +8,9 @@
         <div class="tabs">
             <div class="tab-links">
                 <ul>
-                    <li id="first" class="active"><a href="#tab1">BY REGION</a></li>
-                    <li id="second"><a href="#tab2">BY NATION</a></li>
-                    <li id="third"><a href="#tab3">BY HEATMAP</a></li>
+                    <li id="fourth" class="active"><a href="#tab4">BY REGION</a></li>
+                    <li id="fifth"><a href="#tab5">BY NATION</a></li>
+                    <li id="sixth"><a href="#tab6">BY HEATMAP</a></li>
                 </ul>
             </div>
 
@@ -19,7 +18,7 @@
 
             <div class=" dis-block clearfix tab-content">
 
-                <div id="tab1" class="tab active">
+                <div id="tab4" class="tab active">
                     <div class="question-heading">
                         <span>In the graph below you can see a benchmark of your result against users in the same region
                         </span>
@@ -27,11 +26,11 @@
                     </div>
 
                     <div class="dis-block clearfix graph">
-                        <canvas id="container"></canvas>
+                        <canvas id="container3"></canvas>
                     </div>
                 </div>
 
-                <div id="tab2" class="tab">
+                <div id="tab5" class="tab">
                     <div class="question-heading">
                        <span>In the graph below you can see a benchmark of your result against users in the same country
                         </span>
@@ -39,11 +38,11 @@
                     </div>
 
                     <div class="dis-block clearfix marT3 graph">
-                        <canvas id="container1"></canvas>
+                        <canvas id="container4"></canvas>
                     </div>
                 </div>
 
-                <div id="tab3" class="tab">
+                <div id="tab6" class="tab">
                     <div class="question-heading">
                        <span>In the graph below you can see a benchmark of your result.
                         </span>
@@ -51,7 +50,7 @@
                     </div>
 
                     <div class="dis-block clearfix marT3 graph">
-                       <div id="container2"></div>
+                       <div id="container5"></div>
                     </div>
                 </div>
 
@@ -62,17 +61,10 @@
 
 </div>
 
-<div>
-     <div class="fleft">
-        <asp:Button ID="leftbt" ClientIDMode="Static" attr-val="#tab1" runat="server" Text="Back" CssClass="btn-next" />
-    </div>
-    <div class="fright">
-        <asp:Button ClientIDMode="Static" ID="rightbt" attr-val="#tab1" runat="server" Text="Next" CssClass="btn-next" /></div>
-</div>
 
 <script type="text/javascript">
     jQuery(document).ready(function () {
-        var barChartData1 = {
+        var barChartData4 = {
             <%-- labels: ['<%= topic1name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic2name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic3name %>'.replace('<span>', '').replace('</span>', ''),
@@ -101,7 +93,7 @@
 
         };
 
-        var barChartData2 = {
+        var barChartData5 = {
             <%--  labels: ['<%= topic1name %>'.replace('<span>', '').replace('</span>', ''),
                              '<%= topic2name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic3name %>'.replace('<span>', '').replace('</span>', ''),
@@ -130,10 +122,10 @@
 
          };
 
-        var ctx1 = document.getElementById('container').getContext('2d');
-        window.myBar = new Chart(ctx1, {
+        var ctx4 = document.getElementById('container3').getContext('2d');
+        window.myBar = new Chart(ctx4, {
             type: 'bar',
-            data: barChartData1,
+            data: barChartData4,
             options: {
                 responsive: true,
                 legend: {
@@ -161,10 +153,10 @@
             }
         });
 
-        var ctx2 = document.getElementById('container1').getContext('2d');
-        window.myBar = new Chart(ctx2, {
+        var ctx5 = document.getElementById('container4').getContext('2d');
+        window.myBar = new Chart(ctx5, {
             type: 'bar',
-            data: barChartData2,
+            data: barChartData5,
             options: {
                 responsive: true,
                 legend: {
@@ -241,7 +233,7 @@
             //};
 
 
-            var chart = new google.visualization.GeoChart(document.getElementById('container2'));
+            var chart = new google.visualization.GeoChart(document.getElementById('container5'));
 
             chart.draw(data, options);
         }
@@ -249,89 +241,21 @@
 
 
         jQuery('.tabs .tab-links a').on('click', function (e) {
-            var currentAttrValue = jQuery(this).attr('href');
-            jQuery('#rightbt').attr('attr-val', currentAttrValue);
-            jQuery('#leftbt').attr('attr-val', currentAttrValue);
+            var currentAttrValue = jQuery(this).attr('href');          
             // Show/Hide Tabs
             jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
 
             // Change/remove current tab to active
             jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
 
-            if (currentAttrValue === '#tab3') {
+            if (currentAttrValue === '#tab6') {
                 drawRegionsMap();
 
             }
 
         });
-        //next btn click
-        jQuery('#rightbt').on('click', function (e) {
-            var currentAttrValue = jQuery(this).attr('attr-val');
-
-            // Change/remove current tab to active
-            jQuery('.tabs .tab-links a').parent('li').siblings().removeClass('active');
-
-            if (currentAttrValue == '#tab1') {
-                jQuery(this).attr('attr-val', '#tab2');
-                jQuery('#leftbt').attr('attr-val', '#tab2');
-                jQuery('.tabs ' + '#tab2').show().siblings().hide();
-                jQuery('#second').addClass('active')
-            }
-            if (currentAttrValue == '#tab2') {
-                jQuery(this).attr('attr-val', '#tab3');
-                jQuery('#leftbt').attr('href', '#tab3');
-                jQuery('.tabs ' + '#tab3').show().siblings().hide();
-                jQuery('#third').addClass('active')
-            }
-            if (currentAttrValue == '#tab3') {
-                if (window.location.href.indexOf("ifpsmtna") > -1) {
-                    window.location.href = "default.aspx"
-                } else {
-                    window.location.href = "association.aspx"
-                }
-                e.preventDefault();
-            }
-
-            // Show/Hide Tabs
-            if (currentAttrValue === '#tab2') {
-                drawRegionsMap();
-            }
-
-
-            // Show/Hide Tabs
-            e.preventDefault();
-        
-        });
-
-        //next btn click
-        jQuery('#leftbt').on('click', function (e) {
-            var currentAttrValue = jQuery(this).attr('attr-val');
-
-            // Change/remove current tab to active
-            jQuery('.tabs .tab-links a').parent('li').siblings().removeClass('active');
-
-            if (currentAttrValue == '#tab1') {
-                window.location.href = "my-results-bar-graph.aspx"
-                e.preventDefault();
-            }
-            if (currentAttrValue == '#tab2') {
-                jQuery(this).attr('attr-val', '#tab1');
-                jQuery('#rightbt').attr('attr-val', '#tab1');
-                jQuery('.tabs ' + '#tab1').show().siblings().hide();
-                jQuery('#first').addClass('active')
-            }
-            if (currentAttrValue == '#tab3') {
-                jQuery(this).attr('attr-val', '#tab2');
-                jQuery('#rightbt').attr('attr-val', '#tab2');
-                jQuery('.tabs ' + '#tab2').show().siblings().hide();
-                jQuery('#second').addClass('active')
-            }
-
-            // Show/Hide Tabs
-            e.preventDefault();
-         
-        });
-
+      
+      
 
     });
 

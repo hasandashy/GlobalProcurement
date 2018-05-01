@@ -148,7 +148,9 @@ namespace SGA.ifpsmtna
             if (e.CommandName == "bar")
             {
                 this.Session["sgaTestId"] = e.CommandArgument;
-                base.Response.Redirect("my-results-bar-graph.aspx", false);
+                //base.Response.Redirect("my-results-bar-graph.aspx", false);
+                base.Response.Redirect("personalised-dashboard.aspx", false);
+               
             }
         }
 

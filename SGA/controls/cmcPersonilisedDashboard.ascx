@@ -1,4 +1,5 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ctrlDesktopCMCGraph.ascx.cs" Inherits="SGA.controls.ctrlCMCDesktopCMCGraph" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="cmcPersonilisedDashboard.ascx.cs" Inherits="SGA.controls.cmcPersonilisedDashboard" %>
+
 
 <div class="dis-block clearfix white-bg pad15 full-height padtop3">
     <style>
@@ -65,14 +66,6 @@
 
 </div>
 
-<div>
-    <div class="fleft">
-        <asp:Button ID="leftbt" ClientIDMode="Static" attr-val="#tab1" runat="server" Text="Back" CssClass="btn-next" />
-    </div>
-    <div class="fright">
-        <asp:Button ClientIDMode="Static" ID="rightbt" attr-val="#tab1" runat="server" Text="Next" CssClass="btn-next" /></div>
-
-</div>
 
 <script type="text/javascript">
     jQuery(document).ready(function () {
@@ -254,95 +247,21 @@
 
 
         jQuery('.tabs .tab-links a').on('click', function (e) {
-            var currentAttrValue = jQuery(this).attr('href');
-            jQuery('#rightbt').attr('attr-val', currentAttrValue);
-            jQuery('#leftbt').attr('attr-val', currentAttrValue);
+            var currentAttrValue = jQuery(this).attr('href');         
             // Show/Hide Tabs
             jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
 
             // Change/remove current tab to active
             jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
-
-
-            if (currentAttrValue === '#tab1') {
-                $('#leftbt').hide();
-            }
-
-            if (currentAttrValue === '#tab2') {
-                $('#leftbt').show();
-
-            }
-
-            if (currentAttrValue === '#tab3') {
-                $('#leftbt').show();
-
-            }
             e.preventDefault();
 
 
         });
-        //next btn click
-        jQuery('#rightbt').on('click', function (e) {
-            var currentAttrValue = jQuery(this).attr('attr-val');
-            // Change/remove current tab to active
-            jQuery('.tabs .tab-links a').parent('li').siblings().removeClass('active');
-
-            if (currentAttrValue == '#tab1') {
-                $('#leftbt').show();
-                jQuery(this).attr('attr-val', '#tab2');
-                jQuery('#leftbt').attr('attr-val', '#tab2');
-                jQuery('.tabs ' + '#tab2').show().siblings().hide();
-                jQuery('#second').addClass('active')
-            }
-            if (currentAttrValue == '#tab2') {
-                $('#leftbt').show();
-                jQuery(this).attr('attr-val', '#tab3');
-                jQuery('#leftbt').attr('attr-val', '#tab3');
-                jQuery('.tabs ' + '#tab3').show().siblings().hide();
-                jQuery('#third').addClass('active')
-
-            }
-            if (currentAttrValue == '#tab3') {
-                window.location.href = "my-results-bar-graph-gap.aspx"
-                //e.preventDefault();
-            }
-
-            // Show/Hide Tabs
-            e.preventDefault();
-
-
-        });
-
-
-        //back btn click
-        jQuery('#leftbt').on('click', function (e) {
-            var currentAttrValue = jQuery(this).attr('attr-val');
-
-            // Change/remove current tab to active
-            jQuery('.tabs .tab-links a').parent('li').siblings().removeClass('active');
-
-            if (currentAttrValue == '#tab1') {
-                $('#leftbt').hide();
-            }
-            if (currentAttrValue == '#tab2') {
-                $('#leftbt').hide();
-                jQuery(this).attr('attr-val', '#tab1');
-                jQuery('#rightbt').attr('attr-val', '#tab1');
-                jQuery('.tabs ' + '#tab1').show().siblings().hide();
-                jQuery('#first').addClass('active')
-            }
-            if (currentAttrValue == '#tab3') {
-                $('#leftbt').show();
-                jQuery(this).attr('attr-val', '#tab2');
-                jQuery('#rightbt').attr('attr-val', '#tab2');
-                jQuery('.tabs ' + '#tab2').show().siblings().hide();
-                jQuery('#second').addClass('active')
-            }
-            e.preventDefault();
-        });
+      
     });
 
 
 
 
 </script>
+

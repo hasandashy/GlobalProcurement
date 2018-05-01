@@ -83,9 +83,9 @@
                             '<%= topic5name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic6name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic7name %>'.replace('<span>', '').replace('</span>', '') ],--%>
-            labels: ['xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx'],
+            labels: ['anlyse', 'align', 'catman', 'sustin', 'relate', 'perfrm', 'partnr'],
             datasets: [{
-                label: 'Your marks',
+                label: 'Your results',
                 backgroundColor: '#FF8C00',
                 borderColor: '#FF8C00',
                 borderWidth: 1,
@@ -97,9 +97,9 @@
         };
 
         var barChartData2 = {
-            labels: ['xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx'],
+            labels: ['anlyse', 'align', 'catman', 'sustin', 'relate', 'perfrm', 'partnr'],
             datasets: [{
-                label: 'Your marks',
+                label: 'Your results',
                 borderWidth: 1,
                 backgroundColor: '#FF8C00',
                 borderColor: '#FF8C00',
@@ -107,7 +107,7 @@
 					<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>
                 ]
             }, {
-                label: 'Avg marks',
+                label: 'Avg results',
                 backgroundColor: '#4682B4',
                 borderColor: '#4682B4',
                 borderWidth: 1,
@@ -119,9 +119,9 @@
         };
 
          var barChartData3 = {
-              labels: ['xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx', 'xxxxxx'],
+             labels: ['anlyse', 'align', 'catman', 'sustin', 'relate', 'perfrm', 'partnr'],
             datasets: [{
-                label: 'Your marks',
+                label: 'Your results',
                 borderWidth: 1,
                 backgroundColor: '#FF8C00',
                 borderColor: '#FF8C00',
@@ -129,7 +129,7 @@
 					<%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>
                 ]
             }, {
-                label: 'Avg marks',
+                label: 'Avg results',
                 borderWidth: 1,
                 backgroundColor: '#4682B4',
                 borderColor: '#4682B4',
