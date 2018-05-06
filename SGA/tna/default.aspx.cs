@@ -66,9 +66,25 @@ namespace SGA.tna
             string assessments = PKE + (PKE != string.Empty ? ", " : "") + PTSA + (PTSA != string.Empty ? ", " : "") + PBSA + (PBSA != string.Empty ? ", " : "") + CMKA + (CMKA != string.Empty ? ", " : "") + CMSA + (CMSA != string.Empty ? ", " : "") + LSA + (LSA != string.Empty ? ", " : "") + NP + (NP != string.Empty ? ", " : "") + DMP + (DMP != string.Empty ? ", " : "") + SCKE + (SCKE != string.Empty ? ", " : "") + SCSA + (SCSA != string.Empty ? ", " : "");
             string subject = "";
             string body = "";
-            SGACommon.GetEmailTemplate(15, ref subject, ref body);
-            body = body.Replace("@v0", SGACommon.LoginUserInfo.name).Replace("@v1", assessments);
-            MailSending.SendMail(ConfigurationManager.AppSettings["nameDisplay"].ToString(), ConfigurationManager.AppSettings["UserName"].ToString(), "sales@comprara.com.au", subject, body, "");
+
+            SqlParameter[] param = new SqlParameter[]
+           {
+                new SqlParameter("@userId", SqlDbType.Int)
+           };
+            param[0].Value = SGACommon.LoginUserInfo.userId;
+            DataSet ds = SqlHelper.ExecuteDataset(CommandType.StoredProcedure, "spGetByUserId", param);
+            if (ds != null)
+            {
+                if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    string firstName = ds.Tables[0].Rows[0]["firstname"].ToString();
+                    string lastName = ds.Tables[0].Rows[0]["lastname"].ToString();
+                    string email = ds.Tables[0].Rows[0]["email"].ToString();
+                    SGACommon.GetEmailTemplate(15, ref subject, ref body);
+                    body = body.Replace("@v0", email).Replace("@v1", assessments).Replace("@v3", email).Replace("@v5", firstName).Replace("@v6", lastName);
+                    MailSending.SendMail(ConfigurationManager.AppSettings["nameDisplay"].ToString(), ConfigurationManager.AppSettings["UserName"].ToString(), "sales@comprara.com.au", subject, body, "");
+                }
+            }
 
         }
     }

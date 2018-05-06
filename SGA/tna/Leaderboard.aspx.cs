@@ -50,7 +50,7 @@ namespace SGA.tna
 
         public void BindUsers()
         {
-            DataSet dsUsers = SqlHelper.ExecuteDataset(CommandType.Text, "select countryRegion,count(1) as nouser from UserInfo where countryRegion is not null group by countryRegion order by nouser desc");
+            DataSet dsUsers = SqlHelper.ExecuteDataset(CommandType.StoredProcedure, "GetUserByRegion");
             if (dsUsers != null)
             {
                 if (dsUsers.Tables.Count > 0 && dsUsers.Tables[0].Rows.Count > 0)

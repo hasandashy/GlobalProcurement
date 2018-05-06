@@ -687,7 +687,7 @@ namespace SGA.webadmin
                         XmlRpcStruct Contact = new XmlRpcStruct();
 
                         Contact.Add("ContactType", "Customer");
-                        Contact.Add("_SGApassword", plainPassword);
+                        Contact.Add("_IFPSMGPBPassword", plainPassword);
                         Contact.Add("_IFPSMPageJobRole", ifpsmJobRole);
                         isdnAPI.dsUpdate("Contact", userId, Contact);
                     }
@@ -699,7 +699,7 @@ namespace SGA.webadmin
                         Contact.Add("_IFPSMPageJobRole", ifpsmJobRole);
                         isdnAPI.dsUpdate("Contact", userId, Contact);
                     }
-                    isdnAPI.addToGroup(userId, 3448);
+                    isdnAPI.addToGroup(userId, 4057);
                     isdnAPI.optIn(emailAddress, "Make them marketable");
                 }
             }

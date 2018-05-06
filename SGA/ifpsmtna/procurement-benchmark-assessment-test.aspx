@@ -8,6 +8,7 @@
 		<script type="text/javascript" src="../js/jquery.min.js"></script>
 		<script type="text/javascript" src="../Scripts/jquery.colorbox.js"></script>
 		<script type="text/javascript" src="../js/custom.js"></script>
+  
         <script type="text/javascript" language="javascript">
             var alertHtml = '';
             var lastpage='n';
@@ -266,7 +267,7 @@
 					</article>
 					<section class="color-box">
 						<article class="test-info-box">
-							<p class="title">Section <%=PageNumber +1 %>: <span class="orange">
+							<p class="title">Pillar <%=PageNumber +1 %>: <span class="orange">
                             <asp:Label ID="lblTopic" runat="server"></asp:Label>
                             </span></p>
 							<p>&nbsp;</p>

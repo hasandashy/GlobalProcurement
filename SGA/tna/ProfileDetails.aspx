@@ -3,8 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="dis-block clearfix  marT1 top-space">
         <div class="main-heading dis-block clearfix pad15 font18 head-graybg padbottom-none padtop4 marTnone">
-            <div class="menu-icon"><a href="MainMenu.aspx">
-                <img src="../images/menu-icon.png" alt=""></a></div>
+            <div class="menu-icon">
+                <a href="MainMenu.aspx">
+                    <img src="../images/menu-icon.png" alt=""></a>
+            </div>
             <h1>Member Information<span> </span></h1>
         </div>
         <asp:MultiView ID="multiView" runat="server">
@@ -219,14 +221,34 @@
                         <div class="dis-block clearfix member-info ">
                             <span class="title">Procurement qualifications</span>
                             <ul>
-                                <li><a href="#" onclick="SaveData(1)">Undergraduate degree in procurement/supply chain</a></li>
+                                <%-- <li><a href="#" onclick="SaveData(1)">Undergraduate degree in procurement/supply chain</a></li>
                                 <li><a href="#" onclick="SaveData(2)">Postgraduate degree in procurement/supply chain</a></li>
                                 <li><a href="#" onclick="SaveData(3)">CIPS: Member (MIPS)</a></li>
                                 <li><a href="#" onclick="SaveData(4)">CIPS: Fellow (FCIPS)</a></li>
                                 <li><a href="#" onclick="SaveData(5)">AAPCM: Member</a></li>
                                 <li><a href="#" onclick="SaveData(6)">AAPCM: Fellow</a></li>
                                 <li><a href="#" onclick="SaveData(7)">Other</a></li>
-                                <li><a href="#" onclick="SaveData(8)">Not applicable</a></li>
+                                <li><a href="#" onclick="SaveData(8)">Not applicable</a></li>--%>
+                                <li><a href="#" onclick="SaveData(1)">Certificate Procurement and Contracting</a></li>
+                                <li><a href="#" onclick="SaveData(2)">Certificate Purchasing</a></li>
+                                <li><a href="#" onclick="SaveData(3)">Certified Professional in Supply Management (CPSM)</a></li>
+                                <li><a href="#" onclick="SaveData(4)">Certificate in Production and Inventory Management (CPIM)</a></li>
+                                <li><a href="#" onclick="SaveData(5)">Diploma of Procurement and Contracting</a></li>
+                                <li><a href="#" onclick="SaveData(6)">Diploma of Purchasing</a></li>
+                                <li><a href="#" onclick="SaveData(7)">Diploma of Contract Management</a></li>
+                                <li><a href="#" onclick="SaveData(8)">Advanced Diploma of Procurement and Contracting</a></li>
+                                <li><a href="#" onclick="SaveData(9)">Graduate Certificate in Logistics and Supply Chain Management</a></li>
+                                <li><a href="#" onclick="SaveData(10)">Undergraduate degree procurement / supply chain</a></li>
+                                <li><a href="#" onclick="SaveData(11)">Postgraduate degree procurement/ supply chain</a></li>
+                                <li><a href="#" onclick="SaveData(12)">Certified Supply Chain Professional (CSCP)</a></li>
+                                <li><a href="#" onclick="SaveData(13)">Certified International Procurement Professional (CIPP)</a></li>
+                                <li><a href="#" onclick="SaveData(14)">Certified International Advanced Procurement Professional (CIAPP)</a></li>
+                                <li><a href="#" onclick="SaveData(15)">Member Chartered Institute Procurement Supply (MCIPS)</a></li>
+                                <li><a href="#" onclick="SaveData(16)">Fellow Chartered Institute Procurement Supply (FCIPS)</a></li>
+                                <li><a href="#" onclick="SaveData(17)">AAPCM Member</a></li>
+                                <li><a href="#" onclick="SaveData(18)">AAPCM Fellow</a></li>
+                                <li><a href="#" onclick="SaveData(19)">Other</a></li>
+                                <li><a href="#" onclick="SaveData(20)">Not applicable</a></li>
                             </ul>
                         </div>
                     </div>
@@ -298,19 +320,19 @@
                                   contentType: "application/json; charset=utf-8",
                                   success: function (data) {
                                       if ('<%=this.source%>' === 'menu') {
-                                         window.location.href = "/tna/myprofile.aspx?source=menu";
-                                     }
-                                     else {
+                                          window.location.href = "/tna/myprofile.aspx?source=menu";
+                                      }
+                                      else {
                                           window.location.href = "/tna/myprofile.aspx"
-                                     }
-                                 },
-                                 error: (error) => {
-                                     alert('Error while saving data');
-                                     event.preventDefault();
-                                     return false;
-                                 }
-                             });
+                                      }
+                                  },
+                                  error: (error) => {
+                                      alert('Error while saving data');
+                                      event.preventDefault();
+                                      return false;
+                                  }
+                              });
 
-                             }
+                              }
     </script>
 </asp:Content>

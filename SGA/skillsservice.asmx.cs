@@ -60,7 +60,7 @@ namespace SGA
 
                     isdnAPI.dsUpdate("Contact", System.Convert.ToInt32(resultFound[0]["Id"].ToString()), Contact);
                     isdnAPI.optIn(emailAddress, "Make them marketable");
-                    isdnAPI.addToGroup(System.Convert.ToInt32(resultFound[0]["Id"].ToString()), 3472);
+                    isdnAPI.addToGroup(System.Convert.ToInt32(resultFound[0]["Id"].ToString()), 4057);
                     //retVal = System.Convert.ToInt32(resultFound[0]["Id"].ToString());
 
                 }
@@ -119,7 +119,7 @@ namespace SGA
                             });
                     if (userId > 0)
                     {
-                        isdnAPI.addToGroup(userId, 3472);
+                        isdnAPI.addToGroup(userId, 4057);
                         isdnAPI.optIn(emailAddress, "Make them marketable");
                     }
                 }
@@ -185,12 +185,12 @@ namespace SGA
                         content = content.Replace("@fullname", firstName + " " + lastName).Replace("@email", emailAddress);
                         MailSending.SendMail(ConfigurationManager.AppSettings["nameDisplay"].ToString(), emailAddress, ConfigurationManager.AppSettings["UserName"].ToString(), subject, content, "");
 
-                        subject = "";
-                        string body = "";
+                        //subject = "";
+                        //string body = "";
 
-                        SGACommon.GetEmailTemplate(10, ref subject, ref body);
-                        body = body.Replace("@v0", firstName).Replace("@v1", lastName).Replace("@v2", "").Replace("@v3", emailAddress).Replace("@v5", plainpassword);
-                        MailSending.SendMail(ConfigurationManager.AppSettings["nameDisplay"].ToString(), ConfigurationManager.AppSettings["UserName"].ToString(), emailAddress, subject, body, "");
+                        //SGACommon.GetEmailTemplate(10, ref subject, ref body);
+                        //body = body.Replace("@v0", firstName).Replace("@v1", lastName).Replace("@v2", "").Replace("@v3", emailAddress).Replace("@v5", plainpassword);
+                        //MailSending.SendMail(ConfigurationManager.AppSettings["nameDisplay"].ToString(), ConfigurationManager.AppSettings["UserName"].ToString(), emailAddress, subject, body, "");
 
 
                     }
@@ -233,8 +233,9 @@ namespace SGA
                 Contact.Add("_IFPSMComments", ifpsmComments);
                 Contact.Add("_Jobrolebestdescribedas", SGACommon.GetJobRole(Convert.ToInt32("1")));
                 Contact.Add("_IFPSMPageJobRole", ifpsmJobRole);
+                Contact.Add("_IFPSMGPBPassword", plainPassword);
                 isdnAPI.dsUpdate("Contact", System.Convert.ToInt32(resultFound[0]["Id"].ToString()), Contact);
-                isdnAPI.addToGroup(System.Convert.ToInt32(resultFound[0]["Id"].ToString()), 3448);
+                isdnAPI.addToGroup(System.Convert.ToInt32(resultFound[0]["Id"].ToString()), 4057);
                 isdnAPI.optIn(emailAddress, "Make them marketable");
             }
             else
@@ -297,7 +298,7 @@ namespace SGA
                         XmlRpcStruct Contact = new XmlRpcStruct();
 
                         Contact.Add("ContactType", "Customer");
-                        Contact.Add("_SGApassword", plainPassword);
+                        Contact.Add("_IFPSMGPBPassword", plainPassword);
                         Contact.Add("_IFPSMPageJobRole", ifpsmJobRole);
                         isdnAPI.dsUpdate("Contact", userId, Contact);
                     }
@@ -309,7 +310,7 @@ namespace SGA
                         Contact.Add("_IFPSMPageJobRole", ifpsmJobRole);
                         isdnAPI.dsUpdate("Contact", userId, Contact);
                     }
-                    isdnAPI.addToGroup(userId, 3448);
+                    isdnAPI.addToGroup(userId, 4057);
                     isdnAPI.optIn(emailAddress, "Make them marketable");
                 }
             }
@@ -488,7 +489,7 @@ namespace SGA
         [WebMethod]
         public void Login(string username, string password, string callback)
         {
-            string success = "s";
+            string success = "n";
             SqlParameter[] sql = new SqlParameter[]
            {
                 new SqlParameter("@email", username)

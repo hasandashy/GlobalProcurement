@@ -1,7 +1,16 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="SGA.Registration" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+     <style>
+    
+        input[type=checkbox] {
+            /* Double-sized Checkboxes */
+            -ms-transform: scale(1.2); /* IE */
+            -moz-transform: scale(1.2); /* FF */
+            -webkit-transform: scale(1.2); /* Safari and Chrome */
+            -o-transform: scale(1.2); /* Opera */
+        }
+    </style>
     <div class="clearfix"></div>
 
     <span class="dotline top1 bdrt1"></span>
@@ -50,6 +59,7 @@
                             <div class="form-group">
 
                                 <select id="jobRole" name="jobRole" class="form-control">
+                                    <option selected value="0">— Role best described as —</option>
                                     <option value="1">Analyst</option>
                                     <option value="2">Procurement Support</option>
                                     <option value="3">Strategic Sourcing</option>
@@ -387,8 +397,12 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <input type="checkbox" id="chkTerms"/>
-                                <span>By ticking this box, I agree to the <a href="Terms.aspx" target="_blank">terms and conditions</a> of this website and acknowledge how this service will protect my personal information while aggregating and analysing the data received. Your details will be handled with care and in accordance with GDPR.</span>
+                                <p style="font-weight:bold;">By ticking this box</p>
+                                <br />
+                                <input type="checkbox" id="chkConsent"/>
+                                <span>I consent to this service collecting my assessment data for aggregate benchmarking purposes and I agree to receiving emails in relation to this service. </span>
+                                <br /> <input type="checkbox" id="chkTerms"/>
+                                <span>I have read and agree to the <a href="Terms.aspx" target="_blank">terms of service</a> and <a href="Privacy.aspx" target="_blank">privacy policy</a>. </span>                                
                             </div>
                             <div class="form-group register-btn">
                                 <input type="submit" id="frm_basic_info" class="btn custom-btn" value="Go" />
@@ -404,4 +418,5 @@
 
 
         </div>
+         
 </asp:Content>

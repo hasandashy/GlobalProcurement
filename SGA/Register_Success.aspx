@@ -13,11 +13,20 @@
 <div class="home-banner">
 <div id="owl-demo2" class="owl-carousel owl-theme">
 
- <div class="item">
+<div class="item">
  
- <img src="images/thanksbanner.png" alt="">
+ <img src="images/img-banner-03.jpg" alt="">
  
  
+ <div class="slider-text2 slider-text3">
+ <p>Thank You</p>
+ <span>for <i>registering.</i></span>
+ 
+  <em><h6>Please check your email inbox <br />for your registration details.<br />If you cannot see the email in your inbox<br /> please check your junk mail too <br /> and save us to your ‘safe senders’ list!</h6></em>
+ 
+ 
+ 
+ </div>
  
  </div>
  

@@ -1,10 +1,44 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/tnaMaster.Master" AutoEventWireup="true" CodeBehind="procurement-benchmark-assessment-test.aspx.cs" Inherits="SGA.tna.procurement_benchmark_assessment_test" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style type="text/css">
         .itemselected {
             background: #f9a03d;
         }
+
+         .spmodal
+    {
+        position: fixed;
+        z-index: 999;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: Black;
+        filter: alpha(opacity=60);
+        opacity: 0.6;
+        -moz-opacity: 0.8;
+    }
+    .center
+    {
+        z-index: 1000;
+        margin: 300px auto;
+        padding: 10px;
+        width: 130px;
+        background-color: black;
+        border-radius: 10px;
+        filter: alpha(opacity=100);
+        opacity: 1;
+        -moz-opacity: 1;
+    }
+    .center img
+    {
+        height: 128px;
+        width: 128px;
+    }
     </style>
     <div class="dis-block clearfix  marT1 top-space">
         <div class="main-heading dis-block clearfix pad15 font18 head-graybg padbottom-none padtop1 marTnone">
@@ -73,9 +107,34 @@
 
         </div>--%>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <%-- <h4 class="modal-title"></h4>--%>
+                </div>
+                <div class="modal-body" style="text-align:center">
+                    <p>please select some value.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="spmodal" style="display:none;">
+    <div class="center">
+        <img alt="" src="../images/sploader.gif" />
+    </div>
+</div>
     <script>
         $( document ).ready(function() {
-
             FillValues();
 
 
@@ -97,17 +156,28 @@
         });
 
         $("#lb2").click(function (event) {
-            SaveAssessment();           
-            if ($('#lblNumber').text() == '09') {
+            if ($('#optionlist #selected').length) {
+                $(".spmodal").show();
+                SaveAssessment();           
+                if ($('#lblNumber').text() == '09') {
+                    event.preventDefault();
+                    if(<%=this.pillarId%> == 7)
+                    {
+                        CompleteAssessment()
+                        $(".spmodal").hide();
+                        window.location.href = "/tna/SuccessMessage.aspx";
+                    }
+                    else{
+                        $(".spmodal").hide();
+                        window.location.href = "/tna/assessment-pillars.aspx";
+                    }
+                }
+            }
+        
+            else {
+                $("#myModal").modal({ backdrop: true });
                 event.preventDefault();
-                if(<%=this.pillarId%> == 7)
-                {
-                    CompleteAssessment()
-                    window.location.href = "/tna/SuccessMessage.aspx";
-                }
-                else{
-                    window.location.href = "/tna/assessment-pillars.aspx";
-                }
+                return false;
             }
         });
 
@@ -134,70 +204,65 @@
                                      alert('error');
                                  }
                              });
-        }
-
-        function SaveAssessment()
-        {    
-            if ($(this).attr("selected")) {
-                $.preloader.start({
-                    modal: true,
-                    src: 'sprites.png'
-                });
-              
-                var json =
-                             $.ajax({
-                                 type: "POST",
-                                 async: false,
-                                 url: "procurement-benchmark-assessment-test.aspx/SaveData",
-                                 data: JSON.stringify({ 'questionId': $('#ques').attr('attr-val'), 'optionId': $('#selected').attr('attr-val'), 'testId': <%=this.testId%> }),
-                                 dataType: "json",
-                                 contentType: "application/json; charset=utf-8",
-                                 success: function (data) {
-                                     //alert('success')
-                                     $.preloader.stop();
-                                 },
-                                 error: (error) => {
-                                     $.preloader.stop();
-                                     alert('Error while saving data');
-                                     event.preventDefault();
-                                     return false;
-                                 }
-                             });
                          }
-                         else {
-                             alert('please select some value');
-                             event.preventDefault();
-                             return false;
-                         }
-                     }
 
-                     function CompleteAssessment()
-                     {           
-                         $.preloader.start({
-                             modal: true,
-                             src: 'sprites.png'
-                         });
-                         var json =
-                                      $.ajax({
-                                          type: "POST",
-                                          async: false,
-                                          url: "procurement-benchmark-assessment-test.aspx/CompleteAssessment",
-                                          data: JSON.stringify({'testId': <%=this.testId%> }),
-                                 dataType: "json",
-                                 contentType: "application/json; charset=utf-8",
-                                 success: function (data) {
-                                     //alert('success')
-                                     $.preloader.stop();
-                                 },
-                                 error: (error) => {
-                                     $.preloader.stop();
-                                     alert('Error while saving data');
-                                     event.preventDefault();
-                                     return false;
-                                 }
-                             });
+                         function SaveAssessment()
+                         {    
            
+                             //$.preloader.start({
+                             //    modal: true,
+                             //    src: 'sprites.png'
+                             //});
+              
+                             var json =
+                                          $.ajax({
+                                              type: "POST",
+                                              async: false,
+                                              url: "procurement-benchmark-assessment-test.aspx/SaveData",
+                                              data: JSON.stringify({ 'questionId': $('#ques').attr('attr-val'), 'optionId': $('#selected').attr('attr-val'), 'testId': <%=this.testId%> }),
+                                 dataType: "json",
+                                 contentType: "application/json; charset=utf-8",
+                                 success: function (data) {
+                                     //alert('success')
+                                     //$.preloader.stop();
+                                 },
+                                 error: (error) => {
+                                     //$.preloader.stop();
+                                     alert('Error while saving data');
+                                     event.preventDefault();
+                                     return false;
+                                 }
+                             });
+                       
                          }
+
+                         function CompleteAssessment()
+                         {           
+                             //$.preloader.start({
+                             //    modal: true,
+                             //    src: 'sprites.png'
+                             //});
+                             var json =
+                                          $.ajax({
+                                              type: "POST",
+                                              async: false,
+                                              url: "procurement-benchmark-assessment-test.aspx/CompleteAssessment",
+                                              data: JSON.stringify({'testId': <%=this.testId%> }),
+                                          dataType: "json",
+                                          contentType: "application/json; charset=utf-8",
+                                          success: function (data) {
+                                              //alert('success')
+                                              //$.preloader.stop();
+                                          },
+                                          error: (error) => {
+                                              //$.preloader.stop();
+                                              alert('Error while saving data');
+                                              event.preventDefault();
+                                              return false;
+                                          }
+                                      });
+           
+                                  }
 
     </script>
 </asp:Content>

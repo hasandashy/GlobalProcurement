@@ -376,6 +376,13 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MembershipTest.aspx.cs">
+      <DependentUpon>MembershipTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MembershipTest.aspx.designer.cs">
+      <DependentUpon>MembershipTest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Popup.aspx.cs">
       <DependentUpon>Popup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1274,6 +1281,7 @@
     <Content Include="Images\republic-of-macedonia.png" />
     <Content Include="Images\republic-of-the-congo.png" />
     <Content Include="Images\result-icon.png" />
+    <Content Include="Images\resultbargraphs.png" />
     <Content Include="Images\rightarrow.jpg" />
     <Content Include="Images\romania.png" />
     <Content Include="Images\ronin-header-logo.gif" />
@@ -1310,6 +1318,7 @@
     <Content Include="Images\south-sudan.png" />
     <Content Include="Images\spa.png" />
     <Content Include="Images\Spain.png" />
+    <Content Include="Images\sploader.gif" />
     <Content Include="Images\srilanka.png" />
     <Content Include="Images\st-barts.png" />
     <Content Include="Images\st-lucia.png" />
@@ -1418,6 +1427,7 @@
     <Content Include="Fonts\OpenSans-Regular-webfont.ttf" />
     <Content Include="Fonts\OpenSans-Regular-webfont.woff" />
     <Content Include="login.aspx" />
+    <Content Include="MembershipTest.aspx" />
     <Content Include="Popup.aspx" />
     <Content Include="Register_Success.aspx" />
     <Content Include="Registration.aspx" />

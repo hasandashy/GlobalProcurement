@@ -95,10 +95,14 @@
                            <div class="clear"></div>
 							<hr class="divider-line" />
 							<p class="txt30">02</p>
-							<p>For each capability pillar, you will be asked nine multiple-choice questions.</p>
+							<p>This is an extensive assessment – <b>allow for 60 minutes to complete it</b>. For each capability pillar, you will be asked nine multiple-choice questions. </p>
+                            <p>&nbsp;</p>
+                            <p><u>Note:</u> You can <b>save</b> your responses for each capability by clicking “NEXT”. When you return, this page will be saved for you and you can continue from where you left off.</p>
 							<hr class="divider-line" />
 							<p class="txt30">03</p>
-							<p>On completion of the evaluation you will have access to your results as a visualisation of your results against the benchmark. You can use your results for your own records – as an evaluation of your knowledge, as it stands today against what may be required of you in the future. Please feel free to click through the various graphs to explore the benchmark data across the world.</p>
+							<p>On completion of the evaluation you will have access to a dashboard which visualises your results against others. You will be able to click through a series of graphs to see how you fair against others with the same role, in the same sector, by region, by nation, etc.</p>
+                            <p>&nbsp;</p>
+                            <p>You can use your results for your own records – as an evaluation of your knowledge, as it stands today against what may be required of you in the future. Please feel free to click through the various graphs to explore the benchmark data across the world.</p>
 							<p>&nbsp;</p>
 							<p>&nbsp;</p>
 							<div class="floatR">

@@ -219,76 +219,82 @@
                
                 if (jQuery("#chkTerms").is(":checked"))
                 {
-                    $('#lblErrorRegister').text(" ");
-                    jQuery("#infusion-form").validate({
-                        debug: true,
-                        rules: {
-                            inf_field_FirstName: "required",
-                            inf_field_LastName: "required",
-                            inf_field_Email: "required",
-                            jobRole: { valueNotEquals: "0" },
-                            country: { valueNotEquals: "0" },
-                            membershipAssociation: { valueNotEquals: "0" }
-                            /*,
-                            inf_field_Phone1: {
-                              equalTo: inf_field_Email
-                            }*/
-                        },
-                        messages: {
-                            inf_field_FirstName: "Please enter your firstname",
-                            inf_field_LastName: "Please enter your lastname",
-                            inf_field_Email: "Please enter your email",
-                            jobRole: "Please select Job Role best described as",
-                            country: "Please select country",
-                            membershipAssociation: "Please select membership Association"
-                            /*inf_field_Phone1: "Please enter your confirm email correct",*/
-                        },
-                        submitHandler: function (form) {
-                            $('#lblErrorRegister').text(" ");
-                            //e.preventDefault();
-                            $.preloader.start({
-                                modal: true,
-                                src: 'sprites.png'
-                            });
-                            jQuery.ajax({
-                                crossDomain: true,
-                                contentType: "application/json; charset=utf-8",
-                                url: 'skillsservice.asmx/RegisterUserFromGlobalProcurement',
-                                dataType: "jsonp",
-                                data: { 'firstName': $("#inf_field_FirstName").val(), 'lastName': $("#inf_field_LastName").val(), 'emailAddress': $("#inf_field_Email").val(), 'country': $("#country").val(), 'jobRole': $("#jobRole").val(), 'membershipAssociation': $("#membershipAssociation").val(), 'ifpsmComments': '', 'ifpsmJobRole': '0' },
-                                success: function (data) {
-                                    if (data == "d") {
+                    if (jQuery("#chkConsent").is(":checked")) {
+                        $('#lblErrorRegister').text(" ");
+                        jQuery("#infusion-form").validate({
+                            debug: true,
+                            rules: {
+                                inf_field_FirstName: "required",
+                                inf_field_LastName: "required",
+                                inf_field_Email: "required",
+                                jobRole: { valueNotEquals: "0" },
+                                country: { valueNotEquals: "0" },
+                                membershipAssociation: { valueNotEquals: "0" }
+                                /*,
+                                inf_field_Phone1: {
+                                  equalTo: inf_field_Email
+                                }*/
+                            },
+                            messages: {
+                                inf_field_FirstName: "Please enter your firstname",
+                                inf_field_LastName: "Please enter your lastname",
+                                inf_field_Email: "Please enter your email",
+                                jobRole: "Please select Job Role best described as",
+                                country: "Please select country",
+                                membershipAssociation: "Please select membership Association"
+                                /*inf_field_Phone1: "Please enter your confirm email correct",*/
+                            },
+                            submitHandler: function (form) {
+                                $('#lblErrorRegister').text(" ");
+                                //e.preventDefault();
+                                $.preloader.start({
+                                    modal: true,
+                                    src: 'sprites.png'
+                                });
+                                jQuery.ajax({
+                                    crossDomain: true,
+                                    contentType: "application/json; charset=utf-8",
+                                    url: 'skillsservice.asmx/RegisterUserFromGlobalProcurement',
+                                    dataType: "jsonp",
+                                    data: { 'firstName': $("#inf_field_FirstName").val(), 'lastName': $("#inf_field_LastName").val(), 'emailAddress': $("#inf_field_Email").val(), 'country': $("#country").val(), 'jobRole': $("#jobRole").val(), 'membershipAssociation': $("#membershipAssociation").val(), 'ifpsmComments': '', 'ifpsmJobRole': '0' },
+                                    success: function (data) {
+                                        if (data == "d") {
+                                            $.preloader.stop();
+                                            e.preventDefault();
+                                            window.location.href = 'Register_Success.aspx';
+                                        }
+                                    },
+
+                                    error: function (jqXHR, exception) {
                                         $.preloader.stop();
-                                        e.preventDefault();
-                                        window.location.href = 'Register_Success.aspx';
+                                        var msg = '';
+                                        if (jqXHR.status === 0) {
+                                            msg = 'Not connect.\n Verify Network.';
+                                        } else if (jqXHR.status == 404) {
+                                            msg = 'Requested page not found. [404]';
+                                        } else if (jqXHR.status == 500) {
+                                            msg = 'Internal Server Error [500].';
+                                        } else if (exception === 'parsererror') {
+                                            msg = 'Requested JSON parse failed.';
+                                        } else if (exception === 'timeout') {
+                                            msg = 'Time out error.';
+                                        } else if (exception === 'abort') {
+                                            msg = 'Ajax request aborted.';
+                                        } else {
+                                            msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                                        }
+                                        alert(msg);
                                     }
-                                },
+                                });
+                            }
 
-                                error: function (jqXHR, exception) {
-                                    $.preloader.stop();
-                                    var msg = '';
-                                    if (jqXHR.status === 0) {
-                                        msg = 'Not connect.\n Verify Network.';
-                                    } else if (jqXHR.status == 404) {
-                                        msg = 'Requested page not found. [404]';
-                                    } else if (jqXHR.status == 500) {
-                                        msg = 'Internal Server Error [500].';
-                                    } else if (exception === 'parsererror') {
-                                        msg = 'Requested JSON parse failed.';
-                                    } else if (exception === 'timeout') {
-                                        msg = 'Time out error.';
-                                    } else if (exception === 'abort') {
-                                        msg = 'Ajax request aborted.';
-                                    } else {
-                                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
-                                    }
-                                    alert(msg);
-                                }
-                            });
-                        }
-                   
 
-                    });
+                        });
+                    }
+                    else {
+                        $.preloader.stop();
+                        $('#lblErrorRegister').text("Please accept consent.");
+                    }
                 }
                 else {
                     $.preloader.stop();

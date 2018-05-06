@@ -239,25 +239,25 @@ namespace SGA.ifpsmtna
             switch (this.PageNumber)
             {
                 case 0:
-                    strPercentage = "You're 12.50% through, doing well!";
+                    strPercentage = "You're 14.28% through, doing well!";
                     break;
                 case 1:
-                    strPercentage = "You're 25% through, doing well!";
+                    strPercentage = "You're 28.56% through, doing well!";
                     break;
                 case 2:
-                    strPercentage = "You're 37.50% through, doing well!";
+                    strPercentage = "You're 42.84% through, doing well!";
                     break;
                 case 3:
-                    strPercentage = "You're 50% through, doing well!";
+                    strPercentage = "You're 57.12% through, doing well!";
                     break;
                 case 4:
-                    strPercentage = "You're 62.50% through, doing well!";
+                    strPercentage = "You're 71.40% through, doing well!";
                     break;
                 case 5:
-                    strPercentage = "You're 75% through, doing well!";
+                    strPercentage = "You're 85.68% through, doing well!";
                     break;
                 case 6:
-                    strPercentage = "You're 87.50% through, doing well!";
+                    strPercentage = "You're 100% through, doing well!";
                     break;
                     //case 7:
                     //    strPercentage = "You're 100% through, congratulations!";
@@ -367,7 +367,7 @@ namespace SGA.ifpsmtna
                 new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
             });
             this.testId = 0;
-            base.Response.Redirect("~/ifpsmtna/my-results-bar-graph.aspx", false);
+            base.Response.Redirect("~/ifpsmtna/personalised-dashboard.aspx", false);
         }
 
         protected void Cronometro1_TimeOut(object sender, System.EventArgs e)
@@ -460,7 +460,7 @@ namespace SGA.ifpsmtna
                 new SqlParameter("@userId", SGACommon.LoginUserInfo.userId)
             });
             this.testId = 0;
-            base.Response.Redirect("~/ifpsmtna/my-results-bar-graph.aspx", false);
+            base.Response.Redirect("~/ifpsmtna/personalised-dashboard.aspx", false);
         }
 
         protected void btnNextNoForward_Click(object sender, System.EventArgs e)

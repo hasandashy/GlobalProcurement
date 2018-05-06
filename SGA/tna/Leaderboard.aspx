@@ -31,7 +31,7 @@
 
                         <div id="tab1" class="tab active">
                             <div class="question-heading">
-                                <span>In the board below you can see the ranking of user registration by region.
+                                <span>Participants by Region
                                 </span>
                                 <div class="redtitle"></div>
                             </div>
@@ -56,7 +56,7 @@
 
                                             <div class="region-name-block">
                                                 <div class="region-name"><%# Container.DataItemIndex + 1%>. <%# Eval("countryRegion") %></div>
-                                                <div class="region-user"><%# Eval("nouser") %> users</div>
+                                                <div class="region-user"><%# Eval("nouserperc") %> %</div>
                                                 <div class="clear"></div>
                                                 <div class="dis-block clearfix progress-top">
                                                     <div class="progress-bar"></div>
@@ -83,7 +83,7 @@
 
                         <div id="tab2" class="tab">
                             <div class="question-heading">
-                                <span>In the board below you can see the ranking of the number of users who have completed assessments by nation.
+                                <span>Participants by Nation
                                 </span>
                                 <div class="redtitle"></div>
                             </div>
@@ -109,7 +109,7 @@
 
                                             <div class="region-name-block">
                                                 <div class="region-name"><%# Container.DataItemIndex + 1%>. <%#Eval("country")%></div>
-                                                <div class="region-user"><%#Eval("nouser")%> users</div>
+                                                <div class="region-user"><%#Eval("nouserperc")%> %</div>
                                                 <div class="clear"></div>
                                                 <div class="dis-block clearfix progress-top">
                                                     <div class="progress-bar"></div>
@@ -136,7 +136,7 @@
 
                         <div id="tab3" class="tab">
                             <div class="question-heading">
-                                <span>In the board below you can see the ranking of the number of users who have completed assessments by membership association.
+                                <span>Participants by membership association
                                 </span>
                                 <div class="redtitle"></div>
                             </div>

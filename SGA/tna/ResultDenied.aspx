@@ -7,7 +7,7 @@
             <h1>Access Denied</h1>
         </div>
 <div class="main-heading dis-block clearfix pad15 padtop1">
-<h1><span>Please complete your assesment and update your profile to view leaderboard. </span></h1>
+<h1><span>Access to leaderboard is currently restricted. Please complete the assessments to view results. </span></h1>
 </div>
 
 

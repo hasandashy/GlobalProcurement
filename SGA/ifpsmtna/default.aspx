@@ -58,7 +58,7 @@
                 <asp:Label ID="lblName" runat="server"></asp:Label>
             </p>
             <p class="title40">Your Assessment</p>
-            <p>Below you will see the assessment that you currently have access to. By clicking 'go' against each assessment, you will be directed to that particular assessment. First, you will reach an information page regarding the assessment you are about to undertake. If you see a lock symbol, this is because you do not yet have access to this assessment. Once access is granted, this assessment will be unlocked and you will be able to access it.</p>
+            <p>Below you will see the assessment that you currently have access to. By clicking 'go' against this, you will be directed to it. First, you will reach a profile page, aggregate data from this page will help us to build a research paper on skills around the globe. You will then see an information page regarding the assessment you are about to undertake.</p>
         </section>
         <div class="dot-line">&nbsp;</div>
         <section class="color-box">
@@ -241,7 +241,7 @@
             if ($('#chkPBSA').is(':checked')) {
                 PBSA = "Procurement Behavioural Self Assessment";
             }
-            if ($('#chkCMKA').is(':checked')) {
+            if ($('#chkCMKE').is(':checked')) {
                 CMKA = "Contract Management Knowledge Evaluation";
             }
             if ($('#chkCMSA').is(':checked')) {

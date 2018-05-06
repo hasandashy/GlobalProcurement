@@ -22,7 +22,7 @@
  
  <span>Welcome to the</span> <strong>Global Procurement Capability </strong> <em>Benchmark</em>
  
- <div class="blue-btn bdr-radis"><a href="register.aspx">REGISTER HERE</a></div>
+ <div class="blue-btn bdr-radis"><a href="Registration.aspx">REGISTER HERE</a></div>
  </div>
  
  </div>
@@ -42,7 +42,7 @@
 	<span></span>advantage.</em>
  
  
- <div class="blue-btn bdr-radis"><a href="register.aspx">REGISTER HERE</a></div>
+ <div class="blue-btn bdr-radis"><a href="Registration.aspx">REGISTER HERE</a></div>
  </div>
  
  </div>
@@ -58,7 +58,7 @@
   <em><span></span>and uncover <br>extraordinary value.</em>
  
  
- <div class="blue-btn bdr-radis"><a href="register.aspx">REGISTER HERE</a></div>
+ <div class="blue-btn bdr-radis"><a href="Registration.aspx">REGISTER HERE</a></div>
  </div>
  
  </div>
@@ -96,7 +96,7 @@
 <p>Some skills will be relevant and place you in good  stead for your future, other skills may become redundant …   
 <strong>Register to participate.</strong></p>
 
-<div class="blue-btn-large btn-bottom"><a href="register.aspx">VISUALISE YOUR CAPABILITY >></a></div>
+<div class="blue-btn-large btn-bottom"><a href="Registration.aspx">VISUALISE YOUR CAPABILITY >></a></div>
 </div>
 
  
@@ -158,7 +158,7 @@
 
 
 
-<div class="blue-btn-large "><a href="register.aspx">REGISTER HERE >></a></div>
+<div class="blue-btn-large "><a href="Registration.aspx">REGISTER HERE >></a></div>
 
 
  
@@ -184,8 +184,8 @@
   <div class="heading post5 hidden two-line">
  <h2>IFPSM member associations now have <span>FREE ACCESS to the GLOBAL Procurement</span>
  </h2>
- <p>As of April 2018 IFPSM member associations will have FREE ACCESS to 
-an Assessment on Procurement Skills and Knowledge. 
+ <p>Just launched in April 2018 – you can now login, take your assessment and get access to your personal capability dashboard. 
+
 </p> 
   </div>
   
@@ -298,7 +298,7 @@ an Assessment on Procurement Skills and Knowledge.
   
   
   </div>
-  <div class="blue-btn-small bdr-radis btn-bottom2"><a href="register.html">FIND OUT MORE</a></div>
+  <div class="blue-btn-small bdr-radis btn-bottom2"><a href="Registration.aspx">FIND OUT MORE</a></div>
    <div class="clearfix"></div>
   </div>
   </div>
@@ -318,7 +318,7 @@ an Assessment on Procurement Skills and Knowledge.
   </div>
   
   <div class="col-sm-6">
-<div class="global-graph"><img src="images/graph.png" alt=""></div>
+<div class="global-graph"><img src="images/resultbargraphs.png" alt=""></div>
   </div>
   </div>
   </div>

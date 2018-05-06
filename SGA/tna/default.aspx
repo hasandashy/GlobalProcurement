@@ -4,6 +4,16 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <style>
+      
+        input[type=checkbox] {
+            /* Double-sized Checkboxes */
+            -ms-transform: scale(1.2); /* IE */
+            -moz-transform: scale(1.2); /* FF */
+            -webkit-transform: scale(1.2); /* Safari and Chrome */
+            -o-transform: scale(1.2); /* Opera */
+        }
+    </style>
     <div class="dis-block clearfix pad15 marT1 top-space">
         <div class="main-heading dis-block clearfix">
             <h1>
@@ -48,81 +58,87 @@
         <div class="assesment-box ">
             <div style="text-align: center; font-weight: bold;">Other paid assessments offered by SkillsGAP Analysis are listed below.</div>
             <div style="text-align: center;">To find out more simply select from the list below and click “LET”S TALK” and we will be in touch.</div>
-           
-        </div>
-
+             <%--<br />
+            <div class="blue-btn">
+             <asp:HyperLink ID="hylLetsTalk" ClientIDMode="Static"  CssClass="rightbt" Text="Lets Talk" runat="server"></asp:HyperLink></div>
+        --%></div>
+       
+           <br />
         <div class="yellow-bg assesment-box">
-            <a href="#"><i>
-                <img src="../images/icon1.png" alt="Procurement Knowledge Evaluation" /></i>
-                <p>Procurement Knowledge Evaluation</p>
+            <a href="#"><%--<i>
+                <img src="../images/icon1.png" alt="Procurement Knowledge Evaluation" /></i>--%>
+               <%-- <p>--%>
+                    Procurement Knowledge Evaluation
+
+               <%-- </p>--%>
                <em><asp:CheckBox ID="chkPKE" ClientIDMode="Static" runat="server" AutoPostBack="false" /></em></a>
 
         </div>
          <div class="yellow-bg assesment-box  marT3">
-            <a href="#"><i>
-                <img src="../images/icon1.png" alt="Procurement Technical Self Assessment" /></i>
-                <p>Procurement Technical Self Assessment</p>
+            <a href="#"><%--<i>
+                <img src="../images/icon1.png" alt="Procurement Technical Self Assessment" /></i>--%>
+                Procurement Technical Self Assessment
                <em><asp:CheckBox ID="chkPTSA" ClientIDMode="Static" runat="server" AutoPostBack="false" /></em></a>
 
         </div>
          <div class="yellow-bg assesment-box  marT3">
-            <a href="#"><i>
-                <img src="../images/icon1.png" alt="Procurement - Behavioural Self Assessment" /></i>
-                <p>Procurement Behavioural Self Assessment</p>
+            <a href="#"><%--<i>
+                <img src="../images/icon1.png" alt="Procurement - Behavioural Self Assessment" /></i>--%>
+                Procurement Behavioural<br /> Self Assessment
                <em><asp:CheckBox ID="chkPBSA" ClientIDMode="Static" runat="server" AutoPostBack="false" /></em></a>
 
         </div>
          <div class="yellow-bg assesment-box  marT3">
-            <a href="#"><i>
-                <img src="../images/icon1.png" alt="Contract Management Knowledge Evaluation" /></i>
-                <p>Contract Management Knowledge Evaluation</p>
+            <a href="#"><%--<i>
+                <img src="../images/icon1.png" alt="Contract Management Knowledge Evaluation" /></i>--%>
+                Contract Management Knowledge Evaluation
                <em><asp:CheckBox ID="chkCMKE" ClientIDMode="Static" runat="server" AutoPostBack="false" /></em></a>
 
         </div>
          <div class="yellow-bg assesment-box  marT3">
-            <a href="#"><i>
-                <img src="../images/icon1.png" alt="Contract Management Self Assessment" /></i>
-                <p>Contract Management Self Assessment</p>
+            <a href="#"><%--<i>
+                <img src="../images/icon1.png" alt="Contract Management Self Assessment" /></i>--%>
+                Contract Management Self Assessment
                <em><asp:CheckBox ID="chkCMSA" ClientIDMode="Static" runat="server" AutoPostBack="false" /></em></a>
 
         </div>
          <div class="yellow-bg assesment-box  marT3">
-            <a href="#"><i>
-                <img src="../images/icon1.png" alt="Leadership Self Assessment" /></i>
-                <p>Leadership Self Assessment</p>
+            <a href="#"><%--<i>
+                <img src="../images/icon1.png" alt="Leadership Self Assessment" /></i>--%>
+                Leadership Self Assessment
                <em><asp:CheckBox ID="chkLSA" ClientIDMode="Static" runat="server" AutoPostBack="false" /></em></a>
 
         </div>
          <div class="yellow-bg assesment-box  marT3">
-            <a href="#"><i>
-                <img src="../images/icon1.png" alt="Negotiation Profile" /></i>
-                <p>Negotiation Profile</p>
+            <a href="#"><%--<i>
+                <img src="../images/icon1.png" alt="Negotiation Profile" /></i>--%>
+                Negotiation Profile
                <em><asp:CheckBox ID="chkNA" ClientIDMode="Static" runat="server" AutoPostBack="false" /></em></a>
 
         </div>
          <div class="yellow-bg assesment-box  marT3">
-            <a href="#"><i>
-                <img src="../images/icon1.png" alt="Department Maturity Profile" /></i>
-                <p>Department Maturity Profile</p>
+            <a href="#"><%--<i>
+                <img src="../images/icon1.png" alt="Department Maturity Profile" /></i>--%>
+                Department Maturity Profile
                <em><asp:CheckBox ID="chkDMP" ClientIDMode="Static" runat="server" AutoPostBack="false" /></em></a>
 
         </div>
          <div class="yellow-bg assesment-box  marT3">
-            <a href="#"><i>
-                <img src="../images/icon1.png" alt="Supply Chain Knowledge Evaluation" /></i>
-                <p>Supply Chain Knowledge Evaluation</p>
+            <a href="#"><%--<i>
+                <img src="../images/icon1.png" alt="Supply Chain Knowledge Evaluation" /></i>--%>
+                Supply Chain Knowledge Evaluation
                <em><asp:CheckBox ID="chkSCKE" ClientIDMode="Static" runat="server" AutoPostBack="false" /></em></a>
 
         </div>
         <div class="yellow-bg assesment-box  marT3">
-            <a href="#"><i>
-                <img src="../images/icon1.png" alt="Supply Chain Self Assessment" /></i>
-                <p>Supply Chain Self Assessment</p>
+            <a href="#"><%--<i>
+                <img src="../images/icon1.png" alt="Supply Chain Self Assessment" /></i>--%>
+                Supply Chain Self<br /> Assessment
                <em><asp:CheckBox ID="chkSCSA" ClientIDMode="Static" runat="server" AutoPostBack="false" /></em></a>
 
         </div>
         <br />
-         <div class="fright blue-btn">
+         <div class="fleft blue-btn">
              <asp:HyperLink ID="hylLetsTalk" ClientIDMode="Static"  CssClass="rightbt" Text="Lets Talk" runat="server"></asp:HyperLink></div>
     </div>
 
@@ -169,7 +185,7 @@
                 if ($('#chkPBSA').is(':checked')) {
                     PBSA = "Procurement Behavioural Self Assessment";
                 }
-                if ($('#chkCMKA').is(':checked')) {
+                if ($('#chkCMKE').is(':checked')) {
                     CMKA = "Contract Management Knowledge Evaluation";
                 }
                 if ($('#chkCMSA').is(':checked')) {

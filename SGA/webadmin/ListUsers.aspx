@@ -875,7 +875,7 @@
                                                                 <td></td>
                                                                 <td colspan="3" class="ssec">
                                                                     <asp:DropDownList ID="ddlEditProLevel" CssClass="styled" runat="server">
-                                                                        <asp:ListItem Value="0" Selected="True">Procurement qualifications</asp:ListItem>
+                                                                         <%-- <asp:ListItem Value="0" Selected="True">Procurement qualifications</asp:ListItem>
                                                                         <asp:ListItem Value="1">Undergraduate degree in procurement / supply chain </asp:ListItem>
                                                                         <asp:ListItem Value="2">Postgraduate degree in procurement / supply chain </asp:ListItem>
                                                                         <asp:ListItem Value="3">CIPS: Member (MCIPS)</asp:ListItem>
@@ -883,7 +883,28 @@
                                                                         <asp:ListItem Value="5">AAPCM: Member </asp:ListItem>
                                                                         <asp:ListItem Value="6">AAPCM: Fellow </asp:ListItem>
                                                                         <asp:ListItem Value="7">Other </asp:ListItem>
-                                                                        <asp:ListItem Value="8">Not applicable</asp:ListItem>
+                                                                        <asp:ListItem Value="8">Not applicable</asp:ListItem>--%>
+                                                                        <asp:ListItem Selected="True" Value="0">Procurement & Supply Qualification</asp:ListItem>
+                                                                        <asp:ListItem Value="1">Certificate Procurement and Contracting</asp:ListItem>
+                                                                        <asp:ListItem Value="2">Certificate Purchasing</asp:ListItem>
+                                                                        <asp:ListItem Value="3">Certified Professional in Supply Management (CPSM)</asp:ListItem>
+                                                                        <asp:ListItem Value="4">Certificate in Production and Inventory Management (CPIM)</asp:ListItem>
+                                                                        <asp:ListItem Value="5">Diploma of Procurement and Contracting</asp:ListItem>
+                                                                        <asp:ListItem Value="6">Diploma of Purchasing</asp:ListItem>
+                                                                        <asp:ListItem Value="7">Diploma of Contract Management</asp:ListItem>
+                                                                        <asp:ListItem Value="8">Advanced Diploma of Procurement and Contracting</asp:ListItem>
+                                                                        <asp:ListItem Value="9">Graduate Certificate in Logistics and Supply Chain Management</asp:ListItem>
+                                                                        <asp:ListItem Value="10">Undergraduate degree procurement / supply chain</asp:ListItem>
+                                                                        <asp:ListItem Value="11">Postgraduate degree procurement/ supply chain</asp:ListItem>
+                                                                        <asp:ListItem Value="12">Certified Supply Chain Professional (CSCP)</asp:ListItem>
+                                                                        <asp:ListItem Value="13">Certified International Procurement Professional (CIPP)</asp:ListItem>
+                                                                        <asp:ListItem Value="14">Certified International Advanced Procurement Professional (CIAPP)</asp:ListItem>
+                                                                        <asp:ListItem Value="15">Member Chartered Institute Procurement Supply (MCIPS)</asp:ListItem>
+                                                                        <asp:ListItem Value="16">Fellow Chartered Institute Procurement Supply (FCIPS)</asp:ListItem>
+                                                                        <asp:ListItem Value="17">AAPCM Member</asp:ListItem>
+                                                                        <asp:ListItem Value="18">AAPCM Fellow</asp:ListItem>
+                                                                        <asp:ListItem Value="19">Other</asp:ListItem>
+                                                                        <asp:ListItem Value="20">Not applicable</asp:ListItem>
                                                                     </asp:DropDownList></td>
                                                             </tr>
                                                             <tr>
@@ -1528,7 +1549,7 @@
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td colspan="2" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:CheckBox ID="chkInclude" runat="server" Text="Include welcome email" /></td>
+                                                                <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:CheckBox ID="chkInclude" runat="server" Text="Include welcome email" /></td>
                                                                 <td colspan="2">&nbsp;</td>
                                                             </tr>
                                                             <tr>
@@ -1575,9 +1596,10 @@
                                                                     <asp:HyperLink ID="hylExcelupload" runat="server" NavigateUrl="~/webadmin/docs/SGAUsers_Upload_Template.xlsx" Style="text-decoration: underline; font-size: small;">Download sample copy of excel upload</asp:HyperLink>
                                                                 </td>
                                                             </tr>
-                                                             <tr>
-                                                                <td colspan="2" style="padding-left:158px"><asp:CheckBox ID="chkBulkInclude" runat="server" Text="Include welcome email" /></td>    
-                                                               
+                                                            <tr>
+                                                                <td colspan="2" style="padding-left: 158px">
+                                                                    <asp:CheckBox ID="chkBulkInclude" runat="server" Text="Include welcome email" /></td>
+
                                                             </tr>
                                                             <tr>
                                                                 <td colspan="2">

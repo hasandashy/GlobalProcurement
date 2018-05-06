@@ -1393,27 +1393,63 @@ namespace SGA.App_Code
             switch (proLevelId)
             {
                 case 1:
-                    strValue = "Undergraduate degree in procurement / supply chain";
+                    strValue = "Certificate Procurement and Contracting";
                     break;
                 case 2:
-                    strValue = "Postgraduate degree in procurement / supply chain";
+                    strValue = "Certificate Purchasing";
                     break;
                 case 3:
-                    strValue = "CIPS: Member (MCIPS)";
+                    strValue = "Certified Professional in Supply Management (CPSM)";
                     break;
                 case 4:
-                    strValue = "CIPS: Fellow (FCIPS)";
+                    strValue = "Certificate in Production and Inventory Management (CPIM)";
                     break;
                 case 5:
-                    strValue = "AAPCM: Member";
+                    strValue = "Diploma of Procurement and Contracting";
                     break;
                 case 6:
-                    strValue = "AAPCM: Fellow";
+                    strValue = "Diploma of Purchasing";
                     break;
                 case 7:
-                    strValue = "Other";
+                    strValue = "Diploma of Contract Management";
                     break;
                 case 8:
+                    strValue = "Advanced Diploma of Procurement and Contracting";
+                    break;
+                case 9:
+                    strValue = "Graduate Certificate in Logistics and Supply Chain Management";
+                    break;
+                case 10:
+                    strValue = "Undergraduate degree procurement / supply chain";
+                    break;
+                case 11:
+                    strValue = "Postgraduate degree procurement/ supply chain";
+                    break;
+                case 12:
+                    strValue = "Certified Supply Chain Professional (CSCP)";
+                    break;
+                case 13:
+                    strValue = "Certified International Procurement Professional (CIPP)";
+                    break;
+                case 14:
+                    strValue = "Certified International Advanced Procurement Professional (CIAPP)";
+                    break;
+                case 15:
+                    strValue = "Member Chartered Institute Procurement Supply (MCIPS)";
+                    break;
+                case 16:
+                    strValue = "Fellow Chartered Institute Procurement Supply (FCIPS)";
+                    break;
+                case 17:
+                    strValue = "AAPCM Member";
+                    break;
+                case 18:
+                    strValue = "AAPCM Fellow";
+                    break;
+                case 19:
+                    strValue = "Other";
+                    break;
+                case 20:
                     strValue = "Not applicable";
                     break;
                 default:

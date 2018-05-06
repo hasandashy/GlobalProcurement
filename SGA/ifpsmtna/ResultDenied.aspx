@@ -24,12 +24,12 @@
 						</article>
 					</section>
 					<section class="my-result-box">
-						<article class="breadcrumb">
+					<%--	<article class="breadcrumb">
 							<a href="#">Report Centre</a>&nbsp; &gt; &nbsp;<a href="#">Results Restricted</a>
-						</article>
+						</article>--%>
 						<p>&nbsp;</p>
 						<p>&nbsp;</p>
-						<div class="my-result-container">
+						<div class="">
 							
 							<div class="col-cnt">
 								<div class="wide640">
@@ -40,14 +40,14 @@
 									<div class="clear"></div>
 									<p>&nbsp;</p>
 									
-                                    <p class="txt28 orange mrg-bt-5">Your results access is restricted. Please complete your assesment to view results.</p>
+                                    <p class="txt28 orange mrg-bt-5">Access to your results is currently restricted. Please complete the assessments to view results.</p>
                                     
 									<p>&nbsp;</p>
 									<p>&nbsp;</p>
                                     
 									<p>&nbsp;</p>
 								</div>
-								<hr class="divider-line" />
+							<%--	<hr class="divider-line" />--%>
 								<p>&nbsp;</p>
 								
 							</div>

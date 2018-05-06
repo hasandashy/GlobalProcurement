@@ -48,7 +48,7 @@
 				<!-- Content Area end // -->
 				<sga:footer id="footer" runat="server"></sga:footer>
 			</div>
-		<div id="outer-btm">&nbsp;</div>
+		<%--<div id="outer-btm">&nbsp;</div>--%>
 		<!-- Outer end // -->
     
     </form>
