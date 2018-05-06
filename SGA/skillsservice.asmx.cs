@@ -136,7 +136,8 @@ namespace SGA
                 if (status > 0)
                 {
                     // email exists and only update value in IS
-                    UpdateValueinIS(emailAddress, firstName, lastName, country, membershipAssociation, ifpsmComments, jobRole, "");
+                    //UpdateValueinIS(emailAddress, firstName, lastName, country, membershipAssociation, ifpsmComments, jobRole, "");
+                    result2 = "c";
                 }
                 else
                 {

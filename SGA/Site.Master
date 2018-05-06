@@ -216,7 +216,6 @@
         jQuery(document).ready(function () {
 
             jQuery(document).on('click', '#frm_basic_info', function (e) {
-               
                 if (jQuery("#chkTerms").is(":checked"))
                 {
                     if (jQuery("#chkConsent").is(":checked")) {
@@ -263,6 +262,12 @@
                                             e.preventDefault();
                                             window.location.href = 'Register_Success.aspx';
                                         }
+                                        else if (data == "c") {
+                                            $.preloader.stop();
+                                            e.preventDefault();
+                                            $('#lblErrorRegister').text("Your email already exists in our records.");
+                                            $('html, body').animate({ scrollTop: 0 }, 800);
+                                        }
                                     },
 
                                     error: function (jqXHR, exception) {
@@ -294,11 +299,15 @@
                     else {
                         $.preloader.stop();
                         $('#lblErrorRegister').text("Please accept consent.");
+                        $('html, body').animate({ scrollTop: 0 }, 800);
+                        return false;
                     }
                 }
                 else {
                     $.preloader.stop();
                     $('#lblErrorRegister').text("Please accept terms and conditions.");
+                    $('html, body').animate({ scrollTop: 0 }, 800);
+                    return false;
                 }
             });
 
