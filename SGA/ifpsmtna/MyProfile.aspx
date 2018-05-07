@@ -62,15 +62,14 @@
                             redirect = "y";
                             $('#title').text("Confirmation");
                             $('#colorbox').css({ "display": "block" });
-                            $('#alertMessage').html("We noticed you haven't completed all of the fields. Providing this information helps us to support your learning. <b>If you are unsure how to answer, then please choose the answer you think is the 'closest fit' for you. Would you like to complete the rest of the fields, or proceed to your training needs analysis?</b> ");
-                            $('#btnCancel').css("display", "block");
-                            $('#btnOk').removeClass("btn-yes");
-                            $('#btnOk').addClass("btn-back");
+                            $('#alertMessage').html("It seems you have not completed all mandatory fields - please complete all fields that are marked with a red asterisk. Thank you.");
+                            //$('#btnCancel').css("display", "block");
+                            //$('#btnOk').removeClass("btn-yes");
+                            //$('#btnOk').addClass("btn-back");
 
-                            $('#btnCancel').removeClass("btn-back");
-                            $('#btnCancel').addClass("btn-proceed");
+                            //$('#btnCancel').removeClass("btn-back");
+                            //$('#btnCancel').addClass("btn-proceed");
                         } else {
-                            debugger;
                             $('#colorbox').css({ "display": "none" });
                             var snd = <%= this._deirectsend%>;
                             if(snd === 1)
@@ -178,15 +177,15 @@
                     <p>Since returning participants will have some information that has changed over time please complete this page once again. </p>
                     <p>&nbsp;</p>
                     <p class="txt18-bold">REGISTRATION DETAILS</p>
-                    <span class="error"></span>&nbsp;&nbsp;<b>First Name</b><br />
-                    <span class="error">*</span>&nbsp;<input type="text" id="fname" name="fname" maxlength="100" runat="server" class="text-box-2" />
+                    <span class="error">*</span>&nbsp;&nbsp;<b>First Name</b><br />
+                    <span class="error"></span>&nbsp;<input type="text" id="fname" name="fname" maxlength="100" runat="server" class="text-box-2" />
                     <p>&nbsp;</p>
-                    <span class="error"></span>&nbsp;&nbsp;<b>Last Name</b><br />
-                    <span class="error">*</span>&nbsp;<input type="text" id="lname" name="lname" maxlength="100" runat="server" class="text-box-2" />
+                    <span class="error">*</span>&nbsp;&nbsp;<b>Last Name</b><br />
+                    <span class="error"></span>&nbsp;<input type="text" id="lname" name="lname" maxlength="100" runat="server" class="text-box-2" />
                     <p>&nbsp;</p>
-                    <span class="error"></span>&nbsp;&nbsp;<b>Your Job Role</b>
+                    <span class="error">*</span>&nbsp;&nbsp;<b>Your Job Role</b>
                     <div class="form-box1">
-                        <span class="error">*</span>&nbsp;&nbsp;<asp:DropDownList ID="ddlJobRole" class="styled" runat="server">
+                       <asp:DropDownList ID="ddlJobRole" class="styled" runat="server">
                             <asp:ListItem Value="0">Job role best described as ...</asp:ListItem>
                             <asp:ListItem Value="1">Analyst</asp:ListItem>
                             <asp:ListItem Value="2">Procurement Support</asp:ListItem>
@@ -208,12 +207,12 @@
                     <p>&nbsp;</p>
                     <p class="txt18-bold">LOGIN DETAILS</p>
 
-                    <span class="error"></span>&nbsp;&nbsp;<b>Your Email</b><br />
-                    <span class="error">*</span>&nbsp;<input type="text" id="email" name="email" disabled="disabled" readonly="readonly" maxlength="250" runat="server" class="text-box-2" />
+                    <span class="error">*</span>&nbsp;&nbsp;<b>Your Email</b><br />
+                    <span class="error"></span>&nbsp;<input type="text" id="email" name="email" disabled="disabled" readonly="readonly" maxlength="250" runat="server" class="text-box-2" />
                     <p>&nbsp;</p>
-                    <span class="error"></span>&nbsp;&nbsp;<a href="javascript:void('0')" id="edit">Edit Password</a>
+                    <span class="error">*</span>&nbsp;&nbsp;<a href="javascript:void('0')" id="edit">Edit Password</a>
                     <br />
-                    <span class="error">*</span>&nbsp;<input type="text" id="passwordplain" name="passwordplain" maxlength="20" runat="server" style="display: none" class="text-box-2" /><input type="password" id="password" name="password" disabled="disabled" maxlength="20" runat="server" class="text-box-2" />
+                    <span class="error"></span>&nbsp;<input type="text" id="passwordplain" name="passwordplain" maxlength="20" runat="server" style="display: none" class="text-box-2" /><input type="password" id="password" name="password" disabled="disabled" maxlength="20" runat="server" class="text-box-2" />
 
 
                     <p>&nbsp;</p>
@@ -271,10 +270,10 @@
                          </asp:DropDownList>
                     </div>
                     <p>&nbsp;</p>
-                    <span class="error"></span>&nbsp;&nbsp;<b>Sector? </b>
+                    <span class="error">*</span>&nbsp;&nbsp;<b>Sector? </b>
                     <br />
                     <div class="form-box1">
-                        <span class="error">*</span>&nbsp;
+                        <span class="error"></span>&nbsp;
                          <asp:DropDownList ID="ddEditSector" runat="server" CssClass="styled">
                              <asp:ListItem Value="0" Selected="True">Sector you belong to</asp:ListItem>
                              <asp:ListItem Value="1">Public</asp:ListItem>

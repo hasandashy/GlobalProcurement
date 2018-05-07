@@ -112,6 +112,7 @@
                         <asp:ListItem Value="ZNS">ZNS - Zdruzenje nabavnikov Slovenije (Slovenian Purchasing Association)</asp:ListItem>
                         <asp:ListItem Value="Other - CIPS">Other: CIPS – Chartered Institute of Purchasing & Supply</asp:ListItem>
                         <asp:ListItem Value="Other - ISM">Other: ISM – Institute of Supply Management</asp:ListItem>
+                         <asp:ListItem Value="Other">Not a Member</asp:ListItem> 
                     </asp:DropDownList>
                 </td>
 

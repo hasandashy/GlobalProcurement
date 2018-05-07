@@ -94,7 +94,7 @@
 
                             <div class="form-group">
                                 <select id="membershipAssociation" name="membershipAssociation" class="form-control">
-                                    <option selected value="0">Membership Association *</option>
+                                    <option selected value="0">Membership Association</option>
                                     <option value="AACAM">AACAM - Asociación Argentina de Compras Administracion de Materiales y Logistica</option>
                                     <option value="ABCAL">ABCAL - Association Belge des Cardes d’Achat et de Logistique</option>
                                     <option value="ADACI">ADACI - Associazione Italiana Acquiste E Supply Management</option>
@@ -145,6 +145,7 @@
                                     <option value="ZNS">ZNS - Zdruzenje nabavnikov Slovenije (Slovenian Purchasing Association)</option>
                                     <option value="Other - CIPS">Other: CIPS – Chartered Institute of Purchasing & Supply</option>
                                     <option value="Other - ISM">Other: ISM – Institute of Supply Management</option>
+                                    <option value="Other">Not a Member</option>
                                 </select>
                             </div>
 

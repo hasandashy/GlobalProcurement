@@ -243,7 +243,18 @@
 
             });
         </script>
-       
+       <style>
+           table.styled
+{
+   border-collapse:separate; 
+   border-spacing:10px;
+}
+
+.styled label
+{
+   margin-left: 10px;
+}
+       </style>
 <!-- Content Area start -->
 				<article id="container">
 					<section class="welcome-test">

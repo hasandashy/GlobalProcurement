@@ -118,7 +118,7 @@
                    <%-- <h4 class="modal-title"></h4>--%>
                 </div>
                 <div class="modal-body" style="text-align:center">
-                    <p>please select some value.</p>
+                    <p>Please select an option.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
