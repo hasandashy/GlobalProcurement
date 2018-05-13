@@ -614,18 +614,32 @@
                                                                 <td>
                                                                     <asp:DropDownList ID="ddlEditJobRole" CssClass="styled" runat="server">
                                                                         <asp:ListItem Value="0">Job role best described as ...</asp:ListItem>
-                                                                        <asp:ListItem Value="1">Analyst</asp:ListItem>
+                                                                        <asp:ListItem Value="1">Procurement Analyst</asp:ListItem>
                                                                         <asp:ListItem Value="2">Procurement Support</asp:ListItem>
                                                                         <asp:ListItem Value="3">Strategic Sourcing</asp:ListItem>
                                                                         <asp:ListItem Value="4">Vendor Manager/ Supplier Relationship Manager</asp:ListItem>
                                                                         <asp:ListItem Value="5">Category Manager</asp:ListItem>
                                                                         <asp:ListItem Value="6">Procurement Leader</asp:ListItem>
-                                                                        <asp:ListItem Value="7">Supply Chain</asp:ListItem>
+                                                                        <asp:ListItem Value="7">Supply Chain Manager</asp:ListItem>
                                                                         <asp:ListItem Value="8">Non-Procurement: CXO</asp:ListItem>
                                                                         <asp:ListItem Value="9">Non-Procurement: Director</asp:ListItem>
                                                                         <asp:ListItem Value="10">Non-Procurement: Manager</asp:ListItem>
                                                                         <asp:ListItem Value="11">Non-Procurement: Professional</asp:ListItem>
                                                                         <asp:ListItem Value="12">Non-Procurement: Trainee</asp:ListItem>
+                                                                        <asp:ListItem Value="14">Head of Supply Chain</asp:ListItem>
+                                                                        <asp:ListItem Value="15">Supply Chain Analyst</asp:ListItem>
+                                                                        <asp:ListItem Value="16">Operator</asp:ListItem>
+                                                                        <asp:ListItem Value="17">Operations Coordinator</asp:ListItem>
+                                                                        <asp:ListItem Value="18">Operations Manager</asp:ListItem>
+                                                                        <asp:ListItem Value="19">Master Scheduling Manager</asp:ListItem>
+                                                                        <asp:ListItem Value="20">Materials Manager</asp:ListItem>
+                                                                        <asp:ListItem Value="21">Supply Chain Executive</asp:ListItem>
+                                                                        <asp:ListItem Value="22">Planner</asp:ListItem>
+                                                                        <asp:ListItem Value="23">Contract Manager</asp:ListItem>
+                                                                        <asp:ListItem Value="24">Head of Procurement</asp:ListItem>
+                                                                        <asp:ListItem Value="25">Operational Buyer</asp:ListItem>
+                                                                        <asp:ListItem Value="26">Senior Buyer</asp:ListItem>
+                                                                        <asp:ListItem Value="27">Support Manager</asp:ListItem>
                                                                         <asp:ListItem Value="13">Other</asp:ListItem>
                                                                     </asp:DropDownList></td>
                                                                 <td class="txtrht">Password</td>
@@ -692,7 +706,7 @@
                                                                         <asp:ListItem Value="ZNS">ZNS - Zdruzenje nabavnikov Slovenije (Slovenian Purchasing Association)</asp:ListItem>
                                                                         <asp:ListItem Value="Other - CIPS">Other: CIPS – Chartered Institute of Purchasing & Supply</asp:ListItem>
                                                                         <asp:ListItem Value="Other - ISM">Other: ISM – Institute of Supply Management</asp:ListItem>
-                                                                        <asp:ListItem Value="Other">Not a Member</asp:ListItem>                                                                        
+                                                                        <asp:ListItem Value="Other">Not a Member</asp:ListItem>
                                                                     </asp:DropDownList></td>
                                                             </tr>
 
@@ -876,7 +890,7 @@
                                                                 <td></td>
                                                                 <td colspan="3" class="ssec">
                                                                     <asp:DropDownList ID="ddlEditProLevel" CssClass="styled" runat="server">
-                                                                         <%-- <asp:ListItem Value="0" Selected="True">Procurement qualifications</asp:ListItem>
+                                                                        <%-- <asp:ListItem Value="0" Selected="True">Procurement qualifications</asp:ListItem>
                                                                         <asp:ListItem Value="1">Undergraduate degree in procurement / supply chain </asp:ListItem>
                                                                         <asp:ListItem Value="2">Postgraduate degree in procurement / supply chain </asp:ListItem>
                                                                         <asp:ListItem Value="3">CIPS: Member (MCIPS)</asp:ListItem>
@@ -1470,15 +1484,33 @@
                                                                 <td>
                                                                     <asp:DropDownList ID="ddlJobRole" CssClass="styled" runat="server">
                                                                         <asp:ListItem Value="0">Job role best described as ...</asp:ListItem>
-                                                                        <asp:ListItem Value="1">Procurement Officer</asp:ListItem>
-                                                                        <asp:ListItem Value="2">Procurement Analyst</asp:ListItem>
-                                                                        <asp:ListItem Value="3">Procurement Advisor</asp:ListItem>
-                                                                        <asp:ListItem Value="4">Procurement Specialist</asp:ListItem>
-                                                                        <asp:ListItem Value="5">Contract Manager</asp:ListItem>
-                                                                        <asp:ListItem Value="6">Contract Manager (including procurement)</asp:ListItem>
-                                                                        <asp:ListItem Value="7">Category Manager</asp:ListItem>
-                                                                        <asp:ListItem Value="8">Procurement Director</asp:ListItem>
-                                                                        <asp:ListItem Value="9">Other</asp:ListItem>
+                                                                        <asp:ListItem Value="1">Procurement Analyst</asp:ListItem>
+                                                                        <asp:ListItem Value="2">Procurement Support</asp:ListItem>
+                                                                        <asp:ListItem Value="3">Strategic Sourcing</asp:ListItem>
+                                                                        <asp:ListItem Value="4">Vendor Manager/ Supplier Relationship Manager</asp:ListItem>
+                                                                        <asp:ListItem Value="5">Category Manager</asp:ListItem>
+                                                                        <asp:ListItem Value="6">Procurement Leader</asp:ListItem>
+                                                                        <asp:ListItem Value="7">Supply Chain Manager</asp:ListItem>
+                                                                        <asp:ListItem Value="8">Non-Procurement: CXO</asp:ListItem>
+                                                                        <asp:ListItem Value="9">Non-Procurement: Director</asp:ListItem>
+                                                                        <asp:ListItem Value="10">Non-Procurement: Manager</asp:ListItem>
+                                                                        <asp:ListItem Value="11">Non-Procurement: Professional</asp:ListItem>
+                                                                        <asp:ListItem Value="12">Non-Procurement: Trainee</asp:ListItem>
+                                                                        <asp:ListItem Value="14">Head of Supply Chain</asp:ListItem>
+                                                                        <asp:ListItem Value="15">Supply Chain Analyst</asp:ListItem>
+                                                                        <asp:ListItem Value="16">Operator</asp:ListItem>
+                                                                        <asp:ListItem Value="17">Operations Coordinator</asp:ListItem>
+                                                                        <asp:ListItem Value="18">Operations Manager</asp:ListItem>
+                                                                        <asp:ListItem Value="19">Master Scheduling Manager</asp:ListItem>
+                                                                        <asp:ListItem Value="20">Materials Manager</asp:ListItem>
+                                                                        <asp:ListItem Value="21">Supply Chain Executive</asp:ListItem>
+                                                                        <asp:ListItem Value="22">Planner</asp:ListItem>
+                                                                        <asp:ListItem Value="23">Contract Manager</asp:ListItem>
+                                                                        <asp:ListItem Value="24">Head of Procurement</asp:ListItem>
+                                                                        <asp:ListItem Value="25">Operational Buyer</asp:ListItem>
+                                                                        <asp:ListItem Value="26">Senior Buyer</asp:ListItem>
+                                                                        <asp:ListItem Value="27">Support Manager</asp:ListItem>
+                                                                        <asp:ListItem Value="13">Other</asp:ListItem>
                                                                     </asp:DropDownList>
                                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" SetFocusOnError="true" ControlToValidate="ddlJobRole" CssClass="error" InitialValue="0" ValidationGroup="add" Text="*"></asp:RequiredFieldValidator>
                                                                 </td>
@@ -1544,7 +1576,7 @@
                                                                         <asp:ListItem Value="ZNS">ZNS - Zdruzenje nabavnikov Slovenije (Slovenian Purchasing Association)</asp:ListItem>
                                                                         <asp:ListItem Value="Other - CIPS">Other: CIPS – Chartered Institute of Purchasing & Supply</asp:ListItem>
                                                                         <asp:ListItem Value="Other - ISM">Other: ISM – Institute of Supply Management</asp:ListItem>
-                                                                         <asp:ListItem Value="Other">Not a Member</asp:ListItem> 
+                                                                        <asp:ListItem Value="Other">Not a Member</asp:ListItem>
                                                                     </asp:DropDownList>
                                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" SetFocusOnError="true" ControlToValidate="ddlMembership" CssClass="error" InitialValue="0" ValidationGroup="add" Text="*"></asp:RequiredFieldValidator>
 

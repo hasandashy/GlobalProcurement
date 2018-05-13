@@ -126,7 +126,7 @@ namespace SGA.ifpsmtna
                 string timeDiff = DataBinder.Eval(e.Item.DataItem, "diff").ToString();
                 if (lblConvertedDate != null)
                 {
-                    lblConvertedDate.Text = SGACommon.ToAusTimeZone(dtTestdate).ToString("dd/MM/yyyy HH:mm tt");
+                    lblConvertedDate.Text = dtTestdate.ToString("dd/MM/yyyy HH:mm tt");
                 }
                 if (lblTimeTaken != null)
                 {

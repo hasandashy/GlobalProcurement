@@ -43,18 +43,33 @@
                 <td>
                     <asp:DropDownList ID="ddlEditJobRole" CssClass="styled" runat="server">
                         <asp:ListItem Value="0">Job role best described as ...</asp:ListItem>
-                        <asp:ListItem Value="1">Analyst</asp:ListItem>
-                        <asp:ListItem Value="2">Procurement Support</asp:ListItem>
-                        <asp:ListItem Value="3">Strategic Sourcing</asp:ListItem>
-                        <asp:ListItem Value="4">Vendor Manager/ Supplier Relationship Manager</asp:ListItem>
-                        <asp:ListItem Value="5">Category Manager</asp:ListItem>
-                        <asp:ListItem Value="6">Procurement Leader</asp:ListItem>
-                        <asp:ListItem Value="7">Supply Chain</asp:ListItem>
-                        <asp:ListItem Value="8">Non-Procurement: CXO</asp:ListItem>
-                        <asp:ListItem Value="9">Non-Procurement: Director</asp:ListItem>
-                        <asp:ListItem Value="10">Non-Procurement: Manager</asp:ListItem>
-                        <asp:ListItem Value="11">Non-Procurement: Professional</asp:ListItem>
-                        <asp:ListItem Value="12">Non-Procurement: Trainee</asp:ListItem>
+                         <asp:ListItem Value="1">Procurement Analyst</asp:ListItem>
+                            <asp:ListItem Value="2">Procurement Support</asp:ListItem>
+                            <asp:ListItem Value="3">Strategic Sourcing</asp:ListItem>
+                            <asp:ListItem Value="4">Vendor Manager/ Supplier Relationship Manager</asp:ListItem>
+                            <asp:ListItem Value="5">Category Manager</asp:ListItem>
+                            <asp:ListItem Value="6">Procurement Leader</asp:ListItem>
+                            <asp:ListItem Value="7">Supply Chain Manager</asp:ListItem>
+                            <asp:ListItem Value="8">Non-Procurement: CXO</asp:ListItem>
+                            <asp:ListItem Value="9">Non-Procurement: Director</asp:ListItem>
+                            <asp:ListItem Value="10">Non-Procurement: Manager</asp:ListItem>
+                            <asp:ListItem Value="11">Non-Procurement: Professional</asp:ListItem>
+                            <asp:ListItem Value="12">Non-Procurement: Trainee</asp:ListItem>
+                            <asp:ListItem Value="14">Head of Supply Chain</asp:ListItem>
+                            <asp:ListItem Value="15">Supply Chain Analyst</asp:ListItem>
+                            <asp:ListItem Value="16">Operator</asp:ListItem>
+                            <asp:ListItem Value="17">Operations Coordinator</asp:ListItem>
+                            <asp:ListItem Value="18">Operations Manager</asp:ListItem>
+                            <asp:ListItem Value="19">Master Scheduling Manager</asp:ListItem>
+                            <asp:ListItem Value="20">Materials Manager</asp:ListItem>
+                            <asp:ListItem Value="21">Supply Chain Executive</asp:ListItem>
+                            <asp:ListItem Value="22">Planner</asp:ListItem>
+                            <asp:ListItem Value="23">Contract Manager</asp:ListItem>
+                            <asp:ListItem Value="24">Head of Procurement</asp:ListItem>
+                            <asp:ListItem Value="25">Operational Buyer</asp:ListItem>
+                            <asp:ListItem Value="26">Senior Buyer</asp:ListItem>
+                            <asp:ListItem Value="27">Support Manager</asp:ListItem>
+                            <asp:ListItem Value="13">Other</asp:ListItem>
                     </asp:DropDownList>
                 </td>
                 <td class="txtrht">Membership Association

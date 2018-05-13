@@ -67,7 +67,7 @@
                                                     <img id="regionImage" runat="server" alt="">
                                                 </div>
 
-                                                <div class="region-name-block">
+                                                <div class="region-name-block">                                                    
                                                     <div class="region-name"><%# Container.DataItemIndex + 1%>. <%# Eval("countryRegion") %></div>
                                                     <div class="region-user"><%# Eval("nouserperc") %> %</div>
                                                     <div class="clear"></div>
@@ -171,7 +171,7 @@
 
                                             <div class="logo-group" runat="server" id="logo2div" visible="false">
                                                 <i>
-                                                    <img runat="server" id="imglogo2" alt=""></i>
+                                                    <img runat="server" id="imglogo2" alt="" width="90" height="90"></i>
                                                 <span>
                                                     <img src="../images/two.png" alt=""></span>
                                             </div>
@@ -179,14 +179,14 @@
 
                                             <div class="logo-group" runat="server" id="logo1div" visible="false">
                                                 <i>
-                                                    <img runat="server" id="imglogo1" alt=""></i>
+                                                    <img runat="server" id="imglogo1" alt="" width="90" height="90"></i>
                                                 <span>
                                                     <img src="../images/one.png" alt=""></span>
                                             </div>
 
                                             <div class="logo-group" runat="server" id="logo3div" visible="false">
                                                 <i>
-                                                    <img runat="server" id="imglogo3" alt=""></i>
+                                                    <img runat="server" id="imglogo3" alt="" width="90" height="90"></i>
                                                 <span>
                                                     <img src="../images/three.png" alt=""></span>
                                             </div>

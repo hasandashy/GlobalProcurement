@@ -114,18 +114,33 @@
                         <div class="dis-block clearfix member-info ">
                             <span class="title">Job Role</span>
                             <ul>
-                                <li><a href="#" onclick="SaveData(1)">Analyst</a></li>
+                                <li><a href="#" onclick="SaveData(1)">Procurement Analyst</a></li>
                                 <li><a href="#" onclick="SaveData(2)">Procurement Support</a></li>
                                 <li><a href="#" onclick="SaveData(3)">Strategic Sourcing</a></li>
                                 <li><a href="#" onclick="SaveData(4)">Vendor Manager/ Supplier Relationship Manager</a></li>
                                 <li><a href="#" onclick="SaveData(5)">Category Manager</a></li>
                                 <li><a href="#" onclick="SaveData(6)">Procurement Leader</a></li>
-                                <li><a href="#" onclick="SaveData(7)">Supply Chain</a></li>
+                                <li><a href="#" onclick="SaveData(7)">Supply Chain Manager</a></li>
                                 <li><a href="#" onclick="SaveData(8)">Non-Procurement: CXO</a></li>
                                 <li><a href="#" onclick="SaveData(9)">Non-Procurement: Director</a></li>
                                 <li><a href="#" onclick="SaveData(10)">Non-Procurement: Manager</a></li>
                                 <li><a href="#" onclick="SaveData(11)">Non-Procurement: Professional</a></li>
                                 <li><a href="#" onclick="SaveData(12)">Non-Procurement: Trainee</a></li>
+                                <li><a href="#" onclick="SaveData(14)">Head of Supply Chain</a></li>
+                                <li><a href="#" onclick="SaveData(15)">Supply Chain Analyst</a></li>
+                                <li><a href="#" onclick="SaveData(16)">Operator</a></li>
+                                <li><a href="#" onclick="SaveData(17)">Operations Coordinator</a></li>
+                                <li><a href="#" onclick="SaveData(18)">Operations Manager</a></li>
+                                <li><a href="#" onclick="SaveData(19)">Master Scheduling Manager</a></li>
+                                <li><a href="#" onclick="SaveData(20)">Materials Manager</a></li>
+                                <li><a href="#" onclick="SaveData(21)">Supply Chain Executive</a></li>
+                                <li><a href="#" onclick="SaveData(22)">Planner</a></li>
+                                <li><a href="#" onclick="SaveData(23)">Contract Manager</a></li>
+                                <li><a href="#" onclick="SaveData(24)">Head of Procurement</a></li>
+                                <li><a href="#" onclick="SaveData(25)">Operational Buyer</a></li>
+                                <li><a href="#" onclick="SaveData(26)">Senior Buyer</a></li>
+                                <li><a href="#" onclick="SaveData(27)">Support Manager</a></li>
+                                <li><a href="#" onclick="SaveData(13)">Other</a></li>
                             </ul>
                         </div>
                     </div>

@@ -59,7 +59,7 @@ namespace SGA.tna
                 string timeDiff = DataBinder.Eval(e.Item.DataItem, "diff").ToString();
                 if (lblConvertedDate != null)
                 {
-                    lblConvertedDate.Text = SGACommon.ToAusTimeZone(dtTestdate).ToString("dd/MM/yyyy");
+                    lblConvertedDate.Text = dtTestdate.ToString("dd/MM/yyyy");
                 }
                 if (lblTimeTaken != null)
                 {

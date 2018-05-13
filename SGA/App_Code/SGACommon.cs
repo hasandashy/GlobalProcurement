@@ -202,45 +202,33 @@ namespace SGA.App_Code
             string strValue = "";
             switch (roleId)
             {
-                case 1:
-                    strValue = "Analyst";
-                    break;
-                case 2:
-                    strValue = "Procurement Support";
-                    break;
-                case 3:
-                    strValue = "Strategic Sourcing";
-                    break;
-                case 4:
-                    strValue = "Vendor Manager/ Supplier Relationship Manager";
-                    break;
-                case 5:
-                    strValue = "Category Manager";
-                    break;
-                case 6:
-                    strValue = "Procurement Leader";
-                    break;
-                case 7:
-                    strValue = "Supply Chain";
-                    break;
-                case 8:
-                    strValue = "Non-Procurement: CXO";
-                    break;
-                case 9:
-                    strValue = "Non-Procurement: Director";
-                    break;
-                case 10:
-                    strValue = "Non-Procurement: Manager";
-                    break;
-                case 11:
-                    strValue = "Non-Procurement: Professional";
-                    break;
-                case 12:
-                    strValue = "Non-Procurement: Trainee";
-                    break;
-                case 13:
-                    strValue = "Other";
-                    break;
+                case 1: strValue = "Procurement Analyst"; break;
+                case 2: strValue = "Procurement Support"; break;
+                case 3: strValue = "Strategic Sourcing"; break;
+                case 4: strValue = "Vendor Manager/ Supplier Relationship Manager"; break;
+                case 5: strValue = "Category Manager"; break;
+                case 6: strValue = "Procurement Leader"; break;
+                case 7: strValue = "Supply Chain Manager"; break;
+                case 8: strValue = "Non-Procurement: CXO"; break;
+                case 9: strValue = "Non-Procurement: Director"; break;
+                case 10: strValue = "Non-Procurement: Manager"; break;
+                case 11: strValue = "Non-Procurement: Professional"; break;
+                case 12: strValue = "Non-Procurement: Trainee"; break;
+                case 14: strValue = "Head of Supply Chain"; break;
+                case 15: strValue = "Supply Chain Analyst"; break;
+                case 16: strValue = "Operator"; break;
+                case 17: strValue = "Operations Coordinator"; break;
+                case 18: strValue = "Operations Manager"; break;
+                case 19: strValue = "Master Scheduling Manager"; break;
+                case 20: strValue = "Materials Manager"; break;
+                case 21: strValue = "Supply Chain Executive"; break;
+                case 22: strValue = "Planner"; break;
+                case 23: strValue = "Contract Manager"; break;
+                case 24: strValue = "Head of Procurement"; break;
+                case 25: strValue = "Operational Buyer"; break;
+                case 26: strValue = "Senior Buyer"; break;
+                case 27: strValue = "Support Manager"; break;
+                case 13: strValue = "Other"; break;
 
             }
             return strValue;
@@ -1274,43 +1262,33 @@ namespace SGA.App_Code
             string strValue;
             switch (roleId)
             {
-                case 1:
-                    strValue = "Analyst";
-                    break;
-                case 2:
-                    strValue = "Procurement Support";
-                    break;
-                case 3:
-                    strValue = "Strategic Sourcing";
-                    break;
-                case 4:
-                    strValue = "Vendor Manager/ Supplier Relationship Manager";
-                    break;
-                case 5:
-                    strValue = "Category Manager";
-                    break;
-                case 6:
-                    strValue = "Procurement Leader";
-                    break;
-                case 7:
-                    strValue = "Supply Chain";
-                    break;
-                case 8:
-                    strValue = "Non-Procurement: CXO";
-                    break;
-                case 9:
-                    strValue = "Non-Procurement: Director";
-                    break;
-                case 10:
-                    strValue = "Non-Procurement: Manager";
-                    break;
-                case 11:
-                    strValue = "Non-Procurement: Professional";
-                    break;
-                case 12:
-                    strValue = "Non-Procurement: Trainee";
-                    break;
-
+                case 1: strValue = "Procurement Analyst"; break;
+                case 2: strValue = "Procurement Support"; break;
+                case 3: strValue = "Strategic Sourcing"; break;
+                case 4: strValue = "Vendor Manager/ Supplier Relationship Manager"; break;
+                case 5: strValue = "Category Manager"; break;
+                case 6: strValue = "Procurement Leader"; break;
+                case 7: strValue = "Supply Chain Manager"; break;
+                case 8: strValue = "Non-Procurement: CXO"; break;
+                case 9: strValue = "Non-Procurement: Director"; break;
+                case 10: strValue = "Non-Procurement: Manager"; break;
+                case 11: strValue = "Non-Procurement: Professional"; break;
+                case 12: strValue = "Non-Procurement: Trainee"; break;
+                case 14: strValue = "Head of Supply Chain"; break;
+                case 15: strValue = "Supply Chain Analyst"; break;
+                case 16: strValue = "Operator"; break;
+                case 17: strValue = "Operations Coordinator"; break;
+                case 18: strValue = "Operations Manager"; break;
+                case 19: strValue = "Master Scheduling Manager"; break;
+                case 20: strValue = "Materials Manager"; break;
+                case 21: strValue = "Supply Chain Executive"; break;
+                case 22: strValue = "Planner"; break;
+                case 23: strValue = "Contract Manager"; break;
+                case 24: strValue = "Head of Procurement"; break;
+                case 25: strValue = "Operational Buyer"; break;
+                case 26: strValue = "Senior Buyer"; break;
+                case 27: strValue = "Support Manager"; break;
+                case 13: strValue = "Other"; break;
                 default:
                     strValue = "--select item--";
                     break;

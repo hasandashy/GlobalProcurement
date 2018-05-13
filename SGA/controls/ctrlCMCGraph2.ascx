@@ -185,7 +185,7 @@
                 ['142', 'Asia', <%= this.asiaAvg%>],
                 ['150', 'Europe', <%= this.europeAvg%>],
                 ['019', 'Americas', <%= this.americaAvg%>],
-                ['009', 'Oceania', <%=this.oceanaAvg%>],
+                ['009', 'Australasia', <%=this.oceanaAvg%>],
                 ['002', 'Africa', <%= this.africaAvg%>]
             ]);
 

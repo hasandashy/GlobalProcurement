@@ -45,18 +45,32 @@ Please complete the form below and we will be in touch.
 
                                 <select id="jobRole" name="jobRole" class="form-control">
                                     <option selected value="0">Job Role best described as *</option>
-                                    <option value="1">Analyst</option>
+                                     <option value="1">Procurement Analyst</option>
                                     <option value="2">Procurement Support</option>
                                     <option value="3">Strategic Sourcing</option>
                                     <option value="4">Vendor Manager/ Supplier Relationship Manager</option>
                                     <option value="5">Category Manager</option>
                                     <option value="6">Procurement Leader</option>
-                                    <option value="7">Supply Chain</option>
+                                    <option value="7">Supply Chain Manager</option>
                                     <option value="8">Non-Procurement: CXO</option>
                                     <option value="9">Non-Procurement: Director</option>
                                     <option value="10">Non-Procurement: Manager</option>
                                     <option value="11">Non-Procurement: Professional</option>
                                     <option value="12">Non-Procurement: Trainee</option>
+                                    <option value="14">Head of Supply Chain</option>
+                                    <option value="15">Supply Chain Analyst</option>
+                                    <option value="16">Operator</option>
+                                    <option value="17">Operations Coordinator</option>
+                                    <option value="18">Operations Manager</option>
+                                    <option value="19">Master Scheduling Manager</option>
+                                    <option value="20">Materials Manager</option>
+                                    <option value="21">Supply Chain Executive</option>
+                                    <option value="22">Planner</option>
+                                    <option value="23">Contract Manager</option>
+                                    <option value="24">Head of Procurement</option>
+                                    <option value="25">Operational Buyer</option>
+                                    <option value="26">Senior Buyer</option>
+                                    <option value="27">Support Manager</option>
                                     <option value="13">Other</option>
 
                                     <!--<option value="1">Analyst</option>

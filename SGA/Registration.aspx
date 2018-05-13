@@ -1,8 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="SGA.Registration" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-     <style>
-    
+    <style>
         input[type=checkbox] {
             /* Double-sized Checkboxes */
             -ms-transform: scale(1.2); /* IE */
@@ -41,9 +40,9 @@
                     <form class="infusion-form" id="infusion-form">
 
                         <div class="dis_block clearfix">
-                              <div class="form-group" style="text-align:center;">
-                                           <asp:Label ID="lblErrorRegister" ClientIDMode="Static" runat="server" ForeColor="Red"></asp:Label>
-                               </div>
+                            <div class="form-group" style="text-align: center;">
+                                <asp:Label ID="lblErrorRegister" ClientIDMode="Static" runat="server" ForeColor="Red"></asp:Label>
+                            </div>
                             <div class="form-group">
 
                                 <input required class="form-control" id="inf_field_FirstName" maxlength="250" name="inf_field_FirstName" type="text" placeholder="First Name *" />
@@ -60,18 +59,32 @@
 
                                 <select id="jobRole" name="jobRole" class="form-control">
                                     <option selected value="0">— Role best described as —</option>
-                                    <option value="1">Analyst</option>
+                                    <option value="1">Procurement Analyst</option>
                                     <option value="2">Procurement Support</option>
                                     <option value="3">Strategic Sourcing</option>
                                     <option value="4">Vendor Manager/ Supplier Relationship Manager</option>
                                     <option value="5">Category Manager</option>
                                     <option value="6">Procurement Leader</option>
-                                    <option value="7">Supply Chain</option>
+                                    <option value="7">Supply Chain Manager</option>
                                     <option value="8">Non-Procurement: CXO</option>
                                     <option value="9">Non-Procurement: Director</option>
                                     <option value="10">Non-Procurement: Manager</option>
                                     <option value="11">Non-Procurement: Professional</option>
                                     <option value="12">Non-Procurement: Trainee</option>
+                                    <option value="14">Head of Supply Chain</option>
+                                    <option value="15">Supply Chain Analyst</option>
+                                    <option value="16">Operator</option>
+                                    <option value="17">Operations Coordinator</option>
+                                    <option value="18">Operations Manager</option>
+                                    <option value="19">Master Scheduling Manager</option>
+                                    <option value="20">Materials Manager</option>
+                                    <option value="21">Supply Chain Executive</option>
+                                    <option value="22">Planner</option>
+                                    <option value="23">Contract Manager</option>
+                                    <option value="24">Head of Procurement</option>
+                                    <option value="25">Operational Buyer</option>
+                                    <option value="26">Senior Buyer</option>
+                                    <option value="27">Support Manager</option>
                                     <option value="13">Other</option>
 
                                     <!--<option value="1">Analyst</option>
@@ -398,12 +411,13 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <p style="font-weight:bold;">By ticking this box</p>
+                                <p style="font-weight: bold;">By ticking this box</p>
                                 <br />
-                                <input type="checkbox" id="chkConsent"/>
+                                <input type="checkbox" id="chkConsent" />
                                 <span>I consent to this service collecting my assessment data for aggregate benchmarking purposes and I agree to receiving emails in relation to this service. </span>
-                                <br /> <input type="checkbox" id="chkTerms"/>
-                                <span>I have read and agree to the <a href="Terms.aspx" target="_blank">terms of service</a> and <a href="Privacy.aspx" target="_blank">privacy policy</a>. </span>                                
+                                <br />
+                                <input type="checkbox" id="chkTerms" />
+                                <span>I have read and agree to the <a href="Terms.aspx" target="_blank">terms of service</a> and <a href="Privacy.aspx" target="_blank">privacy policy</a>. </span>
                             </div>
                             <div class="form-group register-btn">
                                 <input type="submit" id="frm_basic_info" class="btn custom-btn" value="Go" />
@@ -419,5 +433,4 @@
 
 
         </div>
-         
 </asp:Content>

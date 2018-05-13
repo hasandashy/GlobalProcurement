@@ -182,7 +182,7 @@ namespace SGA.tna
                 HtmlImage img = e.Item.FindControl("regionImage") as HtmlImage;
 
 
-                if (data.Trim().ToLower() == "apac")
+                if (data.Trim().ToLower() == "asia")
                 {
                     strImagePath = "~/Images/asia-map.png";
                     region = "Asia";
@@ -202,10 +202,10 @@ namespace SGA.tna
                     strImagePath = "~/Images/europe-map.png";
                     region = "Europe";
                 }
-                else if (data.Trim().ToLower() == "oceania")
+                else if (data.Trim().ToLower() == "australasia")
                 {
                     strImagePath = "~/Images/oceania-map.png";
-                    region = "Oceania";
+                    region = "Australasia";
                 }
                 img.Src = strImagePath;
                 div.Style.Add("width", width);

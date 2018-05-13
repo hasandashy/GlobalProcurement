@@ -185,20 +185,34 @@
                     <p>&nbsp;</p>
                     <span class="error">*</span>&nbsp;&nbsp;<b>Your Job Role</b>
                     <div class="form-box1">
-                       <asp:DropDownList ID="ddlJobRole" class="styled" runat="server">
+                        <asp:DropDownList ID="ddlJobRole" class="styled" runat="server">
                             <asp:ListItem Value="0">Job role best described as ...</asp:ListItem>
-                            <asp:ListItem Value="1">Analyst</asp:ListItem>
+                            <asp:ListItem Value="1">Procurement Analyst</asp:ListItem>
                             <asp:ListItem Value="2">Procurement Support</asp:ListItem>
                             <asp:ListItem Value="3">Strategic Sourcing</asp:ListItem>
                             <asp:ListItem Value="4">Vendor Manager/ Supplier Relationship Manager</asp:ListItem>
                             <asp:ListItem Value="5">Category Manager</asp:ListItem>
                             <asp:ListItem Value="6">Procurement Leader</asp:ListItem>
-                            <asp:ListItem Value="7">Supply Chain</asp:ListItem>
+                            <asp:ListItem Value="7">Supply Chain Manager</asp:ListItem>
                             <asp:ListItem Value="8">Non-Procurement: CXO</asp:ListItem>
                             <asp:ListItem Value="9">Non-Procurement: Director</asp:ListItem>
                             <asp:ListItem Value="10">Non-Procurement: Manager</asp:ListItem>
                             <asp:ListItem Value="11">Non-Procurement: Professional</asp:ListItem>
                             <asp:ListItem Value="12">Non-Procurement: Trainee</asp:ListItem>
+                            <asp:ListItem Value="14">Head of Supply Chain</asp:ListItem>
+                            <asp:ListItem Value="15">Supply Chain Analyst</asp:ListItem>
+                            <asp:ListItem Value="16">Operator</asp:ListItem>
+                            <asp:ListItem Value="17">Operations Coordinator</asp:ListItem>
+                            <asp:ListItem Value="18">Operations Manager</asp:ListItem>
+                            <asp:ListItem Value="19">Master Scheduling Manager</asp:ListItem>
+                            <asp:ListItem Value="20">Materials Manager</asp:ListItem>
+                            <asp:ListItem Value="21">Supply Chain Executive</asp:ListItem>
+                            <asp:ListItem Value="22">Planner</asp:ListItem>
+                            <asp:ListItem Value="23">Contract Manager</asp:ListItem>
+                            <asp:ListItem Value="24">Head of Procurement</asp:ListItem>
+                            <asp:ListItem Value="25">Operational Buyer</asp:ListItem>
+                            <asp:ListItem Value="26">Senior Buyer</asp:ListItem>
+                            <asp:ListItem Value="27">Support Manager</asp:ListItem>
                             <asp:ListItem Value="13">Other</asp:ListItem>
                         </asp:DropDownList>
 
@@ -387,7 +401,7 @@
                     <div class="form-box1">
                         <span class="error"></span>&nbsp;
                          <asp:DropDownList ID="ddlEditProLevel" CssClass="styled" runat="server">
-                            <%-- <asp:ListItem Value="0" Selected="True">Procurement qualifications</asp:ListItem>
+                             <%-- <asp:ListItem Value="0" Selected="True">Procurement qualifications</asp:ListItem>
                              <asp:ListItem Value="1">Undergraduate degree in procurement / supply chain </asp:ListItem>
                              <asp:ListItem Value="2">Postgraduate degree in procurement / supply chain </asp:ListItem>
                              <asp:ListItem Value="3">CIPS: Member (MCIPS)</asp:ListItem>
@@ -396,27 +410,27 @@
                              <asp:ListItem Value="6">AAPCM: Fellow </asp:ListItem>
                              <asp:ListItem Value="7">Other </asp:ListItem>
                              <asp:ListItem Value="8">Not applicable</asp:ListItem>--%>
-                              <asp:ListItem Selected="True" Value="0">Procurement & Supply Qualification</asp:ListItem>
-                            <asp:ListItem Value="1">Certificate Procurement and Contracting</asp:ListItem>
-                            <asp:ListItem Value="2">Certificate Purchasing</asp:ListItem>
-                            <asp:ListItem Value="3">Certified Professional in Supply Management (CPSM)</asp:ListItem>
-                            <asp:ListItem Value="4">Certificate in Production and Inventory Management (CPIM)</asp:ListItem>
-                            <asp:ListItem Value="5">Diploma of Procurement and Contracting</asp:ListItem>
-                            <asp:ListItem Value="6">Diploma of Purchasing</asp:ListItem>
-                            <asp:ListItem Value="7">Diploma of Contract Management</asp:ListItem>
-                            <asp:ListItem Value="8">Advanced Diploma of Procurement and Contracting</asp:ListItem>
-                            <asp:ListItem Value="9">Graduate Certificate in Logistics and Supply Chain Management</asp:ListItem>
-                            <asp:ListItem Value="10">Undergraduate degree procurement / supply chain</asp:ListItem>
-                            <asp:ListItem Value="11">Postgraduate degree procurement/ supply chain</asp:ListItem>
-                            <asp:ListItem Value="12">Certified Supply Chain Professional (CSCP)</asp:ListItem>
-                            <asp:ListItem Value="13">Certified International Procurement Professional (CIPP)</asp:ListItem>
-                            <asp:ListItem Value="14">Certified International Advanced Procurement Professional (CIAPP)</asp:ListItem>
-                            <asp:ListItem Value="15">Member Chartered Institute Procurement Supply (MCIPS)</asp:ListItem>
-                            <asp:ListItem Value="16">Fellow Chartered Institute Procurement Supply (FCIPS)</asp:ListItem>
-                            <asp:ListItem Value="17">AAPCM Member</asp:ListItem>
-                            <asp:ListItem Value="18">AAPCM Fellow</asp:ListItem>
-                            <asp:ListItem Value="19">Other</asp:ListItem>
-                            <asp:ListItem Value="20">Not applicable</asp:ListItem>
+                             <asp:ListItem Selected="True" Value="0">Procurement & Supply Qualification</asp:ListItem>
+                             <asp:ListItem Value="1">Certificate Procurement and Contracting</asp:ListItem>
+                             <asp:ListItem Value="2">Certificate Purchasing</asp:ListItem>
+                             <asp:ListItem Value="3">Certified Professional in Supply Management (CPSM)</asp:ListItem>
+                             <asp:ListItem Value="4">Certificate in Production and Inventory Management (CPIM)</asp:ListItem>
+                             <asp:ListItem Value="5">Diploma of Procurement and Contracting</asp:ListItem>
+                             <asp:ListItem Value="6">Diploma of Purchasing</asp:ListItem>
+                             <asp:ListItem Value="7">Diploma of Contract Management</asp:ListItem>
+                             <asp:ListItem Value="8">Advanced Diploma of Procurement and Contracting</asp:ListItem>
+                             <asp:ListItem Value="9">Graduate Certificate in Logistics and Supply Chain Management</asp:ListItem>
+                             <asp:ListItem Value="10">Undergraduate degree procurement / supply chain</asp:ListItem>
+                             <asp:ListItem Value="11">Postgraduate degree procurement/ supply chain</asp:ListItem>
+                             <asp:ListItem Value="12">Certified Supply Chain Professional (CSCP)</asp:ListItem>
+                             <asp:ListItem Value="13">Certified International Procurement Professional (CIPP)</asp:ListItem>
+                             <asp:ListItem Value="14">Certified International Advanced Procurement Professional (CIAPP)</asp:ListItem>
+                             <asp:ListItem Value="15">Member Chartered Institute Procurement Supply (MCIPS)</asp:ListItem>
+                             <asp:ListItem Value="16">Fellow Chartered Institute Procurement Supply (FCIPS)</asp:ListItem>
+                             <asp:ListItem Value="17">AAPCM Member</asp:ListItem>
+                             <asp:ListItem Value="18">AAPCM Fellow</asp:ListItem>
+                             <asp:ListItem Value="19">Other</asp:ListItem>
+                             <asp:ListItem Value="20">Not applicable</asp:ListItem>
                          </asp:DropDownList>
                     </div>
                     <p>&nbsp;</p>
@@ -425,7 +439,7 @@
                     <div class="form-box1">
                         <span class="error"></span>&nbsp;
                         <asp:DropDownList ID="cboEditQualifications" CssClass="styled" runat="server">
-                              <asp:ListItem Value="0" Selected="True">Level of education</asp:ListItem>
+                            <asp:ListItem Value="0" Selected="True">Level of education</asp:ListItem>
                             <asp:ListItem Value="1">Secondary school</asp:ListItem>
                             <asp:ListItem Value="2">Certificate</asp:ListItem>
                             <asp:ListItem Value="3">Diploma</asp:ListItem>
@@ -434,7 +448,7 @@
                             <asp:ListItem Value="6">Postgraduate</asp:ListItem>
                             <asp:ListItem Value="7">Masters</asp:ListItem>
                             <asp:ListItem Value="8">Doctorate</asp:ListItem>
-                           
+
                         </asp:DropDownList>
                     </div>
                     <p>&nbsp;</p>
