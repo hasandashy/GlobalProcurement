@@ -1,4 +1,6 @@
-﻿using DataTier;
+﻿using CookComputing.XmlRpc;
+using DataTier;
+using InfusionSoftDotNet;
 using SGA.App_Code;
 using System;
 using System.Collections.Generic;
@@ -82,6 +84,17 @@ namespace SGA.ifpsmtna
                     SGACommon.GetEmailTemplate(15, ref subject, ref body);
                     body = body.Replace("@v0", email).Replace("@v1", assessments).Replace("@v3", email).Replace("@v5", firstName).Replace("@v6", lastName);
                     MailSending.SendMail(ConfigurationManager.AppSettings["nameDisplay"].ToString(), ConfigurationManager.AppSettings["UserName"].ToString(), "sales@comprara.com.au", subject, body, "");
+
+
+                    string[] strField = new string[]
+                            {
+                            "Id"
+                            };
+                    XmlRpcStruct[] resultFound = isdnAPI.findByEmail(email, strField);
+                    if (resultFound.Length > 0)
+                    {
+                        isdnAPI.addToGroup(System.Convert.ToInt32(resultFound[0]["Id"].ToString()), 4077);                        
+                    }
                 }
             }
 

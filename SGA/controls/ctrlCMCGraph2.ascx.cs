@@ -92,6 +92,56 @@ namespace SGA.controls
 
         protected decimal europeAvg = 0.0m;
 
+        //New Map
+        protected decimal _nAfricaAvg = 0.0m;
+
+        protected decimal _wAfricaAvg = 0.0m;
+
+        protected decimal _mAfricaAvg = 0.0m;
+
+        protected decimal _sAfricaAvg = 0.0m;
+
+        protected decimal _eAfricaAvg = 0.0m;
+
+
+        protected decimal _nAmericaAvg = 0.0m;
+
+        protected decimal _carAmericaAvg = 0.0m;
+
+        protected decimal _cAmericaAvg = 0.0m;
+
+        protected decimal _sAmericaAvg = 0.0m;
+
+
+        protected decimal _cAsiaAvg = 0.0m;
+
+        protected decimal _eAsiaAvg = 0.0m;
+
+        protected decimal _sAsiaAvg = 0.0m;
+
+        protected decimal _saAsiaAvg = 0.0m;
+
+        protected decimal _wAsiaAvg = 0.0m;
+
+
+        protected decimal _nEuropeAvg = 0.0m;
+
+        protected decimal _eEuropeAvg = 0.0m;
+
+        protected decimal _wEuropeAvg = 0.0m;
+
+        protected decimal _sEuropeAvg = 0.0m;
+
+
+        protected decimal _aNOcenAvg = 0.0m;
+
+        protected decimal _pOcenAvg = 0.0m;
+
+        protected decimal _mOcenAvg = 0.0m;
+
+        protected decimal _micOcenAvg = 0.0m;
+
+
         public int testId
         {
             get
@@ -122,10 +172,11 @@ namespace SGA.controls
             {
                 //tblCompare.Visible = (this.showCompare == 1);
                 BindGraph();
-                GetTestAverageByRegion();
+                //GetTestAverageByRegion();
+                GetTestAverageByRegionNew();
                 //Page.ClientScript.RegisterStartupScript(base.GetType(), "CallMyFunction", "drawChart()", true);
 
-            
+
 
             }
         }
@@ -194,6 +245,109 @@ namespace SGA.controls
                     }
                 }
             }
+        }
+
+        public decimal GetTestAverageByRegionNew()
+        {
+            decimal marks = 0.00m;
+            DataSet dsMarks = SqlHelper.ExecuteDataset(CommandType.StoredProcedure, "spGetPercentageAllRegionsNew");
+
+
+            if (dsMarks != null)
+            {
+                if (dsMarks.Tables.Count > 0 && dsMarks.Tables[0].Rows.Count > 0)
+                {
+                    for (int i = 0; i < dsMarks.Tables[0].Rows.Count; i++)
+                    {
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "northern africa")
+                        {
+                            _nAfricaAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "western africa")
+                        {
+                            _wAfricaAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "middle africa")
+                        {
+                            _mAfricaAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "eastern africa")
+                        {
+                            _eAfricaAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "southern africa")
+                        {
+                            _sAfricaAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "northern europe")
+                        {
+                            _nEuropeAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "western europe")
+                        {
+                            _wEuropeAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "eastern europe")
+                        {
+                            _eEuropeAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "southern europe")
+                        {
+                            _sEuropeAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "northern america")
+                        {
+                            _nAmericaAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "caribbean")
+                        {
+                            _carAmericaAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "central america")
+                        {
+                            _cAmericaAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "south america")
+                        {
+                            _sAmericaAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "central asia")
+                        {
+                            _cAsiaAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "eastern asia")
+                        {
+                            _eAsiaAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "southern asia")
+                        {
+                            _sAsiaAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "south-eastern asia")
+                        {
+                            _saAsiaAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "australia and new zealand")
+                        {
+                            _aNOcenAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "melanesia")
+                        {
+                            _mOcenAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "micronesia")
+                        {
+                            _micOcenAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+                        if (dsMarks.Tables[0].Rows[i]["countryRegion"].ToString().ToLower() == "polynesia")
+                        {
+                            _pOcenAvg = Convert.ToDecimal(dsMarks.Tables[0].Rows[i]["avgmarks"]);
+                        }
+
+                    }
+                }
+            }
+            return marks;
         }
 
         public decimal GetAverageByRegion(int topicId)

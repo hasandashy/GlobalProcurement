@@ -32,7 +32,7 @@
 
                 <div id="tab5" class="tab">
                     <div class="question-heading">
-                       <span>In the graph below you can see a benchmark of your result against users in the same country
+                        <span>In the graph below you can see a benchmark of your result against users in the same country
                         </span>
                         <div class="redtitle"></div>
                     </div>
@@ -44,13 +44,13 @@
 
                 <div id="tab6" class="tab">
                     <div class="question-heading">
-                       <span>In the graph below you can see a benchmark of your result.
+                        <span>In the graph below you can see a benchmark of your result.
                         </span>
                         <div class="redtitle"></div>
                     </div>
 
                     <div class="dis-block clearfix marT3 graph">
-                       <div id="container5"></div>
+                        <div id="container5"></div>
                     </div>
                 </div>
 
@@ -102,13 +102,13 @@
                             '<%= topic6name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic7name %>'.replace('<span>', '').replace('</span>', '')],--%>
             labels: ['ANLYSE', 'ALIGN', 'CATMAN', 'SUSTIN', 'RELATE', 'PERFRM', 'PARTNR'],
-             datasets: [{
-                 label: 'Your results',
-                 borderWidth: 1,
-                 backgroundColor: '#FF8C00',
-                 borderColor: '#FF8C00',
-                 data: [
-                     <%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>
+            datasets: [{
+                label: 'Your results',
+                borderWidth: 1,
+                backgroundColor: '#FF8C00',
+                borderColor: '#FF8C00',
+                data: [
+                    <%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>
                 ]
             }, {
                 label: 'Avg results',
@@ -116,11 +116,11 @@
                 backgroundColor: '#4682B4',
                 borderColor: '#4682B4',
                 data: [
-					<%= countrymedain1 %>,<%= countrymedain2 %>,<%= countrymedain3 %>,<%= countrymedain4 %>,<%= countrymedain5 %>,<%= countrymedain6 %>,<%= countrymedain7 %>
-                ]
-            }]
+                    <%= countrymedain1 %>,<%= countrymedain2 %>,<%= countrymedain3 %>,<%= countrymedain4 %>,<%= countrymedain5 %>,<%= countrymedain6 %>,<%= countrymedain7 %>
+                 ]
+             }]
 
-         };
+        };
 
         var ctx4 = document.getElementById('container3').getContext('2d');
         window.myBar = new Chart(ctx4, {
@@ -184,20 +184,37 @@
             }
         });
 
-       
+
         function drawRegionsMap() {
 
             var data = google.visualization.arrayToDataTable([
                 ['Region Code', 'Continent', 'Avg Score'],
-                ['142', 'Asia', <%= this.asiaAvg%>],
-                ['150', 'Europe', <%= this.europeAvg%>],
-                ['019', 'Americas', <%= this.americaAvg%>],
-                ['009', 'Australasia', <%=this.oceanaAvg%>],
-                ['002', 'Africa', <%= this.africaAvg%>]
+                ['015', 'Northern Africa', <%=this._nAfricaAvg%>],
+['011', 'Western Africa', <%=this._wAfricaAvg%>],
+['017', 'Middle Africa', <%=this._mAfricaAvg%>],
+['014', 'Eastern Africa', <%=this._eAfricaAvg%>],
+['018', 'Southern Africa', <%=this._sAfricaAvg%>],
+['154', 'Northern Europe', <%=this._nEuropeAvg%>],
+['155', 'Western Europe', <%=this._wEuropeAvg%>],
+['151', 'Eastern Europe', <%=this._eEuropeAvg%>],
+['039', 'Southern Europe', <%=this._sEuropeAvg%>],
+['021', 'Northern America', <%=this._nAmericaAvg%>],
+['029', 'Caribbean', <%=this._carAmericaAvg%>],
+['013', 'Central America', <%=this._cAmericaAvg%>],
+['005', 'South America', <%=this._sAmericaAvg%>],
+['143', 'Central Asia', <%=this._cAsiaAvg%>],
+['030', 'Eastern Asia', <%=this._eAsiaAvg%>],
+['034', 'Southern Asia', <%=this._sAsiaAvg%>],
+['035', 'South-Eastern Asia', <%=this._saAsiaAvg%>],
+['145', 'Western Asia', <%=this._wAsiaAvg%>],
+['053', 'Australia and New Zealand', <%=this._aNOcenAvg%>],
+['054', 'Melanesia', <%=this._mOcenAvg%>],
+['057', 'Micronesia', <%=this._micOcenAvg%>],
+['061', 'Polynesia', <%=this._pOcenAvg%>]
             ]);
 
-          // extract column index 1 for color values
-            var colorValues = [<%= this.asiaAvg%>,<%= this.europeAvg%>,<%=this.americaAvg%>,<%=this.oceanaAvg%>,<%=this.africaAvg%>]      
+            // extract column index 1 for color values
+            var colorValues = [<%=this._nAfricaAvg%>,<%=this._wAfricaAvg%>,<%=this._mAfricaAvg%>,<%=this._eAfricaAvg%>,<%=this._sAfricaAvg%>,<%=this._nEuropeAvg%>,<%=this._wEuropeAvg%>,<%=this._eEuropeAvg%>,<%=this._sEuropeAvg%>,<%=this._nAmericaAvg%>,<%=this._carAmericaAvg%>,<%=this._cAmericaAvg%>,<%=this._sAmericaAvg%>,<%=this._cAsiaAvg%>,<%=this._eAsiaAvg%>,<%=this._sAsiaAvg%>,<%=this._saAsiaAvg%>,<%=this._wAsiaAvg%>,<%=this._aNOcenAvg%>,<%=this._mOcenAvg%>,<%=this._micOcenAvg%>,<%=this._pOcenAvg%>]
             // sort ascending
             colorValues.sort(function (a, b) { return a - b });
             // build color names red <= -10 > yellow <= 10 > green
@@ -219,12 +236,13 @@
             });
 
             var options = {
-                resolution: 'continents',
+                resolution: 'subcontinents',
                 colorAxis: {
                     colors: colorNames,
                     values: colorValues
                 },
-                datalessRegionColor: 'grey',
+                datalessRegionColor: 'grey'
+                
             };
 
             //var options = {
@@ -241,7 +259,7 @@
 
 
         jQuery('.tabs .tab-links a').on('click', function (e) {
-            var currentAttrValue = jQuery(this).attr('href');          
+            var currentAttrValue = jQuery(this).attr('href');
             // Show/Hide Tabs
             jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
 
@@ -254,8 +272,8 @@
             }
 
         });
-      
-      
+
+
 
     });
 

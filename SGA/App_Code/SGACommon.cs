@@ -1264,10 +1264,10 @@ namespace SGA.App_Code
             {
                 case 1: strValue = "Procurement Analyst"; break;
                 case 2: strValue = "Procurement Support"; break;
-                case 3: strValue = "Strategic Sourcing"; break;
-                case 4: strValue = "Vendor Manager/ Supplier Relationship Manager"; break;
+                case 3: strValue = "Strategic Sourcing Specialist"; break;
+                case 4: strValue = "Supplier Relationship Manager (VM)"; break;
                 case 5: strValue = "Category Manager"; break;
-                case 6: strValue = "Procurement Leader"; break;
+                case 6: strValue = "Procurement Manager/Leader"; break;
                 case 7: strValue = "Supply Chain Manager"; break;
                 case 8: strValue = "Non-Procurement: CXO"; break;
                 case 9: strValue = "Non-Procurement: Director"; break;
@@ -1288,6 +1288,8 @@ namespace SGA.App_Code
                 case 25: strValue = "Operational Buyer"; break;
                 case 26: strValue = "Senior Buyer"; break;
                 case 27: strValue = "Support Manager"; break;
+                case 28: strValue = "Purchasing Administrator"; break;
+                case 29: strValue = "Contract Administrator"; break;
                 case 13: strValue = "Other"; break;
                 default:
                     strValue = "--select item--";
