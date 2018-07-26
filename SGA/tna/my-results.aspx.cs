@@ -67,7 +67,7 @@ namespace SGA.tna
                     {
                         ':'
                     });
-                    lblTimeTaken.Text = strArr[1] + "m " + strArr[2] + "s";
+                    lblTimeTaken.Text = strArr[0] + "h " + strArr[1] + "m " + strArr[2] + "s";
                 }
             }
         }

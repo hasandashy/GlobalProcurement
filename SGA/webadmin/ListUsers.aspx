@@ -151,10 +151,63 @@
                                                                 <td>
                                                                     <input type="text" autocomplete="off" name="txtEmail" id="txtEmail" runat="server" maxlength="250" />
                                                                 </td>
-                                                                <td class="txtrht">Company
+                                                                <td class="txtrht">Membership
                                                                 </td>
                                                                 <td>
-                                                                    <input type="text" autocomplete="off" name="txtCompany" id="txtCompany" runat="server" maxlength="100" />
+                                                                     <asp:DropDownList ID="ddlMemSearch" runat="server" class="styled">
+                                                                        <asp:ListItem Value="0">Select</asp:ListItem>
+                                                                        <asp:ListItem Value="AACAM">AACAM - Asociación Argentina de Compras Administracion de Materiales y Logistica</asp:ListItem>
+                                                                        <asp:ListItem Value="ABCAL">ABCAL - Association Belge des Cardes d’Achat et de Logistique</asp:ListItem>
+                                                                        <asp:ListItem Value="ADACI">ADACI - Associazione Italiana Acquiste E Supply Management</asp:ListItem>
+                                                                        <asp:ListItem Value="AERCE">AERCE - Associación Espanola de Professionales de Compras, Contractión y Aprovisionamientos</asp:ListItem>
+                                                                        <asp:ListItem Value="APCADEC">APCADEC - Portuguese association for Purchasing and Supply Management</asp:ListItem>
+                                                                        <asp:ListItem Value="APPI">APPI - Asosiasi Pengacara Pengadaan Indonesia</asp:ListItem>
+                                                                        <asp:ListItem Value="APROCAL">APROCAL - Asociación de Profesionales en Compras, Abastecimiento y Logística, A.C.</asp:ListItem>
+                                                                        <asp:ListItem Value="BME">BME - Bundesverband Materialwirtschaft, Einkauf und Logistik</asp:ListItem>
+                                                                        <asp:ListItem Value="BMOE">BMOE - Bundesverband Materialwirtschaft, Einkauf und Logistik in Osterreich</asp:ListItem>
+                                                                        <asp:ListItem Value="CAP">CAP - Croatian Association of Purchasing</asp:ListItem>
+                                                                        <asp:ListItem Value="CAPP">CAPP - Caribbean Association of Procurement Professionals</asp:ListItem>
+                                                                        <asp:ListItem Value="CBEC">CBEC - Brazilian Council of Purchasing Executives</asp:ListItem>
+                                                                        <asp:ListItem Value="CFLP">CFLP - China Federation of Logistics and Purchasing</asp:ListItem>
+                                                                        <asp:ListItem Value="CIPSMN">CIPSMN - Chartered Institute of Purchasing & Supply Management of Nigeria</asp:ListItem>
+                                                                        <asp:ListItem Value="DILF">DILF - Danish Purchasing and Logistics Forum</asp:ListItem>
+                                                                        <asp:ListItem Value="Forum Einkauf">Forum Einkauf - Forum Einkauf</asp:ListItem>
+                                                                        <asp:ListItem Value="FZUP">FZUP - Federation of Purchases and Supply Management of Russia</asp:ListItem>
+                                                                        <asp:ListItem Value="HALPIM">HALPIM - Hungarian Association of Logistics, Purchasing and Inventory Management</asp:ListItem>
+                                                                        <asp:ListItem Value="HPI">HPI - Hellenic Purchasing Institute</asp:ListItem>
+                                                                        <asp:ListItem Value="IAPI">IAPI - Ikatan Ahli Pengadaan Indonesia</asp:ListItem>
+                                                                        <asp:ListItem Value="IFPSM">IFPSM - International Federation of Purchasing & Supply Management</asp:ListItem>
+                                                                        <asp:ListItem Value="IIMM">IIMM - Indian Institute of Materials Management</asp:ListItem>
+                                                                        <asp:ListItem Value="IIPMM">IIPMM - Irish Institute of Purchasing and Materials Management</asp:ListItem>
+                                                                        <asp:ListItem Value="IPLMA">IPLMA - Israeli Purchasing & Logistics Managers Association</asp:ListItem>
+                                                                        <asp:ListItem Value="IPPU">IPPU - Institute of Procurement Professionals of Uganda</asp:ListItem>
+                                                                        <asp:ListItem Value="IPSHK">IPSHK - The Institute of Purchasing and Supply of Hong Kong</asp:ListItem>
+                                                                        <asp:ListItem Value="ISMM">ISMM - Institute of Supply and Materials Management</asp:ListItem>
+                                                                        <asp:ListItem Value="JMMA">JMMA - Japan Materials Management Association</asp:ListItem>
+                                                                        <asp:ListItem Value="KISM">KISM - Kenya Institute of Supplies Management</asp:ListItem>
+                                                                        <asp:ListItem Value="LOGY">LOGY - Finnish Association of Purchasing and Logistics</asp:ListItem>
+                                                                        <asp:ListItem Value="MIPMM">MIPMM - Malaysian Institute of Purchasing & Materials Management</asp:ListItem>
+                                                                        <asp:ListItem Value="MIPS">MIPS - Malawi Institute of Procurement and Supply</asp:ListItem>
+                                                                        <asp:ListItem Value="NEVI">NEVI - Nederlandse Vereniging voor Inkoop Management</asp:ListItem>
+                                                                        <asp:ListItem Value="NIMA">NIMA - Norsk Forbund for Innkjøp og Logistikk (The Norwegian Association of Purchasing and Logistics)</asp:ListItem>
+                                                                        <asp:ListItem Value="PASIA">PASIA - Procurement and Supply Institute of Asia</asp:ListItem>
+                                                                        <asp:ListItem Value="PISM">PISM - Philippine Institute for Supply Management</asp:ListItem>
+                                                                        <asp:ListItem Value="PROCURE">PROCURE - procure.ch Swiss Association for Purchasing and Supply Management</asp:ListItem>
+                                                                        <asp:ListItem Value="PROLOG">PROLOG - Estonian Purchasing and Supply Chain Management Association</asp:ListItem>
+                                                                        <asp:ListItem Value="PSCMT">PSCMT - Purchasing and Supply Chain Management Association of Thailand</asp:ListItem>
+                                                                        <asp:ListItem Value="PSML">PSML - Polish Supply Management Leaders</asp:ListItem>
+                                                                        <asp:ListItem Value="SAPPP">SAPPP - Serbian Association of Professionals in Public Procurement</asp:ListItem>
+                                                                        <asp:ListItem Value="SCMA">SCMA - Supply Chain Management Association</asp:ListItem>
+                                                                        <asp:ListItem Value="SILF">SILF - Swedish Purchasing and Logistic Association</asp:ListItem>
+                                                                        <asp:ListItem Value="SIMM">SIMM - Singapore Institute of Materials Management</asp:ListItem>
+                                                                        <asp:ListItem Value="SMIT">SMIT - Supply Management Institute, Taiwan</asp:ListItem>
+                                                                        <asp:ListItem Value="SSCPA">SSCPA - Serbian Supply Chain Professionals Association</asp:ListItem>
+                                                                        <asp:ListItem Value="TUSAYDER">TUSAYDER - TUSAYDER</asp:ListItem>
+                                                                        <asp:ListItem Value="ZNS">ZNS - Zdruzenje nabavnikov Slovenije (Slovenian Purchasing Association)</asp:ListItem>
+                                                                        <asp:ListItem Value="Other - CIPS">Other: CIPS – Chartered Institute of Purchasing & Supply</asp:ListItem>
+                                                                        <asp:ListItem Value="Other - ISM">Other: ISM – Institute of Supply Management</asp:ListItem>
+                                                                        <asp:ListItem Value="Other">Not a Member</asp:ListItem>
+                                                                    </asp:DropDownList>
                                                                 </td>
                                                             </tr>
                                                             <tr>

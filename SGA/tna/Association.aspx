@@ -18,21 +18,26 @@
             <p>To find out more about expanding your personal equity and value, contact your procurement association: </p>
         </div>
 
-
-
         <div class="dis-block clearfix marT4 center">
+            <p>Your procurement association will recommend the best training and solutions to achieve your procurement goals.</p>
+        </div>
+
+        <%--<div class="dis-block clearfix marT4 center">
             <img src="../images/pasia-logo.png" alt="">
-        </div>
+        </div>--%>
 
-        <div class="dis-block clearfix marT4 center">
+        <%--<div class="dis-block clearfix marT4 center">
             <p>As a globally recognised association, PASIA will recommend the best training to achieve your procurement goals.</p>
+        </div>--%>
+        <div class="dis-block clearfix marT4 center">
+            <p>Should you have any further questions or requirements, contact us.</p>
         </div>
-
-
+        <div class="dis-block clearfix marT4 center">
+            <img src="../images/ifpsm.png" alt="">
+        </div>
         <div class="dis-block clearfix marT4 center contact-details">
-            <strong>Contact details: </strong>
-            <p><strong>Email:</strong> <a href="mailto:info@pasia.org">info@pasia.org</a> </p>
-            <p><strong>Visit:</strong> <a href="http://www.pasia.org/contact.html" target="_blank">http://www.pasia.org/contact.html</a></p>
+            <p><strong>Email:</strong> <a href="mailto:benchmark@ifpsm.org">benchmark@ifpsm.org</a> </p>
+            <p><strong>Visit:</strong> <a href="http://www.ifpsm.org" target="_blank">http://www.ifpsm.org/</a></p>
         </div>
 
 

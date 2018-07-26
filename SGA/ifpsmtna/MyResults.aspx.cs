@@ -134,7 +134,7 @@ namespace SGA.ifpsmtna
                     {
                         ':'
                     });
-                    lblTimeTaken.Text = strArr[1] + " min " + strArr[2] + " sec ";
+                    lblTimeTaken.Text = strArr[0] + " hrs " + strArr[1] + " min " + strArr[2] + " sec ";
                 }
             }
         }

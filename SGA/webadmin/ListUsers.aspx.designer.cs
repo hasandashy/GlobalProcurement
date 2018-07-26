@@ -58,13 +58,13 @@ namespace SGA.webadmin {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtEmail;
         
         /// <summary>
-        /// txtCompany control.
+        /// ddlMemSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCompany;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMemSearch;
         
         /// <summary>
         /// ddlOrder control.

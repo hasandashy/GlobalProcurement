@@ -161,7 +161,7 @@ namespace SGA.webadmin
                 new SqlParameter("@firstname", this.txtFname.Value.Trim()),
                 new SqlParameter("@lastname", this.txtLname.Value.Trim()),
                 new SqlParameter("@email", this.txtEmail.Value.Trim()),
-                new SqlParameter("@company", this.txtCompany.Value.Trim()),
+                new SqlParameter("@membership", this.ddlMemSearch.SelectedValue),
                 new SqlParameter("@dateFrom", this.txtFrom.Text.Trim()),
                 new SqlParameter("@dateTo", this.txtTo.Text.Trim()),
                 new SqlParameter("@userCondition", this.ddlOrder.SelectedValue),
@@ -1150,7 +1150,7 @@ namespace SGA.webadmin
                 new SqlParameter("@firstname", this.txtFname.Value.Trim()),
                 new SqlParameter("@lastname", this.txtLname.Value.Trim()),
                 new SqlParameter("@email", this.txtEmail.Value.Trim()),
-                new SqlParameter("@company", this.txtCompany.Value.Trim()),
+                new SqlParameter("@membership", this.ddlMemSearch.SelectedValue),
                 new SqlParameter("@dateFrom", this.txtFrom.Text.Trim()),
                 new SqlParameter("@dateTo", this.txtTo.Text.Trim()),
                 new SqlParameter("@userCondition", this.ddlOrder.SelectedValue),
@@ -1179,49 +1179,14 @@ namespace SGA.webadmin
                             MyWorksheet.Cells[startRow, 2].Value = DS.Tables[0].Rows[i]["First name"].ToString();
                             MyWorksheet.Cells[startRow, 3].Value = DS.Tables[0].Rows[i]["Last name"].ToString();
                             MyWorksheet.Cells[startRow, 4].Value = DS.Tables[0].Rows[i]["Email"].ToString();
-                            MyWorksheet.Cells[startRow, 5].Value = DS.Tables[0].Rows[i]["Company"].ToString();
-                            MyWorksheet.Cells[startRow, 6].Value = DS.Tables[0].Rows[i]["ExpiryDate"].ToString();
-                            MyWorksheet.Cells[startRow, 7].Value = DS.Tables[0].Rows[i]["Register date"].ToString();
-                            MyWorksheet.Cells[startRow, 8].Value = DS.Tables[0].Rows[i]["Password"].ToString();
-                            MyWorksheet.Cells[startRow, 9].Value = DS.Tables[0].Rows[i]["Job Role"].ToString();
-                            MyWorksheet.Cells[startRow, 10].Value = DS.Tables[0].Rows[i]["Approved"].ToString();
-                            MyWorksheet.Cells[startRow, 11].Value = DS.Tables[0].Rows[i]["Added By Admin"].ToString();
-                            MyWorksheet.Cells[startRow, 12].Value = DS.Tables[0].Rows[i]["Industry"].ToString();
-                            MyWorksheet.Cells[startRow, 13].Value = DS.Tables[0].Rows[i]["Annualised revenues"].ToString();
-                            MyWorksheet.Cells[startRow, 14].Value = DS.Tables[0].Rows[i]["Spend under influence"].ToString();
-                            MyWorksheet.Cells[startRow, 15].Value = DS.Tables[0].Rows[i]["Procurement model"].ToString();
-                            MyWorksheet.Cells[startRow, 16].Value = DS.Tables[0].Rows[i]["Number of employees"].ToString();
-                            MyWorksheet.Cells[startRow, 17].Value = DS.Tables[0].Rows[i]["Years of procurement experience"].ToString();
-                            MyWorksheet.Cells[startRow, 18].Value = DS.Tables[0].Rows[i]["Level of education"].ToString();
-                            MyWorksheet.Cells[startRow, 19].Value = DS.Tables[0].Rows[i]["Category you manage currently"].ToString();
-                            MyWorksheet.Cells[startRow, 20].Value = DS.Tables[0].Rows[i]["Procurement function reports to"].ToString();
-                            MyWorksheet.Cells[startRow, 21].Value = DS.Tables[0].Rows[i]["Procurement qualifications"].ToString();
-                            MyWorksheet.Cells[startRow, 22].Value = DS.Tables[0].Rows[i]["Geographical influence"].ToString();
-                            MyWorksheet.Cells[startRow, 23].Value = DS.Tables[0].Rows[i]["Phone No"].ToString();
-                            MyWorksheet.Cells[startRow, 24].Value = DS.Tables[0].Rows[i]["In which state do you work?"].ToString();
-                            MyWorksheet.Cells[startRow, 25].Value = DS.Tables[0].Rows[i]["Postcode"].ToString();
-                            MyWorksheet.Cells[startRow, 26].Value = DS.Tables[0].Rows[i]["Country"].ToString();
-                            MyWorksheet.Cells[startRow, 27].Value = DS.Tables[0].Rows[i]["JobTitle"].ToString();
-                            MyWorksheet.Cells[startRow, 28].Value = DS.Tables[0].Rows[i]["Procurement Benchmark Assessment - Assigned"].ToString();
-                            MyWorksheet.Cells[startRow, 29].Value = DS.Tables[0].Rows[i]["Procurement Benchmark Assessment - Started"].ToString();
-                            MyWorksheet.Cells[startRow, 30].Value = DS.Tables[0].Rows[i]["Skills Self Assessment Given"].ToString();
-                            MyWorksheet.Cells[startRow, 31].Value = DS.Tables[0].Rows[i]["Behavioural Assessment Given"].ToString();
-                            MyWorksheet.Cells[startRow, 32].Value = DS.Tables[0].Rows[i]["Negotiation Profile Assessment Given"].ToString();
-                            MyWorksheet.Cells[startRow, 33].Value = DS.Tables[0].Rows[i]["Maturity Profile Assessment Given"].ToString();
-                            MyWorksheet.Cells[startRow, 34].Value = DS.Tables[0].Rows[i]["Negotiation Profile Assessment Given"].ToString();
-                            MyWorksheet.Cells[startRow, 35].Value = DS.Tables[0].Rows[i]["Contract Management Assessmen Given"].ToString();
-                            MyWorksheet.Cells[startRow, 36].Value = DS.Tables[0].Rows[i]["Procurement Benchmark Assessment - Completed"].ToString();
-                            MyWorksheet.Cells[startRow, 37].Value = DS.Tables[0].Rows[i]["Behavioural Assessment Completed"].ToString();
-                            MyWorksheet.Cells[startRow, 38].Value = DS.Tables[0].Rows[i]["Skills Self Assessment Completed"].ToString();
-                            MyWorksheet.Cells[startRow, 39].Value = DS.Tables[0].Rows[i]["Negotiation Profile Assessment Completed"].ToString();
-                            MyWorksheet.Cells[startRow, 40].Value = DS.Tables[0].Rows[i]["Maturity Profile Assessment Completed"].ToString();
-                            MyWorksheet.Cells[startRow, 41].Value = DS.Tables[0].Rows[i]["Contract Management Assessment Completed"].ToString();
-                            MyWorksheet.Cells[startRow, 42].Value = DS.Tables[0].Rows[i]["Procurement Benchmark Assessment Link"].ToString();
-                            MyWorksheet.Cells[startRow, 43].Value = DS.Tables[0].Rows[i]["Behavioural Assessment Link"].ToString();
-                            MyWorksheet.Cells[startRow, 44].Value = DS.Tables[0].Rows[i]["Skills Self Assessment Link"].ToString();
-                            MyWorksheet.Cells[startRow, 45].Value = DS.Tables[0].Rows[i]["Negotiation Profile Assessment Link"].ToString();
-                            MyWorksheet.Cells[startRow, 46].Value = DS.Tables[0].Rows[i]["Maturity Profile Assessment Link"].ToString();
-                            MyWorksheet.Cells[startRow, 47].Value = DS.Tables[0].Rows[i]["Contract Management Assessment Link"].ToString();
+                            MyWorksheet.Cells[startRow, 5].Value = DS.Tables[0].Rows[i]["ExpiryDate"].ToString();
+                            MyWorksheet.Cells[startRow, 6].Value = DS.Tables[0].Rows[i]["Register date"].ToString();
+                            MyWorksheet.Cells[startRow, 7].Value = DS.Tables[0].Rows[i]["Job Role"].ToString();
+                            MyWorksheet.Cells[startRow, 8].Value = DS.Tables[0].Rows[i]["Approved"].ToString();
+                            MyWorksheet.Cells[startRow, 9].Value = DS.Tables[0].Rows[i]["Added By Admin"].ToString();
+                            MyWorksheet.Cells[startRow, 10].Value = DS.Tables[0].Rows[i]["MembershipAssociation"].ToString();                            
+                            MyWorksheet.Cells[startRow, 11].Value = DS.Tables[0].Rows[i]["Procurement Benchmark Assessment - Started"].ToString();
+                            MyWorksheet.Cells[startRow, 12].Value = DS.Tables[0].Rows[i]["Procurement Benchmark Assessment - Completed"].ToString();
                             startRow++;
                             i++;
                         }
