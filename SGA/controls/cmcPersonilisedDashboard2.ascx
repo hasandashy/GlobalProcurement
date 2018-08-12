@@ -24,7 +24,17 @@
                         </span>
                         <div class="redtitle"></div>
                     </div>
+                    <article class="navigation" style="border-top: none;">
+                        <ul>
+                            <asp:Repeater ID="rptrTopics1" runat="server">
+                                <ItemTemplate>
+                                    <li>
+                                        <asp:LinkButton ID="lnkBtn" CssClass="color" runat="server" Font-Size="12px" Text='<%#Eval("topicName").ToString().Replace(" ","<br />")%>' CommandArgument='<%#Eval("topicId") %>' CommandName="select">LinkButton</asp:LinkButton></li>
 
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </ul>
+                    </article>
                     <div class="dis-block clearfix graph">
                         <canvas id="container3"></canvas>
                     </div>
@@ -36,7 +46,17 @@
                         </span>
                         <div class="redtitle"></div>
                     </div>
+                    <article class="navigation" style="border-top: none;">
+                        <ul>
+                            <asp:Repeater ID="rptrTopics2" runat="server">
+                                <ItemTemplate>
+                                    <li>
+                                        <asp:LinkButton ID="lnkBtn" CssClass="color" runat="server" Font-Size="12px" Text='<%#Eval("topicName").ToString().Replace(" ","<br />")%>' CommandArgument='<%#Eval("topicId") %>' CommandName="select">LinkButton</asp:LinkButton></li>
 
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </ul>
+                    </article>
                     <div class="dis-block clearfix marT3 graph">
                         <canvas id="container4"></canvas>
                     </div>
@@ -117,8 +137,8 @@
                 borderColor: '#4682B4',
                 data: [
                     <%= countrymedain1 %>,<%= countrymedain2 %>,<%= countrymedain3 %>,<%= countrymedain4 %>,<%= countrymedain5 %>,<%= countrymedain6 %>,<%= countrymedain7 %>
-                 ]
-             }]
+                ]
+            }]
 
         };
 
@@ -134,7 +154,7 @@
                 scales:
        {
            xAxes: [{
-               display: true,
+               display: false,
                gridLines: {
                    display: false
                }
@@ -165,7 +185,7 @@
                 scales:
        {
            xAxes: [{
-               display: true,
+               display: false,
                gridLines: {
                    display: false
                }
@@ -242,7 +262,7 @@
                     values: colorValues
                 },
                 datalessRegionColor: 'grey'
-                
+
             };
 
             //var options = {

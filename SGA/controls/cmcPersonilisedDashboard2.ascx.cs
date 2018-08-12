@@ -185,6 +185,12 @@ namespace SGA.controls
             {
                 new SqlParameter("@testId", this.testId)
             });
+            //uncomment
+            //DataSet _ds = SqlHelper.ExecuteDataset(CommandType.StoredProcedure, "spGetSgaTopics");
+            //this.rptrTopics1.DataSource = _ds;
+            //this.rptrTopics1.DataBind();
+            //this.rptrTopics2.DataSource = _ds;
+            //this.rptrTopics2.DataBind();
             if (ds != null)
             {
                 if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)

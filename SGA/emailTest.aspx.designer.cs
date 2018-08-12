@@ -7,27 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SGA.controls {
+namespace SGA {
     
     
-    public partial class cmcPersonilisedDashboard2 {
+    public partial class emailTest {
         
         /// <summary>
-        /// rptrTopics1 control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptrTopics1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// rptrTopics2 control.
+        /// lblUserId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptrTopics2;
+        protected global::System.Web.UI.WebControls.Label lblUserId;
+        
+        /// <summary>
+        /// imb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imb;
     }
 }

@@ -1,4 +1,6 @@
-﻿using DataTier;
+﻿using CookComputing.XmlRpc;
+using DataTier;
+using InfusionSoftDotNet;
 using SGA.App_Code;
 using System;
 using System.Collections.Generic;
@@ -163,6 +165,19 @@ namespace SGA.tna
         [WebMethod]
         public static void CompleteAssessment(int testId)
         {
+            string[] strField = new string[]
+                      {
+                            "Id"
+                      };
+            XmlRpcStruct[] resultFound = isdnAPI.findByEmail(SGACommon.LoginUserInfo.name, strField);
+            int userId;
+            XmlRpcStruct Contact = new XmlRpcStruct();
+            if (resultFound.Length > 0)
+            {
+                userId = System.Convert.ToInt32(resultFound[0]["Id"].ToString());
+                isdnAPI.addToGroup(userId, 4229);
+                isdnAPI.dsUpdate("Contact", userId, Contact);
+            }
             SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "spRestrictTest", new SqlParameter[]
             {
                 new SqlParameter("@flag", "0"),

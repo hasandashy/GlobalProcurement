@@ -28,7 +28,17 @@
                         </span>
                         <div class="redtitle"></div>
                     </div>
+                    <article class="navigation" style="border-top:none;">
+                        <ul>
+                            <asp:Repeater ID="rptrTopics1" runat="server">
+                                <ItemTemplate>
+                                    <li>
+                                        <asp:LinkButton ID="lnkBtn" CssClass="color" runat="server" Font-Size="12px" Text='<%#Eval("topicName").ToString().Replace(" ","<br />")%>' CommandArgument='<%#Eval("topicId") %>' CommandName="select">LinkButton</asp:LinkButton></li>
 
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </ul>
+                    </article>
                     <div class="dis-block clearfix graph">
                         <canvas id="container"></canvas>
                     </div>
@@ -40,7 +50,17 @@
                         </span>
                         <div class="redtitle"></div>
                     </div>
+                    <article class="navigation" style="border-top:none;">
+                        <ul>
+                            <asp:Repeater ID="rptrTopics2" runat="server">
+                                <ItemTemplate>
+                                    <li>
+                                        <asp:LinkButton ID="lnkBtn" CssClass="color" runat="server" Font-Size="12px" Text='<%#Eval("topicName").ToString().Replace(" ","<br />")%>' CommandArgument='<%#Eval("topicId") %>' CommandName="select">LinkButton</asp:LinkButton></li>
 
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </ul>
+                    </article>
                     <div class="dis-block clearfix marT3 graph">
                         <canvas id="container1"></canvas>
                     </div>
@@ -53,7 +73,17 @@
                         </span>
                         <div class="redtitle"></div>
                     </div>
+                    <article class="navigation" style="border-top:none;">
+                        <ul>
+                            <asp:Repeater ID="rptrTopics3" runat="server">
+                                <ItemTemplate>
+                                    <li>
+                                        <asp:LinkButton ID="lnkBtn" CssClass="color" runat="server" Font-Size="12px" Text='<%#Eval("topicName").ToString().Replace(" ","<br />")%>' CommandArgument='<%#Eval("topicId") %>' CommandName="select">LinkButton</asp:LinkButton></li>
 
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </ul>
+                    </article>
                     <div class="dis-block clearfix marT3 graph">
                         <canvas id="container2"></canvas>
                     </div>
@@ -130,25 +160,25 @@
                             '<%= topic6name %>'.replace('<span>', '').replace('</span>', ''),
                             '<%= topic7name %>'.replace('<span>', '').replace('</span>', '')],--%>
             labels: ['ANLYSE', 'ALIGN', 'CATMAN', 'SUSTIN', 'RELATE', 'PERFRM', 'PARTNR'],
-             datasets: [{
-                 label: 'Your results',
-                 borderWidth: 1,
-                 backgroundColor: '#FF8C00',
-                 borderColor: '#FF8C00',
-                 data: [
-                     <%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>
-                ]
-            }, {
-                label: 'Avg results',
+            datasets: [{
+                label: 'Your results',
                 borderWidth: 1,
-                backgroundColor: '#4682B4',
-                borderColor: '#4682B4',
+                backgroundColor: '#FF8C00',
+                borderColor: '#FF8C00',
                 data: [
-					<%= sectormedain1 %>,<%= sectormedain2 %>,<%= sectormedain3 %>,<%= sectormedain4 %>,<%= sectormedain5 %>,<%= sectormedain6 %>,<%= sectormedain7 %>
+                    <%= topic1mark %>,<%= topic2mark %>,<%= topic3mark %>,<%= topic4mark %>,<%= topic5mark %>,<%= topic6mark %>,<%= topic7mark %>
+                 ]
+             }, {
+                 label: 'Avg results',
+                 borderWidth: 1,
+                 backgroundColor: '#4682B4',
+                 borderColor: '#4682B4',
+                 data: [
+                     <%= sectormedain1 %>,<%= sectormedain2 %>,<%= sectormedain3 %>,<%= sectormedain4 %>,<%= sectormedain5 %>,<%= sectormedain6 %>,<%= sectormedain7 %>
                 ]
             }]
 
-         };
+        };
         //-------------------------------------------------------------------------
 
         var ctx = document.getElementById('container').getContext('2d');
@@ -163,7 +193,7 @@
                 scales:
        {
            xAxes: [{
-               display: true,
+               display: false,
                gridLines: {
                    display: false
                }
@@ -194,7 +224,7 @@
                 scales:
        {
            xAxes: [{
-               display: true,
+               display: false,
                gridLines: {
                    display: false
                }
@@ -225,7 +255,7 @@
                 scales:
        {
            xAxes: [{
-               display: true,
+               display: false,
                gridLines: {
                    display: false
                }
@@ -247,7 +277,7 @@
 
 
         jQuery('.tabs .tab-links a').on('click', function (e) {
-            var currentAttrValue = jQuery(this).attr('href');         
+            var currentAttrValue = jQuery(this).attr('href');
             // Show/Hide Tabs
             jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
 
@@ -257,7 +287,7 @@
 
 
         });
-      
+
     });
 
 

@@ -114,6 +114,10 @@ namespace SGA.ifpsmtna
         {
             this.rptrTopics.DataSource = SqlHelper.ExecuteDataset(CommandType.StoredProcedure, "spGetSgaTopics");
             this.rptrTopics.DataBind();
+            //uncomment
+            //this.rptrTopicsIndicator.DataSource = SqlHelper.ExecuteDataset(CommandType.StoredProcedure, "spGetSgaTopics");
+            //this.rptrTopicsIndicator.DataBind();
+
         }
 
         protected void rptrTopics_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -359,6 +363,19 @@ namespace SGA.ifpsmtna
                     SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "spUpdateOptions", param);
                 }
             }
+            string[] strField = new string[]
+                       {
+                            "Id"
+                       };
+            XmlRpcStruct[] resultFound = isdnAPI.findByEmail(SGACommon.LoginUserInfo.name, strField);
+            int userId;
+            XmlRpcStruct Contact = new XmlRpcStruct();
+            if (resultFound.Length > 0)
+            {
+                userId = System.Convert.ToInt32(resultFound[0]["Id"].ToString());
+                isdnAPI.addToGroup(userId, 4229);
+                isdnAPI.dsUpdate("Contact", userId, Contact);
+            }
 
             SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "spRestrictTest", new SqlParameter[]
             {
@@ -436,21 +453,15 @@ namespace SGA.ifpsmtna
                         {
                             "Id"
                         };
-            //XmlRpcStruct[] resultFound = isdnAPI.findByEmail(SGACommon.LoginUserInfo.name, strField);
-            //int userId;
-            //XmlRpcStruct Contact = new XmlRpcStruct();
-            //if (resultFound.Length > 0)
-            //{
-            //    userId = System.Convert.ToInt32(resultFound[0]["Id"].ToString());
-            //    isdnAPI.addToGroup(userId, 1466);
-            //    string Url = "http://" + base.Request.UrlReferrer.Host + "/Category_Management_Challenge_Report.aspx?Id=" + DataTier.SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "spGetSessionId", new SqlParameter[]{
-            //        new SqlParameter("@testId",this.testId),
-            //        new SqlParameter("@flag","1")
-            //    }).ToString();
-            //    Contact.Add("_CMCReportURL", Url);
-            //    Contact.Add("ContactType", "Customer");
-            //    isdnAPI.dsUpdate("Contact", userId, Contact);
-            //}
+            XmlRpcStruct[] resultFound = isdnAPI.findByEmail(SGACommon.LoginUserInfo.name, strField);
+            int userId;
+            XmlRpcStruct Contact = new XmlRpcStruct();
+            if (resultFound.Length > 0)
+            {
+                userId = System.Convert.ToInt32(resultFound[0]["Id"].ToString());
+                isdnAPI.addToGroup(userId, 4229);
+                isdnAPI.dsUpdate("Contact", userId, Contact);
+            }
 
 
             SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "spRestrictTest", new SqlParameter[]
